@@ -1,0 +1,13 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1024" height="1024" fill="#f6b25e"/>
+  <rect x="0" y="0" width="1024" height="512" fill="#f8bd6e"/>
+  <rect x="118" y="150" width="788" height="620" rx="70" fill="#fffdf7"/>
+  <path d="M512 92 l40 96 l104 8 l-80 67 l25 101 l-89 -55 l-89 55 l25 -101 l-80 -67 l104 -8 z" fill="#ffd45a" stroke="#33414a" stroke-width="10" stroke-linejoin="round"/>
+  <text x="512" y="470" font-family="'Hiragino Sans','Yu Gothic',sans-serif" font-size="230" font-weight="900" fill="#33414a" text-anchor="middle">ちび</text>
+  <text x="512" y="690" font-family="'Hiragino Sans','Yu Gothic',sans-serif" font-size="150" font-weight="900" fill="#f0946a" text-anchor="middle">クエ</text>
+  <g transform="translate(512 800)">
+    <rect x="-8" y="-6" width="16" height="52" rx="8" fill="#58b88b"/>
+    <path d="M0 6 C -46 6 -60 -34 -60 -34 C -18 -34 0 6 0 6 Z" fill="#58b88b"/>
+    <path d="M0 -2 C 46 -2 60 -42 60 -42 C 18 -42 0 -2 0 -2 Z" fill="#6cc396"/>
+  </g>
+</svg>
