@@ -11,12 +11,12 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "flag": "🇦🇷",
     "rarity": 3,
     "stats": {
-      "dribble": 10,
-      "pass": 10,
+      "dribble": 9,
+      "pass": 9,
       "shoot": 9,
-      "heading": 3,
-      "defense": 2,
-      "speed": 7
+      "heading": 2,
+      "defense": 3,
+      "speed": 8
     },
     "face": {
       "skin": "light",
@@ -39,12 +39,12 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "flag": "🇵🇹",
     "rarity": 3,
     "stats": {
-      "dribble": 7,
-      "pass": 7,
-      "shoot": 10,
-      "heading": 10,
-      "defense": 2,
-      "speed": 7
+      "dribble": 8,
+      "pass": 8,
+      "shoot": 9,
+      "heading": 9,
+      "defense": 3,
+      "speed": 8
     },
     "face": {
       "skin": "tan",
@@ -68,10 +68,10 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 3,
     "stats": {
       "dribble": 9,
-      "pass": 7,
+      "pass": 8,
       "shoot": 9,
       "heading": 5,
-      "defense": 2,
+      "defense": 4,
       "speed": 10
     },
     "face": {
@@ -95,11 +95,11 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "flag": "🇳🇴",
     "rarity": 3,
     "stats": {
-      "dribble": 6,
-      "pass": 6,
-      "shoot": 10,
-      "heading": 9,
-      "defense": 3,
+      "dribble": 8,
+      "pass": 7,
+      "shoot": 9,
+      "heading": 8,
+      "defense": 5,
       "speed": 9
     },
     "face": {
@@ -123,12 +123,12 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "flag": "🇪🇸",
     "rarity": 3,
     "stats": {
-      "dribble": 10,
-      "pass": 8,
+      "dribble": 9,
+      "pass": 9,
       "shoot": 8,
-      "heading": 3,
+      "heading": 2,
       "defense": 2,
-      "speed": 8
+      "speed": 9
     },
     "face": {
       "skin": "tan",
@@ -152,10 +152,10 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 3,
     "stats": {
       "dribble": 9,
-      "pass": 7,
-      "shoot": 7,
-      "heading": 4,
-      "defense": 4,
+      "pass": 8,
+      "shoot": 8,
+      "heading": 3,
+      "defense": 3,
       "speed": 9
     },
     "face": {
@@ -180,10 +180,10 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 2,
     "stats": {
       "dribble": 9,
-      "pass": 7,
+      "pass": 8,
       "shoot": 8,
-      "heading": 4,
-      "defense": 2,
+      "heading": 2,
+      "defense": 3,
       "speed": 10
     },
     "face": {
@@ -207,11 +207,11 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "flag": "🇪🇬",
     "rarity": 2,
     "stats": {
-      "dribble": 8,
-      "pass": 8,
+      "dribble": 9,
+      "pass": 9,
       "shoot": 9,
-      "heading": 5,
-      "defense": 3,
+      "heading": 4,
+      "defense": 5,
       "speed": 9
     },
     "face": {
@@ -235,12 +235,12 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "rarity": 2,
     "stats": {
-      "dribble": 6,
+      "dribble": 8,
       "pass": 8,
-      "shoot": 10,
+      "shoot": 9,
       "heading": 8,
-      "defense": 3,
-      "speed": 5
+      "defense": 5,
+      "speed": 6
     },
     "face": {
       "skin": "light",
@@ -263,12 +263,12 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "rarity": 2,
     "stats": {
-      "dribble": 8,
+      "dribble": 9,
       "pass": 8,
       "shoot": 8,
       "heading": 7,
-      "defense": 6,
-      "speed": 7
+      "defense": 8,
+      "speed": 8
     },
     "face": {
       "skin": "brown",
@@ -291,12 +291,12 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "flag": "🇪🇸",
     "rarity": 2,
     "stats": {
-      "dribble": 6,
+      "dribble": 9,
       "pass": 9,
-      "shoot": 6,
-      "heading": 7,
-      "defense": 8,
-      "speed": 5
+      "shoot": 8,
+      "heading": 6,
+      "defense": 9,
+      "speed": 7
     },
     "face": {
       "skin": "light",
@@ -319,12 +319,12 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "flag": "🇪🇸",
     "rarity": 2,
     "stats": {
-      "dribble": 8,
+      "dribble": 9,
       "pass": 9,
-      "shoot": 6,
-      "heading": 3,
+      "shoot": 7,
+      "heading": 2,
       "defense": 5,
-      "speed": 6
+      "speed": 8
     },
     "face": {
       "skin": "light",
@@ -347,12 +347,12 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "flag": "🇧🇪",
     "rarity": 2,
     "stats": {
-      "dribble": 7,
-      "pass": 10,
+      "dribble": 8,
+      "pass": 9,
       "shoot": 8,
-      "heading": 4,
-      "defense": 3,
-      "speed": 5
+      "heading": 5,
+      "defense": 5,
+      "speed": 6
     },
     "face": {
       "skin": "light",
@@ -378,7 +378,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "dribble": 9,
       "pass": 8,
       "shoot": 7,
-      "heading": 3,
+      "heading": 2,
       "defense": 3,
       "speed": 8
     },
@@ -403,12 +403,12 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "flag": "🇳🇱",
     "rarity": 2,
     "stats": {
-      "dribble": 4,
+      "dribble": 6,
       "pass": 7,
-      "shoot": 4,
+      "shoot": 3,
       "heading": 10,
-      "defense": 10,
-      "speed": 6
+      "defense": 9,
+      "speed": 7
     },
     "face": {
       "skin": "brown",
@@ -434,9 +434,9 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "dribble": 8,
       "pass": 7,
       "shoot": 6,
-      "heading": 5,
-      "defense": 7,
-      "speed": 10
+      "heading": 4,
+      "defense": 8,
+      "speed": 9
     },
     "face": {
       "skin": "tan",
@@ -459,7 +459,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "flag": "🇧🇪",
     "rarity": 2,
     "stats": {
-      "dribble": 1,
+      "dribble": 2,
       "pass": 5,
       "shoot": 1,
       "heading": 4,
@@ -490,7 +490,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "dribble": 2,
       "pass": 5,
       "shoot": 1,
-      "heading": 4,
+      "heading": 3,
       "defense": 8,
       "speed": 5
     },
@@ -544,11 +544,11 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 1,
     "stats": {
       "dribble": 5,
-      "pass": 7,
+      "pass": 6,
       "shoot": 4,
-      "heading": 7,
-      "defense": 9,
-      "speed": 5
+      "heading": 6,
+      "defense": 8,
+      "speed": 6
     },
     "face": {
       "skin": "light",
@@ -571,12 +571,12 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "flag": "🇩🇪",
     "rarity": 1,
     "stats": {
-      "dribble": 4,
+      "dribble": 6,
       "pass": 6,
-      "shoot": 3,
+      "shoot": 4,
       "heading": 8,
       "defense": 9,
-      "speed": 7
+      "speed": 8
     },
     "face": {
       "skin": "brown",
@@ -599,12 +599,12 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "flag": "🇫🇷",
     "rarity": 1,
     "stats": {
-      "dribble": 5,
-      "pass": 6,
-      "shoot": 2,
-      "heading": 8,
+      "dribble": 8,
+      "pass": 7,
+      "shoot": 4,
+      "heading": 9,
       "defense": 9,
-      "speed": 7
+      "speed": 8
     },
     "face": {
       "skin": "brown",
@@ -627,12 +627,12 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "flag": "🇭🇷",
     "rarity": 1,
     "stats": {
-      "dribble": 6,
+      "dribble": 7,
       "pass": 7,
       "shoot": 4,
       "heading": 7,
       "defense": 8,
-      "speed": 7
+      "speed": 8
     },
     "face": {
       "skin": "light",
@@ -655,10 +655,10 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "flag": "🇯🇵",
     "rarity": 1,
     "stats": {
-      "dribble": 4,
+      "dribble": 6,
       "pass": 6,
       "shoot": 3,
-      "heading": 8,
+      "heading": 6,
       "defense": 8,
       "speed": 5
     },
@@ -688,7 +688,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "shoot": 1,
       "heading": 4,
       "defense": 9,
-      "speed": 4
+      "speed": 5
     },
     "face": {
       "skin": "light",
@@ -711,12 +711,12 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "flag": "🇮🇹",
     "rarity": 1,
     "stats": {
-      "dribble": 1,
-      "pass": 4,
+      "dribble": 2,
+      "pass": 5,
       "shoot": 1,
-      "heading": 4,
+      "heading": 5,
       "defense": 9,
-      "speed": 4
+      "speed": 5
     },
     "face": {
       "skin": "light",

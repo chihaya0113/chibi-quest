@@ -12,36 +12,40 @@ const positionLabels = {
 
 // 所属は2025-26シーズン時点。移籍したらここを直して npm run generate:players
 // stats: [ドリブル, パス, シュート, ヘディング, まもり(GKはセービング), はやさ] 各1〜10
+// stats: [dribble, pass, shoot, heading, defense, speed]。
+// dribble/pass/shoot/defense/speed は EA SPORTS FC 26 の実データ（PAC/SHO/PAS/DRI/DEF, 99満点）を
+// 10満点にスケール変換（round(x/10)）。heading は EA側に対応する見出しステータスが無いため、
+// 実際の空中戦の評判・PHYスタッツを参考にした判断値。GK等データが薄い選手は総合力とプレースタイルから推定。
 const players = [
   // ⭐⭐⭐ レジェンド
-  { no: 1, name: "メッシ", emoji: "🐐", pos: "FW", club: "インテル・マイアミ", country: "アルゼンチン", flag: "🇦🇷", rarity: 3, stats: [10, 10, 9, 3, 2, 7] },
-  { no: 2, name: "クリスティアーノ・ロナウド", emoji: "🚀", pos: "FW", club: "アル・ナスル", country: "ポルトガル", flag: "🇵🇹", rarity: 3, stats: [7, 7, 10, 10, 2, 7] },
-  { no: 3, name: "エムバペ", emoji: "🐢", pos: "FW", club: "レアル・マドリード", country: "フランス", flag: "🇫🇷", rarity: 3, stats: [9, 7, 9, 5, 2, 10] },
-  { no: 4, name: "ハーランド", emoji: "🤖", pos: "FW", club: "マンチェスター・シティ", country: "ノルウェー", flag: "🇳🇴", rarity: 3, stats: [6, 6, 10, 9, 3, 9] },
-  { no: 5, name: "ラミン・ヤマル", emoji: "🌟", pos: "FW", club: "バルセロナ", country: "スペイン", flag: "🇪🇸", rarity: 3, stats: [10, 8, 8, 3, 2, 8] },
-  { no: 6, name: "三笘薫", emoji: "⚡", pos: "FW", club: "ブライトン", country: "日本", flag: "🇯🇵", rarity: 3, stats: [9, 7, 7, 4, 4, 9] },
+  { no: 1, name: "メッシ", emoji: "🐐", pos: "FW", club: "インテル・マイアミ", country: "アルゼンチン", flag: "🇦🇷", rarity: 3, stats: [9, 9, 9, 2, 3, 8] },
+  { no: 2, name: "クリスティアーノ・ロナウド", emoji: "🚀", pos: "FW", club: "アル・ナスル", country: "ポルトガル", flag: "🇵🇹", rarity: 3, stats: [8, 8, 9, 9, 3, 8] },
+  { no: 3, name: "エムバペ", emoji: "🐢", pos: "FW", club: "レアル・マドリード", country: "フランス", flag: "🇫🇷", rarity: 3, stats: [9, 8, 9, 5, 4, 10] },
+  { no: 4, name: "ハーランド", emoji: "🤖", pos: "FW", club: "マンチェスター・シティ", country: "ノルウェー", flag: "🇳🇴", rarity: 3, stats: [8, 7, 9, 8, 5, 9] },
+  { no: 5, name: "ラミン・ヤマル", emoji: "🌟", pos: "FW", club: "バルセロナ", country: "スペイン", flag: "🇪🇸", rarity: 3, stats: [9, 9, 8, 2, 2, 9] },
+  { no: 6, name: "三笘薫", emoji: "⚡", pos: "FW", club: "ブライトン", country: "日本", flag: "🇯🇵", rarity: 3, stats: [9, 8, 8, 3, 3, 9] },
   // ⭐⭐ レア
-  { no: 7, name: "ヴィニシウス", emoji: "🕺", pos: "FW", club: "レアル・マドリード", country: "ブラジル", flag: "🇧🇷", rarity: 2, stats: [9, 7, 8, 4, 2, 10] },
-  { no: 8, name: "サラー", emoji: "👑", pos: "FW", club: "リヴァプール", country: "エジプト", flag: "🇪🇬", rarity: 2, stats: [8, 8, 9, 5, 3, 9] },
-  { no: 9, name: "ハリー・ケイン", emoji: "🎯", pos: "FW", club: "バイエルン・ミュンヘン", country: "イングランド", flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", rarity: 2, stats: [6, 8, 10, 8, 3, 5] },
-  { no: 10, name: "ベリンガム", emoji: "😎", pos: "MF", club: "レアル・マドリード", country: "イングランド", flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", rarity: 2, stats: [8, 8, 8, 7, 6, 7] },
-  { no: 11, name: "ロドリ", emoji: "🧠", pos: "MF", club: "マンチェスター・シティ", country: "スペイン", flag: "🇪🇸", rarity: 2, stats: [6, 9, 6, 7, 8, 5] },
-  { no: 12, name: "ペドリ", emoji: "🪄", pos: "MF", club: "バルセロナ", country: "スペイン", flag: "🇪🇸", rarity: 2, stats: [8, 9, 6, 3, 5, 6] },
-  { no: 13, name: "デ・ブライネ", emoji: "🧭", pos: "MF", club: "ナポリ", country: "ベルギー", flag: "🇧🇪", rarity: 2, stats: [7, 10, 8, 4, 3, 5] },
-  { no: 14, name: "久保建英", emoji: "🌀", pos: "MF", club: "レアル・ソシエダ", country: "日本", flag: "🇯🇵", rarity: 2, stats: [9, 8, 7, 3, 3, 8] },
-  { no: 15, name: "ファン・ダイク", emoji: "🏰", pos: "DF", club: "リヴァプール", country: "オランダ", flag: "🇳🇱", rarity: 2, stats: [4, 7, 4, 10, 10, 6] },
-  { no: 16, name: "ハキミ", emoji: "🚄", pos: "DF", club: "パリ・サンジェルマン", country: "モロッコ", flag: "🇲🇦", rarity: 2, stats: [8, 7, 6, 5, 7, 10] },
-  { no: 17, name: "クルトワ", emoji: "🕷", pos: "GK", club: "レアル・マドリード", country: "ベルギー", flag: "🇧🇪", rarity: 2, stats: [1, 5, 1, 4, 10, 4] },
-  { no: 18, name: "鈴木彩艶", emoji: "🔥", pos: "GK", club: "パルマ", country: "日本", flag: "🇯🇵", rarity: 2, stats: [2, 5, 1, 4, 8, 5] },
+  { no: 7, name: "ヴィニシウス", emoji: "🕺", pos: "FW", club: "レアル・マドリード", country: "ブラジル", flag: "🇧🇷", rarity: 2, stats: [9, 8, 8, 2, 3, 10] },
+  { no: 8, name: "サラー", emoji: "👑", pos: "FW", club: "リヴァプール", country: "エジプト", flag: "🇪🇬", rarity: 2, stats: [9, 9, 9, 4, 5, 9] },
+  { no: 9, name: "ハリー・ケイン", emoji: "🎯", pos: "FW", club: "バイエルン・ミュンヘン", country: "イングランド", flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", rarity: 2, stats: [8, 8, 9, 8, 5, 6] },
+  { no: 10, name: "ベリンガム", emoji: "😎", pos: "MF", club: "レアル・マドリード", country: "イングランド", flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", rarity: 2, stats: [9, 8, 8, 7, 8, 8] },
+  { no: 11, name: "ロドリ", emoji: "🧠", pos: "MF", club: "マンチェスター・シティ", country: "スペイン", flag: "🇪🇸", rarity: 2, stats: [9, 9, 8, 6, 9, 7] },
+  { no: 12, name: "ペドリ", emoji: "🪄", pos: "MF", club: "バルセロナ", country: "スペイン", flag: "🇪🇸", rarity: 2, stats: [9, 9, 7, 2, 5, 8] },
+  { no: 13, name: "デ・ブライネ", emoji: "🧭", pos: "MF", club: "ナポリ", country: "ベルギー", flag: "🇧🇪", rarity: 2, stats: [8, 9, 8, 5, 5, 6] },
+  { no: 14, name: "久保建英", emoji: "🌀", pos: "MF", club: "レアル・ソシエダ", country: "日本", flag: "🇯🇵", rarity: 2, stats: [9, 8, 7, 2, 3, 8] },
+  { no: 15, name: "ファン・ダイク", emoji: "🏰", pos: "DF", club: "リヴァプール", country: "オランダ", flag: "🇳🇱", rarity: 2, stats: [6, 7, 3, 10, 9, 7] },
+  { no: 16, name: "ハキミ", emoji: "🚄", pos: "DF", club: "パリ・サンジェルマン", country: "モロッコ", flag: "🇲🇦", rarity: 2, stats: [8, 7, 6, 4, 8, 9] },
+  { no: 17, name: "クルトワ", emoji: "🕷", pos: "GK", club: "レアル・マドリード", country: "ベルギー", flag: "🇧🇪", rarity: 2, stats: [2, 5, 1, 4, 10, 4] },
+  { no: 18, name: "鈴木彩艶", emoji: "🔥", pos: "GK", club: "パルマ", country: "日本", flag: "🇯🇵", rarity: 2, stats: [2, 5, 1, 3, 8, 5] },
   // ⭐ きほん
   { no: 19, name: "モドリッチ", emoji: "🎻", pos: "MF", club: "ACミラン", country: "クロアチア", flag: "🇭🇷", rarity: 1, stats: [8, 9, 6, 3, 5, 5] },
-  { no: 20, name: "遠藤航", emoji: "🛡", pos: "MF", club: "リヴァプール", country: "日本", flag: "🇯🇵", rarity: 1, stats: [5, 7, 4, 7, 9, 5] },
-  { no: 21, name: "リュディガー", emoji: "🦾", pos: "DF", club: "レアル・マドリード", country: "ドイツ", flag: "🇩🇪", rarity: 1, stats: [4, 6, 3, 8, 9, 7] },
-  { no: 22, name: "サリバ", emoji: "🧱", pos: "DF", club: "アーセナル", country: "フランス", flag: "🇫🇷", rarity: 1, stats: [5, 6, 2, 8, 9, 7] },
-  { no: 23, name: "グヴァルディオル", emoji: "🐻", pos: "DF", club: "マンチェスター・シティ", country: "クロアチア", flag: "🇭🇷", rarity: 1, stats: [6, 7, 4, 7, 8, 7] },
-  { no: 24, name: "板倉滉", emoji: "🗻", pos: "DF", club: "アヤックス", country: "日本", flag: "🇯🇵", rarity: 1, stats: [4, 6, 3, 8, 8, 5] },
-  { no: 25, name: "アリソン", emoji: "🦅", pos: "GK", club: "リヴァプール", country: "ブラジル", flag: "🇧🇷", rarity: 1, stats: [2, 6, 1, 4, 9, 4] },
-  { no: 26, name: "ドンナルンマ", emoji: "🧤", pos: "GK", club: "マンチェスター・シティ", country: "イタリア", flag: "🇮🇹", rarity: 1, stats: [1, 4, 1, 4, 9, 4] }
+  { no: 20, name: "遠藤航", emoji: "🛡", pos: "MF", club: "リヴァプール", country: "日本", flag: "🇯🇵", rarity: 1, stats: [5, 6, 4, 6, 8, 6] },
+  { no: 21, name: "リュディガー", emoji: "🦾", pos: "DF", club: "レアル・マドリード", country: "ドイツ", flag: "🇩🇪", rarity: 1, stats: [6, 6, 4, 8, 9, 8] },
+  { no: 22, name: "サリバ", emoji: "🧱", pos: "DF", club: "アーセナル", country: "フランス", flag: "🇫🇷", rarity: 1, stats: [8, 7, 4, 9, 9, 8] },
+  { no: 23, name: "グヴァルディオル", emoji: "🐻", pos: "DF", club: "マンチェスター・シティ", country: "クロアチア", flag: "🇭🇷", rarity: 1, stats: [7, 7, 4, 7, 8, 8] },
+  { no: 24, name: "板倉滉", emoji: "🗻", pos: "DF", club: "アヤックス", country: "日本", flag: "🇯🇵", rarity: 1, stats: [6, 6, 3, 6, 8, 5] },
+  { no: 25, name: "アリソン", emoji: "🦅", pos: "GK", club: "リヴァプール", country: "ブラジル", flag: "🇧🇷", rarity: 1, stats: [2, 6, 1, 4, 9, 5] },
+  { no: 26, name: "ドンナルンマ", emoji: "🧤", pos: "GK", club: "マンチェスター・シティ", country: "イタリア", flag: "🇮🇹", rarity: 1, stats: [2, 5, 1, 5, 9, 5] }
 ];
 
 // スターター（れんしゅうせい）: 最初からチームにいる低能力選手。
