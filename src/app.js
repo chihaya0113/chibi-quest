@@ -1,5 +1,5 @@
-import { subjects } from "./curriculum.js?v=13";
-import { getLevelFromXp, loadState, resetState, saveState } from "./storage.js?v=13";
+import { subjects } from "./curriculum.js?v=14";
+import { getLevelFromXp, loadState, resetState, saveState } from "./storage.js?v=14";
 
 const allQuestions = [
   ...(window.CHIBI_QUEST_QUESTIONS ?? []),
