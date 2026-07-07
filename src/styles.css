@@ -1026,6 +1026,97 @@ h1 {
   font-size: 0.62rem;
 }
 
+.formationSwitch {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.formationChip {
+  padding: 6px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.formationChip.active {
+  background: var(--cta);
+  color: #fff;
+  border-color: var(--cta);
+}
+
+.pitchRow.count-4 .teamSlot { width: 76px; height: 76px; }
+.pitchRow.count-4 .teamSlotName { max-width: 66px; }
+
+.benchBoard { margin-top: 24px; }
+
+.benchRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.benchTile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 10px;
+  border: 1.5px solid var(--line);
+  border-radius: 14px;
+  background: #fffdf7;
+}
+
+.winRateCard { text-align: center; }
+
+.winRateBig {
+  margin: 10px 0 4px;
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.winReasons {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.winReason { padding: 4px 10px; border-radius: 10px; }
+.winReason.plus { background: var(--ok-bg); }
+.winReason.minus { background: var(--danger-bg); }
+
+.tacticGroup { margin-top: 16px; text-align: left; }
+.tacticGroupLabel { font-weight: 800; margin-bottom: 6px; }
+
+.tacticChips {
+  display: flex;
+  gap: 8px;
+}
+
+.tacticChip {
+  flex: 1;
+  padding: 10px;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  font-weight: 800;
+}
+
+.tacticChip.active {
+  background: var(--cta);
+  color: #fff;
+  border-color: var(--cta);
+}
+
 .pickList {
   display: grid;
   gap: 12px;
@@ -1327,6 +1418,20 @@ h1 {
   .teamSlot {
     width: 82px;
     height: 82px;
+  }
+
+  .pitchRow.count-4 {
+    gap: 8px;
+  }
+
+  .pitchRow.count-4 .teamSlot {
+    width: 66px;
+    height: 66px;
+  }
+
+  .pitchRow.count-4 .teamSlotName {
+    max-width: 56px;
+    font-size: 0.6rem;
   }
 
   .battlePitch {

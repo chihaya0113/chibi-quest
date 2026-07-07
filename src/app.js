@@ -1,5 +1,5 @@
-import { subjects } from "./curriculum.js?v=16";
-import { getLevelFromXp, loadState, resetState, saveState } from "./storage.js?v=16";
+import { subjects } from "./curriculum.js?v=18";
+import { getLevelFromXp, loadState, resetState, saveState } from "./storage.js?v=18";
 
 const allQuestions = [
   ...(window.CHIBI_QUEST_QUESTIONS ?? []),
@@ -123,32 +123,57 @@ function computeMatchupWinRate(myXI, myTactics, oppTactics) {
 
   return { finalPercent, tacticTotal, traitTotal, reasons };
 }
-// 8人制 2-3-2: 上からFW2・MF3・DF2・GK1（slots配列は GK→DF→MF→FW の順）
-const TEAM_SLOTS = [
-  { index: 0, pos: "GK" },
-  { index: 1, pos: "DF" },
-  { index: 2, pos: "DF" },
-  { index: 3, pos: "MF" },
-  { index: 4, pos: "MF" },
-  { index: 5, pos: "MF" },
-  { index: 6, pos: "FW" },
-  { index: 7, pos: "FW" }
-];
-const TEAM_ROWS = [
-  { label: "FW", slotIndexes: [6, 7] },
-  { label: "MF", slotIndexes: [3, 4, 5] },
-  { label: "DF", slotIndexes: [1, 2] },
-  { label: "GK", slotIndexes: [0] }
-];
-// リーグ参加チーム（きみ以外の7チーム）。それぞれ得意な戦い方（スタイル）を持つ
+// 11人制フォーメーション（GK1＋DF/MF/FWの組み合わせを3種から選べる）。slots配列は GK→DF→MF→FW の順
+const FORMATIONS = {
+  "4-3-3": { label: "4-3-3", df: 4, mf: 3, fw: 3 },
+  "4-4-2": { label: "4-4-2", df: 4, mf: 4, fw: 2 },
+  "3-4-3": { label: "3-4-3", df: 3, mf: 4, fw: 3 }
+};
+const DEFAULT_FORMATION = "4-3-3";
+
+function formationSlots(formationKey) {
+  const f = FORMATIONS[formationKey] ?? FORMATIONS[DEFAULT_FORMATION];
+  const positions = ["GK", ...Array(f.df).fill("DF"), ...Array(f.mf).fill("MF"), ...Array(f.fw).fill("FW")];
+  return positions.map((pos, index) => ({ index, pos }));
+}
+
+function formationRows(formationKey) {
+  const slots = formationSlots(formationKey);
+  const byPos = (pos) => slots.filter((slot) => slot.pos === pos).map((slot) => slot.index);
+  return [
+    { label: "FW", slotIndexes: byPos("FW") },
+    { label: "MF", slotIndexes: byPos("MF") },
+    { label: "DF", slotIndexes: byPos("DF") },
+    { label: "GK", slotIndexes: byPos("GK") }
+  ];
+}
+
+// 対戦ピッチ用の座標（%）。行ごとに均等配置し、自チームは左、あいては右にミラー
+function formationPitchCoords(formationKey) {
+  const f = FORMATIONS[formationKey] ?? FORMATIONS[DEFAULT_FORMATION];
+  const spreadRow = (count, x) => {
+    if (count === 1) return [{ x, y: 50 }];
+    const coords = [];
+    for (let i = 0; i < count; i += 1) coords.push({ x, y: 15 + (70 * i) / (count - 1) });
+    return coords;
+  };
+  return [
+    { x: 7, y: 50 },
+    ...spreadRow(f.df, 20),
+    ...spreadRow(f.mf, 34),
+    ...spreadRow(f.fw, 46)
+  ];
+}
+const CPU_PITCH_COORDS = formationPitchCoords("4-3-3");
+// リーグ参加チーム（きみ以外の7チーム）。それぞれ得意な戦い方（スタイル）と実際の戦術（守備・攻撃・ビルドアップ）を持つ
 const LEAGUE_CPU_TEAMS = [
-  { id: "cpu_1", name: "たんぽぽFC", emoji: "🌼", style: "possession", mid: 3, def: 3, atk: 3, gk: 3 },
-  { id: "cpu_2", name: "かみなりSC", emoji: "⚡", style: "counter", mid: 5, def: 4, atk: 5, gk: 4 },
-  { id: "cpu_3", name: "ドラゴン学園", emoji: "🐉", style: "attacking", mid: 6, def: 6, atk: 6, gk: 6 },
-  { id: "cpu_4", name: "ギャラクシーFC", emoji: "🌌", style: "possession", mid: 8, def: 7, atk: 8, gk: 7 },
-  { id: "cpu_5", name: "でんせつスターズ", emoji: "👑", style: "attacking", mid: 9, def: 9, atk: 9, gk: 9 },
-  { id: "cpu_6", name: "アイアンウォールFC", emoji: "🛡", style: "defensive", mid: 5, def: 8, atk: 4, gk: 7 },
-  { id: "cpu_7", name: "ウィンドラッシュ", emoji: "🌪", style: "counter", mid: 6, def: 5, atk: 7, gk: 5 }
+  { id: "cpu_1", name: "たんぽぽFC", emoji: "🌼", style: "possession", mid: 3, def: 3, atk: 3, gk: 3, tactics: { defense: "retreat", attack: "possession", buildup: "shortpass" } },
+  { id: "cpu_2", name: "かみなりSC", emoji: "⚡", style: "counter", mid: 5, def: 4, atk: 5, gk: 4, tactics: { defense: "forecheck", attack: "counter", buildup: "longpass" } },
+  { id: "cpu_3", name: "ドラゴン学園", emoji: "🐉", style: "attacking", mid: 6, def: 6, atk: 6, gk: 6, tactics: { defense: "forecheck", attack: "possession", buildup: "shortpass" } },
+  { id: "cpu_4", name: "ギャラクシーFC", emoji: "🌌", style: "possession", mid: 8, def: 7, atk: 8, gk: 7, tactics: { defense: "retreat", attack: "possession", buildup: "shortpass" } },
+  { id: "cpu_5", name: "でんせつスターズ", emoji: "👑", style: "attacking", mid: 9, def: 9, atk: 9, gk: 9, tactics: { defense: "forecheck", attack: "possession", buildup: "longpass" } },
+  { id: "cpu_6", name: "アイアンウォールFC", emoji: "🛡", style: "defensive", mid: 5, def: 8, atk: 4, gk: 7, tactics: { defense: "retreat", attack: "counter", buildup: "longpass" } },
+  { id: "cpu_7", name: "ウィンドラッシュ", emoji: "🌪", style: "counter", mid: 6, def: 5, atk: 7, gk: 5, tactics: { defense: "forecheck", attack: "counter", buildup: "longpass" } }
 ];
 const LEAGUE_STYLE_LABELS = {
   possession: "ポゼッション型",
@@ -175,13 +200,6 @@ const EQUIP_EFFECTS = {
   sc_011: "def", sc_012: "def", sc_013: "def", sc_014: "def", sc_015: "rebound"
 };
 const BATTLE_EVENTS = 10;
-// 対戦ピッチの駒座標（%）。自チームは左、あいては右にミラー
-const SLOT_COORDS = [
-  { x: 7, y: 50 },
-  { x: 20, y: 30 }, { x: 20, y: 70 },
-  { x: 34, y: 20 }, { x: 34, y: 50 }, { x: 34, y: 80 },
-  { x: 46, y: 35 }, { x: 46, y: 65 }
-];
 let battleTimer = null;
 const QUESTIONS_PER_SESSION = 10;
 const QUESTIONS_PER_DAILY_SUBJECT = 10;
@@ -1264,8 +1282,16 @@ function renderSoccer() {
     renderSlotMenu();
     return;
   }
+  if (soccerScreen.mode === "benchAssign") {
+    renderBenchAssign();
+    return;
+  }
   if (soccerScreen.mode === "battleSelect") {
     renderBattleSelect();
+    return;
+  }
+  if (soccerScreen.mode === "prematch") {
+    renderPrematch();
     return;
   }
   if (soccerScreen.mode === "battle") {
@@ -1824,19 +1850,57 @@ function renderPlayerDexTiles() {
   }).join("");
 }
 
+// 選手ID配列を新フォーメーションのマスへ振り直す（ポジション一致を優先、余りは空欄）
+function remapPlayersToFormation(playerIds, formationKey) {
+  const slotDefs = formationSlots(formationKey);
+  const newSlots = new Array(slotDefs.length).fill(null);
+  const remaining = [...playerIds];
+  slotDefs.forEach((slotDef, index) => {
+    const matchIdx = remaining.findIndex((id) => findPlayerById(id)?.position === slotDef.pos);
+    if (matchIdx >= 0) {
+      newSlots[index] = remaining[matchIdx];
+      remaining.splice(matchIdx, 1);
+    }
+  });
+  slotDefs.forEach((slotDef, index) => {
+    if (newSlots[index] || remaining.length === 0) return;
+    newSlots[index] = remaining.shift();
+  });
+  return newSlots;
+}
+
 function getTeam() {
-  const team = state.soccer.team ?? { slots: [], equips: {} };
-  if (!Array.isArray(team.slots) || team.slots.length !== TEAM_SLOTS.length) {
-    team.slots = [null, null, null, null, null, null, null, null];
-  }
+  const team = state.soccer.team ?? {};
+  if (!FORMATIONS[team.formation]) team.formation = DEFAULT_FORMATION;
   team.equips ??= {};
-  // 全マスが空（旧セーブ含む）ならスターターで埋める
-  if (team.slots.every((slot) => !slot) && starterPlayers.length > 0) {
-    team.slots = [...STARTER_SLOT_FILL];
+  const slotDefs = formationSlots(team.formation);
+  if (!Array.isArray(team.slots) || team.slots.length !== slotDefs.length) {
+    const previousIds = Array.isArray(team.slots) ? team.slots.filter(Boolean) : [];
+    // スターター未所持ぶんを補って初期チームを組む（旧セーブや新規プレイ時）
+    const fillerIds = previousIds.length > 0 ? previousIds : STARTER_SLOT_FILL.filter((id) => isPlayerAvailable(findPlayerById(id)));
+    team.slots = remapPlayersToFormation(fillerIds, team.formation);
+    team.equips = {};
     saveState(state);
   }
   state.soccer.team = team;
   return team;
+}
+
+function setFormation(formationKey) {
+  if (!FORMATIONS[formationKey]) return;
+  const team = getTeam();
+  if (team.formation === formationKey) return;
+  const previousIds = team.slots.filter(Boolean);
+  team.formation = formationKey;
+  team.slots = remapPlayersToFormation(previousIds, formationKey);
+  team.equips = {};
+  saveState(state);
+}
+
+function benchPlayers() {
+  const team = getTeam();
+  const placed = new Set(team.slots.filter(Boolean));
+  return soccerPlayers.filter((player) => isPlayerAvailable(player) && !placed.has(player.id));
 }
 
 function findPlayerById(playerId) {
@@ -1887,7 +1951,7 @@ function removeFromSlot(slotIndex) {
 
 function renderTeamSlot(slotIndex) {
   const team = getTeam();
-  const slotPos = TEAM_SLOTS[slotIndex].pos;
+  const slotPos = formationSlots(team.formation)[slotIndex].pos;
   const playerId = team.slots[slotIndex];
   const player = playerId ? findPlayerById(playerId) : null;
 
@@ -1916,38 +1980,88 @@ function renderTeam() {
   window.onkeydown = null;
   const team = getTeam();
   const memberCount = team.slots.filter(Boolean).length;
+  const rows = formationRows(team.formation);
+  const bench = benchPlayers();
+  const returnTo = soccerScreen?.returnTo ?? null;
 
   app.innerHTML = `
     <main class="shell">
       <section class="quizHeader">
-        <button class="iconButton" id="homeButton" aria-label="ホームへ戻る">←</button>
-        <strong class="packTitle">⚽ チームへんせい ${memberCount}/8人</strong>
+        <button class="iconButton" id="homeButton" aria-label="もどる">←</button>
+        <strong class="packTitle">⚽ チームへんせい ${memberCount}/${formationSlots(team.formation).length}人</strong>
         <span class="teamPower">💪 ${computeTeamPower()}</span>
       </section>
 
+      <section class="formationSwitch">
+        ${Object.keys(FORMATIONS).map((key) => `
+          <button class="formationChip ${team.formation === key ? "active" : ""}" data-formation="${key}">${FORMATIONS[key].label}</button>
+        `).join("")}
+      </section>
+
       <section class="pitchBoard">
-        ${TEAM_ROWS.map((row) => `
-          <div class="pitchRow">
+        ${rows.map((row) => `
+          <div class="pitchRow count-${row.slotIndexes.length}">
             ${row.slotIndexes.map((slotIndex) => renderTeamSlot(slotIndex)).join("")}
           </div>
         `).join("")}
       </section>
 
       <p class="dexHint">マスをタップして 選手をえらぼう。選手をタップすると 🎴せんじゅつカードを そうびできるよ。</p>
+
+      <section class="benchBoard">
+        <p class="eyebrow">🪑 ひかえ選手（タップで あいているマスへ）</p>
+        ${bench.length === 0 ? `
+          <p class="dexHint">ひかえの選手はいないよ。</p>
+        ` : `
+          <div class="benchRow">
+            ${bench.map((player) => `
+              <button class="benchTile pos-${player.position.toLowerCase()}" data-bench-player="${player.id}">
+                <span class="teamSlotAvatar">${avatarHtml(player, 26)}</span>
+                <span class="posBadge">${escapeHtml(player.position)}</span>
+              </button>
+            `).join("")}
+          </div>
+        `}
+      </section>
     </main>
   `;
 
   document.querySelector("#homeButton").addEventListener("click", () => {
-    soccerScreen = null;
+    soccerScreen = returnTo ? { mode: returnTo } : null;
     render();
+  });
+  document.querySelectorAll(".formationChip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      setFormation(chip.dataset.formation);
+      render();
+    });
+  });
+  document.querySelectorAll(".benchTile").forEach((tile) => {
+    tile.addEventListener("click", () => {
+      const playerId = tile.dataset.benchPlayer;
+      const currentTeam = getTeam();
+      const slotDefs = formationSlots(currentTeam.formation);
+      const emptyMatchIndex = slotDefs.findIndex((slot, index) => !currentTeam.slots[index] && slot.pos === findPlayerById(playerId)?.position);
+      const emptyAnyIndex = slotDefs.findIndex((slot, index) => !currentTeam.slots[index]);
+      if (emptyMatchIndex >= 0) {
+        placePlayer(emptyMatchIndex, playerId);
+        render();
+      } else if (emptyAnyIndex >= 0) {
+        placePlayer(emptyAnyIndex, playerId);
+        render();
+      } else {
+        soccerScreen = { mode: "benchAssign", playerId, returnTo };
+        render();
+      }
+    });
   });
   document.querySelectorAll(".teamSlot").forEach((slot) => {
     slot.addEventListener("click", () => {
       const slotIndex = Number(slot.dataset.slot);
       const playerId = getTeam().slots[slotIndex];
       soccerScreen = playerId
-        ? { mode: "slotMenu", slotIndex }
-        : { mode: "pickPlayer", slotIndex };
+        ? { mode: "slotMenu", slotIndex, returnTo }
+        : { mode: "pickPlayer", slotIndex, returnTo };
       render();
     });
   });
@@ -1956,8 +2070,9 @@ function renderTeam() {
 function renderPickPlayer() {
   window.onkeydown = null;
   const slotIndex = soccerScreen.slotIndex;
-  const slotPos = TEAM_SLOTS[slotIndex].pos;
+  const returnTo = soccerScreen.returnTo ?? null;
   const team = getTeam();
+  const slotPos = formationSlots(team.formation)[slotIndex].pos;
   const ownedPlayers = soccerPlayers.filter(isPlayerAvailable);
   const sorted = [...ownedPlayers].sort((a, b) => {
     const fitA = a.position === slotPos ? 0 : 1;
@@ -2001,18 +2116,18 @@ function renderPickPlayer() {
   `;
 
   document.querySelector("#backButton").addEventListener("click", () => {
-    soccerScreen = { mode: "team" };
+    soccerScreen = { mode: "team", returnTo };
     render();
   });
   document.querySelector("#clearSlotButton")?.addEventListener("click", () => {
     removeFromSlot(slotIndex);
-    soccerScreen = { mode: "team" };
+    soccerScreen = { mode: "team", returnTo };
     render();
   });
   document.querySelectorAll(".pickRow").forEach((row) => {
     row.addEventListener("click", () => {
       placePlayer(slotIndex, row.dataset.player);
-      soccerScreen = { mode: "team" };
+      soccerScreen = { mode: "team", returnTo };
       render();
     });
   });
@@ -2021,10 +2136,11 @@ function renderPickPlayer() {
 function renderSlotMenu() {
   window.onkeydown = null;
   const slotIndex = soccerScreen.slotIndex;
+  const returnTo = soccerScreen.returnTo ?? null;
   const team = getTeam();
   const player = findPlayerById(team.slots[slotIndex]);
   if (!player) {
-    soccerScreen = { mode: "team" };
+    soccerScreen = { mode: "team", returnTo };
     render();
     return;
   }
@@ -2034,7 +2150,7 @@ function renderSlotMenu() {
   app.innerHTML = `
     <main class="shell resultShell">
       <section class="resultPanel soccerRevealPanel">
-        <p class="eyebrow">⚽ ${escapeHtml(TEAM_SLOTS[slotIndex].pos)}マスの選手</p>
+        <p class="eyebrow">⚽ ${escapeHtml(formationSlots(team.formation)[slotIndex].pos)}マスの選手</p>
         <div class="cardRevealWrap">
           ${renderPlayerCardFace(player, {})}
         </div>
@@ -2065,16 +2181,16 @@ function renderSlotMenu() {
   `;
 
   document.querySelector("#backButton").addEventListener("click", () => {
-    soccerScreen = { mode: "team" };
+    soccerScreen = { mode: "team", returnTo };
     render();
   });
   document.querySelector("#changeButton").addEventListener("click", () => {
-    soccerScreen = { mode: "pickPlayer", slotIndex };
+    soccerScreen = { mode: "pickPlayer", slotIndex, returnTo };
     render();
   });
   document.querySelector("#removeButton").addEventListener("click", () => {
     removeFromSlot(slotIndex);
-    soccerScreen = { mode: "team" };
+    soccerScreen = { mode: "team", returnTo };
     render();
   });
   document.querySelectorAll(".equipChip").forEach((chip) => {
@@ -2086,7 +2202,58 @@ function renderSlotMenu() {
         team.equips[slotIndex] = cardId;
       }
       saveState(state);
-      soccerScreen = { mode: "slotMenu", slotIndex };
+      soccerScreen = { mode: "slotMenu", slotIndex, returnTo };
+      render();
+    });
+  });
+}
+
+function renderBenchAssign() {
+  window.onkeydown = null;
+  const playerId = soccerScreen.playerId;
+  const returnTo = soccerScreen.returnTo ?? null;
+  const player = findPlayerById(playerId);
+  const team = getTeam();
+  const slotDefs = formationSlots(team.formation);
+  if (!player) {
+    soccerScreen = { mode: "team", returnTo };
+    render();
+    return;
+  }
+
+  app.innerHTML = `
+    <main class="shell">
+      <section class="quizHeader">
+        <button class="iconButton" id="backButton" aria-label="編成にもどる">←</button>
+        <strong class="packTitle">${escapeHtml(player.name)}を どのマスに？</strong>
+        <span></span>
+      </section>
+      <p class="dexHint">入れかえたいマスをタップしてね。</p>
+      <section class="pickList">
+        ${slotDefs.map((slotDef) => {
+          const current = findPlayerById(team.slots[slotDef.index]);
+          return `
+            <button class="pickRow pos-${slotDef.pos.toLowerCase()}" data-slot="${slotDef.index}">
+              <span class="dexPlayerAvatar">${current ? avatarHtml(current, 28) : "＋"}</span>
+              <span class="pickRowMain">
+                <strong>${current ? escapeHtml(current.name) : "（からのマス）"}</strong>
+              </span>
+              <span class="posBadge">${escapeHtml(slotDef.pos)}</span>
+            </button>
+          `;
+        }).join("")}
+      </section>
+    </main>
+  `;
+
+  document.querySelector("#backButton").addEventListener("click", () => {
+    soccerScreen = { mode: "team", returnTo };
+    render();
+  });
+  document.querySelectorAll(".pickRow").forEach((row) => {
+    row.addEventListener("click", () => {
+      placePlayer(Number(row.dataset.slot), playerId);
+      soccerScreen = { mode: "team", returnTo };
       render();
     });
   });
@@ -2252,12 +2419,13 @@ function leagueRanking() {
 
 function collectTeamForBattle() {
   const team = getTeam();
+  const slotDefs = formationSlots(team.formation);
   const placed = [];
   team.slots.forEach((playerId, slotIndex) => {
     const player = playerId ? findPlayerById(playerId) : null;
     if (!player) return;
     const equip = team.equips[slotIndex] ? findCardById(team.equips[slotIndex]) : null;
-    placed.push({ player, slotIndex, slotPos: TEAM_SLOTS[slotIndex].pos, equip });
+    placed.push({ player, slotIndex, slotPos: slotDefs[slotIndex].pos, equip });
   });
 
   const boosts = { pass: 0, break: 0, shoot: 0, def: 0, rebound: 0 };
@@ -2271,8 +2439,12 @@ function collectTeamForBattle() {
   const mfEntries = bySlotPos("MF");
   const dfEntries = bySlotPos("DF");
   const gkEntry = bySlotPos("GK")[0] ?? null;
-  const mid = mfEntries.reduce((sum, e) => sum + (e.player.stats.pass + e.player.stats.dribble) / 2, 0) / 3;
-  const def = dfEntries.reduce((sum, e) => sum + (e.player.stats.defense + e.player.stats.heading) / 2, 0) / 2;
+  const mid = mfEntries.length > 0
+    ? mfEntries.reduce((sum, e) => sum + (e.player.stats.pass + e.player.stats.dribble) / 2, 0) / mfEntries.length
+    : 0;
+  const def = dfEntries.length > 0
+    ? dfEntries.reduce((sum, e) => sum + (e.player.stats.defense + e.player.stats.heading) / 2, 0) / dfEntries.length
+    : 0;
   const gk = gkEntry ? gkEntry.player.stats.defense : 1;
 
   let attackers = [
@@ -2298,8 +2470,9 @@ function clampChance(value, min, max) {
   return Math.min(max, Math.max(min, value));
 }
 
-function simulateMatch(cpu) {
+function simulateMatch(cpu, matchBonus = 0) {
   const my = collectTeamForBattle();
+  const bonus = clampChance(matchBonus, -0.3, 0.3);
   const lines = [];
   let myScore = 0;
   let cpuScore = 0;
@@ -2317,14 +2490,14 @@ function simulateMatch(cpu) {
       push(`⏱ 前半おわり　${myScore} - ${cpuScore}`, "info", { ball: 50 });
     }
 
-    const pAttack = clampChance(0.5 + (my.mid - cpu.mid) * 0.04 + my.boosts.pass * 0.04, 0.2, 0.8);
+    const pAttack = clampChance(0.5 + (my.mid - cpu.mid) * 0.04 + my.boosts.pass * 0.04 + bonus * 0.4, 0.2, 0.8);
     if (Math.random() < pAttack) {
       const attacker = weightedPick(my.attackers);
       if (!attacker) continue;
       const player = attacker.player;
       const breakScore = Math.max(player.stats.dribble, player.stats.speed);
       const hasBreakEquip = attacker.equip && EQUIP_EFFECTS[attacker.equip.id] === "break";
-      const breakChance = clampChance(0.4 + (breakScore - cpu.def) * 0.06 + my.boosts.break * 0.06, 0.15, 0.85);
+      const breakChance = clampChance(0.4 + (breakScore - cpu.def) * 0.06 + my.boosts.break * 0.06 + bonus * 0.3, 0.15, 0.85);
 
       if (Math.random() >= breakChance) {
         push(`${player.emoji}${player.name}が しかけたが、${cpu.name}に とめられた！`, "chance", { ball: 65, actor: player.id });
@@ -2334,7 +2507,7 @@ function simulateMatch(cpu) {
       const flavor = hasBreakEquip ? `🎴${attacker.equip.name}！ ` : "";
       const useHeading = player.stats.heading > player.stats.shoot;
       const shootStat = useHeading ? player.stats.heading : player.stats.shoot;
-      const goalChance = clampChance(0.35 + (shootStat - cpu.gk) * 0.07 + my.boosts.shoot * 0.07, 0.12, 0.8);
+      const goalChance = clampChance(0.35 + (shootStat - cpu.gk) * 0.07 + my.boosts.shoot * 0.07 + bonus * 0.3, 0.12, 0.8);
 
       if (Math.random() < goalChance) {
         myScore += 1;
@@ -2352,14 +2525,14 @@ function simulateMatch(cpu) {
         }
       }
     } else {
-      const breakChance = clampChance(0.4 + (cpu.atk - my.def) * 0.06 - my.boosts.def * 0.07, 0.15, 0.85);
+      const breakChance = clampChance(0.4 + (cpu.atk - my.def) * 0.06 - my.boosts.def * 0.07 - bonus * 0.3, 0.15, 0.85);
       if (Math.random() >= breakChance) {
         const defender = my.dfEntries.length > 0 ? my.dfEntries[Math.floor(Math.random() * my.dfEntries.length)] : null;
         const defEquip = defender?.equip && EQUIP_EFFECTS[defender.equip.id] === "def" ? `🎴${defender.equip.name}！ ` : "";
         push(`${defEquip}ナイスまもり！ ${defender ? `${defender.player.emoji}${defender.player.name}` : "みんな"}が ボールをうばった！`, "good", { ball: 35, actor: defender?.player.id ?? null });
         continue;
       }
-      const goalChance = clampChance(0.35 + (cpu.atk - my.gk) * 0.07, 0.12, 0.8);
+      const goalChance = clampChance(0.35 + (cpu.atk - my.gk) * 0.07 - bonus * 0.3, 0.12, 0.8);
       if (Math.random() < goalChance) {
         cpuScore += 1;
         push(`😱 ${cpu.emoji}${cpu.name}のシュートが きまってしまった…`, "danger", { ball: 2, flash: "danger" });
@@ -2371,14 +2544,29 @@ function simulateMatch(cpu) {
 
   push(`しあい しゅうりょう！　きみ ${myScore} - ${cpuScore} ${cpu.name}`, "info", { ball: 50 });
 
+  const myCoords = formationPitchCoords(getTeam().formation);
   const tokens = my.placed.map((entry) => ({
     id: entry.player.id,
     emoji: entry.player.emoji,
-    x: SLOT_COORDS[entry.slotIndex].x,
-    y: SLOT_COORDS[entry.slotIndex].y
+    x: myCoords[entry.slotIndex].x,
+    y: myCoords[entry.slotIndex].y
   }));
 
   return { lines, myScore, cpuScore, tokens };
+}
+
+function getMyTactics() {
+  state.soccer.myTactics ??= { defense: "forecheck", attack: "possession", buildup: "shortpass" };
+  return state.soccer.myTactics;
+}
+
+function setMyTacticField(kind, value) {
+  getMyTactics()[kind] = value;
+  saveState(state);
+}
+
+function myXIPlayers() {
+  return getTeam().slots.map((playerId) => (playerId ? findPlayerById(playerId) : null)).filter(Boolean);
 }
 
 function playTodayLeagueMatch() {
@@ -2387,7 +2575,9 @@ function playTodayLeagueMatch() {
   if (!fixture || state.soccer.battleTickets <= 0) return;
   if (getTeam().slots.filter(Boolean).length === 0) return;
 
-  const match = simulateMatch(fixture.opponent);
+  const winRate = computeMatchupWinRate(myXIPlayers(), getMyTactics(), fixture.opponent.tactics);
+  const matchBonus = (winRate.finalPercent - 50) / 100;
+  const match = simulateMatch(fixture.opponent, matchBonus);
   state.soccer.battleTickets -= 1;
 
   let outcome = "loss";
@@ -2439,7 +2629,7 @@ function renderBattleSelect() {
         <p class="eyebrow">${dowLabels[fixture.dayIndex]}曜日の試合</p>
         <h2 class="homeCardTitle">${fixture.opponent.emoji} ${escapeHtml(fixture.opponent.name)}</h2>
         <p class="entrySub">${escapeHtml(LEAGUE_STYLE_LABELS[fixture.opponent.style] ?? "")}</p>
-        <button class="primaryButton practiceStart" id="playLeagueButton" ${state.soccer.battleTickets > 0 && placedCount > 0 ? "" : "disabled"}>たたかう（🎟${state.soccer.battleTickets}）</button>
+        <button class="primaryButton practiceStart" id="playLeagueButton" ${state.soccer.battleTickets > 0 && placedCount > 0 ? "" : "disabled"}>たいせんじゅんびへ（🎟${state.soccer.battleTickets}）</button>
       </section>
     `;
   }
@@ -2452,7 +2642,7 @@ function renderBattleSelect() {
         <span class="teamPower">🎟 ${state.soccer.battleTickets}</span>
       </section>
 
-      <p class="dexHint">きみのチーム：${placedCount}/8人・💪${computeTeamPower()}　${placedCount === 0 ? "まず ⚽チームへんせいで 選手をおこう！" : ""}</p>
+      <p class="dexHint">きみのチーム：${placedCount}/${formationSlots(getTeam().formation).length}人・💪${computeTeamPower()}　${placedCount === 0 ? "まず ⚽チームへんせいで 選手をおこう！" : ""}</p>
 
       ${todayBox}
 
@@ -2477,7 +2667,87 @@ function renderBattleSelect() {
     soccerScreen = null;
     render();
   });
-  document.querySelector("#playLeagueButton")?.addEventListener("click", playTodayLeagueMatch);
+  document.querySelector("#playLeagueButton")?.addEventListener("click", () => {
+    soccerScreen = { mode: "prematch" };
+    render();
+  });
+}
+
+function renderPrematch() {
+  window.onkeydown = null;
+  ensureLeagueWeek();
+  const fixture = todaysLeagueFixture();
+  if (!fixture) {
+    soccerScreen = { mode: "battleSelect" };
+    render();
+    return;
+  }
+  const cpu = fixture.opponent;
+  const team = getTeam();
+  const placedCount = team.slots.filter(Boolean).length;
+  const myTactics = getMyTactics();
+  const winRate = computeMatchupWinRate(myXIPlayers(), myTactics, cpu.tactics);
+
+  const tacticGroup = (kind, options) => `
+    <div class="tacticGroup">
+      <p class="tacticGroupLabel">${{ defense: "守備", attack: "攻撃", buildup: "ビルドアップ" }[kind]}</p>
+      <div class="tacticChips">
+        ${options.map((opt) => `
+          <button class="tacticChip ${myTactics[kind] === opt ? "active" : ""}" data-kind="${kind}" data-value="${opt}">${TACTIC_LABELS[opt]}</button>
+        `).join("")}
+      </div>
+    </div>
+  `;
+
+  app.innerHTML = `
+    <main class="shell">
+      <section class="quizHeader">
+        <button class="iconButton" id="backButton" aria-label="リーグにもどる">←</button>
+        <strong class="packTitle">たいせんじゅんび</strong>
+        <span class="teamPower">🎟 ${state.soccer.battleTickets}</span>
+      </section>
+
+      <section class="homeCard practiceCard">
+        <p class="eyebrow">きょうの相手</p>
+        <h2 class="homeCardTitle">${cpu.emoji} ${escapeHtml(cpu.name)}</h2>
+        <p class="entrySub">${escapeHtml(LEAGUE_STYLE_LABELS[cpu.style] ?? "")}・${TACTIC_LABELS[cpu.tactics.defense]}/${TACTIC_LABELS[cpu.tactics.attack]}/${TACTIC_LABELS[cpu.tactics.buildup]}</p>
+      </section>
+
+      <section class="settingsCard winRateCard">
+        <p class="eyebrow">きみの チーム：${placedCount}/${formationSlots(team.formation).length}人・💪${computeTeamPower()}</p>
+        <button class="secondaryButton" id="editTeamButton">チームをへんせいする（${FORMATIONS[team.formation].label}）</button>
+
+        <p class="winRateBig">かちめ ${winRate.finalPercent}%</p>
+        ${winRate.reasons.length === 0 ? `<p class="dexHint">とくにゆうりな組み合わせは ないよ。</p>` : `
+          <ul class="winReasons">
+            ${winRate.reasons.map((reason) => `<li class="winReason ${reason.value > 0 ? "plus" : "minus"}">${reason.value > 0 ? "＋" : ""}${reason.value}% ${escapeHtml(reason.label)}</li>`).join("")}
+          </ul>
+        `}
+
+        ${tacticGroup("defense", ["forecheck", "retreat"])}
+        ${tacticGroup("attack", ["possession", "counter"])}
+        ${tacticGroup("buildup", ["shortpass", "longpass"])}
+      </section>
+
+      <button class="primaryButton practiceStart" id="fightButton" ${state.soccer.battleTickets > 0 && placedCount > 0 ? "" : "disabled"}>たたかう（🎟${state.soccer.battleTickets}）</button>
+    </main>
+  `;
+
+  document.querySelector("#backButton").addEventListener("click", () => {
+    soccerScreen = { mode: "battleSelect" };
+    render();
+  });
+  document.querySelector("#editTeamButton").addEventListener("click", () => {
+    soccerScreen = { mode: "team", returnTo: "prematch" };
+    render();
+  });
+  document.querySelector("#fightButton")?.addEventListener("click", playTodayLeagueMatch);
+  document.querySelectorAll(".tacticChip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      setMyTacticField(chip.dataset.kind, chip.dataset.value);
+      render();
+    });
+  });
 }
 
 function renderBattle() {
@@ -2501,7 +2771,7 @@ function renderBattle() {
         ${match.tokens.map((token) => `
           <span class="pitchToken mine" data-token="${token.id}" data-x="${token.x}" data-y="${token.y}" style="left:${token.x}%;top:${token.y}%"><span class="tokenBody" style="animation-duration:${(2.4 + Math.random() * 1.8).toFixed(2)}s;animation-delay:-${(Math.random() * 3).toFixed(2)}s">${avatarHtml(findPlayerById(token.id) ?? { emoji: token.emoji }, 26)}</span></span>
         `).join("")}
-        ${SLOT_COORDS.map((coord) => `
+        ${CPU_PITCH_COORDS.map((coord) => `
           <span class="pitchToken cpu" data-x="${100 - coord.x}" data-y="${coord.y}" style="left:${100 - coord.x}%;top:${coord.y}%"><span class="tokenBody" style="animation-duration:${(2.4 + Math.random() * 1.8).toFixed(2)}s;animation-delay:-${(Math.random() * 3).toFixed(2)}s">${cpu.emoji}</span></span>
         `).join("")}
         <span class="pitchBall" id="pitchBall" style="left:50%"></span>
