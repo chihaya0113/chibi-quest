@@ -10,6 +10,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "アルゼンチン",
     "flag": "🇦🇷",
     "rarity": 3,
+    "tier": "S",
     "stats": {
       "dribble": 9,
       "pass": 9,
@@ -18,6 +19,14 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 3,
       "speed": 8
     },
+    "specialtyTactic": "possession",
+    "traits": [
+      "ドリブル",
+      "ボールキープ",
+      "パス精度",
+      "視野",
+      "トラップ"
+    ],
     "face": {
       "skin": "light",
       "hair": "short",
@@ -38,6 +47,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "ポルトガル",
     "flag": "🇵🇹",
     "rarity": 3,
+    "tier": "S",
     "stats": {
       "dribble": 8,
       "pass": 8,
@@ -46,6 +56,14 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 3,
       "speed": 8
     },
+    "specialtyTactic": "counter",
+    "traits": [
+      "決定力",
+      "スピード",
+      "オフザボール",
+      "瞬発力",
+      "裏抜け"
+    ],
     "face": {
       "skin": "tan",
       "hair": "spiky",
@@ -66,6 +84,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "フランス",
     "flag": "🇫🇷",
     "rarity": 3,
+    "tier": "S",
     "stats": {
       "dribble": 9,
       "pass": 8,
@@ -74,6 +93,14 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 4,
       "speed": 10
     },
+    "specialtyTactic": "counter",
+    "traits": [
+      "スピード",
+      "裏抜け",
+      "決定力",
+      "瞬発力",
+      "オフザボール"
+    ],
     "face": {
       "skin": "brown",
       "hair": "buzz",
@@ -94,6 +121,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "ノルウェー",
     "flag": "🇳🇴",
     "rarity": 3,
+    "tier": "S",
     "stats": {
       "dribble": 8,
       "pass": 7,
@@ -102,6 +130,14 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 5,
       "speed": 9
     },
+    "specialtyTactic": "longpass",
+    "traits": [
+      "ターゲットマン",
+      "フィジカル",
+      "ロングシュート",
+      "クロス精度",
+      "ロングフィード"
+    ],
     "face": {
       "skin": "light",
       "hair": "bun",
@@ -122,6 +158,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "スペイン",
     "flag": "🇪🇸",
     "rarity": 3,
+    "tier": "S",
     "stats": {
       "dribble": 9,
       "pass": 9,
@@ -130,6 +167,14 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 2,
       "speed": 9
     },
+    "specialtyTactic": "possession",
+    "traits": [
+      "ドリブル",
+      "パス精度",
+      "視野",
+      "トラップ",
+      "ボールキープ"
+    ],
     "face": {
       "skin": "tan",
       "hair": "curly",
@@ -150,6 +195,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "日本",
     "flag": "🇯🇵",
     "rarity": 3,
+    "tier": "S",
     "stats": {
       "dribble": 9,
       "pass": 8,
@@ -158,6 +204,14 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 3,
       "speed": 9
     },
+    "specialtyTactic": "counter",
+    "traits": [
+      "スピード",
+      "裏抜け",
+      "瞬発力",
+      "オフザボール",
+      "決定力"
+    ],
     "face": {
       "skin": "light",
       "hair": "short",
@@ -178,6 +232,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "ブラジル",
     "flag": "🇧🇷",
     "rarity": 2,
+    "tier": "A",
     "stats": {
       "dribble": 9,
       "pass": 8,
@@ -186,6 +241,13 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 3,
       "speed": 10
     },
+    "specialtyTactic": "counter",
+    "traits": [
+      "スピード",
+      "裏抜け",
+      "瞬発力",
+      "オフザボール"
+    ],
     "face": {
       "skin": "brown",
       "hair": "curly",
@@ -206,6 +268,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "エジプト",
     "flag": "🇪🇬",
     "rarity": 2,
+    "tier": "A",
     "stats": {
       "dribble": 9,
       "pass": 9,
@@ -214,6 +277,13 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 5,
       "speed": 9
     },
+    "specialtyTactic": "counter",
+    "traits": [
+      "決定力",
+      "スピード",
+      "オフザボール",
+      "裏抜け"
+    ],
     "face": {
       "skin": "tan",
       "hair": "curly",
@@ -234,6 +304,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "イングランド",
     "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "rarity": 2,
+    "tier": "A",
     "stats": {
       "dribble": 8,
       "pass": 8,
@@ -242,6 +313,13 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 5,
       "speed": 6
     },
+    "specialtyTactic": "longpass",
+    "traits": [
+      "ターゲットマン",
+      "ロングシュート",
+      "フィジカル",
+      "クロス精度"
+    ],
     "face": {
       "skin": "light",
       "hair": "short",
@@ -262,6 +340,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "イングランド",
     "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "rarity": 2,
+    "tier": "A",
     "stats": {
       "dribble": 9,
       "pass": 8,
@@ -270,6 +349,13 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 8,
       "speed": 8
     },
+    "specialtyTactic": "forecheck",
+    "traits": [
+      "ボール奪取",
+      "スタミナ",
+      "アグレッシブ",
+      "プレッシャー"
+    ],
     "face": {
       "skin": "brown",
       "hair": "short",
@@ -290,6 +376,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "スペイン",
     "flag": "🇪🇸",
     "rarity": 2,
+    "tier": "A",
     "stats": {
       "dribble": 9,
       "pass": 9,
@@ -298,6 +385,13 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 9,
       "speed": 7
     },
+    "specialtyTactic": "retreat",
+    "traits": [
+      "守備ポジショニング",
+      "カバーリング",
+      "対人守備",
+      "空中戦"
+    ],
     "face": {
       "skin": "light",
       "hair": "short",
@@ -318,6 +412,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "スペイン",
     "flag": "🇪🇸",
     "rarity": 2,
+    "tier": "A",
     "stats": {
       "dribble": 9,
       "pass": 9,
@@ -326,6 +421,13 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 5,
       "speed": 8
     },
+    "specialtyTactic": "possession",
+    "traits": [
+      "パス精度",
+      "視野",
+      "トラップ",
+      "ドリブル"
+    ],
     "face": {
       "skin": "light",
       "hair": "curly",
@@ -346,6 +448,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "ベルギー",
     "flag": "🇧🇪",
     "rarity": 2,
+    "tier": "A",
     "stats": {
       "dribble": 8,
       "pass": 9,
@@ -354,6 +457,13 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 5,
       "speed": 6
     },
+    "specialtyTactic": "shortpass",
+    "traits": [
+      "スルーパス",
+      "ワンタッチパス",
+      "テクニック",
+      "敏捷性"
+    ],
     "face": {
       "skin": "light",
       "hair": "short",
@@ -374,6 +484,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "日本",
     "flag": "🇯🇵",
     "rarity": 2,
+    "tier": "A",
     "stats": {
       "dribble": 9,
       "pass": 8,
@@ -382,6 +493,13 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 3,
       "speed": 8
     },
+    "specialtyTactic": "possession",
+    "traits": [
+      "ドリブル",
+      "パス精度",
+      "トラップ",
+      "ボールキープ"
+    ],
     "face": {
       "skin": "light",
       "hair": "spiky",
@@ -402,6 +520,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "オランダ",
     "flag": "🇳🇱",
     "rarity": 2,
+    "tier": "A",
     "stats": {
       "dribble": 6,
       "pass": 7,
@@ -410,6 +529,13 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 9,
       "speed": 7
     },
+    "specialtyTactic": "retreat",
+    "traits": [
+      "空中戦",
+      "カバーリング",
+      "対人守備",
+      "守備ポジショニング"
+    ],
     "face": {
       "skin": "brown",
       "hair": "bun",
@@ -430,6 +556,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "モロッコ",
     "flag": "🇲🇦",
     "rarity": 2,
+    "tier": "A",
     "stats": {
       "dribble": 8,
       "pass": 7,
@@ -438,6 +565,13 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 8,
       "speed": 9
     },
+    "specialtyTactic": "counter",
+    "traits": [
+      "スピード",
+      "裏抜け",
+      "瞬発力",
+      "オフザボール"
+    ],
     "face": {
       "skin": "tan",
       "hair": "short",
@@ -458,6 +592,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "ベルギー",
     "flag": "🇧🇪",
     "rarity": 2,
+    "tier": "A",
     "stats": {
       "dribble": 2,
       "pass": 5,
@@ -466,6 +601,13 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 10,
       "speed": 4
     },
+    "specialtyTactic": "retreat",
+    "traits": [
+      "GKセービング",
+      "カバーリング",
+      "対人守備",
+      "守備ポジショニング"
+    ],
     "face": {
       "skin": "light",
       "hair": "short",
@@ -486,6 +628,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "日本",
     "flag": "🇯🇵",
     "rarity": 2,
+    "tier": "A",
     "stats": {
       "dribble": 2,
       "pass": 5,
@@ -494,6 +637,13 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 8,
       "speed": 5
     },
+    "specialtyTactic": "retreat",
+    "traits": [
+      "GKセービング",
+      "対人守備",
+      "守備ポジショニング",
+      "カバーリング"
+    ],
     "face": {
       "skin": "tan",
       "hair": "buzz",
@@ -514,6 +664,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "クロアチア",
     "flag": "🇭🇷",
     "rarity": 1,
+    "tier": "B",
     "stats": {
       "dribble": 8,
       "pass": 9,
@@ -522,6 +673,12 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 5,
       "speed": 5
     },
+    "specialtyTactic": "shortpass",
+    "traits": [
+      "スルーパス",
+      "テクニック",
+      "ワンタッチパス"
+    ],
     "face": {
       "skin": "light",
       "hair": "long",
@@ -542,6 +699,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "日本",
     "flag": "🇯🇵",
     "rarity": 1,
+    "tier": "B",
     "stats": {
       "dribble": 5,
       "pass": 6,
@@ -550,6 +708,12 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 8,
       "speed": 6
     },
+    "specialtyTactic": "forecheck",
+    "traits": [
+      "ボール奪取",
+      "スタミナ",
+      "プレッシャー"
+    ],
     "face": {
       "skin": "light",
       "hair": "buzz",
@@ -570,6 +734,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "ドイツ",
     "flag": "🇩🇪",
     "rarity": 1,
+    "tier": "B",
     "stats": {
       "dribble": 6,
       "pass": 6,
@@ -578,6 +743,12 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 9,
       "speed": 8
     },
+    "specialtyTactic": "retreat",
+    "traits": [
+      "対人守備",
+      "空中戦",
+      "カバーリング"
+    ],
     "face": {
       "skin": "brown",
       "hair": "buzz",
@@ -598,6 +769,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "フランス",
     "flag": "🇫🇷",
     "rarity": 1,
+    "tier": "B",
     "stats": {
       "dribble": 8,
       "pass": 7,
@@ -606,6 +778,12 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 9,
       "speed": 8
     },
+    "specialtyTactic": "retreat",
+    "traits": [
+      "空中戦",
+      "対人守備",
+      "守備ポジショニング"
+    ],
     "face": {
       "skin": "brown",
       "hair": "short",
@@ -626,6 +804,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "クロアチア",
     "flag": "🇭🇷",
     "rarity": 1,
+    "tier": "B",
     "stats": {
       "dribble": 7,
       "pass": 7,
@@ -634,6 +813,12 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 8,
       "speed": 8
     },
+    "specialtyTactic": "retreat",
+    "traits": [
+      "対人守備",
+      "空中戦",
+      "カバーリング"
+    ],
     "face": {
       "skin": "light",
       "hair": "short",
@@ -654,6 +839,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "日本",
     "flag": "🇯🇵",
     "rarity": 1,
+    "tier": "B",
     "stats": {
       "dribble": 6,
       "pass": 6,
@@ -662,6 +848,12 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 8,
       "speed": 5
     },
+    "specialtyTactic": "retreat",
+    "traits": [
+      "守備ポジショニング",
+      "カバーリング",
+      "対人守備"
+    ],
     "face": {
       "skin": "light",
       "hair": "curly",
@@ -682,6 +874,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "ブラジル",
     "flag": "🇧🇷",
     "rarity": 1,
+    "tier": "B",
     "stats": {
       "dribble": 2,
       "pass": 6,
@@ -690,6 +883,12 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 9,
       "speed": 5
     },
+    "specialtyTactic": "retreat",
+    "traits": [
+      "GKセービング",
+      "カバーリング",
+      "対人守備"
+    ],
     "face": {
       "skin": "light",
       "hair": "short",
@@ -710,6 +909,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "イタリア",
     "flag": "🇮🇹",
     "rarity": 1,
+    "tier": "B",
     "stats": {
       "dribble": 2,
       "pass": 5,
@@ -718,6 +918,12 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 9,
       "speed": 5
     },
+    "specialtyTactic": "retreat",
+    "traits": [
+      "GKセービング",
+      "空中戦",
+      "対人守備"
+    ],
     "face": {
       "skin": "light",
       "hair": "short",
@@ -738,6 +944,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "れんしゅうせい",
     "flag": "🌱",
     "rarity": 1,
+    "tier": "B",
     "stats": {
       "dribble": 1,
       "pass": 2,
@@ -746,6 +953,10 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 4,
       "speed": 2
     },
+    "specialtyTactic": "retreat",
+    "traits": [
+      "GKセービング"
+    ],
     "face": null,
     "starter": true,
     "status": "active"
@@ -761,6 +972,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "れんしゅうせい",
     "flag": "🌱",
     "rarity": 1,
+    "tier": "B",
     "stats": {
       "dribble": 2,
       "pass": 2,
@@ -769,6 +981,10 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 4,
       "speed": 2
     },
+    "specialtyTactic": "retreat",
+    "traits": [
+      "対人守備"
+    ],
     "face": null,
     "starter": true,
     "status": "active"
@@ -784,6 +1000,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "れんしゅうせい",
     "flag": "🌱",
     "rarity": 1,
+    "tier": "B",
     "stats": {
       "dribble": 2,
       "pass": 3,
@@ -792,6 +1009,10 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 3,
       "speed": 3
     },
+    "specialtyTactic": "retreat",
+    "traits": [
+      "空中戦"
+    ],
     "face": null,
     "starter": true,
     "status": "active"
@@ -807,6 +1028,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "れんしゅうせい",
     "flag": "🌱",
     "rarity": 1,
+    "tier": "B",
     "stats": {
       "dribble": 3,
       "pass": 3,
@@ -815,6 +1037,10 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 2,
       "speed": 3
     },
+    "specialtyTactic": "possession",
+    "traits": [
+      "ボールキープ"
+    ],
     "face": null,
     "starter": true,
     "status": "active"
@@ -830,6 +1056,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "れんしゅうせい",
     "flag": "🌱",
     "rarity": 1,
+    "tier": "B",
     "stats": {
       "dribble": 3,
       "pass": 3,
@@ -838,6 +1065,10 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 2,
       "speed": 4
     },
+    "specialtyTactic": "counter",
+    "traits": [
+      "瞬発力"
+    ],
     "face": null,
     "starter": true,
     "status": "active"
@@ -853,6 +1084,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "れんしゅうせい",
     "flag": "🌱",
     "rarity": 1,
+    "tier": "B",
     "stats": {
       "dribble": 2,
       "pass": 4,
@@ -861,6 +1093,10 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 3,
       "speed": 1
     },
+    "specialtyTactic": "shortpass",
+    "traits": [
+      "テクニック"
+    ],
     "face": null,
     "starter": true,
     "status": "active"
@@ -876,6 +1112,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "れんしゅうせい",
     "flag": "🌱",
     "rarity": 1,
+    "tier": "B",
     "stats": {
       "dribble": 3,
       "pass": 2,
@@ -884,6 +1121,10 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 1,
       "speed": 3
     },
+    "specialtyTactic": "forecheck",
+    "traits": [
+      "アグレッシブ"
+    ],
     "face": null,
     "starter": true,
     "status": "active"
@@ -899,6 +1140,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "country": "れんしゅうせい",
     "flag": "🌱",
     "rarity": 1,
+    "tier": "B",
     "stats": {
       "dribble": 3,
       "pass": 2,
@@ -907,6 +1149,10 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
       "defense": 1,
       "speed": 4
     },
+    "specialtyTactic": "counter",
+    "traits": [
+      "スピード"
+    ],
     "face": null,
     "starter": true,
     "status": "active"

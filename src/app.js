@@ -1,5 +1,5 @@
-import { subjects } from "./curriculum.js?v=15";
-import { getLevelFromXp, loadState, resetState, saveState } from "./storage.js?v=15";
+import { subjects } from "./curriculum.js?v=16";
+import { getLevelFromXp, loadState, resetState, saveState } from "./storage.js?v=16";
 
 const allQuestions = [
   ...(window.CHIBI_QUEST_QUESTIONS ?? []),
@@ -25,6 +25,104 @@ const PLAYER_STAT_LABELS = [
   ["speed", "はやさ"]
 ];
 const POSITION_ORDER = { FW: 0, MF: 1, DF: 2, GK: 3 };
+
+// ---- 戦術・特性・勝率計算（データ基盤＋計算エンジン。UI配線は次フェーズ） ----
+
+const TACTIC_LABELS = {
+  forecheck: "フォアチェック",
+  retreat: "リトリート",
+  possession: "ポゼッション",
+  counter: "カウンター",
+  shortpass: "ショートパス",
+  longpass: "ロングパス"
+};
+
+// 各戦術に対応する特性プール（1特性は必ず1戦術のみに属する）
+const TACTIC_TRAIT_POOLS = {
+  forecheck: ["ボール奪取", "スタミナ", "アグレッシブ", "プレッシャー", "飛び出し（GK）"],
+  retreat: ["カバーリング", "空中戦", "守備ポジショニング", "対人守備", "GKセービング"],
+  possession: ["パス精度", "トラップ", "視野", "ボールキープ", "ドリブル"],
+  counter: ["スピード", "裏抜け", "決定力", "瞬発力", "オフザボール"],
+  shortpass: ["ワンタッチパス", "スルーパス", "テクニック", "コントロールシュート", "敏捷性"],
+  longpass: ["ロングフィード", "クロス精度", "ロングシュート", "ターゲットマン", "フィジカル"]
+};
+
+const TRAIT_TO_TACTIC = {};
+for (const [tactic, traits] of Object.entries(TACTIC_TRAIT_POOLS)) {
+  for (const trait of traits) TRAIT_TO_TACTIC[trait] = tactic;
+}
+
+// 守備⇄攻撃のクロス相性（4すくみ：forecheck→possession→retreat→counter→forecheck）。
+// ビルドアップ（shortpass/longpass）は勝率の直接補正を持たず、特性プールの選択にのみ関わる。
+const TACTIC_MATCHUP_BONUS = {
+  forecheck_vs_possession: 5,
+  forecheck_vs_counter: -5,
+  retreat_vs_possession: -5,
+  retreat_vs_counter: 5,
+  possession_vs_forecheck: -5,
+  possession_vs_retreat: 5,
+  counter_vs_forecheck: 5,
+  counter_vs_retreat: -5
+};
+
+const TRAIT_BONUS_CAP = 20;
+
+// ダブり（凸）で解放済みの特性配列を返す。スターターは常に全解放。
+function unlockedTraitsFor(player) {
+  if (!player) return [];
+  if (player.starter) return player.traits ?? [];
+  const ownedCount = state.soccer.players[player.id] ?? 0;
+  const traits = player.traits ?? [];
+  return traits.slice(0, Math.max(0, Math.min(ownedCount, traits.length)));
+}
+
+// myXI/oppXI: 選手オブジェクトの配列。myTactics/oppTactics: { defense, attack, buildup }
+function computeMatchupWinRate(myXI, myTactics, oppTactics) {
+  const reasons = [];
+
+  const defVsAtk = TACTIC_MATCHUP_BONUS[`${myTactics.defense}_vs_${oppTactics.attack}`] ?? 0;
+  if (defVsAtk !== 0) {
+    reasons.push({
+      kind: "tactic",
+      label: `${TACTIC_LABELS[myTactics.defense]}が${TACTIC_LABELS[oppTactics.attack]}に${defVsAtk > 0 ? "有利" : "不利"}`,
+      value: defVsAtk
+    });
+  }
+
+  const atkVsDef = TACTIC_MATCHUP_BONUS[`${myTactics.attack}_vs_${oppTactics.defense}`] ?? 0;
+  if (atkVsDef !== 0) {
+    reasons.push({
+      kind: "tactic",
+      label: `${TACTIC_LABELS[myTactics.attack]}が${TACTIC_LABELS[oppTactics.defense]}に${atkVsDef > 0 ? "有利" : "不利"}`,
+      value: atkVsDef
+    });
+  }
+  const tacticTotal = defVsAtk + atkVsDef;
+
+  const activeTactics = [myTactics.defense, myTactics.attack, myTactics.buildup];
+  const traitCounts = new Map();
+  for (const player of myXI) {
+    for (const trait of unlockedTraitsFor(player)) {
+      if (!activeTactics.includes(TRAIT_TO_TACTIC[trait])) continue;
+      traitCounts.set(trait, (traitCounts.get(trait) ?? 0) + 1);
+    }
+  }
+
+  let traitTotalRaw = 0;
+  for (const [trait, count] of traitCounts) {
+    traitTotalRaw += count;
+    reasons.push({ kind: "trait", label: `${trait} ×${count}`, value: count });
+  }
+  const traitTotal = Math.max(-TRAIT_BONUS_CAP, Math.min(TRAIT_BONUS_CAP, traitTotalRaw));
+  if (traitTotalRaw !== traitTotal) {
+    reasons.push({ kind: "cap", label: `特性補正の上限（±${TRAIT_BONUS_CAP}%）`, value: traitTotal - traitTotalRaw });
+  }
+
+  const rawPercent = 50 + tacticTotal + traitTotal;
+  const finalPercent = Math.max(10, Math.min(90, rawPercent));
+
+  return { finalPercent, tacticTotal, traitTotal, reasons };
+}
 // 8人制 2-3-2: 上からFW2・MF3・DF2・GK1（slots配列は GK→DF→MF→FW の順）
 const TEAM_SLOTS = [
   { index: 0, pos: "GK" },
