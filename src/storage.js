@@ -77,6 +77,14 @@ const defaultState = {
       beaten: [],
       wins: 0,
       played: 0
+    },
+    league: {
+      weekKey: null,
+      standings: null,
+      results: null,
+      playedDays: [],
+      lastRewardWeekKey: null,
+      lastReward: null
     }
   }
 };
@@ -90,6 +98,7 @@ export function loadState() {
     loaded.lastQuestionFamilies ??= [];
     loaded.daily = { ...structuredClone(defaultState.daily), ...(loaded.daily ?? {}) };
     loaded.soccer = { ...structuredClone(defaultState.soccer), ...(loaded.soccer ?? {}) };
+    loaded.soccer.league = { ...structuredClone(defaultState.soccer.league), ...(loaded.soccer.league ?? {}) };
     const migrationVersion = Number.isFinite(saved.migrationVersion) ? saved.migrationVersion : 0;
 
     if (migrationVersion < 1) {

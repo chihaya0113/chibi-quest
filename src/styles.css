@@ -1664,6 +1664,18 @@ h1 {
 .subjectStatVal { text-align: right; font-weight: 800; }
 .subjectStatCount { text-align: right; font-size: 0.78rem; color: var(--ink-soft); }
 
+.leagueRow.leagueRowMe {
+  padding: 6px 8px;
+  border-radius: 10px;
+  background: var(--sun-faint);
+}
+.leagueRowName {
+  font-weight: 800;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .weakList { display: grid; gap: 10px; margin-top: 12px; }
 .weakRow {
   display: grid;

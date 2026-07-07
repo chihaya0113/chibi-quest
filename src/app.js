@@ -1,5 +1,5 @@
-import { subjects } from "./curriculum.js?v=14";
-import { getLevelFromXp, loadState, resetState, saveState } from "./storage.js?v=14";
+import { subjects } from "./curriculum.js?v=15";
+import { getLevelFromXp, loadState, resetState, saveState } from "./storage.js?v=15";
 
 const allQuestions = [
   ...(window.CHIBI_QUEST_QUESTIONS ?? []),
@@ -42,13 +42,33 @@ const TEAM_ROWS = [
   { label: "DF", slotIndexes: [1, 2] },
   { label: "GK", slotIndexes: [0] }
 ];
-// CPUチーム（弱い→強い。前のチームに勝つと次が解放）
-const CPU_TEAMS = [
-  { id: "cpu_1", name: "たんぽぽFC", emoji: "🌼", mid: 3, def: 3, atk: 3, gk: 3 },
-  { id: "cpu_2", name: "かみなりSC", emoji: "⚡", mid: 5, def: 4, atk: 5, gk: 4 },
-  { id: "cpu_3", name: "ドラゴン学園", emoji: "🐉", mid: 6, def: 6, atk: 6, gk: 6 },
-  { id: "cpu_4", name: "ギャラクシーFC", emoji: "🌌", mid: 8, def: 7, atk: 8, gk: 7 },
-  { id: "cpu_5", name: "でんせつスターズ", emoji: "👑", mid: 9, def: 9, atk: 9, gk: 9 }
+// リーグ参加チーム（きみ以外の7チーム）。それぞれ得意な戦い方（スタイル）を持つ
+const LEAGUE_CPU_TEAMS = [
+  { id: "cpu_1", name: "たんぽぽFC", emoji: "🌼", style: "possession", mid: 3, def: 3, atk: 3, gk: 3 },
+  { id: "cpu_2", name: "かみなりSC", emoji: "⚡", style: "counter", mid: 5, def: 4, atk: 5, gk: 4 },
+  { id: "cpu_3", name: "ドラゴン学園", emoji: "🐉", style: "attacking", mid: 6, def: 6, atk: 6, gk: 6 },
+  { id: "cpu_4", name: "ギャラクシーFC", emoji: "🌌", style: "possession", mid: 8, def: 7, atk: 8, gk: 7 },
+  { id: "cpu_5", name: "でんせつスターズ", emoji: "👑", style: "attacking", mid: 9, def: 9, atk: 9, gk: 9 },
+  { id: "cpu_6", name: "アイアンウォールFC", emoji: "🛡", style: "defensive", mid: 5, def: 8, atk: 4, gk: 7 },
+  { id: "cpu_7", name: "ウィンドラッシュ", emoji: "🌪", style: "counter", mid: 6, def: 5, atk: 7, gk: 5 }
+];
+const LEAGUE_STYLE_LABELS = {
+  possession: "ポゼッション型",
+  counter: "カウンター型",
+  attacking: "攻撃型",
+  defensive: "守備型"
+};
+// 8チーム総当たり（あなた＝team 0）の週間対戦表（円卓法で生成・検証済み）。
+// schedule[team][day] = その日の対戦相手のteam index
+const LEAGUE_SCHEDULE = [
+  [7, 6, 5, 4, 3, 2, 1],
+  [6, 4, 2, 7, 5, 3, 0],
+  [5, 3, 1, 6, 4, 0, 7],
+  [4, 2, 7, 5, 0, 1, 6],
+  [3, 1, 6, 0, 2, 7, 5],
+  [2, 7, 0, 3, 1, 6, 4],
+  [1, 0, 4, 2, 7, 5, 3],
+  [0, 5, 3, 1, 6, 4, 2]
 ];
 // 戦術カード装備の対戦効果（カードID → 効果の種類）
 const EQUIP_EFFECTS = {
@@ -1187,7 +1207,7 @@ function renderSoccerHub() {
       <section class="hubGrid">
         ${tile("hubPack", "🎴", "せんじゅつパック", `のこり ${s.packs}こ`, s.packs > 0 ? s.packs : "", s.packs <= 0)}
         ${tile("hubPlayerPack", "🧑", "せんしゅパック", `のこり ${s.playerPacks}こ`, s.playerPacks > 0 ? s.playerPacks : "", s.playerPacks <= 0)}
-        ${tile("hubBattle", "🏆", "たいせん", `🎟 ${s.battleTickets}まい`, s.battleTickets > 0 ? s.battleTickets : "", false)}
+        ${tile("hubBattle", "🏆", "リーグ", `🎟 ${s.battleTickets}まい`, s.battleTickets > 0 ? s.battleTickets : "", false)}
         ${tile("hubTeam", "🧩", "チームへんせい", "せんしゅを ならべる", "", false)}
         ${tile("hubDex", "📖", "ずかん", `せんしゅ ${countOwnedPlayers()}/${collectiblePlayers.length}`, "", false)}
       </section>
@@ -1974,15 +1994,162 @@ function renderSlotMenu() {
   });
 }
 
-function getBattleState() {
-  state.soccer.battle ??= { beaten: [], wins: 0, played: 0 };
-  state.soccer.battle.beaten ??= [];
-  return state.soccer.battle;
+// ---- リーグ（8チーム総当たり・週間シーズン） ----
+
+function parseDateKey(key) {
+  const [y, m, d] = key.split("-").map(Number);
+  return new Date(y, m - 1, d);
 }
 
-function isCpuUnlocked(index) {
-  if (index === 0) return true;
-  return getBattleState().beaten.includes(CPU_TEAMS[index - 1].id);
+function mondayDateKeyOf(date) {
+  const d = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  const day = d.getDay();
+  const diff = day === 0 ? -6 : 1 - day;
+  d.setDate(d.getDate() + diff);
+  return dateKey(d);
+}
+
+function dayIndexInWeek(weekKey, date) {
+  const monday = parseDateKey(weekKey);
+  const today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  return Math.round((today - monday) / 86400000);
+}
+
+function emptyStandingsRow() {
+  return { points: 0, wins: 0, draws: 0, losses: 0, rests: 0, played: 0 };
+}
+
+function applyResultToStandings(standings, teamIndex, outcome) {
+  const row = standings[teamIndex];
+  if (outcome === "rest") {
+    row.rests += 1;
+    return;
+  }
+  row.played += 1;
+  if (outcome === "win") { row.points += 3; row.wins += 1; }
+  else if (outcome === "draw") { row.points += 1; row.draws += 1; }
+  else if (outcome === "loss") { row.losses += 1; }
+}
+
+function simulateCpuVsCpuResult(teamA, teamB) {
+  const strengthA = teamA.atk + teamA.mid + teamA.def + teamA.gk;
+  const strengthB = teamB.atk + teamB.mid + teamB.def + teamB.gk;
+  const drawChance = 0.22;
+  const aWinChance = clampChance(0.5 + (strengthA - strengthB) * 0.025, 0.12, 0.85) * (1 - drawChance);
+  const roll = Math.random();
+  if (roll < drawChance) return "draw";
+  return roll < drawChance + aWinChance ? "winA" : "winB";
+}
+
+function simulateCpuPairingsForDay(day) {
+  const standings = state.soccer.league.standings;
+  const done = new Set();
+  for (let team = 1; team <= 7; team += 1) {
+    if (done.has(team)) continue;
+    const opp = LEAGUE_SCHEDULE[team][day];
+    if (opp === 0) continue; // その日は「きみ」と対戦する予定＝ここでは処理しない
+    done.add(team);
+    done.add(opp);
+    const outcome = simulateCpuVsCpuResult(LEAGUE_CPU_TEAMS[team - 1], LEAGUE_CPU_TEAMS[opp - 1]);
+    if (outcome === "draw") {
+      applyResultToStandings(standings, team, "draw");
+      applyResultToStandings(standings, opp, "draw");
+    } else if (outcome === "winA") {
+      applyResultToStandings(standings, team, "win");
+      applyResultToStandings(standings, opp, "loss");
+    } else {
+      applyResultToStandings(standings, team, "loss");
+      applyResultToStandings(standings, opp, "win");
+    }
+  }
+}
+
+function grantLeagueReward(rank) {
+  // 今の通貨だけで組んだ簡易版報酬（選手指名権・Tier確定パックは、ロースター改修後にアップグレード予定）
+  let packs = 0;
+  let playerPacks = 0;
+  let ticket = 0;
+  if (rank === 1) { packs = 3; playerPacks = 3; ticket = 1; }
+  else if (rank === 2) { packs = 2; playerPacks = 2; }
+  else if (rank === 3) { packs = 2; playerPacks = 1; }
+  else if (rank === 4) { packs = 1; playerPacks = 1; }
+  else { packs = 1; playerPacks = 0; }
+
+  state.soccer.packs += packs;
+  state.soccer.playerPacks += playerPacks;
+  state.soccer.battleTickets += ticket;
+  return { packs, playerPacks, ticket };
+}
+
+function finalizeLeagueWeek() {
+  const league = state.soccer.league;
+  if (!league.weekKey || !league.standings) return;
+  const ranking = Object.entries(league.standings)
+    .map(([team, row]) => ({ team: Number(team), ...row }))
+    .sort((a, b) => b.points - a.points || b.wins - a.wins || a.team - b.team);
+  const myRank = ranking.findIndex((row) => row.team === 0) + 1;
+  const reward = grantLeagueReward(myRank);
+  league.lastRewardWeekKey = league.weekKey;
+  league.lastReward = { rank: myRank, ...reward };
+}
+
+function startNewLeagueWeek(weekKey) {
+  const standings = {};
+  for (let team = 0; team < 8; team += 1) standings[team] = emptyStandingsRow();
+  const league = state.soccer.league;
+  league.weekKey = weekKey;
+  league.standings = standings;
+  league.playedDays = {};
+  league.cpuDaysResolved = [];
+}
+
+function ensureLeagueWeek() {
+  const league = state.soccer.league;
+  const currentMonday = mondayDateKeyOf(new Date());
+  if (league.weekKey !== currentMonday) {
+    if (league.weekKey && league.standings) {
+      for (let day = 0; day <= 6; day += 1) {
+        if (!league.cpuDaysResolved.includes(day)) {
+          simulateCpuPairingsForDay(day);
+          league.cpuDaysResolved.push(day);
+        }
+        if (!league.playedDays[day]) league.playedDays[day] = { kind: "rest" };
+      }
+      finalizeLeagueWeek();
+    }
+    startNewLeagueWeek(currentMonday);
+  }
+
+  const todayIndex = dayIndexInWeek(league.weekKey, new Date());
+  for (let day = 0; day < todayIndex; day += 1) {
+    if (!league.cpuDaysResolved.includes(day)) {
+      simulateCpuPairingsForDay(day);
+      league.cpuDaysResolved.push(day);
+    }
+    if (!league.playedDays[day]) league.playedDays[day] = { kind: "rest" };
+  }
+  if (!league.cpuDaysResolved.includes(todayIndex)) {
+    simulateCpuPairingsForDay(todayIndex);
+    league.cpuDaysResolved.push(todayIndex);
+  }
+  saveState(state);
+}
+
+function todaysLeagueFixture() {
+  const league = state.soccer.league;
+  const dayIndex = dayIndexInWeek(league.weekKey, new Date());
+  if (league.playedDays[dayIndex]) return null;
+  const oppTeamIndex = LEAGUE_SCHEDULE[0][dayIndex];
+  return { dayIndex, opponent: LEAGUE_CPU_TEAMS[oppTeamIndex - 1] };
+}
+
+function leagueRanking() {
+  const league = state.soccer.league;
+  const names = ["きみ", ...LEAGUE_CPU_TEAMS.map((team) => team.name)];
+  const emojis = ["⚽", ...LEAGUE_CPU_TEAMS.map((team) => team.emoji)];
+  return Object.entries(league.standings)
+    .map(([team, row]) => ({ team: Number(team), name: names[Number(team)], emoji: emojis[Number(team)], ...row }))
+    .sort((a, b) => b.points - a.points || b.wins - a.wins || a.team - b.team);
 }
 
 function collectTeamForBattle() {
@@ -2116,77 +2283,95 @@ function simulateMatch(cpu) {
   return { lines, myScore, cpuScore, tokens };
 }
 
-function startBattle(cpuIndex) {
-  const cpu = CPU_TEAMS[cpuIndex];
-  if (!cpu || state.soccer.battleTickets <= 0) return;
+function playTodayLeagueMatch() {
+  ensureLeagueWeek();
+  const fixture = todaysLeagueFixture();
+  if (!fixture || state.soccer.battleTickets <= 0) return;
   if (getTeam().slots.filter(Boolean).length === 0) return;
 
-  const match = simulateMatch(cpu);
-  const battle = getBattleState();
+  const match = simulateMatch(fixture.opponent);
   state.soccer.battleTickets -= 1;
-  battle.played += 1;
 
+  let outcome = "loss";
   let reward = 10;
   let resultText = "まけちゃった… でも いい経験！";
   if (match.myScore > match.cpuScore) {
+    outcome = "win";
     reward = 30;
     resultText = "🏆 しょうり！！";
-    battle.wins += 1;
-    if (!battle.beaten.includes(cpu.id)) battle.beaten.push(cpu.id);
   } else if (match.myScore === match.cpuScore) {
+    outcome = "draw";
     reward = 15;
     resultText = "ひきわけ！ おしい！";
   }
+
+  applyResultToStandings(state.soccer.league.standings, 0, outcome);
+  state.soccer.league.playedDays[fixture.dayIndex] = { kind: outcome, myScore: match.myScore, cpuScore: match.cpuScore };
+
   state.xp += reward;
   state.level = getLevelFromXp(state.xp);
   saveState(state);
 
-  soccerScreen = { mode: "battle", cpuIndex, match, reward, resultText };
+  soccerScreen = { mode: "battle", opponent: fixture.opponent, match, reward, resultText };
   render();
 }
 
 function renderBattleSelect() {
   window.onkeydown = null;
+  ensureLeagueWeek();
   const placedCount = getTeam().slots.filter(Boolean).length;
-  const battle = getBattleState();
+  const league = state.soccer.league;
+  const ranking = leagueRanking();
+  const fixture = todaysLeagueFixture();
+  const todayIndex = dayIndexInWeek(league.weekKey, new Date());
+  const todayResult = league.playedDays[todayIndex];
+  const dowLabels = ["月", "火", "水", "木", "金", "土", "日"];
+
+  let todayBox = "";
+  if (todayResult) {
+    if (todayResult.kind === "rest") {
+      todayBox = `<p class="dexHint">きょうは 試合なし（お休み）。あしたまた がんばろう！</p>`;
+    } else {
+      const labels = { win: "🏆 しょうり", draw: "🤝 ひきわけ", loss: "😢 まけ" };
+      todayBox = `<p class="dexHint">きょうの結果：${labels[todayResult.kind]}（${todayResult.myScore} - ${todayResult.cpuScore}）</p>`;
+    }
+  } else if (fixture) {
+    todayBox = `
+      <section class="homeCard practiceCard">
+        <p class="eyebrow">${dowLabels[fixture.dayIndex]}曜日の試合</p>
+        <h2 class="homeCardTitle">${fixture.opponent.emoji} ${escapeHtml(fixture.opponent.name)}</h2>
+        <p class="entrySub">${escapeHtml(LEAGUE_STYLE_LABELS[fixture.opponent.style] ?? "")}</p>
+        <button class="primaryButton practiceStart" id="playLeagueButton" ${state.soccer.battleTickets > 0 && placedCount > 0 ? "" : "disabled"}>たたかう（🎟${state.soccer.battleTickets}）</button>
+      </section>
+    `;
+  }
 
   app.innerHTML = `
     <main class="shell">
       <section class="quizHeader">
         <button class="iconButton" id="homeButton" aria-label="ホームへ戻る">←</button>
-        <strong class="packTitle">🏆 たいせん</strong>
+        <strong class="packTitle">🏆 リーグ</strong>
         <span class="teamPower">🎟 ${state.soccer.battleTickets}</span>
       </section>
 
       <p class="dexHint">きみのチーム：${placedCount}/8人・💪${computeTeamPower()}　${placedCount === 0 ? "まず ⚽チームへんせいで 選手をおこう！" : ""}</p>
 
-      <section class="pickList">
-        ${CPU_TEAMS.map((cpu, index) => {
-          const unlocked = isCpuUnlocked(index);
-          const beaten = battle.beaten.includes(cpu.id);
-          const strength = "⭐".repeat(index + 1);
-          if (!unlocked) {
-            return `
-              <div class="pickRow cpuRow locked">
-                <span class="dexPlayerAvatar">🔒</span>
-                <span class="pickRowMain"><strong>？？？</strong><small>前のチームに かつと 解放</small></span>
-              </div>
-            `;
-          }
-          return `
-            <div class="pickRow cpuRow">
-              <span class="dexPlayerAvatar">${cpu.emoji}</span>
-              <span class="pickRowMain">
-                <strong>${escapeHtml(cpu.name)} ${beaten ? "✅" : ""}</strong>
-                <small>つよさ ${strength}</small>
-              </span>
-              <button class="primaryButton battleGoButton" data-cpu="${index}" ${state.soccer.battleTickets > 0 && placedCount > 0 ? "" : "disabled"}>たたかう（🎟1）</button>
-            </div>
-          `;
-        }).join("")}
-      </section>
+      ${todayBox}
 
-      <p class="dexHint">🎟たいせん券は 日課クリアで 1まい もらえるよ。</p>
+      <section class="settingsCard">
+        <p class="eyebrow">こんしゅうの じゅんい表</p>
+        <div class="subjectStats">
+          ${ranking.map((row, index) => `
+            <div class="subjectStatRow leagueRow ${row.team === 0 ? "leagueRowMe" : ""}">
+              <span class="subjectStatLabel">${index + 1}位 ${row.emoji}</span>
+              <span class="leagueRowName">${escapeHtml(row.name)}</span>
+              <span class="subjectStatVal">${row.points}pt</span>
+              <span class="subjectStatCount">${row.wins}勝${row.draws}分${row.losses}敗${row.rests > 0 ? `・お休み${row.rests}` : ""}</span>
+            </div>
+          `).join("")}
+        </div>
+        <p class="settingsNote">日曜が終わると じゅんいに応じてパックがもらえるよ。勉強しなかった日は「負け」ではなく「お休み」になるよ。</p>
+      </section>
     </main>
   `;
 
@@ -2194,14 +2379,12 @@ function renderBattleSelect() {
     soccerScreen = null;
     render();
   });
-  document.querySelectorAll(".battleGoButton").forEach((button) => {
-    button.addEventListener("click", () => startBattle(Number(button.dataset.cpu)));
-  });
+  document.querySelector("#playLeagueButton")?.addEventListener("click", playTodayLeagueMatch);
 }
 
 function renderBattle() {
   window.onkeydown = null;
-  const cpu = CPU_TEAMS[soccerScreen.cpuIndex];
+  const cpu = soccerScreen.opponent;
   const match = soccerScreen.match;
 
   app.innerHTML = `
@@ -2228,7 +2411,7 @@ function renderBattle() {
 
       <section class="resultActions battleActions" id="battleActions" hidden>
         <p class="battleResultText">${escapeHtml(soccerScreen.resultText)} <span class="xpGain">+${soccerScreen.reward} XP</span></p>
-        <button class="primaryButton" id="againBattleButton" ${state.soccer.battleTickets > 0 ? "" : "disabled"}>もう一回（🎟${state.soccer.battleTickets}）</button>
+        <button class="primaryButton" id="leagueBackButton">🏆 リーグ表を見る</button>
         <button class="secondaryButton" id="teamFixButton">チームをなおす</button>
         <button class="secondaryButton" id="backHomeButton">ホーム</button>
       </section>
@@ -2320,7 +2503,10 @@ function renderBattle() {
     soccerScreen = null;
     render();
   });
-  document.querySelector("#againBattleButton").addEventListener("click", () => startBattle(soccerScreen.cpuIndex));
+  document.querySelector("#leagueBackButton").addEventListener("click", () => {
+    soccerScreen = { mode: "battleSelect" };
+    render();
+  });
   document.querySelector("#teamFixButton").addEventListener("click", () => {
     soccerScreen = { mode: "team" };
     render();
