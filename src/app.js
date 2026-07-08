@@ -1,5 +1,5 @@
-import { subjects } from "./curriculum.js?v=18";
-import { getLevelFromXp, loadState, resetState, saveState } from "./storage.js?v=18";
+import { subjects } from "./curriculum.js?v=19";
+import { getLevelFromXp, loadState, resetState, saveState } from "./storage.js?v=19";
 
 const allQuestions = [
   ...(window.CHIBI_QUEST_QUESTIONS ?? []),
@@ -66,6 +66,7 @@ const TACTIC_MATCHUP_BONUS = {
 };
 
 const TRAIT_BONUS_CAP = 20;
+const BUILDUP_BONUS = 3;
 
 // ダブり（凸）で解放済みの特性配列を返す。スターターは常に全解放。
 function unlockedTraitsFor(player) {
@@ -97,7 +98,16 @@ function computeMatchupWinRate(myXI, myTactics, oppTactics) {
       value: atkVsDef
     });
   }
-  const tacticTotal = defVsAtk + atkVsDef;
+  // ビルドアップ：ショートパスは、ロングパスの相手を細かいパス回しで剥がせる（一方通行の相性）
+  const buildupBonus = (myTactics.buildup === "shortpass" && oppTactics.buildup === "longpass") ? BUILDUP_BONUS : 0;
+  if (buildupBonus !== 0) {
+    reasons.push({
+      kind: "tactic",
+      label: `${TACTIC_LABELS.shortpass}が${TACTIC_LABELS.longpass}に有利`,
+      value: buildupBonus
+    });
+  }
+  const tacticTotal = defVsAtk + atkVsDef + buildupBonus;
 
   const activeTactics = [myTactics.defense, myTactics.attack, myTactics.buildup];
   const traitCounts = new Map();
@@ -165,22 +175,17 @@ function formationPitchCoords(formationKey) {
   ];
 }
 const CPU_PITCH_COORDS = formationPitchCoords("4-3-3");
-// リーグ参加チーム（きみ以外の7チーム）。それぞれ得意な戦い方（スタイル）と実際の戦術（守備・攻撃・ビルドアップ）を持つ
+// リーグ参加チーム（きみ以外の7チーム）。守備・攻撃・ビルドアップの組み合わせが7チームすべて異なり、
+// ステータス配分もチームごとにはっきり尖らせてある（弱点が一目でわかるように）
 const LEAGUE_CPU_TEAMS = [
-  { id: "cpu_1", name: "たんぽぽFC", emoji: "🌼", style: "possession", mid: 3, def: 3, atk: 3, gk: 3, tactics: { defense: "retreat", attack: "possession", buildup: "shortpass" } },
-  { id: "cpu_2", name: "かみなりSC", emoji: "⚡", style: "counter", mid: 5, def: 4, atk: 5, gk: 4, tactics: { defense: "forecheck", attack: "counter", buildup: "longpass" } },
-  { id: "cpu_3", name: "ドラゴン学園", emoji: "🐉", style: "attacking", mid: 6, def: 6, atk: 6, gk: 6, tactics: { defense: "forecheck", attack: "possession", buildup: "shortpass" } },
-  { id: "cpu_4", name: "ギャラクシーFC", emoji: "🌌", style: "possession", mid: 8, def: 7, atk: 8, gk: 7, tactics: { defense: "retreat", attack: "possession", buildup: "shortpass" } },
-  { id: "cpu_5", name: "でんせつスターズ", emoji: "👑", style: "attacking", mid: 9, def: 9, atk: 9, gk: 9, tactics: { defense: "forecheck", attack: "possession", buildup: "longpass" } },
-  { id: "cpu_6", name: "アイアンウォールFC", emoji: "🛡", style: "defensive", mid: 5, def: 8, atk: 4, gk: 7, tactics: { defense: "retreat", attack: "counter", buildup: "longpass" } },
-  { id: "cpu_7", name: "ウィンドラッシュ", emoji: "🌪", style: "counter", mid: 6, def: 5, atk: 7, gk: 5, tactics: { defense: "forecheck", attack: "counter", buildup: "longpass" } }
+  { id: "cpu_1", name: "ブレイブドラゴンズ", emoji: "🐲", blurb: "中盤支配の技巧派。両端はうすい", mid: 7, def: 3, atk: 6, gk: 3, tactics: { defense: "forecheck", attack: "possession", buildup: "shortpass" } },
+  { id: "cpu_2", name: "コズミックFC", emoji: "🌌", blurb: "GK起点の大展開。守備ラインはうすい", mid: 6, def: 3, atk: 5, gk: 7, tactics: { defense: "forecheck", attack: "possession", buildup: "longpass" } },
+  { id: "cpu_3", name: "サンダーボルトFC", emoji: "⚡", blurb: "一撃必殺の速攻。守りはガラス", mid: 5, def: 3, atk: 8, gk: 3, tactics: { defense: "forecheck", attack: "counter", buildup: "shortpass" } },
+  { id: "cpu_4", name: "レジェンドクラウンズ", emoji: "👑", blurb: "弱点なしの最強格", mid: 5, def: 5, atk: 7, gk: 7, tactics: { defense: "forecheck", attack: "counter", buildup: "longpass" } },
+  { id: "cpu_5", name: "のんびりフラワーズ", emoji: "🌼", blurb: "ひたすら崩れない。でもほぼ決めない", mid: 6, def: 6, atk: 2, gk: 5, tactics: { defense: "retreat", attack: "possession", buildup: "shortpass" } },
+  { id: "cpu_6", name: "グレートウォールFC", emoji: "🛡", blurb: "攻撃力ほぼゼロ、伝説の鉄壁", mid: 3, def: 9, atk: 2, gk: 8, tactics: { defense: "retreat", attack: "counter", buildup: "shortpass" } },
+  { id: "cpu_7", name: "トルネードランナーズ", emoji: "🌪", blurb: "一発の速さ頼み、脆さも一級品", mid: 3, def: 4, atk: 7, gk: 3, tactics: { defense: "retreat", attack: "counter", buildup: "longpass" } }
 ];
-const LEAGUE_STYLE_LABELS = {
-  possession: "ポゼッション型",
-  counter: "カウンター型",
-  attacking: "攻撃型",
-  defensive: "守備型"
-};
 // 8チーム総当たり（あなた＝team 0）の週間対戦表（円卓法で生成・検証済み）。
 // schedule[team][day] = その日の対戦相手のteam index
 const LEAGUE_SCHEDULE = [
@@ -2628,7 +2633,7 @@ function renderBattleSelect() {
       <section class="homeCard practiceCard">
         <p class="eyebrow">${dowLabels[fixture.dayIndex]}曜日の試合</p>
         <h2 class="homeCardTitle">${fixture.opponent.emoji} ${escapeHtml(fixture.opponent.name)}</h2>
-        <p class="entrySub">${escapeHtml(LEAGUE_STYLE_LABELS[fixture.opponent.style] ?? "")}</p>
+        <p class="entrySub">${escapeHtml(fixture.opponent.blurb ?? "")}</p>
         <button class="primaryButton practiceStart" id="playLeagueButton" ${state.soccer.battleTickets > 0 && placedCount > 0 ? "" : "disabled"}>たいせんじゅんびへ（🎟${state.soccer.battleTickets}）</button>
       </section>
     `;
@@ -2710,7 +2715,7 @@ function renderPrematch() {
       <section class="homeCard practiceCard">
         <p class="eyebrow">きょうの相手</p>
         <h2 class="homeCardTitle">${cpu.emoji} ${escapeHtml(cpu.name)}</h2>
-        <p class="entrySub">${escapeHtml(LEAGUE_STYLE_LABELS[cpu.style] ?? "")}・${TACTIC_LABELS[cpu.tactics.defense]}/${TACTIC_LABELS[cpu.tactics.attack]}/${TACTIC_LABELS[cpu.tactics.buildup]}</p>
+        <p class="entrySub">${escapeHtml(cpu.blurb ?? "")}・${TACTIC_LABELS[cpu.tactics.defense]}/${TACTIC_LABELS[cpu.tactics.attack]}/${TACTIC_LABELS[cpu.tactics.buildup]}</p>
       </section>
 
       <section class="settingsCard winRateCard">
