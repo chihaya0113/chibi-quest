@@ -1,5 +1,5 @@
-import { subjects } from "./curriculum.js?v=21";
-import { getLevelFromXp, loadState, resetState, saveState } from "./storage.js?v=21";
+import { subjects } from "./curriculum.js?v=22";
+import { getLevelFromXp, loadState, resetState, saveState } from "./storage.js?v=22";
 
 const allQuestions = [
   ...(window.CHIBI_QUEST_QUESTIONS ?? []),
@@ -12,6 +12,9 @@ const soccerPlayers = window.CHIBI_QUEST_SOCCER_PLAYERS ?? [];
 // パック・図鑑の対象（スターターれんしゅうせいは除く）
 const collectiblePlayers = soccerPlayers.filter((player) => !player.starter);
 const starterPlayers = soccerPlayers.filter((player) => player.starter);
+// 現在排出中の最新弾（既存プレイヤーの最大wave値）
+const CURRENT_WAVE = collectiblePlayers.reduce((max, player) => Math.max(max, player.wave ?? 1), 1);
+const PLAYER_PACK_DRAW_COUNT = 3;
 // スロット順（GK,DF,DF,MF,MF,MF,FW,FW）に合わせたスターター初期配置
 const STARTER_SLOT_FILL = ["st_101", "st_102", "st_103", "st_104", "st_105", "st_106", "st_107", "st_108"];
 const RARITY_WEIGHTS = { 1: 6, 2: 3, 3: 1 };
@@ -1283,13 +1286,13 @@ function renderSoccerHub() {
       </section>
 
       <section class="hubGrid">
-        ${tile("hubPlayerPack", "🧑", "せんしゅパック", `のこり ${s.playerPacks}こ`, s.playerPacks > 0 ? s.playerPacks : "", s.playerPacks <= 0)}
+        ${tile("hubPlayerPack", "🧑", "せんしゅパック", `のこり ${s.playerPacks}こ・1こで${PLAYER_PACK_DRAW_COUNT}人`, s.playerPacks > 0 ? s.playerPacks : "", s.playerPacks <= 0)}
         ${tile("hubBattle", "🏆", "リーグ", `🎟 ${s.battleTickets}まい`, s.battleTickets > 0 ? s.battleTickets : "", false)}
         ${tile("hubTeam", "🧩", "チームへんせい", "せんしゅを ならべる", "", false)}
         ${tile("hubDex", "📖", "ずかん", `せんしゅ ${countOwnedPlayers()}/${collectiblePlayers.length}`, "", false)}
       </section>
 
-      <p class="dexHint">パックとたいせん券は、日課をクリアするともらえるよ。</p>
+      <p class="dexHint">いま排出中：<strong>第${CURRENT_WAVE}弾</strong>のカード。パックとたいせん券は、日課をクリアするともらえるよ。</p>
     </main>
   `;
 
@@ -1330,19 +1333,19 @@ function drawPlayer() {
 
 function openPlayerPack() {
   if (state.soccer.playerPacks <= 0) return;
-  const player = drawPlayer();
   state.soccer.playerPacks = Math.max(0, state.soccer.playerPacks - 1);
-  const previousCount = state.soccer.players[player.id] ?? 0;
-  state.soccer.players[player.id] = previousCount + 1;
+
+  const results = [];
+  for (let i = 0; i < PLAYER_PACK_DRAW_COUNT; i += 1) {
+    const player = drawPlayer();
+    const previousCount = state.soccer.players[player.id] ?? 0;
+    state.soccer.players[player.id] = previousCount + 1;
+    results.push({ player, isNew: previousCount === 0, count: previousCount + 1 });
+  }
   saveState(state);
 
   session = null;
-  soccerScreen = {
-    mode: "playerReveal",
-    player,
-    isNew: previousCount === 0,
-    count: previousCount + 1
-  };
+  soccerScreen = { mode: "playerReveal", results };
   render();
 }
 
@@ -1443,10 +1446,13 @@ function renderStatBars(player) {
 
 function renderPlayerCardFace(player, options = {}) {
   const kira = options.kira && player.rarity >= 3 ? " kira" : "";
+  const traits = player.traits ?? [];
+  const unlocked = new Set(unlockedTraitsFor(player));
   return `
     <article class="playerCard pos-${player.position.toLowerCase()}${kira}">
       <header class="playerCardHead">
         <span class="posBadge">${escapeHtml(player.position)}</span>
+        ${player.wave ? `<span class="waveBadge">第${player.wave}弾</span>` : ""}
         <span class="soccerCardStars">${rarityStars(player.rarity)}</span>
       </header>
       <div class="playerIdentity">
@@ -1458,25 +1464,42 @@ function renderPlayerCardFace(player, options = {}) {
         </div>
       </div>
       <div class="playerStats">${renderStatBars(player)}</div>
+      ${traits.length > 0 ? `
+        <div class="traitSection">
+          <p class="traitTactic">🎯 得意戦術：${escapeHtml(TACTIC_LABELS[player.specialtyTactic] ?? "")}</p>
+          <div class="traitChips">
+            ${traits.map((trait) => {
+              const isUnlocked = unlocked.has(trait);
+              return `<span class="traitChip ${isUnlocked ? "unlocked" : "locked"}">${isUnlocked ? "✨" : "🔒"} ${escapeHtml(trait)}</span>`;
+            }).join("")}
+          </div>
+        </div>
+      ` : ""}
     </article>
   `;
 }
 
 function renderPlayerReveal() {
   window.onkeydown = null;
-  const { player, isNew, count } = soccerScreen;
+  const { results } = soccerScreen;
+  const newCount = results.filter((entry) => entry.isNew).length;
+  const headline = newCount > 0 ? `せんしゅ ${results.length}人 ゲット！` : "また 会えた！";
 
   app.innerHTML = `
     <main class="shell resultShell">
       <section class="resultPanel soccerRevealPanel">
-        <p class="eyebrow">🧑 せんしゅパック かいふう</p>
-        <h1>${isNew ? "せんしゅ ゲット！" : "また 会えた！"}</h1>
-        <div class="cardRevealWrap shine">
-          ${renderPlayerCardFace(player, { kira: true })}
+        <p class="eyebrow">🧑 せんしゅパック かいふう（第${CURRENT_WAVE}弾）</p>
+        <h1>${headline}</h1>
+        <div class="packRevealGrid">
+          ${results.map((entry) => `
+            <div class="cardRevealWrap shine">
+              ${renderPlayerCardFace(entry.player, { kira: true })}
+              <p class="soccerRevealNote">
+                ${entry.isNew ? `<strong>NEW!</strong> ずかんに とうろくされたよ` : `${entry.count}まい目！`}
+              </p>
+            </div>
+          `).join("")}
         </div>
-        <p class="soccerRevealNote">
-          ${isNew ? `<strong>NEW!</strong> ずかんに とうろくされたよ` : `${count}まい目！`}
-        </p>
         <div class="resultActions">
           ${state.soccer.playerPacks > 0 ? `<button class="primaryButton" id="nextPlayerPackButton">もう1パック（のこり${state.soccer.playerPacks}）</button>` : ""}
           <button class="secondaryButton" id="dexButton">図鑑を見る</button>

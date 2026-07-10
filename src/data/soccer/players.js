@@ -12,6 +12,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 3,
     "tier": "S",
     "cost": 10,
+    "wave": 1,
     "stats": {
       "dribble": 9,
       "pass": 8,
@@ -50,6 +51,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 3,
     "tier": "S",
     "cost": 10,
+    "wave": 1,
     "stats": {
       "dribble": 6,
       "pass": 7,
@@ -87,6 +89,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 3,
     "tier": "S",
     "cost": 10,
+    "wave": 1,
     "stats": {
       "dribble": 2,
       "pass": 5,
@@ -125,6 +128,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 2,
     "tier": "A",
     "cost": 9,
+    "wave": 1,
     "stats": {
       "dribble": 8,
       "pass": 9,
@@ -162,6 +166,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 2,
     "tier": "A",
     "cost": 9,
+    "wave": 1,
     "stats": {
       "dribble": 8,
       "pass": 7,
@@ -199,6 +204,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 2,
     "tier": "A",
     "cost": 9,
+    "wave": 1,
     "stats": {
       "dribble": 8,
       "pass": 7,
@@ -236,6 +242,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 2,
     "tier": "A",
     "cost": 8,
+    "wave": 1,
     "stats": {
       "dribble": 9,
       "pass": 8,
@@ -273,6 +280,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 2,
     "tier": "A",
     "cost": 8,
+    "wave": 1,
     "stats": {
       "dribble": 3,
       "pass": 6,
@@ -310,6 +318,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 2,
     "tier": "A",
     "cost": 8,
+    "wave": 1,
     "stats": {
       "dribble": 8,
       "pass": 9,
@@ -347,6 +356,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 2,
     "tier": "A",
     "cost": 7,
+    "wave": 1,
     "stats": {
       "dribble": 9,
       "pass": 8,
@@ -384,6 +394,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 2,
     "tier": "A",
     "cost": 7,
+    "wave": 1,
     "stats": {
       "dribble": 5,
       "pass": 6,
@@ -420,6 +431,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 2,
     "tier": "A",
     "cost": 7,
+    "wave": 1,
     "stats": {
       "dribble": 9,
       "pass": 8,
@@ -456,6 +468,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 1,
     "tier": "B",
     "cost": 6,
+    "wave": 1,
     "stats": {
       "dribble": 6,
       "pass": 9,
@@ -492,6 +505,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 1,
     "tier": "B",
     "cost": 6,
+    "wave": 1,
     "stats": {
       "dribble": 6,
       "pass": 5,
@@ -528,6 +542,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 1,
     "tier": "B",
     "cost": 6,
+    "wave": 1,
     "stats": {
       "dribble": 4,
       "pass": 7,
@@ -564,6 +579,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 1,
     "tier": "B",
     "cost": 5,
+    "wave": 1,
     "stats": {
       "dribble": 8,
       "pass": 7,
@@ -600,6 +616,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 1,
     "tier": "B",
     "cost": 5,
+    "wave": 1,
     "stats": {
       "dribble": 6,
       "pass": 6,
@@ -636,6 +653,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 1,
     "tier": "B",
     "cost": 5,
+    "wave": 1,
     "stats": {
       "dribble": 7,
       "pass": 7,
@@ -672,6 +690,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 1,
     "tier": "B",
     "cost": 4,
+    "wave": 1,
     "stats": {
       "dribble": 7,
       "pass": 7,
@@ -708,6 +727,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 1,
     "tier": "B",
     "cost": 4,
+    "wave": 1,
     "stats": {
       "dribble": 6,
       "pass": 7,
@@ -744,6 +764,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 1,
     "tier": "B",
     "cost": 4,
+    "wave": 1,
     "stats": {
       "dribble": 6,
       "pass": 7,
@@ -780,6 +801,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 1,
     "tier": "B",
     "cost": 3,
+    "wave": 1,
     "stats": {
       "dribble": 8,
       "pass": 7,
@@ -816,6 +838,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 1,
     "tier": "B",
     "cost": 3,
+    "wave": 1,
     "stats": {
       "dribble": 5,
       "pass": 7,
@@ -852,6 +875,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 1,
     "tier": "B",
     "cost": 3,
+    "wave": 1,
     "stats": {
       "dribble": 4,
       "pass": 5,
@@ -888,6 +912,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 1,
     "tier": "B",
     "cost": 2,
+    "wave": 1,
     "stats": {
       "dribble": 5,
       "pass": 5,
@@ -924,6 +949,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 1,
     "tier": "B",
     "cost": 2,
+    "wave": 1,
     "stats": {
       "dribble": 6,
       "pass": 5,
@@ -960,6 +986,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 1,
     "tier": "B",
     "cost": 2,
+    "wave": 1,
     "stats": {
       "dribble": 6,
       "pass": 7,
@@ -996,6 +1023,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 1,
     "tier": "B",
     "cost": 1,
+    "wave": 1,
     "stats": {
       "dribble": 8,
       "pass": 6,
@@ -1032,6 +1060,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 1,
     "tier": "B",
     "cost": 1,
+    "wave": 1,
     "stats": {
       "dribble": 4,
       "pass": 5,
@@ -1068,6 +1097,7 @@ window.CHIBI_QUEST_SOCCER_PLAYERS = [
     "rarity": 1,
     "tier": "B",
     "cost": 1,
+    "wave": 1,
     "stats": {
       "dribble": 5,
       "pass": 5,

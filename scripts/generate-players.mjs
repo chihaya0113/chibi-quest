@@ -26,7 +26,7 @@ const positionLabels = {
 // traits は解放される順番（Lv1で1個目から）。tier上限を超える分は生成時に自動で切り詰められる。
 
 // 第1弾（30人）：グループ1〜10から3人ずつ
-const players = [
+const wave1Players = [
   // グループ1（コスト10・Tier S）
   { no: 1, name: "エムバペ", emoji: "🐢", pos: "FW", club: "レアル・マドリード", country: "フランス", flag: "🇫🇷", rarity: 3, cost: 10, stats: [9, 8, 9, 5, 4, 10], specialtyTactic: "counter", traits: ["スピード", "裏抜け", "決定力", "瞬発力", "オフザボール"] },
   { no: 2, name: "ファン・ダイク", emoji: "🏰", pos: "DF", club: "リヴァプール", country: "オランダ", flag: "🇳🇱", rarity: 3, cost: 10, stats: [6, 7, 3, 10, 9, 7], specialtyTactic: "retreat", traits: ["空中戦", "カバーリング", "対人守備", "守備ポジショニング"] },
@@ -67,6 +67,11 @@ const players = [
   { no: 28, name: "エステヴァン", emoji: "🌟", pos: "FW", club: "チェルシー", country: "ブラジル", flag: "🇧🇷", rarity: 1, cost: 1, stats: [8, 6, 6, 2, 2, 7], specialtyTactic: "possession", traits: ["ドリブル", "トラップ", "視野"] },
   { no: 29, name: "高井幸大", emoji: "🌿", pos: "DF", club: "川崎フロンターレ", country: "日本", flag: "🇯🇵", rarity: 1, cost: 1, stats: [4, 5, 2, 6, 6, 5], specialtyTactic: "retreat", traits: ["対人守備", "空中戦", "守備ポジショニング"] },
   { no: 30, name: "松木玖生", emoji: "🚀", pos: "MF", club: "FC東京", country: "日本", flag: "🇯🇵", rarity: 1, cost: 1, stats: [5, 5, 4, 5, 5, 6], specialtyTactic: "forecheck", traits: ["ボール奪取", "プレッシャー", "スタミナ"] }
+];
+
+// 弾ごとの選手リストをここに追加していく（例: const wave2Players = [...]; ）
+const players = [
+  ...wave1Players.map((player) => ({ ...player, wave: 1 }))
 ];
 
 // スターター（れんしゅうせい）: 最初からチームにいる低能力選手。
@@ -150,6 +155,7 @@ const output = [
       rarity: player.rarity,
       tier,
       cost: player.cost,
+      wave: player.wave,
       stats: toStats(player.stats),
       specialtyTactic: player.specialtyTactic,
       traits: (player.traits ?? []).slice(0, TRAIT_CAP_BY_TIER[tier]),
@@ -202,6 +208,9 @@ for (const player of output) {
   }
   if (!Number.isInteger(player.cost) || player.cost < 1 || player.cost > 10) {
     throw new Error(`Invalid cost for ${player.id}: ${player.cost}`);
+  }
+  if (!player.starter && !Number.isInteger(player.wave)) {
+    throw new Error(`Invalid wave for ${player.id}: ${player.wave}`);
   }
   if (!player.starter) {
     const cap = TRAIT_CAP_BY_TIER[player.tier];
