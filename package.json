@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "generate:questions": "node scripts/generate-questions.mjs && node scripts/generate-japanese-questions.mjs && node scripts/generate-social-questions.mjs && node scripts/generate-english-questions.mjs && node scripts/generate-science-questions.mjs",
-    "generate:soccer": "node scripts/generate-soccer-cards.mjs",
     "generate:players": "node scripts/generate-players.mjs",
     "audit:questions": "node scripts/audit-questions.mjs",
     "serve": "python3 -m http.server 5173"

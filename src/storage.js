@@ -63,15 +63,12 @@ const defaultState = {
     inProgress: null
   },
   soccer: {
-    packs: 0,
-    owned: {},
     playerPacks: 0,
     players: {},
     team: {
       // 初期フォーメーションは4-3-3（11人制）。スターター8人を入れ、残りは空欄
       formation: "4-3-3",
-      slots: ["st_101", "st_102", "st_103", null, null, "st_104", "st_105", "st_106", "st_107", "st_108", null],
-      equips: {}
+      slots: ["st_101", "st_102", "st_103", null, null, "st_104", "st_105", "st_106", "st_107", "st_108", null]
     },
     myTactics: { defense: "forecheck", attack: "possession", buildup: "shortpass" },
     battleTickets: 0,

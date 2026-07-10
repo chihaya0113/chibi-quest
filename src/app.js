@@ -1,5 +1,5 @@
-import { subjects } from "./curriculum.js?v=20";
-import { getLevelFromXp, loadState, resetState, saveState } from "./storage.js?v=20";
+import { subjects } from "./curriculum.js?v=21";
+import { getLevelFromXp, loadState, resetState, saveState } from "./storage.js?v=21";
 
 const allQuestions = [
   ...(window.CHIBI_QUEST_QUESTIONS ?? []),
@@ -8,7 +8,6 @@ const allQuestions = [
   ...(window.CHIBI_QUEST_ENGLISH_QUESTIONS ?? []),
   ...(window.CHIBI_QUEST_SCIENCE_QUESTIONS ?? [])
 ];
-const soccerCards = window.CHIBI_QUEST_SOCCER_CARDS ?? [];
 const soccerPlayers = window.CHIBI_QUEST_SOCCER_PLAYERS ?? [];
 // パック・図鑑の対象（スターターれんしゅうせいは除く）
 const collectiblePlayers = soccerPlayers.filter((player) => !player.starter);
@@ -198,12 +197,6 @@ const LEAGUE_SCHEDULE = [
   [1, 0, 4, 2, 7, 5, 3],
   [0, 5, 3, 1, 6, 4, 2]
 ];
-// 戦術カード装備の対戦効果（カードID → 効果の種類）
-const EQUIP_EFFECTS = {
-  sc_001: "pass", sc_002: "break", sc_003: "shoot", sc_004: "break", sc_005: "pass",
-  sc_006: "pass", sc_007: "pass", sc_008: "pass", sc_009: "pass", sc_010: "pass",
-  sc_011: "def", sc_012: "def", sc_013: "def", sc_014: "def", sc_015: "rebound"
-};
 const BATTLE_EVENTS = 10;
 let battleTimer = null;
 const QUESTIONS_PER_SESSION = 10;
@@ -321,7 +314,7 @@ function renderHome() {
   const progress = state.xp % 100;
   const dailyButtonLabel = isCompletedToday() ? "もう一回やる" : dailyInProgress ? "つづきから" : "はじめる";
 
-  const waiting = state.soccer.packs + state.soccer.playerPacks + state.soccer.battleTickets;
+  const waiting = state.soccer.playerPacks + state.soccer.battleTickets;
 
   app.innerHTML = `
     <main class="shell home">
@@ -365,7 +358,7 @@ function renderHome() {
         <div class="entryMain">
           <p class="eyebrow">⚽ サッカー</p>
           <h2 class="homeCardTitle">あそぶ・あつめる・たいせん</h2>
-          <p class="entrySub">せんしゅ ${countOwnedPlayers()}/${collectiblePlayers.length}　カード ${countOwnedCards()}/${soccerCards.length}</p>
+          <p class="entrySub">せんしゅ ${countOwnedPlayers()}/${collectiblePlayers.length}</p>
         </div>
         <span class="entryArrow">${waiting > 0 ? `<span class="entryBadge">${waiting}</span>` : ""}›</span>
       </button>
@@ -1124,7 +1117,6 @@ function updateDailyProgress(perSubject, totalCorrect) {
     daily.streak = daily.lastCompletedDate === yesterday ? (daily.streak ?? 0) + 1 : 1;
     daily.lastCompletedDate = today;
     daily.bestStreak = Math.max(daily.bestStreak ?? 0, daily.streak);
-    state.soccer.packs += 1;
     state.soccer.playerPacks += 1;
     state.soccer.battleTickets += 1;
     packEarned = true;
@@ -1195,12 +1187,12 @@ function renderDailyResult() {
         </div>
         ${session.packEarned ? `
           <div class="packBanner">
-            <span class="packEmoji">🎴</span>
-            <strong>パック2つ ＆ 🎟たいせん券を ゲット！</strong>
+            <span class="packEmoji">🧑</span>
+            <strong>せんしゅパック ＆ 🎟たいせん券を ゲット！</strong>
           </div>
         ` : ""}
         <div class="resultActions">
-          ${(state.soccer.playerPacks > 0 || state.soccer.packs > 0) ? `<button class="primaryButton" id="openPacksButton">パックをあける</button>` : ""}
+          ${state.soccer.playerPacks > 0 ? `<button class="primaryButton" id="openPacksButton">パックをあける</button>` : ""}
           <button class="secondaryButton" id="homeButton">ホームへ</button>
           <button class="secondaryButton" id="againButton">もう一回</button>
         </div>
@@ -1210,12 +1202,7 @@ function renderDailyResult() {
 
   document.querySelector("#openPacksButton")?.addEventListener("click", () => {
     session = null;
-    // 選手パック → そのまま戦術パック の順で開封（片方だけならそれを）
-    if (state.soccer.playerPacks > 0) {
-      openPlayerPack();
-    } else {
-      openPack();
-    }
+    openPlayerPack();
   });
   document.querySelector("#againButton").addEventListener("click", startDaily);
   document.querySelector("#homeButton").addEventListener("click", () => {
@@ -1224,47 +1211,9 @@ function renderDailyResult() {
   });
 }
 
-function countOwnedCards() {
-  return soccerCards.filter((card) => (state.soccer.owned[card.id] ?? 0) > 0).length;
-}
-
-function drawCard() {
-  const unowned = soccerCards.filter((card) => !(state.soccer.owned[card.id] > 0));
-  const pool = unowned.length > 0 ? unowned : soccerCards;
-  const totalWeight = pool.reduce((sum, card) => sum + (RARITY_WEIGHTS[card.rarity] ?? 1), 0);
-  let roll = Math.random() * totalWeight;
-  for (const card of pool) {
-    roll -= RARITY_WEIGHTS[card.rarity] ?? 1;
-    if (roll <= 0) return card;
-  }
-  return pool[pool.length - 1];
-}
-
-function openPack() {
-  if (state.soccer.packs <= 0) return;
-  const card = drawCard();
-  session = null;
-  soccerScreen = {
-    mode: "quiz",
-    card,
-    choices: shuffle(card.choices),
-    answered: false,
-    isCorrect: false
-  };
-  render();
-}
-
 function renderSoccer() {
   if (soccerScreen.mode === "hub") {
     renderSoccerHub();
-    return;
-  }
-  if (soccerScreen.mode === "quiz") {
-    renderSoccerQuiz();
-    return;
-  }
-  if (soccerScreen.mode === "reveal") {
-    renderSoccerReveal();
     return;
   }
   if (soccerScreen.mode === "playerReveal") {
@@ -1334,7 +1283,6 @@ function renderSoccerHub() {
       </section>
 
       <section class="hubGrid">
-        ${tile("hubPack", "🎴", "せんじゅつパック", `のこり ${s.packs}こ`, s.packs > 0 ? s.packs : "", s.packs <= 0)}
         ${tile("hubPlayerPack", "🧑", "せんしゅパック", `のこり ${s.playerPacks}こ`, s.playerPacks > 0 ? s.playerPacks : "", s.playerPacks <= 0)}
         ${tile("hubBattle", "🏆", "リーグ", `🎟 ${s.battleTickets}まい`, s.battleTickets > 0 ? s.battleTickets : "", false)}
         ${tile("hubTeam", "🧩", "チームへんせい", "せんしゅを ならべる", "", false)}
@@ -1349,7 +1297,6 @@ function renderSoccerHub() {
     soccerScreen = null;
     render();
   });
-  document.querySelector("#hubPack")?.addEventListener("click", openPack);
   document.querySelector("#hubPlayerPack")?.addEventListener("click", openPlayerPack);
   document.querySelector("#hubBattle")?.addEventListener("click", () => {
     soccerScreen = { mode: "battleSelect" };
@@ -1532,7 +1479,6 @@ function renderPlayerReveal() {
         </p>
         <div class="resultActions">
           ${state.soccer.playerPacks > 0 ? `<button class="primaryButton" id="nextPlayerPackButton">もう1パック（のこり${state.soccer.playerPacks}）</button>` : ""}
-          ${state.soccer.playerPacks <= 0 && state.soccer.packs > 0 ? `<button class="primaryButton" id="nextTacticPackButton">つぎは 🎴せんじゅつパック（のこり${state.soccer.packs}）</button>` : ""}
           <button class="secondaryButton" id="dexButton">図鑑を見る</button>
           <button class="secondaryButton" id="homeButton">ホーム</button>
         </div>
@@ -1543,10 +1489,6 @@ function renderPlayerReveal() {
   document.querySelector("#nextPlayerPackButton")?.addEventListener("click", () => {
     soccerScreen = null;
     openPlayerPack();
-  });
-  document.querySelector("#nextTacticPackButton")?.addEventListener("click", () => {
-    soccerScreen = null;
-    openPack();
   });
   document.querySelector("#dexButton").addEventListener("click", () => {
     soccerScreen = { mode: "dex", tab: "players" };
@@ -1593,170 +1535,9 @@ function rarityStars(rarity) {
   return "⭐".repeat(rarity);
 }
 
-function cardTypeIcon(type) {
-  return { attack: "⚡", support: "🤝", defense: "🛡" }[type] ?? "⚽";
-}
-
-function renderSoccerQuiz() {
-  window.onkeydown = null;
-  const card = soccerScreen.card;
-
-  app.innerHTML = `
-    <main class="shell quizShell">
-      <section class="quizHeader">
-        <button class="iconButton" id="homeButton" aria-label="ホームへ戻る">←</button>
-        <strong class="packTitle">🎴 パックかいふう</strong>
-        <span></span>
-      </section>
-
-      <section class="questionPanel soccerQuizPanel">
-        <p class="unitPill soccerPill">⚽ この場面、どう動く？</p>
-        <h1>${escapeHtml(card.prompt)}</h1>
-        <div class="choiceGrid">
-          ${soccerScreen.choices.map((choice, index) => `
-            <button class="choiceButton" data-value="${escapeHtml(choice.text)}">
-              <span class="choiceNumber">${index + 1}</span>
-              <span>${escapeHtml(choice.text)}</span>
-            </button>
-          `).join("")}
-        </div>
-        <div class="feedback" id="feedback"></div>
-      </section>
-    </main>
-  `;
-
-  document.querySelector("#homeButton").addEventListener("click", () => {
-    if (!soccerScreen.answered && !window.confirm("パックはまだあいていないよ。あとであける？")) return;
-    soccerScreen = null;
-    window.onkeydown = null;
-    render();
-  });
-
-  const choiceButtons = [...document.querySelectorAll(".choiceButton")];
-  choiceButtons.forEach((button) => {
-    button.addEventListener("click", () => submitSoccerAnswer(button.dataset.value));
-  });
-  window.onkeydown = (event) => {
-    if (!soccerScreen.answered && /^[1-4]$/.test(event.key)) {
-      choiceButtons[Number(event.key) - 1]?.click();
-    }
-  };
-}
-
-function submitSoccerAnswer(selected) {
-  if (soccerScreen.answered) return;
-
-  const card = soccerScreen.card;
-  const isCorrect = selected === String(card.answer.value);
-  soccerScreen.answered = true;
-  soccerScreen.isCorrect = isCorrect;
-
-  document.querySelectorAll(".choiceButton").forEach((control) => {
-    control.disabled = true;
-  });
-
-  const feedback = document.querySelector("#feedback");
-  feedback.className = `feedback ${isCorrect ? "correct" : "incorrect"}`;
-  feedback.innerHTML = `
-    <strong>${isCorrect ? "ナイスプレー！✨" : "おしい！"}</strong>
-    <p>${escapeHtml(card.explanation)}</p>
-    <button class="secondaryButton nextButton" id="receiveButton">カードをうけとる</button>
-  `;
-
-  document.querySelector("#receiveButton").addEventListener("click", receiveCard);
-  window.setTimeout(() => {
-    window.onkeydown = (event) => {
-      if (event.key === "Enter") receiveCard();
-    };
-  }, 0);
-}
-
-function receiveCard() {
-  if (!soccerScreen?.answered || soccerScreen.mode !== "quiz") return;
-
-  const card = soccerScreen.card;
-  state.soccer.packs = Math.max(0, state.soccer.packs - 1);
-  const previousCount = state.soccer.owned[card.id] ?? 0;
-  state.soccer.owned[card.id] = previousCount + 1;
-  saveState(state);
-
-  soccerScreen = {
-    mode: "reveal",
-    card,
-    isCorrect: soccerScreen.isCorrect,
-    isNew: previousCount === 0,
-    count: previousCount + 1
-  };
-  window.onkeydown = null;
-  render();
-}
-
-function renderCardFace(card, options = {}) {
-  const kira = options.kira && card.rarity >= 3 ? " kira" : "";
-  return `
-    <article class="soccerCard type-${card.type}${kira}">
-      <header class="soccerCardHead">
-        <span class="soccerCardType">${cardTypeIcon(card.type)} ${escapeHtml(card.typeLabel)}</span>
-        <span class="soccerCardStars">${rarityStars(card.rarity)}</span>
-      </header>
-      <h2 class="soccerCardName">${escapeHtml(card.name)}</h2>
-      <p class="soccerCardNo">No.${String(card.cardNo).padStart(2, "0")}</p>
-      <div class="soccerCardBody">
-        <p class="soccerCardLabel">こう動く：</p>
-        <p class="soccerCardText">${escapeHtml(card.answer.value)}</p>
-      </div>
-    </article>
-  `;
-}
-
-function renderSoccerReveal() {
-  window.onkeydown = null;
-  const { card, isCorrect, isNew, count } = soccerScreen;
-  const headline = isCorrect
-    ? (isNew ? "カード ゲット！" : "また ゲット！")
-    : "カードは もらえたよ";
-
-  app.innerHTML = `
-    <main class="shell resultShell">
-      <section class="resultPanel soccerRevealPanel">
-        <p class="eyebrow">🎴 パックかいふう</p>
-        <h1>${headline}</h1>
-        <div class="cardRevealWrap ${isCorrect ? "shine" : ""}">
-          ${renderCardFace(card, { kira: isCorrect })}
-        </div>
-        <p class="soccerRevealNote">
-          ${isNew ? `<strong>NEW!</strong> ずかんに とうろくされたよ` : `${count}まい目！`}
-          ${isCorrect ? "" : "<br />つぎは せいかいすると キラキラ になるよ"}
-        </p>
-        <div class="resultActions">
-          ${state.soccer.packs > 0 ? `<button class="primaryButton" id="nextPackButton">もう1パック（のこり${state.soccer.packs}）</button>` : ""}
-          <button class="secondaryButton" id="dexButton">図鑑を見る</button>
-          <button class="secondaryButton" id="homeButton">ホーム</button>
-        </div>
-      </section>
-    </main>
-  `;
-
-  document.querySelector("#nextPackButton")?.addEventListener("click", () => {
-    soccerScreen = null;
-    openPack();
-  });
-  document.querySelector("#dexButton").addEventListener("click", () => {
-    soccerScreen = { mode: "dex" };
-    render();
-  });
-  document.querySelector("#homeButton").addEventListener("click", () => {
-    soccerScreen = null;
-    render();
-  });
-}
-
 function renderSoccerDex() {
   window.onkeydown = null;
-  const tab = soccerScreen.tab === "cards" ? "cards" : "players";
-  const title = tab === "cards"
-    ? `🎴 せんじゅつ図鑑 ${countOwnedCards()}/${soccerCards.length}`
-    : `🧑 せんしゅ図鑑 ${countOwnedPlayers()}/${collectiblePlayers.length}`;
+  const title = `🧑 せんしゅ図鑑 ${countOwnedPlayers()}/${collectiblePlayers.length}`;
 
   app.innerHTML = `
     <main class="shell">
@@ -1766,13 +1547,8 @@ function renderSoccerDex() {
         <span></span>
       </section>
 
-      <section class="dexTabs">
-        <button class="subjectTab ${tab === "players" ? "active" : ""}" data-tab="players">🧑 せんしゅ</button>
-        <button class="subjectTab ${tab === "cards" ? "active" : ""}" data-tab="cards">🎴 せんじゅつ</button>
-      </section>
-
       <section class="dexGrid">
-        ${tab === "cards" ? renderCardDexTiles() : renderPlayerDexTiles()}
+        ${renderPlayerDexTiles()}
       </section>
 
       <p class="dexHint">日課をクリアすると、あたらしいパックがもらえるよ！</p>
@@ -1783,43 +1559,12 @@ function renderSoccerDex() {
     soccerScreen = null;
     render();
   });
-  document.querySelectorAll(".dexTabs .subjectTab").forEach((button) => {
-    button.addEventListener("click", () => {
-      soccerScreen = { mode: "dex", tab: button.dataset.tab };
-      render();
-    });
-  });
   document.querySelectorAll(".dexTile[data-player]").forEach((tile) => {
     tile.addEventListener("click", () => {
       soccerScreen = { mode: "playerDetail", playerId: tile.dataset.player };
       render();
     });
   });
-}
-
-function renderCardDexTiles() {
-  return [...soccerCards].sort((a, b) => a.cardNo - b.cardNo).map((card) => {
-    const count = state.soccer.owned[card.id] ?? 0;
-    if (count === 0) {
-      return `
-        <article class="dexTile lockedCard">
-          <span class="dexLockMark">？</span>
-          <span class="dexLockNo">No.${String(card.cardNo).padStart(2, "0")}</span>
-        </article>
-      `;
-    }
-    return `
-      <article class="dexTile type-${card.type}">
-        <header class="dexTileHead">
-          <span>${cardTypeIcon(card.type)}</span>
-          <span class="soccerCardStars">${rarityStars(card.rarity)}</span>
-        </header>
-        <strong class="dexTileName">${escapeHtml(card.name)}</strong>
-        <p class="dexTileText">${escapeHtml(card.answer.value)}</p>
-        ${count > 1 ? `<span class="dexTileCount">×${count}</span>` : ""}
-      </article>
-    `;
-  }).join("");
 }
 
 function renderPlayerDexTiles() {
@@ -1877,14 +1622,12 @@ function remapPlayersToFormation(playerIds, formationKey) {
 function getTeam() {
   const team = state.soccer.team ?? {};
   if (!FORMATIONS[team.formation]) team.formation = DEFAULT_FORMATION;
-  team.equips ??= {};
   const slotDefs = formationSlots(team.formation);
   if (!Array.isArray(team.slots) || team.slots.length !== slotDefs.length) {
     const previousIds = Array.isArray(team.slots) ? team.slots.filter(Boolean) : [];
     // スターター未所持ぶんを補って初期チームを組む（旧セーブや新規プレイ時）
     const fillerIds = previousIds.length > 0 ? previousIds : STARTER_SLOT_FILL.filter((id) => isPlayerAvailable(findPlayerById(id)));
     team.slots = remapPlayersToFormation(fillerIds, team.formation);
-    team.equips = {};
     saveState(state);
   }
   state.soccer.team = team;
@@ -1898,7 +1641,6 @@ function setFormation(formationKey) {
   const previousIds = team.slots.filter(Boolean);
   team.formation = formationKey;
   team.slots = remapPlayersToFormation(previousIds, formationKey);
-  team.equips = {};
   saveState(state);
 }
 
@@ -1912,10 +1654,6 @@ function findPlayerById(playerId) {
   return soccerPlayers.find((player) => player.id === playerId);
 }
 
-function findCardById(cardId) {
-  return soccerCards.find((card) => card.id === cardId);
-}
-
 function playerPower(player) {
   const total = PLAYER_STAT_LABELS.reduce((sum, [key]) => sum + (player.stats[key] ?? 0), 0);
   return Math.round(total / PLAYER_STAT_LABELS.length);
@@ -1924,11 +1662,10 @@ function playerPower(player) {
 function computeTeamPower() {
   const team = getTeam();
   let power = 0;
-  team.slots.forEach((playerId, index) => {
+  team.slots.forEach((playerId) => {
     const player = playerId ? findPlayerById(playerId) : null;
     if (!player) return;
     power += playerPower(player);
-    if (team.equips[index]) power += 2;
   });
   return power;
 }
@@ -1938,10 +1675,6 @@ function placePlayer(slotIndex, playerId) {
   const existingIndex = team.slots.indexOf(playerId);
   if (existingIndex >= 0 && existingIndex !== slotIndex) {
     team.slots[existingIndex] = null;
-    delete team.equips[existingIndex];
-  }
-  if (team.slots[slotIndex] !== playerId) {
-    delete team.equips[slotIndex];
   }
   team.slots[slotIndex] = playerId;
   saveState(state);
@@ -1950,7 +1683,6 @@ function placePlayer(slotIndex, playerId) {
 function removeFromSlot(slotIndex) {
   const team = getTeam();
   team.slots[slotIndex] = null;
-  delete team.equips[slotIndex];
   saveState(state);
 }
 
@@ -1969,13 +1701,11 @@ function renderTeamSlot(slotIndex) {
     `;
   }
 
-  const equipped = team.equips[slotIndex] ? findCardById(team.equips[slotIndex]) : null;
   const mismatch = player.position !== slotPos;
   return `
     <button class="teamSlot filled pos-${slotPos.toLowerCase()} ${mismatch ? "mismatch" : ""}" data-slot="${slotIndex}">
       <span class="teamSlotAvatar">${avatarHtml(player, 32)}</span>
       <span class="teamSlotName">${escapeHtml(player.name.length > 6 ? `${player.name.slice(0, 6)}…` : player.name)}</span>
-      ${equipped ? `<span class="teamSlotEquip">🎴</span>` : ""}
       ${mismatch ? `<span class="teamSlotWarn">${escapeHtml(player.position)}</span>` : ""}
     </button>
   `;
@@ -2011,7 +1741,7 @@ function renderTeam() {
         `).join("")}
       </section>
 
-      <p class="dexHint">マスをタップして 選手をえらぼう。選手をタップすると 🎴せんじゅつカードを そうびできるよ。</p>
+      <p class="dexHint">マスをタップして 選手をえらぼう。</p>
 
       <section class="benchBoard">
         <p class="eyebrow">🪑 ひかえ選手（タップで あいているマスへ）</p>
@@ -2149,31 +1879,12 @@ function renderSlotMenu() {
     render();
     return;
   }
-  const equippedId = team.equips[slotIndex] ?? null;
-  const ownedCards = soccerCards.filter((card) => (state.soccer.owned[card.id] ?? 0) > 0);
-
   app.innerHTML = `
     <main class="shell resultShell">
       <section class="resultPanel soccerRevealPanel">
         <p class="eyebrow">⚽ ${escapeHtml(formationSlots(team.formation)[slotIndex].pos)}マスの選手</p>
         <div class="cardRevealWrap">
           ${renderPlayerCardFace(player, {})}
-        </div>
-
-        <div class="equipSection">
-          <p class="equipTitle">🎴 せんじゅつカードを そうび（動きの質が変わる）</p>
-          ${ownedCards.length === 0 ? `
-            <p class="dexHint">まだカードがないよ。🎴せんじゅつパックで 手に入れよう！</p>
-          ` : `
-            <div class="equipChips">
-              ${ownedCards.map((card) => `
-                <button class="equipChip ${card.id === equippedId ? "equipped" : ""}" data-card="${card.id}">
-                  ${cardTypeIcon(card.type)} ${escapeHtml(card.name)}
-                </button>
-              `).join("")}
-            </div>
-          `}
-          ${equippedId ? `<p class="equipNote">そうび中：${escapeHtml(findCardById(equippedId)?.name ?? "")}（もう一回タップで はずす）</p>` : ""}
         </div>
 
         <div class="resultActions">
@@ -2197,19 +1908,6 @@ function renderSlotMenu() {
     removeFromSlot(slotIndex);
     soccerScreen = { mode: "team", returnTo };
     render();
-  });
-  document.querySelectorAll(".equipChip").forEach((chip) => {
-    chip.addEventListener("click", () => {
-      const cardId = chip.dataset.card;
-      if (team.equips[slotIndex] === cardId) {
-        delete team.equips[slotIndex];
-      } else {
-        team.equips[slotIndex] = cardId;
-      }
-      saveState(state);
-      soccerScreen = { mode: "slotMenu", slotIndex, returnTo };
-      render();
-    });
   });
 }
 
@@ -2335,20 +2033,17 @@ function simulateCpuPairingsForDay(day) {
 }
 
 function grantLeagueReward(rank) {
-  // 今の通貨だけで組んだ簡易版報酬（選手指名権・Tier確定パックは、ロースター改修後にアップグレード予定）
-  let packs = 0;
   let playerPacks = 0;
   let ticket = 0;
-  if (rank === 1) { packs = 3; playerPacks = 3; ticket = 1; }
-  else if (rank === 2) { packs = 2; playerPacks = 2; }
-  else if (rank === 3) { packs = 2; playerPacks = 1; }
-  else if (rank === 4) { packs = 1; playerPacks = 1; }
-  else { packs = 1; playerPacks = 0; }
+  if (rank === 1) { playerPacks = 4; ticket = 1; }
+  else if (rank === 2) { playerPacks = 3; }
+  else if (rank === 3) { playerPacks = 2; }
+  else if (rank === 4) { playerPacks = 1; }
+  else { playerPacks = 0; }
 
-  state.soccer.packs += packs;
   state.soccer.playerPacks += playerPacks;
   state.soccer.battleTickets += ticket;
-  return { packs, playerPacks, ticket };
+  return { playerPacks, ticket };
 }
 
 function finalizeLeagueWeek() {
@@ -2429,16 +2124,8 @@ function collectTeamForBattle() {
   team.slots.forEach((playerId, slotIndex) => {
     const player = playerId ? findPlayerById(playerId) : null;
     if (!player) return;
-    const equip = team.equips[slotIndex] ? findCardById(team.equips[slotIndex]) : null;
-    placed.push({ player, slotIndex, slotPos: slotDefs[slotIndex].pos, equip });
+    placed.push({ player, slotIndex, slotPos: slotDefs[slotIndex].pos });
   });
-
-  const boosts = { pass: 0, break: 0, shoot: 0, def: 0, rebound: 0 };
-  for (const entry of placed) {
-    if (!entry.equip) continue;
-    const effect = EQUIP_EFFECTS[entry.equip.id];
-    if (effect) boosts[effect] += 1;
-  }
 
   const bySlotPos = (pos) => placed.filter((entry) => entry.slotPos === pos);
   const mfEntries = bySlotPos("MF");
@@ -2458,7 +2145,7 @@ function collectTeamForBattle() {
   ];
   if (attackers.length === 0) attackers = placed.map((entry) => ({ entry, weight: 1 }));
 
-  return { placed, boosts, mid: Math.max(mid, 0.5), def: Math.max(def, 0.5), gk, gkEntry, dfEntries, attackers };
+  return { placed, mid: Math.max(mid, 0.5), def: Math.max(def, 0.5), gk, gkEntry, dfEntries, attackers };
 }
 
 function weightedPick(items) {
@@ -2495,46 +2182,34 @@ function simulateMatch(cpu, matchBonus = 0) {
       push(`⏱ 前半おわり　${myScore} - ${cpuScore}`, "info", { ball: 50 });
     }
 
-    const pAttack = clampChance(0.5 + (my.mid - cpu.mid) * 0.04 + my.boosts.pass * 0.04 + bonus * 0.4, 0.2, 0.8);
+    const pAttack = clampChance(0.5 + (my.mid - cpu.mid) * 0.04 + bonus * 0.4, 0.2, 0.8);
     if (Math.random() < pAttack) {
       const attacker = weightedPick(my.attackers);
       if (!attacker) continue;
       const player = attacker.player;
       const breakScore = Math.max(player.stats.dribble, player.stats.speed);
-      const hasBreakEquip = attacker.equip && EQUIP_EFFECTS[attacker.equip.id] === "break";
-      const breakChance = clampChance(0.4 + (breakScore - cpu.def) * 0.06 + my.boosts.break * 0.06 + bonus * 0.3, 0.15, 0.85);
+      const breakChance = clampChance(0.4 + (breakScore - cpu.def) * 0.06 + bonus * 0.3, 0.15, 0.85);
 
       if (Math.random() >= breakChance) {
         push(`${player.emoji}${player.name}が しかけたが、${cpu.name}に とめられた！`, "chance", { ball: 65, actor: player.id });
         continue;
       }
 
-      const flavor = hasBreakEquip ? `🎴${attacker.equip.name}！ ` : "";
       const useHeading = player.stats.heading > player.stats.shoot;
       const shootStat = useHeading ? player.stats.heading : player.stats.shoot;
-      const goalChance = clampChance(0.35 + (shootStat - cpu.gk) * 0.07 + my.boosts.shoot * 0.07 + bonus * 0.3, 0.12, 0.8);
+      const goalChance = clampChance(0.35 + (shootStat - cpu.gk) * 0.07 + bonus * 0.3, 0.12, 0.8);
 
       if (Math.random() < goalChance) {
         myScore += 1;
-        push(`${flavor}⚽ ゴーール！！ ${player.emoji}${player.name}が${useHeading ? " ヘディングで" : ""} きめた！`, "goal", { ball: 98, actor: player.id, flash: "goal" });
+        push(`⚽ ゴーール！！ ${player.emoji}${player.name}が${useHeading ? " ヘディングで" : ""} きめた！`, "goal", { ball: 98, actor: player.id, flash: "goal" });
       } else {
-        push(`${flavor}${player.emoji}${player.name}のシュート！ …キーパーに とめられた！`, "chance", { ball: 88, actor: player.id });
-        if (my.boosts.rebound > 0 && Math.random() < 0.45) {
-          const reboundEntry = my.placed.find((e) => e.equip && EQUIP_EFFECTS[e.equip.id] === "rebound") ?? attacker;
-          if (Math.random() < 0.5) {
-            myScore += 1;
-            push(`🎴こぼれ球に反応！ ${reboundEntry.player.emoji}${reboundEntry.player.name}が おしこんだ！ ⚽`, "goal", { ball: 98, actor: reboundEntry.player.id, flash: "goal" });
-          } else {
-            push(`こぼれ球に とびこんだが、おしくも 入らない！`, "chance", { ball: 90, actor: reboundEntry.player.id });
-          }
-        }
+        push(`${player.emoji}${player.name}のシュート！ …キーパーに とめられた！`, "chance", { ball: 88, actor: player.id });
       }
     } else {
-      const breakChance = clampChance(0.4 + (cpu.atk - my.def) * 0.06 - my.boosts.def * 0.07 - bonus * 0.3, 0.15, 0.85);
+      const breakChance = clampChance(0.4 + (cpu.atk - my.def) * 0.06 - bonus * 0.3, 0.15, 0.85);
       if (Math.random() >= breakChance) {
         const defender = my.dfEntries.length > 0 ? my.dfEntries[Math.floor(Math.random() * my.dfEntries.length)] : null;
-        const defEquip = defender?.equip && EQUIP_EFFECTS[defender.equip.id] === "def" ? `🎴${defender.equip.name}！ ` : "";
-        push(`${defEquip}ナイスまもり！ ${defender ? `${defender.player.emoji}${defender.player.name}` : "みんな"}が ボールをうばった！`, "good", { ball: 35, actor: defender?.player.id ?? null });
+        push(`ナイスまもり！ ${defender ? `${defender.player.emoji}${defender.player.name}` : "みんな"}が ボールをうばった！`, "good", { ball: 35, actor: defender?.player.id ?? null });
         continue;
       }
       const goalChance = clampChance(0.35 + (cpu.atk - my.gk) * 0.07 - bonus * 0.3, 0.12, 0.8);
