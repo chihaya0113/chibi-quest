@@ -1,5 +1,5 @@
-import { subjects } from "./curriculum.js?v=24";
-import { loadState, resetState, saveState } from "./storage.js?v=24";
+import { subjects } from "./curriculum.js?v=25";
+import { loadState, resetState, saveState } from "./storage.js?v=25";
 
 const allQuestions = [
   ...(window.CHIBI_QUEST_QUESTIONS ?? []),
@@ -144,12 +144,12 @@ function computeMatchupWinRate(myXI, myTactics, oppTactics) {
       value: atkVsDef
     });
   }
-  // ビルドアップ：ショートパスは、ロングパスの相手を細かいパス回しで剥がせる（一方通行の相性）
-  const buildupBonus = (myTactics.buildup === "shortpass" && oppTactics.buildup === "longpass") ? BUILDUP_BONUS : 0;
+  // ビルドアップ：自分と相手のタイプが違えば、自分のペースを押しつけやすい（対称。同じタイプは補正なし）
+  const buildupBonus = myTactics.buildup !== oppTactics.buildup ? BUILDUP_BONUS : 0;
   if (buildupBonus !== 0) {
     reasons.push({
       kind: "tactic",
-      label: `${TACTIC_LABELS.shortpass}が${TACTIC_LABELS.longpass}に有利`,
+      label: `${TACTIC_LABELS[myTactics.buildup]}が${TACTIC_LABELS[oppTactics.buildup]}に有利`,
       value: buildupBonus
     });
   }
@@ -252,6 +252,8 @@ const DAILY_SUBJECT_ORDER = ["math", "japanese", "english", "science", "social"]
 const RECENT_QUESTION_LIMIT = 120;
 const RECENT_FAMILY_LIMIT = 80;
 const POINTS_PER_PACK = 100;
+// チーム編成の合計コスト上限（11人×平均コスト5.5相当）
+const COST_BUDGET = 60;
 const WEAK_SCORE_BOOST = 100;
 const DIFFICULTY_ORDER = [3, 3, 2, 3, 2, 3, 3, 2, 3, 2];
 const app = document.querySelector("#app");
@@ -359,7 +361,9 @@ function renderHome() {
   const unlocked = new Set(state.unlockedUnits);
   const questions = getSubjectQuestions(subject.id);
   const availableQuestions = questions.filter((question) => unlocked.has(question.unit));
-  const progress = state.points ?? 0;
+  const totalPoints = state.points ?? 0;
+  const pointPacksAvailable = Math.floor(totalPoints / POINTS_PER_PACK);
+  const barProgress = totalPoints % POINTS_PER_PACK;
   const dailyButtonLabel = isCompletedToday() ? "もう一回やる" : dailyInProgress ? "つづきから" : "はじめる";
 
   const waiting = state.soccer.playerPacks + state.soccer.battleTickets;
@@ -372,8 +376,8 @@ function renderHome() {
           <h1>まいにち クエスト</h1>
         </div>
         <div class="levelBadge">
-          <span>🎯 ${progress}/${POINTS_PER_PACK}pt</span>
-          <small>あと${POINTS_PER_PACK - progress}ptで パック</small>
+          <span>🎯 ${totalPoints}pt</span>
+          <small>${pointPacksAvailable > 0 ? `パック${pointPacksAvailable}個 ひきかえOK！` : `あと${POINTS_PER_PACK - barProgress}ptで パック`}</small>
         </div>
       </section>
 
@@ -397,7 +401,7 @@ function renderHome() {
           `).join("")}
         </div>
         <div class="xpTrack" aria-label="つぎのパックまでのポイント">
-          <span style="width:${progress}%"></span>
+          <span style="width:${barProgress}%"></span>
         </div>
         <button class="primaryButton practiceStart" id="startButton" ${availableQuestions.length < QUESTIONS_PER_SESSION ? "disabled" : ""}>${escapeHtml(subject.label)}を 10問 スタート</button>
       </section>
@@ -1114,12 +1118,10 @@ function finishSession() {
     };
   }
 
-  state.points = (state.points ?? 0) + earnedPoints;
-  const packsFromPoints = Math.floor(state.points / POINTS_PER_PACK);
-  if (packsFromPoints > 0) {
-    state.points -= packsFromPoints * POINTS_PER_PACK;
-    state.soccer.playerPacks += packsFromPoints;
-  }
+  // ptは100を超えても自動でパックにはせず貯まり続ける。パックの受け取りはhubから手動で行う（openPointsPack）
+  const previousPoints = state.points ?? 0;
+  state.points = previousPoints + earnedPoints;
+  const newPointPacksUnlocked = Math.floor(state.points / POINTS_PER_PACK) - Math.floor(previousPoints / POINTS_PER_PACK);
   state.lastQuestionIds = [
     ...state.lastQuestionIds,
     ...allQuestionsInSession.map((question) => question.id)
@@ -1152,7 +1154,7 @@ function finishSession() {
     correctCount,
     totalQuestions,
     earnedPoints,
-    packsFromPoints,
+    newPointPacksUnlocked,
     perSubject,
     packEarned
   };
@@ -1197,7 +1199,7 @@ function renderResult() {
           <strong>${session.correctCount}</strong>
           <span>/${total}</span>
         </div>
-        <p class="xpGain">+${session.earnedPoints}pt${session.packsFromPoints > 0 ? `　🎉 パック${session.packsFromPoints}個 ゲット！` : ""}</p>
+        <p class="xpGain">+${session.earnedPoints}pt${session.newPointPacksUnlocked > 0 ? `　🎯 ポイントパックが引けるようになったよ！` : ""}</p>
         <div class="resultActions">
           <button class="primaryButton" id="againButton">もう一回</button>
           <button class="secondaryButton" id="homeButton">ホーム</button>
@@ -1243,10 +1245,10 @@ function renderDailyResult() {
             <strong>せんしゅパック ＆ 🎟たいせん券を ゲット！</strong>
           </div>
         ` : ""}
-        ${session.packsFromPoints > 0 ? `
+        ${session.newPointPacksUnlocked > 0 ? `
           <div class="packBanner">
             <span class="packEmoji">🎯</span>
-            <strong>100ptたっせい！ せんしゅパック${session.packsFromPoints}個 ゲット！</strong>
+            <strong>100ptたっせい！ ポイントパックが引けるようになったよ！</strong>
           </div>
         ` : ""}
         <div class="resultActions">
@@ -1342,6 +1344,7 @@ function renderSoccerHub() {
 
       <section class="hubGrid">
         ${tile("hubPlayerPack", "🧑", "せんしゅパック", `のこり ${s.playerPacks}こ`, s.playerPacks > 0 ? s.playerPacks : "", s.playerPacks <= 0)}
+        ${pointPacksAvailable() > 0 ? tile("hubPointsPack", "🎯", "ポイントパック", `のこり ${pointPacksAvailable()}こ`, pointPacksAvailable(), false) : ""}
         ${(s.guaranteedPacks ?? 0) > 0 ? tile("hubGuaranteedPack", "🌟", "A以上かくていパック", `のこり ${s.guaranteedPacks}こ`, s.guaranteedPacks, false) : ""}
         ${(s.nominationRights ?? 0) > 0 ? tile("hubNomination", "👑", "せんしゅ指名権", `のこり ${s.nominationRights}こ`, s.nominationRights, false) : ""}
         ${tile("hubBattle", "🏆", "リーグ", `🎟 ${s.battleTickets}まい`, s.battleTickets > 0 ? s.battleTickets : "", false)}
@@ -1358,6 +1361,7 @@ function renderSoccerHub() {
     render();
   });
   document.querySelector("#hubPlayerPack")?.addEventListener("click", openPlayerPack);
+  document.querySelector("#hubPointsPack")?.addEventListener("click", openPointsPack);
   document.querySelector("#hubGuaranteedPack")?.addEventListener("click", openGuaranteedPack);
   document.querySelector("#hubNomination")?.addEventListener("click", () => {
     soccerScreen = { mode: "nominationPick" };
@@ -1423,6 +1427,21 @@ function openGuaranteedPack() {
 
   session = null;
   soccerScreen = { mode: "playerReveal", results, guaranteed: true };
+  render();
+}
+
+function pointPacksAvailable() {
+  return Math.floor((state.points ?? 0) / POINTS_PER_PACK);
+}
+
+function openPointsPack() {
+  if (pointPacksAvailable() <= 0) return;
+  state.points -= POINTS_PER_PACK;
+  const results = [drawAndOwnPlayer()];
+  saveState(state);
+
+  session = null;
+  soccerScreen = { mode: "playerReveal", results };
   render();
 }
 
@@ -1836,7 +1855,25 @@ function computeTeamPower() {
   return power;
 }
 
+function computeTeamCost() {
+  const team = getTeam();
+  return team.slots.reduce((sum, playerId) => sum + (findPlayerById(playerId)?.cost ?? 0), 0);
+}
+
+// slotIndexにincomingPlayerIdを置いた場合の合計コスト（既存の同選手の重複や、入れ替え先の選手ぶんは除いて計算）
+function projectedTeamCost(slotIndex, incomingPlayerId) {
+  const team = getTeam();
+  const incomingCost = findPlayerById(incomingPlayerId)?.cost ?? 0;
+  let total = incomingCost;
+  team.slots.forEach((playerId, idx) => {
+    if (idx === slotIndex || playerId === incomingPlayerId) return;
+    total += findPlayerById(playerId)?.cost ?? 0;
+  });
+  return total;
+}
+
 function placePlayer(slotIndex, playerId) {
+  if (projectedTeamCost(slotIndex, playerId) > COST_BUDGET) return;
   const team = getTeam();
   const existingIndex = team.slots.indexOf(playerId);
   if (existingIndex >= 0 && existingIndex !== slotIndex) {
@@ -1891,6 +1928,8 @@ function renderTeam() {
         <strong class="packTitle">⚽ チームへんせい ${memberCount}/${formationSlots(team.formation).length}人</strong>
         <span class="teamPower">💪 ${computeTeamPower()}</span>
       </section>
+
+      <p class="costBudget ${computeTeamCost() > COST_BUDGET ? "over" : ""}">💰 コスト ${computeTeamCost()}/${COST_BUDGET}</p>
 
       <section class="formationSwitch">
         ${Object.keys(FORMATIONS).map((key) => `
@@ -1954,6 +1993,8 @@ function renderPickPlayer() {
         <span></span>
       </section>
 
+      <p class="dexHint">💰 コスト ${computeTeamCost()}/${COST_BUDGET}</p>
+
       ${sorted.length === 0 ? `
         <p class="dexHint">まだ選手がいないよ。日課をクリアして 🧑せんしゅパックを あけよう！</p>
       ` : `
@@ -1961,16 +2002,17 @@ function renderPickPlayer() {
           ${sorted.map((player) => {
             const inSlot = team.slots.indexOf(player.id);
             const fit = player.position === slotPos;
+            const overBudget = projectedTeamCost(slotIndex, player.id) > COST_BUDGET;
             return `
-              <button class="pickRow pos-${player.position.toLowerCase()}" data-player="${player.id}">
+              <button class="pickRow pos-${player.position.toLowerCase()} ${overBudget ? "overBudget" : ""}" data-player="${player.id}" ${overBudget ? "disabled" : ""}>
                 <span class="dexPlayerAvatar">${avatarHtml(player, 28)}</span>
                 <span class="pickRowMain">
                   <strong>${escapeHtml(player.name)}</strong>
                   <small>${player.flag} ${escapeHtml(player.club)}</small>
                 </span>
                 <span class="posBadge">${escapeHtml(player.position)}</span>
-                <span class="pickRowPower">💪${playerPower(player)}</span>
-                <span class="pickRowTag">${fit ? "✨ぴったり" : ""}${inSlot >= 0 ? " 出場中" : ""}</span>
+                <span class="pickRowPower">💪${playerPower(player)}・💰${player.cost ?? 0}</span>
+                <span class="pickRowTag">${overBudget ? "コストオーバー" : fit ? "✨ぴったり" : ""}${inSlot >= 0 ? " 出場中" : ""}</span>
               </button>
             `;
           }).join("")}
@@ -2360,6 +2402,14 @@ function playTodayLeagueMatch() {
   render();
 }
 
+function formatRewardBreakdown(reward) {
+  const parts = [];
+  if (reward.nominationRights > 0) parts.push(`👑 せんしゅ指名権×${reward.nominationRights}`);
+  if (reward.guaranteedPacks > 0) parts.push(`🌟 A以上かくていパック×${reward.guaranteedPacks}`);
+  if (reward.playerPacks > 0) parts.push(`🧑 通常パック×${reward.playerPacks}`);
+  return parts.length > 0 ? parts.join("　") : "なし";
+}
+
 function renderBattleSelect() {
   window.onkeydown = null;
   ensureLeagueWeek();
@@ -2401,6 +2451,14 @@ function renderBattleSelect() {
       <p class="dexHint">きみのチーム：${placedCount}/${formationSlots(getTeam().formation).length}人・💪${computeTeamPower()}　${placedCount === 0 ? "まず ⚽チームへんせいで 選手をおこう！" : ""}</p>
 
       ${todayBox}
+
+      ${league.lastReward ? `
+        <section class="settingsCard lastRewardCard">
+          <p class="eyebrow">先週の じゅんい ほうしゅう</p>
+          <p class="lastRewardRank">${league.lastReward.rank}位</p>
+          <p class="lastRewardBreakdown">${formatRewardBreakdown(league.lastReward)}</p>
+        </section>
+      ` : ""}
 
       <section class="settingsCard">
         <p class="eyebrow">こんしゅうの じゅんい表</p>
@@ -2451,7 +2509,8 @@ function renderPrematch() {
   }, { opt: null, bonus: 0 });
   const bestDef = bestOf(["forecheck", "retreat"], cpu.tactics.attack);
   const bestAtk = bestOf(["possession", "counter"], cpu.tactics.defense);
-  const bestBuildup = cpu.tactics.buildup === "longpass" ? { opt: "shortpass", bonus: BUILDUP_BONUS } : { opt: null, bonus: 0 };
+  // ビルドアップは対称ルールなので、相手と違うタイプが常に有利
+  const bestBuildup = { opt: cpu.tactics.buildup === "shortpass" ? "longpass" : "shortpass", bonus: BUILDUP_BONUS };
 
   const tacticGroup = (kind, options, recommended) => `
     <div class="tacticGroup">
@@ -2484,12 +2543,12 @@ function renderPrematch() {
         <p class="matchupHintTitle">💡 この相手に有効な戦術</p>
         <p class="matchupHintLine">${bestDef.opt ? `守備は「${TACTIC_LABELS[bestDef.opt]}」が有利だよ（＋${bestDef.bonus}%）` : "守備はどちらでも大きな差はないよ"}</p>
         <p class="matchupHintLine">${bestAtk.opt ? `攻撃は「${TACTIC_LABELS[bestAtk.opt]}」が有利だよ（＋${bestAtk.bonus}%）` : "攻撃はどちらでも大きな差はないよ"}</p>
-        ${bestBuildup.opt ? `<p class="matchupHintLine">ビルドアップは「ショートパス」が有利だよ（＋${bestBuildup.bonus}%）</p>` : ""}
+        <p class="matchupHintLine">ビルドアップは「${TACTIC_LABELS[bestBuildup.opt]}」が有利だよ（＋${bestBuildup.bonus}%）</p>
         <p class="matchupHintLine">🎯 選んだ戦術に合う特性を持つ選手を並べると、さらに有利になるよ</p>
       </section>
 
       <section class="settingsCard winRateCard">
-        <p class="eyebrow">きみの チーム：${placedCount}/${formationSlots(team.formation).length}人・💪${computeTeamPower()}</p>
+        <p class="eyebrow">きみの チーム：${placedCount}/${formationSlots(team.formation).length}人・💪${computeTeamPower()}・💰${computeTeamCost()}/${COST_BUDGET}</p>
         <button class="secondaryButton" id="editTeamButton">チームをへんせいする（${FORMATIONS[team.formation].label}）</button>
 
         <p class="winRateBig">かちめ ${winRate.finalPercent}%</p>

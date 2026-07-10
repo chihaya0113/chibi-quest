@@ -1131,6 +1131,23 @@ details.tacticHint .hintText {
 .pickRow.pos-df { background: var(--sky); }
 .pickRow.pos-gk { background: var(--ok-bg); }
 
+.pickRow.overBudget,
+.pickRow[disabled] {
+  opacity: 0.5;
+  filter: grayscale(0.6);
+  cursor: not-allowed;
+}
+
+.costBudget {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.costBudget.over {
+  color: var(--cta);
+}
+
 .pickRowMain {
   flex: 1;
   display: grid;
@@ -1663,6 +1680,20 @@ details.tacticHint .hintText {
   color: var(--ink-soft);
   font-weight: 600;
   font-size: 0.85rem;
+}
+
+.lastRewardCard { text-align: center; }
+
+.lastRewardRank {
+  margin: 6px 0 4px;
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.lastRewardBreakdown {
+  margin: 0;
+  font-weight: 700;
+  font-size: 0.9rem;
 }
 
 .statChips {
