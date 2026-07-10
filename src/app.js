@@ -1,5 +1,5 @@
-import { subjects } from "./curriculum.js?v=23";
-import { getLevelFromXp, loadState, resetState, saveState } from "./storage.js?v=23";
+import { subjects } from "./curriculum.js?v=24";
+import { loadState, resetState, saveState } from "./storage.js?v=24";
 
 const allQuestions = [
   ...(window.CHIBI_QUEST_QUESTIONS ?? []),
@@ -12,9 +12,11 @@ const soccerPlayers = window.CHIBI_QUEST_SOCCER_PLAYERS ?? [];
 // パック・図鑑の対象（スターターれんしゅうせいは除く）
 const collectiblePlayers = soccerPlayers.filter((player) => !player.starter);
 const starterPlayers = soccerPlayers.filter((player) => player.starter);
+// A以上かくていパックの排出対象（Tier S・Aのみ）
+const guaranteedPlayerPool = collectiblePlayers.filter((player) => player.tier === "S" || player.tier === "A");
 // 現在排出中の最新弾（既存プレイヤーの最大wave値）
 const CURRENT_WAVE = collectiblePlayers.reduce((max, player) => Math.max(max, player.wave ?? 1), 1);
-const PLAYER_PACK_DRAW_COUNT = 3;
+const PLAYER_PACK_DRAW_COUNT = 1;
 // スロット順（GK,DF,DF,MF,MF,MF,FW,FW）に合わせたスターター初期配置
 const STARTER_SLOT_FILL = ["st_101", "st_102", "st_103", "st_104", "st_105", "st_106", "st_107", "st_108"];
 const RARITY_WEIGHTS = { 1: 6, 2: 3, 3: 1 };
@@ -53,6 +55,48 @@ const TRAIT_TO_TACTIC = {};
 for (const [tactic, traits] of Object.entries(TACTIC_TRAIT_POOLS)) {
   for (const trait of traits) TRAIT_TO_TACTIC[trait] = tactic;
 }
+
+// 戦術・特性のかんたんせつめい（❓ヒント表示用）
+const TACTIC_HINTS = {
+  forecheck: "前からすばやくボールをうばいにいく、守り方だよ。",
+  retreat: "後ろにさがって、しっかり守るねばり強い守り方だよ。",
+  possession: "パスをつないで、ボールを持ち続ける攻め方だよ。",
+  counter: "すきをついて、いっきにスピードで攻める攻め方だよ。",
+  shortpass: "近くの味方に、細かくパスをつなぐ組み立て方だよ。",
+  longpass: "遠くまで、大きくボールを送る組み立て方だよ。"
+};
+const TRAIT_HINTS = {
+  "ボール奪取": "相手からボールをうばうのが得意だよ。",
+  "スタミナ": "さいごまで元気に走り続けられるよ。",
+  "アグレッシブ": "強気にぶつかっていけるよ。",
+  "プレッシャー": "相手にプレッシャーをかけて、あせらせるよ。",
+  "飛び出し（GK）": "キーパーが前に出て、ピンチを防ぐよ。",
+  "カバーリング": "味方の後ろを、しっかりカバーするよ。",
+  "空中戦": "ジャンプして、ヘディングで競り勝つよ。",
+  "守備ポジショニング": "守る場所どりが、うまいよ。",
+  "対人守備": "1対1の守りに、強いよ。",
+  "GKセービング": "キーパーがシュートを止めるのが、得意だよ。",
+  "パス精度": "正確なパスを、味方に届けられるよ。",
+  "トラップ": "ボールを、ピタッと止められるよ。",
+  "視野": "まわりがよく見えていて、パスコースを見つけるよ。",
+  "ボールキープ": "相手にボールを、取られにくいよ。",
+  "ドリブル": "ボールを持って、相手をかわすのが得意だよ。",
+  "スピード": "とにかく、足が速いよ。",
+  "裏抜け": "相手の後ろへ、すばやく走りこむよ。",
+  "決定力": "チャンスを、しっかりゴールに決めるよ。",
+  "瞬発力": "一瞬で、トップスピードに入れるよ。",
+  "オフザボール": "ボールがない時の動き方が、うまいよ。",
+  "ワンタッチパス": "パスを止めずに、すぐつなげるよ。",
+  "スルーパス": "相手の間を通す、鋭いパスが出せるよ。",
+  "テクニック": "細かいボールさばきが、うまいよ。",
+  "コントロールシュート": "ねらったところに、シュートを打てるよ。",
+  "敏捷性": "すばやく、体の向きを変えられるよ。",
+  "ロングフィード": "遠くの味方へ、正確に大きいパスを送れるよ。",
+  "クロス精度": "サイドから、正確なクロスを上げられるよ。",
+  "ロングシュート": "遠くからでも、強いシュートが打てるよ。",
+  "ターゲットマン": "前線で、ボールを収めるのがうまいよ。",
+  "フィジカル": "体が強くて、当たり負けしないよ。"
+};
 
 // 守備⇄攻撃のクロス相性（4すくみ：forecheck→possession→retreat→counter→forecheck）。
 // ビルドアップ（shortpass/longpass）は勝率の直接補正を持たず、特性プールの選択にのみ関わる。
@@ -207,6 +251,7 @@ const QUESTIONS_PER_DAILY_SUBJECT = 10;
 const DAILY_SUBJECT_ORDER = ["math", "japanese", "english", "science", "social"];
 const RECENT_QUESTION_LIMIT = 120;
 const RECENT_FAMILY_LIMIT = 80;
+const POINTS_PER_PACK = 100;
 const WEAK_SCORE_BOOST = 100;
 const DIFFICULTY_ORDER = [3, 3, 2, 3, 2, 3, 3, 2, 3, 2];
 const app = document.querySelector("#app");
@@ -314,7 +359,7 @@ function renderHome() {
   const unlocked = new Set(state.unlockedUnits);
   const questions = getSubjectQuestions(subject.id);
   const availableQuestions = questions.filter((question) => unlocked.has(question.unit));
-  const progress = state.xp % 100;
+  const progress = state.points ?? 0;
   const dailyButtonLabel = isCompletedToday() ? "もう一回やる" : dailyInProgress ? "つづきから" : "はじめる";
 
   const waiting = state.soccer.playerPacks + state.soccer.battleTickets;
@@ -327,8 +372,8 @@ function renderHome() {
           <h1>まいにち クエスト</h1>
         </div>
         <div class="levelBadge">
-          <span>Lv.${state.level}</span>
-          <small>${state.xp} XP</small>
+          <span>🎯 ${progress}/${POINTS_PER_PACK}pt</span>
+          <small>あと${POINTS_PER_PACK - progress}ptで パック</small>
         </div>
       </section>
 
@@ -351,7 +396,7 @@ function renderHome() {
             </button>
           `).join("")}
         </div>
-        <div class="xpTrack" aria-label="次のレベルまでの経験値">
+        <div class="xpTrack" aria-label="つぎのパックまでのポイント">
           <span style="width:${progress}%"></span>
         </div>
         <button class="primaryButton practiceStart" id="startButton" ${availableQuestions.length < QUESTIONS_PER_SESSION ? "disabled" : ""}>${escapeHtml(subject.label)}を 10問 スタート</button>
@@ -1055,8 +1100,7 @@ function finishSession() {
   const allQuestionsInSession = session.segments.flatMap((segment) => segment.questions);
   const correctCount = session.answers.filter((answer) => answer.isCorrect).length;
   const totalQuestions = allQuestionsInSession.length;
-  const base = session.kind === "daily" ? 50 : 10;
-  const earnedXp = correctCount * 12 + base;
+  const earnedPoints = correctCount;
   const answeredAt = new Date().toISOString();
   const sessionId = `session_${Date.now()}_${session.kind}`;
 
@@ -1070,8 +1114,12 @@ function finishSession() {
     };
   }
 
-  state.xp += earnedXp;
-  state.level = getLevelFromXp(state.xp);
+  state.points = (state.points ?? 0) + earnedPoints;
+  const packsFromPoints = Math.floor(state.points / POINTS_PER_PACK);
+  if (packsFromPoints > 0) {
+    state.points -= packsFromPoints * POINTS_PER_PACK;
+    state.soccer.playerPacks += packsFromPoints;
+  }
   state.lastQuestionIds = [
     ...state.lastQuestionIds,
     ...allQuestionsInSession.map((question) => question.id)
@@ -1103,7 +1151,8 @@ function finishSession() {
     mode: "result",
     correctCount,
     totalQuestions,
-    earnedXp,
+    earnedPoints,
+    packsFromPoints,
     perSubject,
     packEarned
   };
@@ -1148,7 +1197,7 @@ function renderResult() {
           <strong>${session.correctCount}</strong>
           <span>/${total}</span>
         </div>
-        <p class="xpGain">+${session.earnedXp} XP</p>
+        <p class="xpGain">+${session.earnedPoints}pt${session.packsFromPoints > 0 ? `　🎉 パック${session.packsFromPoints}個 ゲット！` : ""}</p>
         <div class="resultActions">
           <button class="primaryButton" id="againButton">もう一回</button>
           <button class="secondaryButton" id="homeButton">ホーム</button>
@@ -1182,7 +1231,7 @@ function renderDailyResult() {
         <p class="eyebrow">きょうの日課</p>
         <div class="treasureChest">${chest}</div>
         <h1>${headline}</h1>
-        <p class="xpGain">+${session.earnedXp} XP / 🔥 れんぞく ${currentStreak()}日</p>
+        <p class="xpGain">+${session.earnedPoints}pt / 🔥 れんぞく ${currentStreak()}日</p>
         <div class="dailyBreakdown">${rows}</div>
         <div class="scoreCircle dailyScoreCircle">
           <strong>${session.correctCount}</strong>
@@ -1192,6 +1241,12 @@ function renderDailyResult() {
           <div class="packBanner">
             <span class="packEmoji">🧑</span>
             <strong>せんしゅパック ＆ 🎟たいせん券を ゲット！</strong>
+          </div>
+        ` : ""}
+        ${session.packsFromPoints > 0 ? `
+          <div class="packBanner">
+            <span class="packEmoji">🎯</span>
+            <strong>100ptたっせい！ せんしゅパック${session.packsFromPoints}個 ゲット！</strong>
           </div>
         ` : ""}
         <div class="resultActions">
@@ -1227,6 +1282,10 @@ function renderSoccer() {
     renderPlayerDetail();
     return;
   }
+  if (soccerScreen.mode === "nominationPick") {
+    renderNominationPick();
+    return;
+  }
   if (soccerScreen.mode === "team") {
     renderTeam();
     return;
@@ -1237,10 +1296,6 @@ function renderSoccer() {
   }
   if (soccerScreen.mode === "slotMenu") {
     renderSlotMenu();
-    return;
-  }
-  if (soccerScreen.mode === "benchAssign") {
-    renderBenchAssign();
     return;
   }
   if (soccerScreen.mode === "battleSelect") {
@@ -1286,7 +1341,9 @@ function renderSoccerHub() {
       </section>
 
       <section class="hubGrid">
-        ${tile("hubPlayerPack", "🧑", "せんしゅパック", `のこり ${s.playerPacks}こ・1こで${PLAYER_PACK_DRAW_COUNT}人`, s.playerPacks > 0 ? s.playerPacks : "", s.playerPacks <= 0)}
+        ${tile("hubPlayerPack", "🧑", "せんしゅパック", `のこり ${s.playerPacks}こ`, s.playerPacks > 0 ? s.playerPacks : "", s.playerPacks <= 0)}
+        ${(s.guaranteedPacks ?? 0) > 0 ? tile("hubGuaranteedPack", "🌟", "A以上かくていパック", `のこり ${s.guaranteedPacks}こ`, s.guaranteedPacks, false) : ""}
+        ${(s.nominationRights ?? 0) > 0 ? tile("hubNomination", "👑", "せんしゅ指名権", `のこり ${s.nominationRights}こ`, s.nominationRights, false) : ""}
         ${tile("hubBattle", "🏆", "リーグ", `🎟 ${s.battleTickets}まい`, s.battleTickets > 0 ? s.battleTickets : "", false)}
         ${tile("hubTeam", "🧩", "チームへんせい", "せんしゅを ならべる", "", false)}
         ${tile("hubDex", "📖", "ずかん", `せんしゅ ${countOwnedPlayers()}/${collectiblePlayers.length}`, "", false)}
@@ -1301,6 +1358,11 @@ function renderSoccerHub() {
     render();
   });
   document.querySelector("#hubPlayerPack")?.addEventListener("click", openPlayerPack);
+  document.querySelector("#hubGuaranteedPack")?.addEventListener("click", openGuaranteedPack);
+  document.querySelector("#hubNomination")?.addEventListener("click", () => {
+    soccerScreen = { mode: "nominationPick" };
+    render();
+  });
   document.querySelector("#hubBattle")?.addEventListener("click", () => {
     soccerScreen = { mode: "battleSelect" };
     render();
@@ -1319,16 +1381,23 @@ function isPlayerAvailable(player) {
   return player.starter || (state.soccer.players[player.id] ?? 0) > 0;
 }
 
-function drawPlayer() {
-  const unowned = collectiblePlayers.filter((player) => !(state.soccer.players[player.id] > 0));
-  const pool = unowned.length > 0 ? unowned : collectiblePlayers;
-  const totalWeight = pool.reduce((sum, player) => sum + (RARITY_WEIGHTS[player.rarity] ?? 1), 0);
+function drawPlayer(pool = collectiblePlayers) {
+  const unowned = pool.filter((player) => !(state.soccer.players[player.id] > 0));
+  const drawPool = unowned.length > 0 ? unowned : pool;
+  const totalWeight = drawPool.reduce((sum, player) => sum + (RARITY_WEIGHTS[player.rarity] ?? 1), 0);
   let roll = Math.random() * totalWeight;
-  for (const player of pool) {
+  for (const player of drawPool) {
     roll -= RARITY_WEIGHTS[player.rarity] ?? 1;
     if (roll <= 0) return player;
   }
-  return pool[pool.length - 1];
+  return drawPool[drawPool.length - 1];
+}
+
+function drawAndOwnPlayer(pool = collectiblePlayers) {
+  const player = drawPlayer(pool);
+  const previousCount = state.soccer.players[player.id] ?? 0;
+  state.soccer.players[player.id] = previousCount + 1;
+  return { player, isNew: previousCount === 0, count: previousCount + 1 };
 }
 
 function openPlayerPack() {
@@ -1337,15 +1406,23 @@ function openPlayerPack() {
 
   const results = [];
   for (let i = 0; i < PLAYER_PACK_DRAW_COUNT; i += 1) {
-    const player = drawPlayer();
-    const previousCount = state.soccer.players[player.id] ?? 0;
-    state.soccer.players[player.id] = previousCount + 1;
-    results.push({ player, isNew: previousCount === 0, count: previousCount + 1 });
+    results.push(drawAndOwnPlayer());
   }
   saveState(state);
 
   session = null;
   soccerScreen = { mode: "playerReveal", results };
+  render();
+}
+
+function openGuaranteedPack() {
+  if ((state.soccer.guaranteedPacks ?? 0) <= 0) return;
+  state.soccer.guaranteedPacks -= 1;
+  const results = [drawAndOwnPlayer(guaranteedPlayerPool)];
+  saveState(state);
+
+  session = null;
+  soccerScreen = { mode: "playerReveal", results, guaranteed: true };
   render();
 }
 
@@ -1466,11 +1543,19 @@ function renderPlayerCardFace(player, options = {}) {
       <div class="playerStats">${renderStatBars(player)}</div>
       ${traits.length > 0 ? `
         <div class="traitSection">
-          <p class="traitTactic">🎯 得意戦術：${escapeHtml(TACTIC_LABELS[player.specialtyTactic] ?? "")}</p>
+          <details class="hintDetails tacticHint">
+            <summary class="traitTactic">🎯 得意戦術：${escapeHtml(TACTIC_LABELS[player.specialtyTactic] ?? "")} <span class="hintBadge">❓</span></summary>
+            <p class="hintText">${escapeHtml(TACTIC_HINTS[player.specialtyTactic] ?? "")}</p>
+          </details>
           <div class="traitChips">
             ${traits.map((trait) => {
               const isUnlocked = unlocked.has(trait);
-              return `<span class="traitChip ${isUnlocked ? "unlocked" : "locked"}">${isUnlocked ? "✨" : "🔒"} ${escapeHtml(trait)}</span>`;
+              return `
+                <details class="hintDetails traitChip ${isUnlocked ? "unlocked" : "locked"}">
+                  <summary>${isUnlocked ? "✨" : "🔒"} ${escapeHtml(trait)} <span class="hintBadge">❓</span></summary>
+                  <p class="hintText">${escapeHtml(TRAIT_HINTS[trait] ?? "")}</p>
+                </details>
+              `;
             }).join("")}
           </div>
         </div>
@@ -1483,12 +1568,14 @@ function renderPlayerReveal() {
   window.onkeydown = null;
   const { results } = soccerScreen;
   const newCount = results.filter((entry) => entry.isNew).length;
-  const headline = newCount > 0 ? `せんしゅ ${results.length}人 ゲット！` : "また 会えた！";
+  const headline = newCount === 0
+    ? "また 会えた！"
+    : results.length > 1 ? `せんしゅ ${results.length}人 ゲット！` : "せんしゅ ゲット！";
 
   app.innerHTML = `
     <main class="shell resultShell">
       <section class="resultPanel soccerRevealPanel">
-        <p class="eyebrow">🧑 せんしゅパック かいふう（第${CURRENT_WAVE}弾）</p>
+        <p class="eyebrow">${soccerScreen.nominated ? "👑 せんしゅ指名権" : soccerScreen.guaranteed ? "🌟 A以上かくていパック かいふう" : `🧑 せんしゅパック かいふう（第${CURRENT_WAVE}弾）`}</p>
         <h1>${headline}</h1>
         <div class="packRevealGrid">
           ${results.map((entry) => `
@@ -1551,6 +1638,68 @@ function renderPlayerDetail() {
   document.querySelector("#backButton").addEventListener("click", () => {
     soccerScreen = { mode: "dex", tab: "players" };
     render();
+  });
+}
+
+function renderNominationPick() {
+  window.onkeydown = null;
+  if ((state.soccer.nominationRights ?? 0) <= 0) {
+    soccerScreen = { mode: "hub" };
+    render();
+    return;
+  }
+  const sorted = [...collectiblePlayers].sort((a, b) => {
+    const posDiff = (POSITION_ORDER[a.position] ?? 9) - (POSITION_ORDER[b.position] ?? 9);
+    return posDiff !== 0 ? posDiff : a.playerNo - b.playerNo;
+  });
+
+  app.innerHTML = `
+    <main class="shell">
+      <section class="quizHeader">
+        <button class="iconButton" id="backButton" aria-label="サッカーへもどる">←</button>
+        <strong class="packTitle">👑 せんしゅ指名権</strong>
+        <span></span>
+      </section>
+      <p class="dexHint">好きな選手を1人えらぼう。かならず その選手が手に入るよ！（のこり${state.soccer.nominationRights}こ）</p>
+      <section class="pickList">
+        ${sorted.map((player) => {
+          const count = state.soccer.players[player.id] ?? 0;
+          return `
+            <button class="pickRow pos-${player.position.toLowerCase()}" data-player="${player.id}">
+              <span class="dexPlayerAvatar">${avatarHtml(player, 28)}</span>
+              <span class="pickRowMain">
+                <strong>${escapeHtml(player.name)}</strong>
+                <small>${player.flag} ${escapeHtml(player.club)}</small>
+              </span>
+              <span class="posBadge">${escapeHtml(player.position)}</span>
+              <span class="pickRowPower">💪${playerPower(player)}</span>
+              <span class="pickRowTag">${count > 0 ? `所持×${count}` : ""}</span>
+            </button>
+          `;
+        }).join("")}
+      </section>
+    </main>
+  `;
+
+  document.querySelector("#backButton").addEventListener("click", () => {
+    soccerScreen = { mode: "hub" };
+    render();
+  });
+  document.querySelectorAll(".pickRow").forEach((row) => {
+    row.addEventListener("click", () => {
+      if ((state.soccer.nominationRights ?? 0) <= 0) return;
+      const playerId = row.dataset.player;
+      state.soccer.nominationRights -= 1;
+      const previousCount = state.soccer.players[playerId] ?? 0;
+      state.soccer.players[playerId] = previousCount + 1;
+      saveState(state);
+      soccerScreen = {
+        mode: "playerReveal",
+        results: [{ player: findPlayerById(playerId), isNew: previousCount === 0, count: previousCount + 1 }],
+        nominated: true
+      };
+      render();
+    });
   });
 }
 
@@ -1667,12 +1816,6 @@ function setFormation(formationKey) {
   saveState(state);
 }
 
-function benchPlayers() {
-  const team = getTeam();
-  const placed = new Set(team.slots.filter(Boolean));
-  return soccerPlayers.filter((player) => isPlayerAvailable(player) && !placed.has(player.id));
-}
-
 function findPlayerById(playerId) {
   return soccerPlayers.find((player) => player.id === playerId);
 }
@@ -1739,7 +1882,6 @@ function renderTeam() {
   const team = getTeam();
   const memberCount = team.slots.filter(Boolean).length;
   const rows = formationRows(team.formation);
-  const bench = benchPlayers();
   const returnTo = soccerScreen?.returnTo ?? null;
 
   app.innerHTML = `
@@ -1765,22 +1907,6 @@ function renderTeam() {
       </section>
 
       <p class="dexHint">マスをタップして 選手をえらぼう。</p>
-
-      <section class="benchBoard">
-        <p class="eyebrow">🪑 ひかえ選手（タップで あいているマスへ）</p>
-        ${bench.length === 0 ? `
-          <p class="dexHint">ひかえの選手はいないよ。</p>
-        ` : `
-          <div class="benchRow">
-            ${bench.map((player) => `
-              <button class="benchTile pos-${player.position.toLowerCase()}" data-bench-player="${player.id}">
-                <span class="teamSlotAvatar">${avatarHtml(player, 26)}</span>
-                <span class="posBadge">${escapeHtml(player.position)}</span>
-              </button>
-            `).join("")}
-          </div>
-        `}
-      </section>
     </main>
   `;
 
@@ -1792,25 +1918,6 @@ function renderTeam() {
     chip.addEventListener("click", () => {
       setFormation(chip.dataset.formation);
       render();
-    });
-  });
-  document.querySelectorAll(".benchTile").forEach((tile) => {
-    tile.addEventListener("click", () => {
-      const playerId = tile.dataset.benchPlayer;
-      const currentTeam = getTeam();
-      const slotDefs = formationSlots(currentTeam.formation);
-      const emptyMatchIndex = slotDefs.findIndex((slot, index) => !currentTeam.slots[index] && slot.pos === findPlayerById(playerId)?.position);
-      const emptyAnyIndex = slotDefs.findIndex((slot, index) => !currentTeam.slots[index]);
-      if (emptyMatchIndex >= 0) {
-        placePlayer(emptyMatchIndex, playerId);
-        render();
-      } else if (emptyAnyIndex >= 0) {
-        placePlayer(emptyAnyIndex, playerId);
-        render();
-      } else {
-        soccerScreen = { mode: "benchAssign", playerId, returnTo };
-        render();
-      }
     });
   });
   document.querySelectorAll(".teamSlot").forEach((slot) => {
@@ -1934,57 +2041,6 @@ function renderSlotMenu() {
   });
 }
 
-function renderBenchAssign() {
-  window.onkeydown = null;
-  const playerId = soccerScreen.playerId;
-  const returnTo = soccerScreen.returnTo ?? null;
-  const player = findPlayerById(playerId);
-  const team = getTeam();
-  const slotDefs = formationSlots(team.formation);
-  if (!player) {
-    soccerScreen = { mode: "team", returnTo };
-    render();
-    return;
-  }
-
-  app.innerHTML = `
-    <main class="shell">
-      <section class="quizHeader">
-        <button class="iconButton" id="backButton" aria-label="編成にもどる">←</button>
-        <strong class="packTitle">${escapeHtml(player.name)}を どのマスに？</strong>
-        <span></span>
-      </section>
-      <p class="dexHint">入れかえたいマスをタップしてね。</p>
-      <section class="pickList">
-        ${slotDefs.map((slotDef) => {
-          const current = findPlayerById(team.slots[slotDef.index]);
-          return `
-            <button class="pickRow pos-${slotDef.pos.toLowerCase()}" data-slot="${slotDef.index}">
-              <span class="dexPlayerAvatar">${current ? avatarHtml(current, 28) : "＋"}</span>
-              <span class="pickRowMain">
-                <strong>${current ? escapeHtml(current.name) : "（からのマス）"}</strong>
-              </span>
-              <span class="posBadge">${escapeHtml(slotDef.pos)}</span>
-            </button>
-          `;
-        }).join("")}
-      </section>
-    </main>
-  `;
-
-  document.querySelector("#backButton").addEventListener("click", () => {
-    soccerScreen = { mode: "team", returnTo };
-    render();
-  });
-  document.querySelectorAll(".pickRow").forEach((row) => {
-    row.addEventListener("click", () => {
-      placePlayer(Number(row.dataset.slot), playerId);
-      soccerScreen = { mode: "team", returnTo };
-      render();
-    });
-  });
-}
-
 // ---- リーグ（8チーム総当たり・週間シーズン） ----
 
 function parseDateKey(key) {
@@ -2057,16 +2113,18 @@ function simulateCpuPairingsForDay(day) {
 
 function grantLeagueReward(rank) {
   let playerPacks = 0;
-  let ticket = 0;
-  if (rank === 1) { playerPacks = 4; ticket = 1; }
-  else if (rank === 2) { playerPacks = 3; }
-  else if (rank === 3) { playerPacks = 2; }
-  else if (rank === 4) { playerPacks = 1; }
-  else { playerPacks = 0; }
+  let guaranteedPacks = 0;
+  let nominationRights = 0;
+  if (rank === 1) { nominationRights = 1; guaranteedPacks = 1; playerPacks = 3; }
+  else if (rank === 2) { guaranteedPacks = 1; playerPacks = 3; }
+  else if (rank === 3) { playerPacks = 3; }
+  else if (rank === 4) { playerPacks = 2; }
+  else { playerPacks = 1; }
 
   state.soccer.playerPacks += playerPacks;
-  state.soccer.battleTickets += ticket;
-  return { playerPacks, ticket };
+  state.soccer.guaranteedPacks = (state.soccer.guaranteedPacks ?? 0) + guaranteedPacks;
+  state.soccer.nominationRights = (state.soccer.nominationRights ?? 0) + nominationRights;
+  return { playerPacks, guaranteedPacks, nominationRights };
 }
 
 function finalizeLeagueWeek() {
@@ -2284,26 +2342,21 @@ function playTodayLeagueMatch() {
   state.soccer.battleTickets -= 1;
 
   let outcome = "loss";
-  let reward = 10;
   let resultText = "まけちゃった… でも いい経験！";
   if (match.myScore > match.cpuScore) {
     outcome = "win";
-    reward = 30;
     resultText = "🏆 しょうり！！";
   } else if (match.myScore === match.cpuScore) {
     outcome = "draw";
-    reward = 15;
     resultText = "ひきわけ！ おしい！";
   }
 
   applyResultToStandings(state.soccer.league.standings, 0, outcome);
   state.soccer.league.playedDays[fixture.dayIndex] = { kind: outcome, myScore: match.myScore, cpuScore: match.cpuScore };
 
-  state.xp += reward;
-  state.level = getLevelFromXp(state.xp);
   saveState(state);
 
-  soccerScreen = { mode: "battle", opponent: fixture.opponent, match, reward, resultText };
+  soccerScreen = { mode: "battle", opponent: fixture.opponent, match, resultText };
   render();
 }
 
@@ -2391,12 +2444,23 @@ function renderPrematch() {
   const myTactics = getMyTactics();
   const winRate = computeMatchupWinRate(myXIPlayers(), myTactics, cpu.tactics);
 
-  const tacticGroup = (kind, options) => `
+  // この相手に対して、守備・攻撃それぞれどちらの選択肢が有利かを事前計算（選択前でも分かるヒント用）
+  const bestOf = (options, oppValue) => options.reduce((best, opt) => {
+    const bonus = TACTIC_MATCHUP_BONUS[`${opt}_vs_${oppValue}`] ?? 0;
+    return bonus > best.bonus ? { opt, bonus } : best;
+  }, { opt: null, bonus: 0 });
+  const bestDef = bestOf(["forecheck", "retreat"], cpu.tactics.attack);
+  const bestAtk = bestOf(["possession", "counter"], cpu.tactics.defense);
+  const bestBuildup = cpu.tactics.buildup === "longpass" ? { opt: "shortpass", bonus: BUILDUP_BONUS } : { opt: null, bonus: 0 };
+
+  const tacticGroup = (kind, options, recommended) => `
     <div class="tacticGroup">
       <p class="tacticGroupLabel">${{ defense: "守備", attack: "攻撃", buildup: "ビルドアップ" }[kind]}</p>
       <div class="tacticChips">
         ${options.map((opt) => `
-          <button class="tacticChip ${myTactics[kind] === opt ? "active" : ""}" data-kind="${kind}" data-value="${opt}">${TACTIC_LABELS[opt]}</button>
+          <button class="tacticChip ${myTactics[kind] === opt ? "active" : ""}" data-kind="${kind}" data-value="${opt}">
+            ${TACTIC_LABELS[opt]}${recommended === opt ? ` <span class="recommendBadge">💡</span>` : ""}
+          </button>
         `).join("")}
       </div>
     </div>
@@ -2416,6 +2480,14 @@ function renderPrematch() {
         <p class="entrySub">${escapeHtml(cpu.blurb ?? "")}・${TACTIC_LABELS[cpu.tactics.defense]}/${TACTIC_LABELS[cpu.tactics.attack]}/${TACTIC_LABELS[cpu.tactics.buildup]}</p>
       </section>
 
+      <section class="settingsCard matchupHint">
+        <p class="matchupHintTitle">💡 この相手に有効な戦術</p>
+        <p class="matchupHintLine">${bestDef.opt ? `守備は「${TACTIC_LABELS[bestDef.opt]}」が有利だよ（＋${bestDef.bonus}%）` : "守備はどちらでも大きな差はないよ"}</p>
+        <p class="matchupHintLine">${bestAtk.opt ? `攻撃は「${TACTIC_LABELS[bestAtk.opt]}」が有利だよ（＋${bestAtk.bonus}%）` : "攻撃はどちらでも大きな差はないよ"}</p>
+        ${bestBuildup.opt ? `<p class="matchupHintLine">ビルドアップは「ショートパス」が有利だよ（＋${bestBuildup.bonus}%）</p>` : ""}
+        <p class="matchupHintLine">🎯 選んだ戦術に合う特性を持つ選手を並べると、さらに有利になるよ</p>
+      </section>
+
       <section class="settingsCard winRateCard">
         <p class="eyebrow">きみの チーム：${placedCount}/${formationSlots(team.formation).length}人・💪${computeTeamPower()}</p>
         <button class="secondaryButton" id="editTeamButton">チームをへんせいする（${FORMATIONS[team.formation].label}）</button>
@@ -2427,9 +2499,9 @@ function renderPrematch() {
           </ul>
         `}
 
-        ${tacticGroup("defense", ["forecheck", "retreat"])}
-        ${tacticGroup("attack", ["possession", "counter"])}
-        ${tacticGroup("buildup", ["shortpass", "longpass"])}
+        ${tacticGroup("defense", ["forecheck", "retreat"], bestDef.opt)}
+        ${tacticGroup("attack", ["possession", "counter"], bestAtk.opt)}
+        ${tacticGroup("buildup", ["shortpass", "longpass"], bestBuildup.opt)}
       </section>
 
       <button class="primaryButton practiceStart" id="fightButton" ${state.soccer.battleTickets > 0 && placedCount > 0 ? "" : "disabled"}>たたかう（🎟${state.soccer.battleTickets}）</button>
@@ -2481,7 +2553,7 @@ function renderBattle() {
       </section>
 
       <section class="resultActions battleActions" id="battleActions" hidden>
-        <p class="battleResultText">${escapeHtml(soccerScreen.resultText)} <span class="xpGain">+${soccerScreen.reward} XP</span></p>
+        <p class="battleResultText">${escapeHtml(soccerScreen.resultText)}</p>
         <button class="primaryButton" id="leagueBackButton">🏆 リーグ表を見る</button>
         <button class="secondaryButton" id="teamFixButton">チームをなおす</button>
         <button class="secondaryButton" id="backHomeButton">ホーム</button>

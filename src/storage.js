@@ -28,8 +28,8 @@ const scienceUnitIds = [
 
 const defaultState = {
   migrationVersion: CURRENT_MIGRATION_VERSION,
-  xp: 0,
-  level: 1,
+  // 1問正解につき1pt。100pt貯まるとせんしゅパックへ自動変換される（finishSession参照）
+  points: 0,
   lastQuestionIds: [],
   lastQuestionFamilies: [],
   unlockedUnits: [
@@ -64,6 +64,8 @@ const defaultState = {
   },
   soccer: {
     playerPacks: 0,
+    guaranteedPacks: 0,
+    nominationRights: 0,
     players: {},
     team: {
       // 初期フォーメーションは4-3-3（11人制）。スターター8人を入れ、残りは空欄
@@ -130,8 +132,4 @@ export function saveState(state) {
 export function resetState() {
   localStorage.removeItem(STORAGE_KEY);
   return structuredClone(defaultState);
-}
-
-export function getLevelFromXp(xp) {
-  return Math.max(1, Math.floor(xp / 100) + 1);
 }
