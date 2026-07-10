@@ -1,5 +1,5 @@
-import { subjects } from "./curriculum.js?v=22";
-import { getLevelFromXp, loadState, resetState, saveState } from "./storage.js?v=22";
+import { subjects } from "./curriculum.js?v=23";
+import { getLevelFromXp, loadState, resetState, saveState } from "./storage.js?v=23";
 
 const allQuestions = [
   ...(window.CHIBI_QUEST_QUESTIONS ?? []),
@@ -2501,39 +2501,98 @@ function renderBattle() {
   const lerp = (from, to, t) => from + (to - from) * t;
   const clampPct = (value, min, max) => Math.min(max, Math.max(min, value));
 
+  // lerpで寄せつつ、1ティックの移動量そのものに上限をかける（目標が大きく飛ぶ場面でも急ワープに見えないように）
+  const stepToward = (currentX, currentY, targetX, targetY, t, maxStepX, maxStepY) => {
+    const dx = clampPct(lerp(currentX, targetX, t) - currentX, -maxStepX, maxStepX);
+    const dy = clampPct(lerp(currentY, targetY, t) - currentY, -maxStepY, maxStepY);
+    return { x: clampPct(currentX + dx, 4, 94), y: clampPct(currentY + dy, 12, 88) };
+  };
+
+  const tokenPos = (token) => ({
+    x: parseFloat(token.style.left) || Number(token.dataset.x),
+    y: parseFloat(token.style.top) || Number(token.dataset.y)
+  });
+
+  const nearestTokens = (selector, fromX, fromY, exclude, count) => {
+    return [...pitch.querySelectorAll(selector)]
+      .filter((token) => token !== exclude)
+      .map((token) => {
+        const { x, y } = tokenPos(token);
+        return { token, x, y, dist: Math.hypot(x - fromX, y - fromY) };
+      })
+      .sort((a, b) => a.dist - b.dist)
+      .slice(0, count);
+  };
+
   const animatePitch = (line) => {
     ball.style.left = `${line.ball}%`;
     const isNeutral = line.kind === "info";
+    const myTactics = getMyTactics();
+    // ポゼッションはコンパクトに寄り、カウンターは広がる（戦術差をドリフトの強さに少しだけ反映）
+    const compactness = myTactics.attack === "possession" ? 1.3 : myTactics.attack === "counter" ? 0.75 : 1;
+    const actorToken = line.actor ? pitch.querySelector(`.pitchToken[data-token="${line.actor}"]`) : null;
+    const isEnemyGoal = line.kind === "danger" && !actorToken;
 
     // 「現在地から目標へ6割だけ寄る」補間で、駒どうしの動きをなめらかに連続させる。
     // 目標＝定位置＋ボール側へのドリフト（駒ごとに引っぱられ方が違う）。
     pitch.querySelectorAll(".pitchToken").forEach((token) => {
+      if (token === actorToken) return;
       const baseX = Number(token.dataset.x);
       const baseY = Number(token.dataset.y);
-      const currentX = parseFloat(token.style.left) || baseX;
-      const currentY = parseFloat(token.style.top) || baseY;
+      const { x: currentX, y: currentY } = tokenPos(token);
+      const isMine = token.classList.contains("mine");
 
-      const pull = 0.10 + Math.random() * 0.22;
+      const pull = (0.10 + Math.random() * 0.22) * (isMine ? compactness : 1);
       const targetX = isNeutral ? baseX : baseX + (line.ball - 50) * pull;
       const targetY = isNeutral ? baseY : baseY + (Math.random() - 0.5) * 9;
 
       token.classList.remove("act");
-      token.style.left = `${clampPct(lerp(currentX, targetX, 0.6), 4, 94)}%`;
-      token.style.top = `${clampPct(lerp(currentY, targetY, 0.6), 12, 88)}%`;
+      const next = stepToward(currentX, currentY, targetX, targetY, 0.6, 14, 10);
+      token.style.left = `${next.x}%`;
+      token.style.top = `${next.y}%`;
     });
 
-    if (line.actor) {
-      const actorToken = pitch.querySelector(`.pitchToken[data-token="${line.actor}"]`);
-      if (actorToken) {
-        actorToken.classList.add("act");
-        // 活躍中の選手はボールへ走りこむ（こちらは目標へ強めに寄せる）
-        const currentX = parseFloat(actorToken.style.left) || Number(actorToken.dataset.x);
-        const currentY = parseFloat(actorToken.style.top) || Number(actorToken.dataset.y);
-        const lungeX = line.ball + (line.ball < 50 ? 5 : -7);
-        const lungeY = 50 + (Math.random() - 0.5) * 12;
-        actorToken.style.left = `${clampPct(lerp(currentX, lungeX, 0.85), 4, 94)}%`;
-        actorToken.style.top = `${clampPct(lerp(currentY, lungeY, 0.85), 12, 88)}%`;
-      }
+    // 周囲の選手も少しだけイベントに連動させる（近い味方はサポート、近い相手は寄せてリアクション）
+    if (actorToken && !isNeutral) {
+      const { x: actorX, y: actorY } = tokenPos(actorToken);
+      nearestTokens(".pitchToken.mine", actorX, actorY, actorToken, 2).forEach(({ token, x, y }) => {
+        const next = stepToward(x, y, line.ball, actorY, 0.35, 8, 6);
+        token.style.left = `${next.x}%`;
+        token.style.top = `${next.y}%`;
+      });
+      nearestTokens(".pitchToken.cpu", line.ball, actorY, actorToken, 1).forEach(({ token, x, y }) => {
+        const next = stepToward(x, y, line.ball, actorY, 0.3, 8, 6);
+        token.style.left = `${next.x}%`;
+        token.style.top = `${next.y}%`;
+      });
+    }
+
+    // 敵の得点はactorが立たない唯一の場面。ゴール前のCPUとGK付近だけ軽く反応させる
+    if (isEnemyGoal) {
+      nearestTokens(".pitchToken.cpu", line.ball, 50, null, 1).forEach(({ token, x, y }) => {
+        const next = stepToward(x, y, line.ball, 50, 0.6, 12, 8);
+        token.classList.add("act");
+        token.style.left = `${next.x}%`;
+        token.style.top = `${next.y}%`;
+      });
+      nearestTokens(".pitchToken.mine", 4, 50, null, 1).forEach(({ token, x, y }) => {
+        const next = stepToward(x, y, 8, 50, 0.4, 8, 6);
+        token.style.left = `${next.x}%`;
+        token.style.top = `${next.y}%`;
+      });
+    }
+
+    if (actorToken) {
+      actorToken.classList.add("act");
+      // 活躍中の選手はボールへ走りこむ（こちらは目標へ強めに寄せる。速い選手ほど踏み込みが大きい）
+      const player = findPlayerById(line.actor);
+      const speedBoost = player ? clampPct((player.stats.speed - 5) * 0.6, -3, 4) : 0;
+      const { x: currentX, y: currentY } = tokenPos(actorToken);
+      const lungeX = line.ball + (line.ball < 50 ? 5 + speedBoost : -7 - speedBoost);
+      const lungeY = 50 + (Math.random() - 0.5) * 12;
+      const next = stepToward(currentX, currentY, lungeX, lungeY, 0.85, 24, 16);
+      actorToken.style.left = `${next.x}%`;
+      actorToken.style.top = `${next.y}%`;
     }
 
     if (line.flash) {
