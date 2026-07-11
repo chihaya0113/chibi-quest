@@ -1131,11 +1131,32 @@ details.tacticHint .hintText {
 .pickRow.pos-df { background: var(--sky); }
 .pickRow.pos-gk { background: var(--ok-bg); }
 
-.pickRow.overBudget,
-.pickRow[disabled] {
-  opacity: 0.5;
+.pickRow.overBudget {
+  opacity: 0.6;
   filter: grayscale(0.6);
-  cursor: not-allowed;
+}
+
+.pickRow.shake {
+  animation: shakeRow 0.4s ease;
+}
+
+@keyframes shakeRow {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+.pickError {
+  margin: 10px 0 0;
+  padding: 10px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  background: var(--danger-bg);
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-align: center;
 }
 
 .costBudget {

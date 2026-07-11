@@ -1,5 +1,5 @@
-import { subjects } from "./curriculum.js?v=25";
-import { loadState, resetState, saveState } from "./storage.js?v=25";
+import { subjects } from "./curriculum.js?v=26";
+import { loadState, resetState, saveState } from "./storage.js?v=26";
 
 const allQuestions = [
   ...(window.CHIBI_QUEST_QUESTIONS ?? []),
@@ -1994,6 +1994,7 @@ function renderPickPlayer() {
       </section>
 
       <p class="dexHint">💰 コスト ${computeTeamCost()}/${COST_BUDGET}</p>
+      <p class="pickError" id="pickError" hidden></p>
 
       ${sorted.length === 0 ? `
         <p class="dexHint">まだ選手がいないよ。日課をクリアして 🧑せんしゅパックを あけよう！</p>
@@ -2004,7 +2005,7 @@ function renderPickPlayer() {
             const fit = player.position === slotPos;
             const overBudget = projectedTeamCost(slotIndex, player.id) > COST_BUDGET;
             return `
-              <button class="pickRow pos-${player.position.toLowerCase()} ${overBudget ? "overBudget" : ""}" data-player="${player.id}" ${overBudget ? "disabled" : ""}>
+              <button class="pickRow pos-${player.position.toLowerCase()} ${overBudget ? "overBudget" : ""}" data-player="${player.id}" data-over-budget="${overBudget}">
                 <span class="dexPlayerAvatar">${avatarHtml(player, 28)}</span>
                 <span class="pickRowMain">
                   <strong>${escapeHtml(player.name)}</strong>
@@ -2033,7 +2034,19 @@ function renderPickPlayer() {
   });
   document.querySelectorAll(".pickRow").forEach((row) => {
     row.addEventListener("click", () => {
-      placePlayer(slotIndex, row.dataset.player);
+      const playerId = row.dataset.player;
+      if (row.dataset.overBudget === "true") {
+        const player = findPlayerById(playerId);
+        const projected = projectedTeamCost(slotIndex, playerId);
+        const errorBox = document.querySelector("#pickError");
+        errorBox.textContent = `💰 コストオーバー！ ${player?.name ?? ""}を入れると コストが ${projected}/${COST_BUDGET} になっちゃうよ。`;
+        errorBox.hidden = false;
+        row.classList.remove("shake");
+        void row.offsetWidth;
+        row.classList.add("shake");
+        return;
+      }
+      placePlayer(slotIndex, playerId);
       soccerScreen = { mode: "team", returnTo };
       render();
     });
