@@ -1858,61 +1858,39 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_division_basic_001",
-    "version": 1,
+    "id": "g3_math_division_basic_101",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "division_basic",
     "unitLabel": "わり算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "4 ÷ 2 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 2,
-      "unit": ""
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 1,
+      "choices": 1
     },
-    "explanation": "2 × 2 = 4 なので、4 ÷ 2 = 2 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_002",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
     "questionType": "numeric_input",
-    "prompt": "6 ÷ 2 はいくつ？",
+    "prompt": "18 ÷ 6 はいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
       "value": 3,
       "unit": ""
     },
-    "explanation": "2 × 3 = 6 なので、6 ÷ 2 = 3 です。",
-    "estimatedSeconds": 45,
+    "explanation": "6 × 3 = 18 なので、18 ÷ 6 = 3 です。",
+    "estimatedSeconds": 30,
     "skillTags": [
       "わり算",
       "九九を使う"
     ],
+    "familyId": "div_fact",
+    "learningObjective": "九九を使って、わり算の答えを求められる",
+    "funMechanic": "drill",
+    "commonMistake": "九九のだんを取りちがえて、商を1ずれで答える",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -1924,641 +1902,21 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_division_basic_003",
-    "version": 1,
+    "id": "g3_math_division_basic_102",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "division_basic",
     "unitLabel": "わり算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "8 ÷ 2 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 4,
-      "unit": ""
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 1,
+      "choices": 1
     },
-    "explanation": "2 × 4 = 8 なので、8 ÷ 2 = 4 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_004",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "10 ÷ 2 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 5,
-      "unit": ""
-    },
-    "explanation": "2 × 5 = 10 なので、10 ÷ 2 = 5 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_005",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "12 ÷ 2 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 6,
-      "unit": ""
-    },
-    "explanation": "2 × 6 = 12 なので、12 ÷ 2 = 6 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_006",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "14 ÷ 2 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 7,
-      "unit": ""
-    },
-    "explanation": "2 × 7 = 14 なので、14 ÷ 2 = 7 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_007",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "16 ÷ 2 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 8,
-      "unit": ""
-    },
-    "explanation": "2 × 8 = 16 なので、16 ÷ 2 = 8 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_008",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "18 ÷ 2 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 9,
-      "unit": ""
-    },
-    "explanation": "2 × 9 = 18 なので、18 ÷ 2 = 9 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_009",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "6 ÷ 3 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 2,
-      "unit": ""
-    },
-    "explanation": "3 × 2 = 6 なので、6 ÷ 3 = 2 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_010",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "9 ÷ 3 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 3,
-      "unit": ""
-    },
-    "explanation": "3 × 3 = 9 なので、9 ÷ 3 = 3 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_011",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "12 ÷ 3 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 4,
-      "unit": ""
-    },
-    "explanation": "3 × 4 = 12 なので、12 ÷ 3 = 4 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_012",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "15 ÷ 3 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 5,
-      "unit": ""
-    },
-    "explanation": "3 × 5 = 15 なので、15 ÷ 3 = 5 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_013",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "18 ÷ 3 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 6,
-      "unit": ""
-    },
-    "explanation": "3 × 6 = 18 なので、18 ÷ 3 = 6 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_014",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "21 ÷ 3 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 7,
-      "unit": ""
-    },
-    "explanation": "3 × 7 = 21 なので、21 ÷ 3 = 7 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_015",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "24 ÷ 3 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 8,
-      "unit": ""
-    },
-    "explanation": "3 × 8 = 24 なので、24 ÷ 3 = 8 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_016",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "27 ÷ 3 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 9,
-      "unit": ""
-    },
-    "explanation": "3 × 9 = 27 なので、27 ÷ 3 = 9 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_017",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "8 ÷ 4 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 2,
-      "unit": ""
-    },
-    "explanation": "4 × 2 = 8 なので、8 ÷ 4 = 2 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_018",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "12 ÷ 4 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 3,
-      "unit": ""
-    },
-    "explanation": "4 × 3 = 12 なので、12 ÷ 4 = 3 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_019",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "16 ÷ 4 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 4,
-      "unit": ""
-    },
-    "explanation": "4 × 4 = 16 なので、16 ÷ 4 = 4 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_020",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "20 ÷ 4 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 5,
-      "unit": ""
-    },
-    "explanation": "4 × 5 = 20 なので、20 ÷ 4 = 5 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_021",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "24 ÷ 4 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 6,
-      "unit": ""
-    },
-    "explanation": "4 × 6 = 24 なので、24 ÷ 4 = 6 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_022",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
     "questionType": "numeric_input",
     "prompt": "28 ÷ 4 はいくつ？",
     "choices": [],
@@ -2568,11 +1926,15 @@ window.CHIBI_QUEST_QUESTIONS = [
       "unit": ""
     },
     "explanation": "4 × 7 = 28 なので、28 ÷ 4 = 7 です。",
-    "estimatedSeconds": 45,
+    "estimatedSeconds": 30,
     "skillTags": [
       "わり算",
       "九九を使う"
     ],
+    "familyId": "div_fact",
+    "learningObjective": "九九を使って、わり算の答えを求められる",
+    "funMechanic": "drill",
+    "commonMistake": "九九のだんを取りちがえて、商を1ずれで答える",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -2584,193 +1946,39 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_division_basic_023",
-    "version": 1,
+    "id": "g3_math_division_basic_103",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "division_basic",
     "unitLabel": "わり算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 1,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "32 ÷ 4 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 8,
-      "unit": ""
-    },
-    "explanation": "4 × 8 = 32 なので、32 ÷ 4 = 8 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_024",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "36 ÷ 4 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 9,
-      "unit": ""
-    },
-    "explanation": "4 × 9 = 36 なので、36 ÷ 4 = 9 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_025",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "10 ÷ 5 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 2,
-      "unit": ""
-    },
-    "explanation": "5 × 2 = 10 なので、10 ÷ 5 = 2 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_026",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "15 ÷ 5 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 3,
-      "unit": ""
-    },
-    "explanation": "5 × 3 = 15 なので、15 ÷ 5 = 3 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_027",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "20 ÷ 5 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 4,
-      "unit": ""
-    },
-    "explanation": "5 × 4 = 20 なので、20 ÷ 5 = 4 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "九九を使う"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_028",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "25 ÷ 5 はいくつ？",
+    "prompt": "45 ÷ 9 はいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
       "value": 5,
       "unit": ""
     },
-    "explanation": "5 × 5 = 25 なので、25 ÷ 5 = 5 です。",
-    "estimatedSeconds": 45,
+    "explanation": "9 × 5 = 45 なので、45 ÷ 9 = 5 です。",
+    "estimatedSeconds": 30,
     "skillTags": [
       "わり算",
       "九九を使う"
     ],
+    "familyId": "div_fact",
+    "learningObjective": "九九を使って、わり算の答えを求められる",
+    "funMechanic": "drill",
+    "commonMistake": "九九のだんを取りちがえて、商を1ずれで答える",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -2782,29 +1990,39 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_division_basic_029",
-    "version": 1,
+    "id": "g3_math_division_basic_104",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "division_basic",
     "unitLabel": "わり算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 1,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "4このシールを、2人で同じ数ずつ分けます。1人分は何こ？",
+    "prompt": "56 ÷ 7 はいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 2,
-      "unit": "こ"
+      "value": 8,
+      "unit": ""
     },
-    "explanation": "4 ÷ 2 = 2 なので、1人分は2こです。",
-    "estimatedSeconds": 45,
+    "explanation": "7 × 8 = 56 なので、56 ÷ 7 = 8 です。",
+    "estimatedSeconds": 30,
     "skillTags": [
       "わり算",
-      "等分",
-      "文章題"
+      "九九を使う"
     ],
+    "familyId": "div_fact",
+    "learningObjective": "九九を使って、わり算の答えを求められる",
+    "funMechanic": "drill",
+    "commonMistake": "九九のだんを取りちがえて、商を1ずれで答える",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -2816,29 +2034,39 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_division_basic_030",
-    "version": 1,
+    "id": "g3_math_division_basic_105",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "division_basic",
     "unitLabel": "わり算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 1,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "12このシールを、3人で同じ数ずつ分けます。1人分は何こ？",
+    "prompt": "72 ÷ 8 はいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 4,
-      "unit": "こ"
+      "value": 9,
+      "unit": ""
     },
-    "explanation": "12 ÷ 3 = 4 なので、1人分は4こです。",
-    "estimatedSeconds": 45,
+    "explanation": "8 × 9 = 72 なので、72 ÷ 8 = 9 です。",
+    "estimatedSeconds": 30,
     "skillTags": [
       "わり算",
-      "等分",
-      "文章題"
+      "九九を使う"
     ],
+    "familyId": "div_fact",
+    "learningObjective": "九九を使って、わり算の答えを求められる",
+    "funMechanic": "drill",
+    "commonMistake": "九九のだんを取りちがえて、商を1ずれで答える",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -2850,16 +2078,331 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_division_basic_031",
-    "version": 1,
+    "id": "g3_math_division_basic_106",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "0 ÷ 6 はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 0,
+      "unit": ""
+    },
+    "explanation": "0をどんな数でわっても、答えは0です。",
+    "estimatedSeconds": 30,
+    "skillTags": [
+      "わり算",
+      "0と1のわり算"
+    ],
+    "familyId": "div_special",
+    "learningObjective": "0や1がまじったわり算のきまりがわかる",
+    "funMechanic": "drill",
+    "commonMistake": "0 ÷ 6 を 6 と答える(わる数をそのまま書く)",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_107",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "8 ÷ 8 はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 1,
+      "unit": ""
+    },
+    "explanation": "同じ数でわると、答えはいつも1です。8 ÷ 8 = 1 です。",
+    "estimatedSeconds": 30,
+    "skillTags": [
+      "わり算",
+      "0と1のわり算"
+    ],
+    "familyId": "div_special",
+    "learningObjective": "0や1がまじったわり算のきまりがわかる",
+    "funMechanic": "drill",
+    "commonMistake": "0 ÷ 6 を 6 と答える(わる数をそのまま書く)",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_108",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "9 ÷ 1 はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 9,
+      "unit": ""
+    },
+    "explanation": "1でわっても数は変わりません。9 ÷ 1 = 9 です。",
+    "estimatedSeconds": 30,
+    "skillTags": [
+      "わり算",
+      "0と1のわり算"
+    ],
+    "familyId": "div_special",
+    "learningObjective": "0や1がまじったわり算のきまりがわかる",
+    "funMechanic": "drill",
+    "commonMistake": "0 ÷ 6 を 6 と答える(わる数をそのまま書く)",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_109",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "5 ÷ 5 はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 1,
+      "unit": ""
+    },
+    "explanation": "同じ数でわると、答えはいつも1です。5 ÷ 5 = 1 です。",
+    "estimatedSeconds": 30,
+    "skillTags": [
+      "わり算",
+      "0と1のわり算"
+    ],
+    "familyId": "div_special",
+    "learningObjective": "0や1がまじったわり算のきまりがわかる",
+    "funMechanic": "drill",
+    "commonMistake": "0 ÷ 6 を 6 と答える(わる数をそのまま書く)",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_110",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "□ × 4 = 32。□に入る数はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 8,
+      "unit": ""
+    },
+    "explanation": "32 ÷ 4 = 8 なので、□は8です。8 × 4 = 32 でたしかめられます。",
+    "estimatedSeconds": 45,
+    "skillTags": [
+      "わり算",
+      "かけ算とわり算"
+    ],
+    "familyId": "div_inverse_blank",
+    "learningObjective": "かけ算の式の□を、わり算で求められる",
+    "funMechanic": "drill",
+    "commonMistake": "□を求めずに、見えている2つの数をかけてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_111",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "6 × □ = 42。□に入る数はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 7,
+      "unit": ""
+    },
+    "explanation": "42 ÷ 6 = 7 なので、□は7です。6 × 7 = 42 でたしかめられます。",
+    "estimatedSeconds": 45,
+    "skillTags": [
+      "わり算",
+      "かけ算とわり算"
+    ],
+    "familyId": "div_inverse_blank",
+    "learningObjective": "かけ算の式の□を、わり算で求められる",
+    "funMechanic": "drill",
+    "commonMistake": "□を求めずに、見えている2つの数をかけてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_112",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "□ × 9 = 54。□に入る数はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 6,
+      "unit": ""
+    },
+    "explanation": "54 ÷ 9 = 6 なので、□は6です。6 × 9 = 54 でたしかめられます。",
+    "estimatedSeconds": 45,
+    "skillTags": [
+      "わり算",
+      "かけ算とわり算"
+    ],
+    "familyId": "div_inverse_blank",
+    "learningObjective": "かけ算の式の□を、わり算で求められる",
+    "funMechanic": "drill",
+    "commonMistake": "□を求めずに、見えている2つの数をかけてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_113",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "division_basic",
     "unitLabel": "わり算",
     "curriculumArea": "A 数と計算",
     "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "24このシールを、4人で同じ数ずつ分けます。1人分は何こ？",
+    "prompt": "いちごが24こあります。4人で同じ数ずつ分けると、1人分は何こ？",
     "choices": [],
     "answer": {
       "type": "number",
@@ -2867,12 +2410,16 @@ window.CHIBI_QUEST_QUESTIONS = [
       "unit": "こ"
     },
     "explanation": "24 ÷ 4 = 6 なので、1人分は6こです。",
-    "estimatedSeconds": 45,
+    "estimatedSeconds": 60,
     "skillTags": [
       "わり算",
       "等分",
       "文章題"
     ],
+    "familyId": "div_equal_share",
+    "learningObjective": "同じ数ずつ分ける場面を、わり算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "分ける人数のほうを答えにしてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -2884,131 +2431,40 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_division_basic_032",
-    "version": 1,
+    "id": "g3_math_division_basic_114",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "division_basic",
     "unitLabel": "わり算",
     "curriculumArea": "A 数と計算",
     "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "40このシールを、5人で同じ数ずつ分けます。1人分は何こ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 8,
-      "unit": "こ"
-    },
-    "explanation": "40 ÷ 5 = 8 なので、1人分は8こです。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "等分",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_033",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "18このシールを、6人で同じ数ずつ分けます。1人分は何こ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 3,
-      "unit": "こ"
-    },
-    "explanation": "18 ÷ 6 = 3 なので、1人分は3こです。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "等分",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_034",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "35このシールを、7人で同じ数ずつ分けます。1人分は何こ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 5,
-      "unit": "こ"
-    },
-    "explanation": "35 ÷ 7 = 5 なので、1人分は5こです。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "等分",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_035",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "56このシールを、8人で同じ数ずつ分けます。1人分は何こ？",
+    "prompt": "色紙が35まいあります。5人で同じ数ずつ分けると、1人分は何まい？",
     "choices": [],
     "answer": {
       "type": "number",
       "value": 7,
-      "unit": "こ"
+      "unit": "まい"
     },
-    "explanation": "56 ÷ 8 = 7 なので、1人分は7こです。",
-    "estimatedSeconds": 45,
+    "explanation": "35 ÷ 5 = 7 なので、1人分は7まいです。",
+    "estimatedSeconds": 60,
     "skillTags": [
       "わり算",
       "等分",
       "文章題"
     ],
+    "familyId": "div_equal_share",
+    "learningObjective": "同じ数ずつ分ける場面を、わり算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "分ける人数のほうを答えにしてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -3020,539 +2476,40 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_division_basic_036",
-    "version": 1,
+    "id": "g3_math_division_basic_115",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "division_basic",
     "unitLabel": "わり算",
     "curriculumArea": "A 数と計算",
     "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "18このシールを、9人で同じ数ずつ分けます。1人分は何こ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 2,
-      "unit": "こ"
-    },
-    "explanation": "18 ÷ 9 = 2 なので、1人分は2こです。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "等分",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_037",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "8このシールを、2人で同じ数ずつ分けます。1人分は何こ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 4,
-      "unit": "こ"
-    },
-    "explanation": "8 ÷ 2 = 4 なので、1人分は4こです。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "等分",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_038",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "18このシールを、3人で同じ数ずつ分けます。1人分は何こ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 6,
-      "unit": "こ"
-    },
-    "explanation": "18 ÷ 3 = 6 なので、1人分は6こです。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "等分",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_039",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "32このシールを、4人で同じ数ずつ分けます。1人分は何こ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 8,
-      "unit": "こ"
-    },
-    "explanation": "32 ÷ 4 = 8 なので、1人分は8こです。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "等分",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_040",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "15このシールを、5人で同じ数ずつ分けます。1人分は何こ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 3,
-      "unit": "こ"
-    },
-    "explanation": "15 ÷ 5 = 3 なので、1人分は3こです。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "等分",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_041",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "30このシールを、6人で同じ数ずつ分けます。1人分は何こ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 5,
-      "unit": "こ"
-    },
-    "explanation": "30 ÷ 6 = 5 なので、1人分は5こです。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "等分",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_042",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "49このシールを、7人で同じ数ずつ分けます。1人分は何こ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 7,
-      "unit": "こ"
-    },
-    "explanation": "49 ÷ 7 = 7 なので、1人分は7こです。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "等分",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_043",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "16このシールを、8人で同じ数ずつ分けます。1人分は何こ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 2,
-      "unit": "こ"
-    },
-    "explanation": "16 ÷ 8 = 2 なので、1人分は2こです。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "等分",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_044",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "36このシールを、9人で同じ数ずつ分けます。1人分は何こ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 4,
-      "unit": "こ"
-    },
-    "explanation": "36 ÷ 9 = 4 なので、1人分は4こです。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "等分",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_045",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "12このシールを、2人で同じ数ずつ分けます。1人分は何こ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 6,
-      "unit": "こ"
-    },
-    "explanation": "12 ÷ 2 = 6 なので、1人分は6こです。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "等分",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_046",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "24このシールを、3人で同じ数ずつ分けます。1人分は何こ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 8,
-      "unit": "こ"
-    },
-    "explanation": "24 ÷ 3 = 8 なので、1人分は8こです。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "等分",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_047",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "12このシールを、4人で同じ数ずつ分けます。1人分は何こ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 3,
-      "unit": "こ"
-    },
-    "explanation": "12 ÷ 4 = 3 なので、1人分は3こです。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "等分",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_048",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "25このシールを、5人で同じ数ずつ分けます。1人分は何こ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 5,
-      "unit": "こ"
-    },
-    "explanation": "25 ÷ 5 = 5 なので、1人分は5こです。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "等分",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_049",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "6このクッキーを、1はこに2こずつ入れます。何はこできますか？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 3,
-      "unit": "はこ"
-    },
-    "explanation": "6 ÷ 2 = 3 なので、3はこできます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "包含除",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_050",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "18このクッキーを、1はこに3こずつ入れます。何はこできますか？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 6,
-      "unit": "はこ"
-    },
-    "explanation": "18 ÷ 3 = 6 なので、6はこできます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "包含除",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_051",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "36このクッキーを、1はこに4こずつ入れます。何はこできますか？",
+    "prompt": "えんぴつが54本あります。6人で同じ数ずつ分けると、1人分は何本？",
     "choices": [],
     "answer": {
       "type": "number",
       "value": 9,
-      "unit": "はこ"
+      "unit": "本"
     },
-    "explanation": "36 ÷ 4 = 9 なので、9はこできます。",
-    "estimatedSeconds": 45,
+    "explanation": "54 ÷ 6 = 9 なので、1人分は9本です。",
+    "estimatedSeconds": 60,
     "skillTags": [
       "わり算",
-      "包含除",
+      "等分",
       "文章題"
     ],
+    "familyId": "div_equal_share",
+    "learningObjective": "同じ数ずつ分ける場面を、わり算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "分ける人数のほうを答えにしてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -3564,29 +2521,40 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_division_basic_052",
-    "version": 1,
+    "id": "g3_math_division_basic_116",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "division_basic",
     "unitLabel": "わり算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 3,
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "25このクッキーを、1はこに5こずつ入れます。何はこできますか？",
+    "prompt": "シールが63まいあります。7人で同じ数ずつ分けると、1人分は何まい？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 5,
-      "unit": "はこ"
+      "value": 9,
+      "unit": "まい"
     },
-    "explanation": "25 ÷ 5 = 5 なので、5はこできます。",
-    "estimatedSeconds": 45,
+    "explanation": "63 ÷ 7 = 9 なので、1人分は9まいです。",
+    "estimatedSeconds": 60,
     "skillTags": [
       "わり算",
-      "包含除",
+      "等分",
       "文章題"
     ],
+    "familyId": "div_equal_share",
+    "learningObjective": "同じ数ずつ分ける場面を、わり算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "分ける人数のほうを答えにしてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -3598,29 +2566,41 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_division_basic_053",
-    "version": 1,
+    "id": "g3_math_division_basic_117",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "division_basic",
     "unitLabel": "わり算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 3,
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "48このクッキーを、1はこに6こずつ入れます。何はこできますか？",
+    "prompt": "サッカーボールが16こあります。2チームで同じ数ずつ分けると、1チーム分は何こ？",
     "choices": [],
     "answer": {
       "type": "number",
       "value": 8,
-      "unit": "はこ"
+      "unit": "こ"
     },
-    "explanation": "48 ÷ 6 = 8 なので、8はこできます。",
-    "estimatedSeconds": 45,
+    "explanation": "16 ÷ 2 = 8 なので、1チーム分は8こです。",
+    "estimatedSeconds": 60,
     "skillTags": [
       "わり算",
-      "包含除",
-      "文章題"
+      "等分",
+      "文章題",
+      "soccer_context"
     ],
+    "familyId": "div_equal_share",
+    "learningObjective": "同じ数ずつ分ける場面を、わり算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "分ける人数のほうを答えにしてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -3632,16 +2612,68 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_division_basic_054",
-    "version": 1,
+    "id": "g3_math_division_basic_118",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "division_basic",
     "unitLabel": "わり算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 3,
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "28このクッキーを、1はこに7こずつ入れます。何はこできますか？",
+    "prompt": "あめが30こあります。1人に6こずつくばると、何人にくばれる？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 5,
+      "unit": "人"
+    },
+    "explanation": "30 ÷ 6 = 5 なので、5人にくばれます。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "わり算",
+      "包含除",
+      "文章題"
+    ],
+    "familyId": "div_grouping",
+    "learningObjective": "「いくつ分できるか」を求める場面を、わり算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "1人分を求める分け方と混同して、答えの単位をまちがえる",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_119",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "ドーナツが28こあります。1はこに7こずつ入れると、何はこできる？",
     "choices": [],
     "answer": {
       "type": "number",
@@ -3649,12 +2681,16 @@ window.CHIBI_QUEST_QUESTIONS = [
       "unit": "はこ"
     },
     "explanation": "28 ÷ 7 = 4 なので、4はこできます。",
-    "estimatedSeconds": 45,
+    "estimatedSeconds": 60,
     "skillTags": [
       "わり算",
       "包含除",
       "文章題"
     ],
+    "familyId": "div_grouping",
+    "learningObjective": "「いくつ分できるか」を求める場面を、わり算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "1人分を求める分け方と混同して、答えの単位をまちがえる",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -3666,97 +2702,40 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_division_basic_055",
-    "version": 1,
+    "id": "g3_math_division_basic_120",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "division_basic",
     "unitLabel": "わり算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 3,
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "56このクッキーを、1はこに8こずつ入れます。何はこできますか？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 7,
-      "unit": "はこ"
-    },
-    "explanation": "56 ÷ 8 = 7 なので、7はこできます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "包含除",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_056",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "27このクッキーを、1はこに9こずつ入れます。何はこできますか？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 3,
-      "unit": "はこ"
-    },
-    "explanation": "27 ÷ 9 = 3 なので、3はこできます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "わり算",
-      "包含除",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_division_basic_057",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "division_basic",
-    "unitLabel": "わり算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "12このクッキーを、1はこに2こずつ入れます。何はこできますか？",
+    "prompt": "花が48本あります。8本ずつたばにすると、何たばできる？",
     "choices": [],
     "answer": {
       "type": "number",
       "value": 6,
-      "unit": "はこ"
+      "unit": "たば"
     },
-    "explanation": "12 ÷ 2 = 6 なので、6はこできます。",
-    "estimatedSeconds": 45,
+    "explanation": "48 ÷ 8 = 6 なので、6たばできます。",
+    "estimatedSeconds": 60,
     "skillTags": [
       "わり算",
       "包含除",
       "文章題"
     ],
+    "familyId": "div_grouping",
+    "learningObjective": "「いくつ分できるか」を求める場面を、わり算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "1人分を求める分け方と混同して、答えの単位をまちがえる",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -3768,29 +2747,40 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_division_basic_058",
-    "version": 1,
+    "id": "g3_math_division_basic_121",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "division_basic",
     "unitLabel": "わり算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 3,
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "27このクッキーを、1はこに3こずつ入れます。何はこできますか？",
+    "prompt": "36ページの本を、1日に4ページずつ読みます。何日で読み終わる？",
     "choices": [],
     "answer": {
       "type": "number",
       "value": 9,
-      "unit": "はこ"
+      "unit": "日"
     },
-    "explanation": "27 ÷ 3 = 9 なので、9はこできます。",
-    "estimatedSeconds": 45,
+    "explanation": "36 ÷ 4 = 9 なので、9日で読み終わります。",
+    "estimatedSeconds": 60,
     "skillTags": [
       "わり算",
       "包含除",
       "文章題"
     ],
+    "familyId": "div_grouping",
+    "learningObjective": "「いくつ分できるか」を求める場面を、わり算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "1人分を求める分け方と混同して、答えの単位をまちがえる",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -3802,29 +2792,41 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_division_basic_059",
-    "version": 1,
+    "id": "g3_math_division_basic_122",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "division_basic",
     "unitLabel": "わり算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 3,
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "20このクッキーを、1はこに4こずつ入れます。何はこできますか？",
+    "prompt": "20人で、1チーム5人のミニゲームをします。チームはいくつできる？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 5,
-      "unit": "はこ"
+      "value": 4,
+      "unit": "チーム"
     },
-    "explanation": "20 ÷ 4 = 5 なので、5はこできます。",
-    "estimatedSeconds": 45,
+    "explanation": "20 ÷ 5 = 4 なので、4チームできます。",
+    "estimatedSeconds": 60,
     "skillTags": [
       "わり算",
       "包含除",
-      "文章題"
+      "文章題",
+      "soccer_context"
     ],
+    "familyId": "div_grouping",
+    "learningObjective": "「いくつ分できるか」を求める場面を、わり算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "1人分を求める分け方と混同して、答えの単位をまちがえる",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -3836,29 +2838,2080 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_division_basic_060",
-    "version": 1,
+    "id": "g3_math_division_basic_123",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 2
+    },
+    "questionType": "expression_choice",
+    "prompt": "27まいのカードを、9人で同じ数ずつ分けます。1人分をもとめる式はどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "27 ÷ 9"
+      },
+      {
+        "id": "b",
+        "text": "9 ÷ 27"
+      },
+      {
+        "id": "c",
+        "text": "27 × 9"
+      },
+      {
+        "id": "d",
+        "text": "27 - 9"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "27 ÷ 9"
+    },
+    "explanation": "ぜんぶの数を人数で分けるので、27 ÷ 9 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "わり算",
+      "式を選ぶ"
+    ],
+    "familyId": "div_expression",
+    "learningObjective": "場面から正しいわり算の式を選べる",
+    "funMechanic": "best_choice",
+    "commonMistake": "わられる数とわる数を反対にした式を選ぶ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_124",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 2
+    },
+    "questionType": "expression_choice",
+    "prompt": "40このあめを、1ふくろに8こずつ入れます。ふくろの数をもとめる式はどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "40 ÷ 8"
+      },
+      {
+        "id": "b",
+        "text": "8 ÷ 40"
+      },
+      {
+        "id": "c",
+        "text": "40 × 8"
+      },
+      {
+        "id": "d",
+        "text": "40 - 8"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "40 ÷ 8"
+    },
+    "explanation": "ぜんぶの数を1ふくろ分の数で分けるので、40 ÷ 8 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "わり算",
+      "式を選ぶ"
+    ],
+    "familyId": "div_expression",
+    "learningObjective": "場面から正しいわり算の式を選べる",
+    "funMechanic": "best_choice",
+    "commonMistake": "わられる数とわる数を反対にした式を選ぶ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_125",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 2
+    },
+    "questionType": "expression_choice",
+    "prompt": "ジュースが18本あります。3人で同じ数ずつ分けます。1人分をもとめる式はどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "18 ÷ 3"
+      },
+      {
+        "id": "b",
+        "text": "3 ÷ 18"
+      },
+      {
+        "id": "c",
+        "text": "18 × 3"
+      },
+      {
+        "id": "d",
+        "text": "18 + 3"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "18 ÷ 3"
+    },
+    "explanation": "ぜんぶの数を人数で分けるので、18 ÷ 3 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "わり算",
+      "式を選ぶ"
+    ],
+    "familyId": "div_expression",
+    "learningObjective": "場面から正しいわり算の式を選べる",
+    "funMechanic": "best_choice",
+    "commonMistake": "わられる数とわる数を反対にした式を選ぶ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_126",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 2
+    },
+    "questionType": "expression_choice",
+    "prompt": "シュートれんしゅうをぜんぶで42回します。1日に7回ずつやると、何日かかるかをもとめる式はどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "42 ÷ 7"
+      },
+      {
+        "id": "b",
+        "text": "7 ÷ 42"
+      },
+      {
+        "id": "c",
+        "text": "42 × 7"
+      },
+      {
+        "id": "d",
+        "text": "42 - 7"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "42 ÷ 7"
+    },
+    "explanation": "ぜんぶの回数を1日分の回数で分けるので、42 ÷ 7 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "わり算",
+      "式を選ぶ",
+      "soccer_context"
+    ],
+    "familyId": "div_expression",
+    "learningObjective": "場面から正しいわり算の式を選べる",
+    "funMechanic": "best_choice",
+    "commonMistake": "わられる数とわる数を反対にした式を選ぶ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_127",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "54 ÷ 9 の答えを見つけるには、九九のどのだんを使う？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "9のだん"
+      },
+      {
+        "id": "b",
+        "text": "5のだん"
+      },
+      {
+        "id": "c",
+        "text": "4のだん"
+      },
+      {
+        "id": "d",
+        "text": "6のだん"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "9のだん"
+    },
+    "explanation": "わる数は9なので、9のだんで54になる九九をさがします。9 × 6 = 54 です。",
+    "estimatedSeconds": 45,
+    "skillTags": [
+      "わり算",
+      "九九を使う"
+    ],
+    "familyId": "div_which_row",
+    "learningObjective": "わり算の答えは、わる数のだんの九九で見つけられることがわかる",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "わる数ではなく、答えの数のだんを選んでしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_128",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "32 ÷ 4 の答えを見つけるには、九九のどのだんを使う？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "4のだん"
+      },
+      {
+        "id": "b",
+        "text": "3のだん"
+      },
+      {
+        "id": "c",
+        "text": "2のだん"
+      },
+      {
+        "id": "d",
+        "text": "8のだん"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "4のだん"
+    },
+    "explanation": "わる数は4なので、4のだんで32になる九九をさがします。4 × 8 = 32 です。",
+    "estimatedSeconds": 45,
+    "skillTags": [
+      "わり算",
+      "九九を使う"
+    ],
+    "familyId": "div_which_row",
+    "learningObjective": "わり算の答えは、わる数のだんの九九で見つけられることがわかる",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "わる数ではなく、答えの数のだんを選んでしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_129",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "63 ÷ 7 の答えを見つけるには、九九のどのだんを使う？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "7のだん"
+      },
+      {
+        "id": "b",
+        "text": "6のだん"
+      },
+      {
+        "id": "c",
+        "text": "3のだん"
+      },
+      {
+        "id": "d",
+        "text": "9のだん"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "7のだん"
+    },
+    "explanation": "わる数は7なので、7のだんで63になる九九をさがします。7 × 9 = 63 です。",
+    "estimatedSeconds": 45,
+    "skillTags": [
+      "わり算",
+      "九九を使う"
+    ],
+    "familyId": "div_which_row",
+    "learningObjective": "わり算の答えは、わる数のだんの九九で見つけられることがわかる",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "わる数ではなく、答えの数のだんを選んでしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_130",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "48 ÷ 6 の答えを見つけるには、九九のどのだんを使う？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "6のだん"
+      },
+      {
+        "id": "b",
+        "text": "4のだん"
+      },
+      {
+        "id": "c",
+        "text": "8のだん"
+      },
+      {
+        "id": "d",
+        "text": "7のだん"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "6のだん"
+    },
+    "explanation": "わる数は6なので、6のだんで48になる九九をさがします。6 × 8 = 48 です。",
+    "estimatedSeconds": 45,
+    "skillTags": [
+      "わり算",
+      "九九を使う"
+    ],
+    "familyId": "div_which_row",
+    "learningObjective": "わり算の答えは、わる数のだんの九九で見つけられることがわかる",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "わる数ではなく、答えの数のだんを選んでしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_131",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "division_basic",
     "unitLabel": "わり算",
     "curriculumArea": "A 数と計算",
     "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "40このクッキーを、1はこに5こずつ入れます。何はこできますか？",
+    "prompt": "30このあめを、何人かで同じ数ずつ分けたら、1人分がちょうど5こになりました。何人で分けた？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 6,
+      "unit": "人"
+    },
+    "explanation": "30 ÷ 5 = 6 なので、6人で分けました。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "わり算",
+      "かけ算とわり算",
+      "文章題"
+    ],
+    "familyId": "div_hidden_number",
+    "learningObjective": "わり算とかけ算の関係を使って、かくれた数を求められる",
+    "funMechanic": "inference",
+    "commonMistake": "問題に見えている2つの数を、そのままわってしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_132",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "えんぴつを4人で同じ数ずつ分けたら、1人分がちょうど6本になりました。えんぴつはぜんぶで何本あった？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 24,
+      "unit": "本"
+    },
+    "explanation": "1人分6本が4人分なので、6 × 4 = 24 で、ぜんぶで24本です。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "わり算",
+      "かけ算とわり算",
+      "文章題"
+    ],
+    "familyId": "div_hidden_number",
+    "learningObjective": "わり算とかけ算の関係を使って、かくれた数を求められる",
+    "funMechanic": "inference",
+    "commonMistake": "問題に見えている2つの数を、そのままわってしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_133",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "ヒント1：九九の7のだんの答えです。ヒント2：6でわると7になります。この数はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 42,
+      "unit": ""
+    },
+    "explanation": "6でわると7になる数は、6 × 7 = 42 です。42は7 × 6 なので、7のだんの答えでもあります。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "わり算",
+      "かけ算とわり算",
+      "文章題"
+    ],
+    "familyId": "div_hidden_number",
+    "learningObjective": "わり算とかけ算の関係を使って、かくれた数を求められる",
+    "funMechanic": "inference",
+    "commonMistake": "問題に見えている2つの数を、そのままわってしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_134",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "ヒント1：九九の8のだんの答えです。ヒント2：40より大きくて、50より小さいです。この数はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 48,
+      "unit": ""
+    },
+    "explanation": "8のだんで40より大きくて50より小さいのは、8 × 6 = 48 だけです。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "わり算",
+      "かけ算とわり算",
+      "文章題"
+    ],
+    "familyId": "div_hidden_number",
+    "learningObjective": "わり算とかけ算の関係を使って、かくれた数を求められる",
+    "funMechanic": "inference",
+    "commonMistake": "問題に見えている2つの数を、そのままわってしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_135",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "ボールを3つのかごに同じ数ずつ入れたら、1つのかごがちょうど9こになりました。ボールはぜんぶで何こ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 27,
+      "unit": "こ"
+    },
+    "explanation": "1かご9こが3かご分なので、9 × 3 = 27 で、ぜんぶで27こです。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "わり算",
+      "かけ算とわり算",
+      "文章題",
+      "soccer_context"
+    ],
+    "familyId": "div_hidden_number",
+    "learningObjective": "わり算とかけ算の関係を使って、かくれた数を求められる",
+    "funMechanic": "inference",
+    "commonMistake": "問題に見えている2つの数を、そのままわってしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_136",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "まちがっている計算は、どれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "63 ÷ 9 = 8"
+      },
+      {
+        "id": "b",
+        "text": "24 ÷ 6 = 4"
+      },
+      {
+        "id": "c",
+        "text": "45 ÷ 5 = 9"
+      },
+      {
+        "id": "d",
+        "text": "16 ÷ 2 = 8"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "63 ÷ 9 = 8"
+    },
+    "explanation": "9 × 8 = 72 なので、63 ÷ 9 = 8 はまちがいです。正しくは 9 × 7 = 63 で、答えは7です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "わり算",
+      "たしかめ"
+    ],
+    "familyId": "div_find_mistake",
+    "learningObjective": "わり算の答えをかけ算でたしかめて、まちがいを見つけられる",
+    "funMechanic": "find_mistake",
+    "commonMistake": "九九の近くの答え(1ずれ)を正しいと思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_137",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "まちがっている計算は、どれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "36 ÷ 4 = 8"
+      },
+      {
+        "id": "b",
+        "text": "21 ÷ 3 = 7"
+      },
+      {
+        "id": "c",
+        "text": "40 ÷ 8 = 5"
+      },
+      {
+        "id": "d",
+        "text": "18 ÷ 9 = 2"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "36 ÷ 4 = 8"
+    },
+    "explanation": "4 × 8 = 32 なので、36 ÷ 4 = 8 はまちがいです。正しくは 4 × 9 = 36 で、答えは9です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "わり算",
+      "たしかめ"
+    ],
+    "familyId": "div_find_mistake",
+    "learningObjective": "わり算の答えをかけ算でたしかめて、まちがいを見つけられる",
+    "funMechanic": "find_mistake",
+    "commonMistake": "九九の近くの答え(1ずれ)を正しいと思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_138",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "まちがっている計算は、どれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "64 ÷ 8 = 7"
+      },
+      {
+        "id": "b",
+        "text": "49 ÷ 7 = 7"
+      },
+      {
+        "id": "c",
+        "text": "54 ÷ 6 = 9"
+      },
+      {
+        "id": "d",
+        "text": "30 ÷ 5 = 6"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "64 ÷ 8 = 7"
+    },
+    "explanation": "8 × 7 = 56 なので、64 ÷ 8 = 7 はまちがいです。正しくは 8 × 8 = 64 で、答えは8です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "わり算",
+      "たしかめ"
+    ],
+    "familyId": "div_find_mistake",
+    "learningObjective": "わり算の答えをかけ算でたしかめて、まちがいを見つけられる",
+    "funMechanic": "find_mistake",
+    "commonMistake": "九九の近くの答え(1ずれ)を正しいと思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_139",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "みおさんは「0 ÷ 8 = 8」と答えました。正しい直し方はどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "0をどんな数でわっても0だから、答えは0"
+      },
+      {
+        "id": "b",
+        "text": "みおさんの答えで正しい"
+      },
+      {
+        "id": "c",
+        "text": "0でわるのと同じだから、答えは1"
+      },
+      {
+        "id": "d",
+        "text": "0 + 8 = 8 だから、答えは8"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "0をどんな数でわっても0だから、答えは0"
+    },
+    "explanation": "0をどんな数でわっても、答えは0です。0 ÷ 8 = 0 です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "わり算",
+      "たしかめ"
+    ],
+    "familyId": "div_find_mistake",
+    "learningObjective": "わり算の答えをかけ算でたしかめて、まちがいを見つけられる",
+    "funMechanic": "find_mistake",
+    "commonMistake": "九九の近くの答え(1ずれ)を正しいと思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_140",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "コーチが「ボール18こを6人で分けると、1人4こ」と言いました。正しく直すと、1人何こ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "1人3こ"
+      },
+      {
+        "id": "b",
+        "text": "1人4こで正しい"
+      },
+      {
+        "id": "c",
+        "text": "1人2こ"
+      },
+      {
+        "id": "d",
+        "text": "1人6こ"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "1人3こ"
+    },
+    "explanation": "18 ÷ 6 = 3 なので、1人3こです。6 × 4 = 24 になってしまうので、4こはまちがいです。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "わり算",
+      "たしかめ",
+      "soccer_context"
+    ],
+    "familyId": "div_find_mistake",
+    "learningObjective": "わり算の答えをかけ算でたしかめて、まちがいを見つけられる",
+    "funMechanic": "find_mistake",
+    "commonMistake": "九九の近くの答え(1ずれ)を正しいと思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_141",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "はると「12 ÷ 3 は、12こを3人で同じ数ずつ分けた1人分」。みお「12 ÷ 3 は、12こを3こずつ分けたときの人数」。正しいのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "二人とも正しい"
+      },
+      {
+        "id": "b",
+        "text": "はるとだけ正しい"
+      },
+      {
+        "id": "c",
+        "text": "みおだけ正しい"
+      },
+      {
+        "id": "d",
+        "text": "二人ともまちがい"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "二人とも正しい"
+    },
+    "explanation": "わり算には「同じ数ずつ分ける」と「いくつ分できるか」の2つの意味があります。どちらも 12 ÷ 3 = 4 です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "わり算",
+      "意味の理解"
+    ],
+    "familyId": "div_judge_claim",
+    "learningObjective": "わり算の意味を、分け方のちがう2つの場面や別の考え方で説明できる",
+    "funMechanic": "judge_claim",
+    "commonMistake": "わり算の意味を1つの場面だけと思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_142",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "はると「7 ÷ 7 = 1 だよ」。みお「7 ÷ 7 = 0 だよ」。正しいのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "はるとだけ正しい"
+      },
+      {
+        "id": "b",
+        "text": "二人とも正しい"
+      },
+      {
+        "id": "c",
+        "text": "みおだけ正しい"
+      },
+      {
+        "id": "d",
+        "text": "二人ともまちがい"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "はるとだけ正しい"
+    },
+    "explanation": "同じ数でわると答えは1です。7 ÷ 7 = 1 なので、はるとが正しいです。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "わり算",
+      "意味の理解"
+    ],
+    "familyId": "div_judge_claim",
+    "learningObjective": "わり算の意味を、分け方のちがう2つの場面や別の考え方で説明できる",
+    "funMechanic": "judge_claim",
+    "commonMistake": "わり算の意味を1つの場面だけと思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_143",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "はると「56 ÷ 8 は、8のだんの九九で見つける」。みお「56 ÷ 8 は、5のだんの九九で見つける」。正しいのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "はるとだけ正しい"
+      },
+      {
+        "id": "b",
+        "text": "二人とも正しい"
+      },
+      {
+        "id": "c",
+        "text": "みおだけ正しい"
+      },
+      {
+        "id": "d",
+        "text": "二人ともまちがい"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "はるとだけ正しい"
+    },
+    "explanation": "わる数のだんを使います。8のだんで 8 × 7 = 56 なので、答えは7です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "わり算",
+      "意味の理解"
+    ],
+    "familyId": "div_judge_claim",
+    "learningObjective": "わり算の意味を、分け方のちがう2つの場面や別の考え方で説明できる",
+    "funMechanic": "judge_claim",
+    "commonMistake": "わり算の意味を1つの場面だけと思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_144",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "20 ÷ 4 について。はると「答えは、20から4を何回ひけるかと同じ」。みお「答えは、4のだんの九九で見つけられる」。正しいのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "二人とも正しい"
+      },
+      {
+        "id": "b",
+        "text": "はるとだけ正しい"
+      },
+      {
+        "id": "c",
+        "text": "みおだけ正しい"
+      },
+      {
+        "id": "d",
+        "text": "二人ともまちがい"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "二人とも正しい"
+    },
+    "explanation": "20から4を5回ひくと0になり、4 × 5 = 20 でも見つけられます。どちらの考え方でも答えは5です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "わり算",
+      "意味の理解"
+    ],
+    "familyId": "div_judge_claim",
+    "learningObjective": "わり算の意味を、分け方のちがう2つの場面や別の考え方で説明できる",
+    "funMechanic": "judge_claim",
+    "commonMistake": "わり算の意味を1つの場面だけと思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_145",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "30このクッキーを5人で分けるときと、6人で分けるとき。1人分が多いのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "5人で分けるとき"
+      },
+      {
+        "id": "b",
+        "text": "6人で分けるとき"
+      },
+      {
+        "id": "c",
+        "text": "どちらも同じ"
+      },
+      {
+        "id": "d",
+        "text": "くらべられない"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "5人で分けるとき"
+    },
+    "explanation": "30 ÷ 5 = 6、30 ÷ 6 = 5 です。分ける人数が少ないほど、1人分は多くなります。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "わり算",
+      "大小比較"
+    ],
+    "familyId": "div_predict_compare",
+    "learningObjective": "わり算の答えの大きさを予想して、計算でたしかめられる",
+    "funMechanic": "predict_check",
+    "commonMistake": "わる数が大きいほど、答えも大きくなると思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_146",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "24まいの色紙を3人で分けるときと、36まいの色紙を6人で分けるとき。1人分が多いのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "24まいを3人で分けるとき"
+      },
+      {
+        "id": "b",
+        "text": "36まいを6人で分けるとき"
+      },
+      {
+        "id": "c",
+        "text": "どちらも同じ"
+      },
+      {
+        "id": "d",
+        "text": "くらべられない"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "24まいを3人で分けるとき"
+    },
+    "explanation": "24 ÷ 3 = 8、36 ÷ 6 = 6 です。ぜんぶの数が少なくても、1人分が多いことがあります。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "わり算",
+      "大小比較"
+    ],
+    "familyId": "div_predict_compare",
+    "learningObjective": "わり算の答えの大きさを予想して、計算でたしかめられる",
+    "funMechanic": "predict_check",
+    "commonMistake": "わる数が大きいほど、答えも大きくなると思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_147",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "48本のジュースを、6本ずつはこに入れるときと、8本ずつはこに入れるとき。はこの数が多いのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "6本ずつ入れるとき"
+      },
+      {
+        "id": "b",
+        "text": "8本ずつ入れるとき"
+      },
+      {
+        "id": "c",
+        "text": "どちらも同じ"
+      },
+      {
+        "id": "d",
+        "text": "くらべられない"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "6本ずつ入れるとき"
+    },
+    "explanation": "48 ÷ 6 = 8、48 ÷ 8 = 6 です。1はこに入れる数が少ないほど、はこの数は多くなります。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "わり算",
+      "大小比較"
+    ],
+    "familyId": "div_predict_compare",
+    "learningObjective": "わり算の答えの大きさを予想して、計算でたしかめられる",
+    "funMechanic": "predict_check",
+    "commonMistake": "わる数が大きいほど、答えも大きくなると思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_148",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "63このみかんを、9こずつはこに入れるときと、7こずつはこに入れるとき。はこの数が少なくてすむのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "9こずつ入れるとき"
+      },
+      {
+        "id": "b",
+        "text": "7こずつ入れるとき"
+      },
+      {
+        "id": "c",
+        "text": "どちらも同じ"
+      },
+      {
+        "id": "d",
+        "text": "くらべられない"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "9こずつ入れるとき"
+    },
+    "explanation": "63 ÷ 9 = 7、63 ÷ 7 = 9 です。1はこにたくさん入れるほど、はこの数は少なくてすみます。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "わり算",
+      "大小比較"
+    ],
+    "familyId": "div_predict_compare",
+    "learningObjective": "わり算の答えの大きさを予想して、計算でたしかめられる",
+    "funMechanic": "predict_check",
+    "commonMistake": "わる数が大きいほど、答えも大きくなると思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_149",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "6 ÷ 3 = 2、12 ÷ 3 = 4、18 ÷ 3 = 6。このならびのつぎ、24 ÷ 3 はいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
       "value": 8,
-      "unit": "はこ"
+      "unit": ""
     },
-    "explanation": "40 ÷ 5 = 8 なので、8はこできます。",
-    "estimatedSeconds": 45,
+    "explanation": "わられる数が6ふえるごとに、答えは2ずつふえています。24 ÷ 3 = 8 です。",
+    "estimatedSeconds": 90,
     "skillTags": [
       "わり算",
-      "包含除",
-      "文章題"
+      "きまり見つけ"
     ],
+    "familyId": "div_rule_pattern",
+    "learningObjective": "わり算のならびからきまりを見つけて、次の答えを求められる",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "ならびのきまりを見ずに、1つ前の答えをそのまま書く",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_150",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "10 ÷ 2 = 5、20 ÷ 2 = 10、30 ÷ 2 = 15。このならびのつぎ、40 ÷ 2 はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 20,
+      "unit": ""
+    },
+    "explanation": "答えは5ずつふえています。40 ÷ 2 = 20 です。10のまとまりで考えると、4 ÷ 2 = 2 から20とわかります。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "わり算",
+      "きまり見つけ"
+    ],
+    "familyId": "div_rule_pattern",
+    "learningObjective": "わり算のならびからきまりを見つけて、次の答えを求められる",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "ならびのきまりを見ずに、1つ前の答えをそのまま書く",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_151",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "81 ÷ 9 = 9、72 ÷ 9 = 8、63 ÷ 9 = 7。このならびのつぎ、54 ÷ 9 はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 6,
+      "unit": ""
+    },
+    "explanation": "わられる数が9へるごとに、答えは1ずつへっています。54 ÷ 9 = 6 です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "わり算",
+      "きまり見つけ"
+    ],
+    "familyId": "div_rule_pattern",
+    "learningObjective": "わり算のならびからきまりを見つけて、次の答えを求められる",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "ならびのきまりを見ずに、1つ前の答えをそのまま書く",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_152",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 3,
+      "info": 1,
+      "steps": 2,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "10のまとまりで考えます。80 ÷ 4 はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 20,
+      "unit": ""
+    },
+    "explanation": "80は10が8こです。8 ÷ 4 = 2 なので、10のまとまりが2こで20です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "わり算",
+      "きまり見つけ"
+    ],
+    "familyId": "div_rule_pattern",
+    "learningObjective": "わり算のならびからきまりを見つけて、次の答えを求められる",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "ならびのきまりを見ずに、1つ前の答えをそのまま書く",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_153",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 2,
+      "choices": 3
+    },
+    "questionType": "multiple_choice",
+    "prompt": "56 ÷ 7 と同じ答えになる式は、どれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "64 ÷ 8"
+      },
+      {
+        "id": "b",
+        "text": "49 ÷ 7"
+      },
+      {
+        "id": "c",
+        "text": "54 ÷ 6"
+      },
+      {
+        "id": "d",
+        "text": "42 ÷ 7"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "64 ÷ 8"
+    },
+    "explanation": "56 ÷ 7 = 8 です。64 ÷ 8 = 8 なので、同じ答えになります。ほかの式の答えは7、9、6です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "わり算",
+      "解き方くらべ"
+    ],
+    "familyId": "div_compare_methods",
+    "learningObjective": "ちがう式や考え方でも、同じ答えになることをたしかめられる",
+    "funMechanic": "compare_methods",
+    "commonMistake": "式の形がちがうと、答えもちがうと思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_154",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "36 ÷ 4 を、はるとは「4 × □ = 36 の□をさがす」で、みおは「36から4を何回ひけるか数える」で考えました。二人の答えはどうなる？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "二人とも9になる"
+      },
+      {
+        "id": "b",
+        "text": "はるとだけ9になる"
+      },
+      {
+        "id": "c",
+        "text": "みおだけ9になる"
+      },
+      {
+        "id": "d",
+        "text": "二人ともちがう答えになる"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "二人とも9になる"
+    },
+    "explanation": "4 × 9 = 36 で、36から4は9回ひけます。考え方がちがっても、答えは同じ9です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "わり算",
+      "解き方くらべ"
+    ],
+    "familyId": "div_compare_methods",
+    "learningObjective": "ちがう式や考え方でも、同じ答えになることをたしかめられる",
+    "funMechanic": "compare_methods",
+    "commonMistake": "式の形がちがうと、答えもちがうと思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_155",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 5,
+    "difficultyAxes": {
+      "knowledge": 3,
+      "info": 3,
+      "steps": 3,
+      "format": 2,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "24このあめを「4人で分けて、その1人分をさらに2人で分ける」のと、「はじめから8人で分ける」の。さいごの1人分はどうなる？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "どちらも3こで同じ"
+      },
+      {
+        "id": "b",
+        "text": "4人→2人のほうが多い"
+      },
+      {
+        "id": "c",
+        "text": "8人で分けるほうが多い"
+      },
+      {
+        "id": "d",
+        "text": "くらべられない"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "どちらも3こで同じ"
+    },
+    "explanation": "24 ÷ 4 = 6、6 ÷ 2 = 3 です。24 ÷ 8 = 3 なので、どちらも3こになります。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "わり算",
+      "解き方くらべ"
+    ],
+    "familyId": "div_compare_methods",
+    "learningObjective": "ちがう式や考え方でも、同じ答えになることをたしかめられる",
+    "funMechanic": "compare_methods",
+    "commonMistake": "式の形がちがうと、答えもちがうと思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_156",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "72 ÷ 8 の答えの見つけ方として、正しいものはどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "8のだんで、答えが72になる九九をさがす"
+      },
+      {
+        "id": "b",
+        "text": "72のだんの九九をさがす"
+      },
+      {
+        "id": "c",
+        "text": "72から8をたしていく"
+      },
+      {
+        "id": "d",
+        "text": "8 × 72 を計算する"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "8のだんで、答えが72になる九九をさがす"
+    },
+    "explanation": "わる数8のだんで72になる九九をさがすと、8 × 9 = 72 です。答えは9です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "わり算",
+      "解き方くらべ"
+    ],
+    "familyId": "div_compare_methods",
+    "learningObjective": "ちがう式や考え方でも、同じ答えになることをたしかめられる",
+    "funMechanic": "compare_methods",
+    "commonMistake": "式の形がちがうと、答えもちがうと思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_157",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "ある数を6でわると、答えは7です。同じ「ある数」を7でわると、答えはいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 6,
+      "unit": ""
+    },
+    "explanation": "6でわると7になる数は 6 × 7 = 42 です。42 ÷ 7 = 6 です。",
+    "estimatedSeconds": 120,
+    "skillTags": [
+      "わり算",
+      "文章題",
+      "組み合わせ"
+    ],
+    "familyId": "div_multi_step",
+    "learningObjective": "わり算を2回、またはわり算とかけ算を組み合わせて、答えまでの道すじを自分で組み立てられる",
+    "funMechanic": "inference",
+    "commonMistake": "1回目のわり算で計算をやめてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_158",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "クッキーが同じ数ずつ入ったはこが4つあり、ぜんぶで32こです。はこ1つ分を2人で分けると、1人何こ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 4,
+      "unit": "こ"
+    },
+    "explanation": "32 ÷ 4 = 8 で、1はこ8こです。8 ÷ 2 = 4 なので、1人4こです。",
+    "estimatedSeconds": 120,
+    "skillTags": [
+      "わり算",
+      "文章題",
+      "組み合わせ"
+    ],
+    "familyId": "div_multi_step",
+    "learningObjective": "わり算を2回、またはわり算とかけ算を組み合わせて、答えまでの道すじを自分で組み立てられる",
+    "funMechanic": "inference",
+    "commonMistake": "1回目のわり算で計算をやめてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_159",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "18人を、同じ人数の3チームに分けます。1チームの中で2人ずつのペアを作ると、ペアはいくつできる？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 3,
+      "unit": "ペア"
+    },
+    "explanation": "18 ÷ 3 = 6 で、1チーム6人です。6 ÷ 2 = 3 なので、ペアは3つできます。",
+    "estimatedSeconds": 120,
+    "skillTags": [
+      "わり算",
+      "文章題",
+      "組み合わせ",
+      "soccer_context"
+    ],
+    "familyId": "div_multi_step",
+    "learningObjective": "わり算を2回、またはわり算とかけ算を組み合わせて、答えまでの道すじを自分で組み立てられる",
+    "funMechanic": "inference",
+    "commonMistake": "1回目のわり算で計算をやめてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_division_basic_160",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "division_basic",
+    "unitLabel": "わり算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "同じねだんのシール8まいで、ぜんぶで72円でした。このシールを3まい買うと、何円？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 27,
+      "unit": "円"
+    },
+    "explanation": "72 ÷ 8 = 9 で、1まい9円です。9 × 3 = 27 なので、27円です。",
+    "estimatedSeconds": 120,
+    "skillTags": [
+      "わり算",
+      "文章題",
+      "組み合わせ"
+    ],
+    "familyId": "div_multi_step",
+    "learningObjective": "わり算を2回、またはわり算とかけ算を組み合わせて、答えまでの道すじを自分で組み立てられる",
+    "funMechanic": "inference",
+    "commonMistake": "1回目のわり算で計算をやめてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",

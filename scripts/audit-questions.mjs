@@ -42,11 +42,28 @@ const requiredFields = [
   "status"
 ];
 
+// chibique-question-design-core 準拠の刷新済み問題(funMechanicあり)に必須のフィールドと語彙
+const FUN_MECHANICS = new Set([
+  "predict_check", "find_mistake", "best_choice", "inference", "reorder",
+  "rule_discovery", "compare_methods", "judge_claim", "decide_then_verify", "drill"
+]);
+const AXIS_KEYS = ["knowledge", "info", "steps", "format", "choices"];
+// 5軸合計 → 総合difficulty(SKILL.md §2 の表)
+function difficultyFromAxes(axes) {
+  const sum = AXIS_KEYS.reduce((total, key) => total + axes[key], 0);
+  if (sum <= 6) return 1;
+  if (sum <= 8) return 2;
+  if (sum <= 10) return 3;
+  if (sum <= 12) return 4;
+  return 5;
+}
+
 const ids = new Set();
 const exactPrompts = new Map();
 const shapeGroups = new Map();
 const bySubject = new Map();
 const byUnit = new Map();
+const renewedByUnit = new Map();
 
 for (const question of questions) {
   for (const field of requiredFields) {
@@ -71,7 +88,24 @@ for (const question of questions) {
   bySubject.set(question.subject, (bySubject.get(question.subject) ?? 0) + 1);
   byUnit.set(`${question.subject}:${question.unit}`, (byUnit.get(`${question.subject}:${question.unit}`) ?? 0) + 1);
 
-  if (![2, 3].includes(question.difficulty)) {
+  if (question.funMechanic !== undefined) {
+    // 刷新済み問題: 新フィールドの検証
+    if (!FUN_MECHANICS.has(question.funMechanic)) {
+      failures.push(`${question.id}: unknown funMechanic "${question.funMechanic}"`);
+    }
+    for (const field of ["learningObjective", "commonMistake", "familyId"]) {
+      if (!question[field]) failures.push(`${question.id}: renewed question missing ${field}`);
+    }
+    const axes = question.difficultyAxes;
+    if (!axes || AXIS_KEYS.some((key) => ![1, 2, 3].includes(axes[key]))) {
+      failures.push(`${question.id}: difficultyAxes must have ${AXIS_KEYS.join("/")} each 1-3`);
+    } else if (difficultyFromAxes(axes) !== question.difficulty) {
+      failures.push(`${question.id}: difficulty ${question.difficulty} does not match axes sum (expected ${difficultyFromAxes(axes)})`);
+    }
+    const unitKey = `${question.subject}:${question.unit}`;
+    if (!renewedByUnit.has(unitKey)) renewedByUnit.set(unitKey, []);
+    renewedByUnit.get(unitKey).push(question);
+  } else if (![2, 3].includes(question.difficulty)) {
     warnings.push(`${question.id}: difficulty should usually be 2 or 3`);
   }
 
@@ -97,6 +131,31 @@ for (const question of questions) {
 
 for (const [subject, count] of bySubject.entries()) {
   if (count !== 260) failures.push(`${subject}: expected 260 questions, got ${count}`);
+}
+
+// 刷新済み単元の分布チェック(chibique-question-design-core §3, §4, §7)
+for (const [unitKey, unitQuestions] of renewedByUnit.entries()) {
+  const total = unitQuestions.length;
+  const drillCount = unitQuestions.filter((question) => question.funMechanic === "drill").length;
+  if (drillCount / total > 0.4) {
+    failures.push(`${unitKey}: drill ratio ${drillCount}/${total} exceeds 40%`);
+  }
+  const mechanics = new Set(unitQuestions.map((question) => question.funMechanic));
+  mechanics.delete("drill");
+  if (mechanics.size < 3) {
+    failures.push(`${unitKey}: needs 3+ non-drill funMechanics, got ${mechanics.size}`);
+  }
+  const soccerCount = unitQuestions.filter((question) => question.skillTags?.includes("soccer_context")).length;
+  if (soccerCount / total > 0.3) {
+    failures.push(`${unitKey}: soccer context ${soccerCount}/${total} exceeds 30%`);
+  }
+  const familySizes = new Map();
+  for (const question of unitQuestions) {
+    familySizes.set(question.familyId, (familySizes.get(question.familyId) ?? 0) + 1);
+  }
+  for (const [familyId, size] of familySizes.entries()) {
+    if (size > 5) failures.push(`${unitKey}: family ${familyId} has ${size} questions (max 5)`);
+  }
 }
 
 // Exact-duplicate prompts (identical wording) beyond the tolerated threshold — a real

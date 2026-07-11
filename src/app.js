@@ -257,7 +257,8 @@ const DAILY_POINTS_CAP = 50;
 // チーム編成の合計コスト上限（11人×平均コスト5.5相当）
 const COST_BUDGET = 60;
 const WEAK_SCORE_BOOST = 100;
-const DIFFICULTY_ORDER = [3, 3, 2, 3, 2, 3, 3, 2, 3, 2];
+// 出題優先度は最初に登場するdifficulty順(3→2→4→1)。刷新済み単元はd1〜d5を持つ
+const DIFFICULTY_ORDER = [3, 3, 2, 3, 2, 4, 3, 2, 3, 1];
 const app = document.querySelector("#app");
 
 let state = loadState();
