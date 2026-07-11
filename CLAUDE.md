@@ -22,6 +22,7 @@
 
 ## プロジェクトSkill(必ず該当場面で使う)
 
+- chibique-question-design-core: 問題の新規作成・刷新・難易度調整・類題作成・レビュー(設計シート、難易度5軸、funMechanic)
 - kids-content: 問題・子供向け文言の追加修正(表記ルール、audit必須)
 - save-data-compat: セーブデータ構造・XP・カードプールの変更(進捗を壊さない)
 - release-pwa: JS・データ変更のpush前(キャッシュバージョン更新)
