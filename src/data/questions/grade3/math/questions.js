@@ -1,27 +1,38 @@
 window.CHIBI_QUEST_QUESTIONS = [
   {
-    "id": "g3_math_multiplication_table_001",
-    "version": 1,
+    "id": "g3_math_multiplication_table_101",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 1,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "2 × 2 はいくつ？",
+    "prompt": "7 × 6 はいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 4,
+      "value": 42,
       "unit": ""
     },
-    "explanation": "2を2こ分あわせるので、2 × 2 = 4 です。",
-    "estimatedSeconds": 45,
+    "explanation": "7を6こ分あわせるので、7 × 6 = 42 です。",
+    "estimatedSeconds": 30,
     "skillTags": [
       "九九",
       "かけ算"
     ],
+    "familyId": "mul_fact",
+    "learningObjective": "九九の答えをすぐに出せる",
+    "funMechanic": "drill",
+    "commonMistake": "となりのだんの九九と混同して1ずれで答える",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -33,28 +44,39 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_002",
-    "version": 1,
+    "id": "g3_math_multiplication_table_102",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 1,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "2 × 3 はいくつ？",
+    "prompt": "8 × 4 はいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 6,
+      "value": 32,
       "unit": ""
     },
-    "explanation": "2を3こ分あわせるので、2 × 3 = 6 です。",
-    "estimatedSeconds": 45,
+    "explanation": "8を4こ分あわせるので、8 × 4 = 32 です。",
+    "estimatedSeconds": 30,
     "skillTags": [
       "九九",
       "かけ算"
     ],
+    "familyId": "mul_fact",
+    "learningObjective": "九九の答えをすぐに出せる",
+    "funMechanic": "drill",
+    "commonMistake": "となりのだんの九九と混同して1ずれで答える",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -66,28 +88,39 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_003",
-    "version": 1,
+    "id": "g3_math_multiplication_table_103",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 1,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "2 × 4 はいくつ？",
+    "prompt": "9 × 7 はいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 8,
+      "value": 63,
       "unit": ""
     },
-    "explanation": "2を4こ分あわせるので、2 × 4 = 8 です。",
-    "estimatedSeconds": 45,
+    "explanation": "9を7こ分あわせるので、9 × 7 = 63 です。",
+    "estimatedSeconds": 30,
     "skillTags": [
       "九九",
       "かけ算"
     ],
+    "familyId": "mul_fact",
+    "learningObjective": "九九の答えをすぐに出せる",
+    "funMechanic": "drill",
+    "commonMistake": "となりのだんの九九と混同して1ずれで答える",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -99,28 +132,39 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_004",
-    "version": 1,
+    "id": "g3_math_multiplication_table_104",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 1,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "2 × 5 はいくつ？",
+    "prompt": "6 × 6 はいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 10,
+      "value": 36,
       "unit": ""
     },
-    "explanation": "2を5こ分あわせるので、2 × 5 = 10 です。",
-    "estimatedSeconds": 45,
+    "explanation": "6を6こ分あわせるので、6 × 6 = 36 です。",
+    "estimatedSeconds": 30,
     "skillTags": [
       "九九",
       "かけ算"
     ],
+    "familyId": "mul_fact",
+    "learningObjective": "九九の答えをすぐに出せる",
+    "funMechanic": "drill",
+    "commonMistake": "となりのだんの九九と混同して1ずれで答える",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -132,377 +176,21 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_005",
-    "version": 1,
+    "id": "g3_math_multiplication_table_105",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "2 × 6 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 12,
-      "unit": ""
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 1,
+      "choices": 1
     },
-    "explanation": "2を6こ分あわせるので、2 × 6 = 12 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "九九",
-      "かけ算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_multiplication_table_006",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "multiplication_table",
-    "unitLabel": "九九の表とかけ算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "2 × 7 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 14,
-      "unit": ""
-    },
-    "explanation": "2を7こ分あわせるので、2 × 7 = 14 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "九九",
-      "かけ算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_multiplication_table_007",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "multiplication_table",
-    "unitLabel": "九九の表とかけ算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "2 × 8 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 16,
-      "unit": ""
-    },
-    "explanation": "2を8こ分あわせるので、2 × 8 = 16 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "九九",
-      "かけ算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_multiplication_table_008",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "multiplication_table",
-    "unitLabel": "九九の表とかけ算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "2 × 9 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 18,
-      "unit": ""
-    },
-    "explanation": "2を9こ分あわせるので、2 × 9 = 18 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "九九",
-      "かけ算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_multiplication_table_009",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "multiplication_table",
-    "unitLabel": "九九の表とかけ算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "3 × 2 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 6,
-      "unit": ""
-    },
-    "explanation": "3を2こ分あわせるので、3 × 2 = 6 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "九九",
-      "かけ算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_multiplication_table_010",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "multiplication_table",
-    "unitLabel": "九九の表とかけ算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "3 × 3 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 9,
-      "unit": ""
-    },
-    "explanation": "3を3こ分あわせるので、3 × 3 = 9 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "九九",
-      "かけ算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_multiplication_table_011",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "multiplication_table",
-    "unitLabel": "九九の表とかけ算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "3 × 4 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 12,
-      "unit": ""
-    },
-    "explanation": "3を4こ分あわせるので、3 × 4 = 12 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "九九",
-      "かけ算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_multiplication_table_012",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "multiplication_table",
-    "unitLabel": "九九の表とかけ算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "3 × 5 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 15,
-      "unit": ""
-    },
-    "explanation": "3を5こ分あわせるので、3 × 5 = 15 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "九九",
-      "かけ算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_multiplication_table_013",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "multiplication_table",
-    "unitLabel": "九九の表とかけ算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "3 × 6 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 18,
-      "unit": ""
-    },
-    "explanation": "3を6こ分あわせるので、3 × 6 = 18 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "九九",
-      "かけ算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_multiplication_table_014",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "multiplication_table",
-    "unitLabel": "九九の表とかけ算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "3 × 7 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 21,
-      "unit": ""
-    },
-    "explanation": "3を7こ分あわせるので、3 × 7 = 21 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "九九",
-      "かけ算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_multiplication_table_015",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "multiplication_table",
-    "unitLabel": "九九の表とかけ算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "3 × 8 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 24,
-      "unit": ""
-    },
-    "explanation": "3を8こ分あわせるので、3 × 8 = 24 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "九九",
-      "かけ算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_multiplication_table_016",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "multiplication_table",
-    "unitLabel": "九九の表とかけ算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
     "questionType": "numeric_input",
     "prompt": "3 × 9 はいくつ？",
     "choices": [],
@@ -512,11 +200,15 @@ window.CHIBI_QUEST_QUESTIONS = [
       "unit": ""
     },
     "explanation": "3を9こ分あわせるので、3 × 9 = 27 です。",
-    "estimatedSeconds": 45,
+    "estimatedSeconds": 30,
     "skillTags": [
       "九九",
       "かけ算"
     ],
+    "familyId": "mul_fact",
+    "learningObjective": "九九の答えをすぐに出せる",
+    "funMechanic": "drill",
+    "commonMistake": "となりのだんの九九と混同して1ずれで答える",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -528,28 +220,39 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_017",
-    "version": 1,
+    "id": "g3_math_multiplication_table_106",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 2,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "4 × 2 はいくつ？",
+    "prompt": "6 × □ = 48。□に入る数はいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
       "value": 8,
       "unit": ""
     },
-    "explanation": "4を2こ分あわせるので、4 × 2 = 8 です。",
+    "explanation": "6のだんで48になるのは 6 × 8 = 48 です。□は8です。",
     "estimatedSeconds": 45,
     "skillTags": [
       "九九",
       "かけ算"
     ],
+    "familyId": "mul_gap",
+    "learningObjective": "九九の式の□に入る数を見つけられる",
+    "funMechanic": "drill",
+    "commonMistake": "□をとばして、見えている2つの数をかけてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -561,28 +264,39 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_018",
-    "version": 1,
+    "id": "g3_math_multiplication_table_107",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 2,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "4 × 3 はいくつ？",
+    "prompt": "□ × 7 = 35。□に入る数はいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 12,
+      "value": 5,
       "unit": ""
     },
-    "explanation": "4を3こ分あわせるので、4 × 3 = 12 です。",
+    "explanation": "5 × 7 = 35 なので、□は5です。",
     "estimatedSeconds": 45,
     "skillTags": [
       "九九",
       "かけ算"
     ],
+    "familyId": "mul_gap",
+    "learningObjective": "九九の式の□に入る数を見つけられる",
+    "funMechanic": "drill",
+    "commonMistake": "□をとばして、見えている2つの数をかけてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -594,28 +308,39 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_019",
-    "version": 1,
+    "id": "g3_math_multiplication_table_108",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 2,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "4 × 4 はいくつ？",
+    "prompt": "9 × □ = 81。□に入る数はいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 16,
+      "value": 9,
       "unit": ""
     },
-    "explanation": "4を4こ分あわせるので、4 × 4 = 16 です。",
+    "explanation": "9 × 9 = 81 なので、□は9です。",
     "estimatedSeconds": 45,
     "skillTags": [
       "九九",
       "かけ算"
     ],
+    "familyId": "mul_gap",
+    "learningObjective": "九九の式の□に入る数を見つけられる",
+    "funMechanic": "drill",
+    "commonMistake": "□をとばして、見えている2つの数をかけてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -627,28 +352,39 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_020",
-    "version": 1,
+    "id": "g3_math_multiplication_table_109",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 2,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "4 × 5 はいくつ？",
+    "prompt": "□ × 3 = 24。□に入る数はいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 20,
+      "value": 8,
       "unit": ""
     },
-    "explanation": "4を5こ分あわせるので、4 × 5 = 20 です。",
+    "explanation": "8 × 3 = 24 なので、□は8です。",
     "estimatedSeconds": 45,
     "skillTags": [
       "九九",
       "かけ算"
     ],
+    "familyId": "mul_gap",
+    "learningObjective": "九九の式の□に入る数を見つけられる",
+    "funMechanic": "drill",
+    "commonMistake": "□をとばして、見えている2つの数をかけてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -660,28 +396,83 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_021",
-    "version": 1,
+    "id": "g3_math_multiplication_table_110",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "multiplication_table",
+    "unitLabel": "九九の表とかけ算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "8 × □ = 56。□に入る数はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 7,
+      "unit": ""
+    },
+    "explanation": "8 × 7 = 56 なので、□は7です。",
+    "estimatedSeconds": 45,
+    "skillTags": [
+      "九九",
+      "かけ算"
+    ],
+    "familyId": "mul_gap",
+    "learningObjective": "九九の式の□に入る数を見つけられる",
+    "funMechanic": "drill",
+    "commonMistake": "□をとばして、見えている2つの数をかけてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_multiplication_table_111",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
     "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "4 × 6 はいくつ？",
+    "prompt": "1れつに6人ずつ、4れつにならびます。ぜんぶで何人？",
     "choices": [],
     "answer": {
       "type": "number",
       "value": 24,
-      "unit": ""
+      "unit": "人"
     },
-    "explanation": "4を6こ分あわせるので、4 × 6 = 24 です。",
-    "estimatedSeconds": 45,
+    "explanation": "6人の4れつ分なので、6 × 4 = 24 です。",
+    "estimatedSeconds": 60,
     "skillTags": [
-      "九九",
-      "かけ算"
+      "かけ算",
+      "文章題"
     ],
+    "familyId": "mul_array_word",
+    "learningObjective": "「1つ分×いくつ分」の場面をかけ算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "かけ算にせず、2つの数をたしてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -693,28 +484,352 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_022",
-    "version": 1,
+    "id": "g3_math_multiplication_table_112",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
     "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "4 × 7 はいくつ？",
+    "prompt": "1週間は7日です。3週間は何日？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 21,
+      "unit": "日"
+    },
+    "explanation": "7日が3つ分なので、7 × 3 = 21 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "かけ算",
+      "文章題"
+    ],
+    "familyId": "mul_array_word",
+    "learningObjective": "「1つ分×いくつ分」の場面をかけ算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "かけ算にせず、2つの数をたしてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_multiplication_table_113",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "multiplication_table",
+    "unitLabel": "九九の表とかけ算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "1はこに8こ入りのチョコが5はこあります。ぜんぶで何こ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 40,
+      "unit": "こ"
+    },
+    "explanation": "8こが5はこ分なので、8 × 5 = 40 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "かけ算",
+      "文章題"
+    ],
+    "familyId": "mul_array_word",
+    "learningObjective": "「1つ分×いくつ分」の場面をかけ算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "かけ算にせず、2つの数をたしてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_multiplication_table_114",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "multiplication_table",
+    "unitLabel": "九九の表とかけ算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "自転車が9台あります。タイヤは1台に2つずつです。タイヤはぜんぶでいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 18,
+      "unit": "つ"
+    },
+    "explanation": "2つが9台分なので、2 × 9 = 18 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "かけ算",
+      "文章題"
+    ],
+    "familyId": "mul_array_word",
+    "learningObjective": "「1つ分×いくつ分」の場面をかけ算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "かけ算にせず、2つの数をたしてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_multiplication_table_115",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "multiplication_table",
+    "unitLabel": "九九の表とかけ算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "シュートれんしゅうを1日に4回ずつ、6日間しました。ぜんぶで何回？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 24,
+      "unit": "回"
+    },
+    "explanation": "4回が6日分なので、4 × 6 = 24 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "かけ算",
+      "文章題",
+      "soccer_context"
+    ],
+    "familyId": "mul_array_word",
+    "learningObjective": "「1つ分×いくつ分」の場面をかけ算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "かけ算にせず、2つの数をたしてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_multiplication_table_116",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "multiplication_table",
+    "unitLabel": "九九の表とかけ算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "赤いリボンは5cmです。青いリボンは赤の3ばいの長さです。青いリボンは何cm？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 15,
+      "unit": "cm"
+    },
+    "explanation": "5cmの3ばいなので、5 × 3 = 15 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "かけ算",
+      "ばい",
+      "文章題"
+    ],
+    "familyId": "mul_times_word",
+    "learningObjective": "「〜ばい」の大きさをかけ算で求められる",
+    "funMechanic": "drill",
+    "commonMistake": "ばいの数をかけずに、たしてしまう(5+3など)",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_multiplication_table_117",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "multiplication_table",
+    "unitLabel": "九九の表とかけ算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "みかんが4こあります。りんごはみかんの2ばいの数です。りんごは何こ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 8,
+      "unit": "こ"
+    },
+    "explanation": "4この2ばいなので、4 × 2 = 8 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "かけ算",
+      "ばい",
+      "文章題"
+    ],
+    "familyId": "mul_times_word",
+    "learningObjective": "「〜ばい」の大きさをかけ算で求められる",
+    "funMechanic": "drill",
+    "commonMistake": "ばいの数をかけずに、たしてしまう(5+3など)",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_multiplication_table_118",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "multiplication_table",
+    "unitLabel": "九九の表とかけ算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "弟は6さいです。お父さんの年れいは弟の6ばいです。お父さんは何さい？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 36,
+      "unit": "さい"
+    },
+    "explanation": "6さいの6ばいなので、6 × 6 = 36 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "かけ算",
+      "ばい",
+      "文章題"
+    ],
+    "familyId": "mul_times_word",
+    "learningObjective": "「〜ばい」の大きさをかけ算で求められる",
+    "funMechanic": "drill",
+    "commonMistake": "ばいの数をかけずに、たしてしまう(5+3など)",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_multiplication_table_119",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "multiplication_table",
+    "unitLabel": "九九の表とかけ算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "白いテープは7cmです。黒いテープは白の4ばいの長さです。黒いテープは何cm？",
     "choices": [],
     "answer": {
       "type": "number",
       "value": 28,
-      "unit": ""
+      "unit": "cm"
     },
-    "explanation": "4を7こ分あわせるので、4 × 7 = 28 です。",
-    "estimatedSeconds": 45,
+    "explanation": "7cmの4ばいなので、7 × 4 = 28 です。",
+    "estimatedSeconds": 60,
     "skillTags": [
-      "九九",
-      "かけ算"
+      "かけ算",
+      "ばい",
+      "文章題"
     ],
+    "familyId": "mul_times_word",
+    "learningObjective": "「〜ばい」の大きさをかけ算で求められる",
+    "funMechanic": "drill",
+    "commonMistake": "ばいの数をかけずに、たしてしまう(5+3など)",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -726,28 +841,40 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_023",
-    "version": 1,
+    "id": "g3_math_multiplication_table_120",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
     "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "4 × 8 はいくつ？",
+    "prompt": "水そうに金魚が3びきいます。メダカは金魚の5ばいの数です。メダカは何びき？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 32,
-      "unit": ""
+      "value": 15,
+      "unit": "ひき"
     },
-    "explanation": "4を8こ分あわせるので、4 × 8 = 32 です。",
-    "estimatedSeconds": 45,
+    "explanation": "3びきの5ばいなので、3 × 5 = 15 です。",
+    "estimatedSeconds": 60,
     "skillTags": [
-      "九九",
-      "かけ算"
+      "かけ算",
+      "ばい",
+      "文章題"
     ],
+    "familyId": "mul_times_word",
+    "learningObjective": "「〜ばい」の大きさをかけ算で求められる",
+    "funMechanic": "drill",
+    "commonMistake": "ばいの数をかけずに、たしてしまう(5+3など)",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -759,28 +886,593 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_024",
-    "version": 1,
+    "id": "g3_math_multiplication_table_121",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
     "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 2
+    },
+    "questionType": "expression_choice",
+    "prompt": "1ふくろ6こ入りのあめが7ふくろあります。ぜんぶの数をもとめる式はどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "6 × 7"
+      },
+      {
+        "id": "b",
+        "text": "6 + 7"
+      },
+      {
+        "id": "c",
+        "text": "7 - 6"
+      },
+      {
+        "id": "d",
+        "text": "6 + 6"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "6 × 7"
+    },
+    "explanation": "6こが7ふくろ分なので、6 × 7 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "かけ算",
+      "式を選ぶ"
+    ],
+    "familyId": "mul_expression",
+    "learningObjective": "かけ算を使う場面かどうかを判断して式を選べる",
+    "funMechanic": "best_choice",
+    "commonMistake": "「ずつ」「ばい」の場面でもたし算の式を選んでしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_multiplication_table_122",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "multiplication_table",
+    "unitLabel": "九九の表とかけ算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 2
+    },
+    "questionType": "expression_choice",
+    "prompt": "8人に3まいずつカードをくばります。いるカードの数をもとめる式はどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "3 × 8"
+      },
+      {
+        "id": "b",
+        "text": "3 + 8"
+      },
+      {
+        "id": "c",
+        "text": "8 - 3"
+      },
+      {
+        "id": "d",
+        "text": "3 + 3"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "3 × 8"
+    },
+    "explanation": "1人分3まいが8人分なので、3 × 8 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "かけ算",
+      "式を選ぶ"
+    ],
+    "familyId": "mul_expression",
+    "learningObjective": "かけ算を使う場面かどうかを判断して式を選べる",
+    "funMechanic": "best_choice",
+    "commonMistake": "「ずつ」「ばい」の場面でもたし算の式を選んでしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_multiplication_table_123",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "multiplication_table",
+    "unitLabel": "九九の表とかけ算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 2
+    },
+    "questionType": "expression_choice",
+    "prompt": "1チームは5人です。4チームぶんの人数をもとめる式はどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "5 × 4"
+      },
+      {
+        "id": "b",
+        "text": "5 + 4"
+      },
+      {
+        "id": "c",
+        "text": "5 + 5 + 5"
+      },
+      {
+        "id": "d",
+        "text": "5 - 4"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "5 × 4"
+    },
+    "explanation": "5人が4チーム分なので、5 × 4 です。5 + 5 + 5 は3チーム分になってしまいます。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "かけ算",
+      "式を選ぶ",
+      "soccer_context"
+    ],
+    "familyId": "mul_expression",
+    "learningObjective": "かけ算を使う場面かどうかを判断して式を選べる",
+    "funMechanic": "best_choice",
+    "commonMistake": "「ずつ」「ばい」の場面でもたし算の式を選んでしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_multiplication_table_124",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "multiplication_table",
+    "unitLabel": "九九の表とかけ算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 2
+    },
+    "questionType": "expression_choice",
+    "prompt": "1しあいで2点ずつ、5しあいで取った点の数をもとめる式はどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "2 × 5"
+      },
+      {
+        "id": "b",
+        "text": "2 + 5"
+      },
+      {
+        "id": "c",
+        "text": "5 - 2"
+      },
+      {
+        "id": "d",
+        "text": "2 + 2"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "2 × 5"
+    },
+    "explanation": "2点が5しあい分なので、2 × 5 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "かけ算",
+      "式を選ぶ",
+      "soccer_context"
+    ],
+    "familyId": "mul_expression",
+    "learningObjective": "かけ算を使う場面かどうかを判断して式を選べる",
+    "funMechanic": "best_choice",
+    "commonMistake": "「ずつ」「ばい」の場面でもたし算の式を選んでしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_multiplication_table_125",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "multiplication_table",
+    "unitLabel": "九九の表とかけ算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "4 × 9 はいくつ？",
+    "prompt": "6 × 8 = 48 です。計算しないで答えられるかな。8 × 6 はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 48,
+      "unit": ""
+    },
+    "explanation": "かけられる数とかける数を入れかえても、答えは同じです。8 × 6 = 48 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "かけ算",
+      "きまり見つけ"
+    ],
+    "familyId": "mul_swap_rule",
+    "learningObjective": "かけられる数とかける数を入れかえても答えが同じきまりに気づく",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "入れかえると答えも変わると思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_multiplication_table_126",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "multiplication_table",
+    "unitLabel": "九九の表とかけ算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "九九の表で、3 × 7 と同じ答えになる九九はどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "7 × 3"
+      },
+      {
+        "id": "b",
+        "text": "3 × 8"
+      },
+      {
+        "id": "c",
+        "text": "4 × 7"
+      },
+      {
+        "id": "d",
+        "text": "7 × 7"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "7 × 3"
+    },
+    "explanation": "入れかえた 7 × 3 も答えは21で同じです。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "かけ算",
+      "きまり見つけ"
+    ],
+    "familyId": "mul_swap_rule",
+    "learningObjective": "かけられる数とかける数を入れかえても答えが同じきまりに気づく",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "入れかえると答えも変わると思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_multiplication_table_127",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "multiplication_table",
+    "unitLabel": "九九の表とかけ算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "7 × 4、4 × 7、7 + 4 のうち、答えがほかとちがうのはどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "7 + 4"
+      },
+      {
+        "id": "b",
+        "text": "7 × 4"
+      },
+      {
+        "id": "c",
+        "text": "4 × 7"
+      },
+      {
+        "id": "d",
+        "text": "どれも同じ"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "7 + 4"
+    },
+    "explanation": "7 × 4 と 4 × 7 はどちらも28ですが、7 + 4 は11です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "かけ算",
+      "きまり見つけ"
+    ],
+    "familyId": "mul_swap_rule",
+    "learningObjective": "かけられる数とかける数を入れかえても答えが同じきまりに気づく",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "入れかえると答えも変わると思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_multiplication_table_128",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "multiplication_table",
+    "unitLabel": "九九の表とかけ算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "5のだんの九九の答え(5、10、15…)の一の位に、いつも出てくる数字はどれとどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "0と5"
+      },
+      {
+        "id": "b",
+        "text": "1と5"
+      },
+      {
+        "id": "c",
+        "text": "0と2"
+      },
+      {
+        "id": "d",
+        "text": "5だけ"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "0と5"
+    },
+    "explanation": "5、10、15、20…と、一の位は5と0がくりかえし出てきます。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "かけ算",
+      "きまり見つけ"
+    ],
+    "familyId": "mul_swap_rule",
+    "learningObjective": "かけられる数とかける数を入れかえても答えが同じきまりに気づく",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "入れかえると答えも変わると思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_multiplication_table_129",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "multiplication_table",
+    "unitLabel": "九九の表とかけ算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "7 × 5 = 35 です。7 × 6 の答えは、35にいくつたした数？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 7,
+      "unit": ""
+    },
+    "explanation": "かける数が1ふえると、答えはかけられる数の7だけふえます。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "かけ算",
+      "きまり見つけ"
+    ],
+    "familyId": "mul_add_one",
+    "learningObjective": "かける数が1ふえると、答えはかけられる数だけふえるきまりがわかる",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "答えが1だけふえると思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_multiplication_table_130",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "multiplication_table",
+    "unitLabel": "九九の表とかけ算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "9 × 4 = 36 です。36にたして考えると、9 × 5 はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 45,
+      "unit": ""
+    },
+    "explanation": "9 × 5 は 9 × 4 より9大きいので、36 + 9 = 45 です。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "かけ算",
+      "きまり見つけ"
+    ],
+    "familyId": "mul_add_one",
+    "learningObjective": "かける数が1ふえると、答えはかけられる数だけふえるきまりがわかる",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "答えが1だけふえると思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_multiplication_table_131",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "multiplication_table",
+    "unitLabel": "九九の表とかけ算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "6 × 7 = 42 です。42から考えると、6 × 6 はいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
       "value": 36,
       "unit": ""
     },
-    "explanation": "4を9こ分あわせるので、4 × 9 = 36 です。",
-    "estimatedSeconds": 45,
+    "explanation": "かける数が1へると、答えは6だけへります。42 - 6 = 36 です。",
+    "estimatedSeconds": 75,
     "skillTags": [
-      "九九",
-      "かけ算"
+      "かけ算",
+      "きまり見つけ"
     ],
+    "familyId": "mul_add_one",
+    "learningObjective": "かける数が1ふえると、答えはかけられる数だけふえるきまりがわかる",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "答えが1だけふえると思いこむ",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -792,44 +1484,99 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_025",
-    "version": 1,
+    "id": "g3_math_multiplication_table_132",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "expression_choice",
-    "prompt": "3こ入りのふくろが6ふくろあります。ぜんぶで何こかをもとめる式はどれ？",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "8 × 3 と 8 × 4 の答えのちがいはいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 8,
+      "unit": ""
+    },
+    "explanation": "8 × 3 = 24、8 × 4 = 32 で、ちがいは8です。かける数が1ちがうと、答えはかけられる数だけちがいます。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "かけ算",
+      "きまり見つけ"
+    ],
+    "familyId": "mul_add_one",
+    "learningObjective": "かける数が1ふえると、答えはかけられる数だけふえるきまりがわかる",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "答えが1だけふえると思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_multiplication_table_133",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "multiplication_table",
+    "unitLabel": "九九の表とかけ算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "まちがっている計算は、どれ？",
     "choices": [
       {
         "id": "a",
-        "text": "3 × 6"
+        "text": "7 × 8 = 54"
       },
       {
         "id": "b",
-        "text": "3 + 6"
+        "text": "6 × 4 = 24"
       },
       {
         "id": "c",
-        "text": "6 - 3"
+        "text": "9 × 3 = 27"
       },
       {
         "id": "d",
-        "text": "3 ÷ 6"
+        "text": "5 × 6 = 30"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "3 × 6"
+      "value": "7 × 8 = 54"
     },
-    "explanation": "3こ入りが6ふくろあるので、3 × 6 です。",
-    "estimatedSeconds": 45,
+    "explanation": "7 × 8 = 56 です。54は 6 × 9 の答えです。",
+    "estimatedSeconds": 90,
     "skillTags": [
       "かけ算",
-      "式を選ぶ"
+      "たしかめ"
     ],
+    "familyId": "mul_find_mistake",
+    "learningObjective": "九九のまちがいを、きまりやたしかめで見つけられる",
+    "funMechanic": "find_mistake",
+    "commonMistake": "近いだんの答えを正しいと思いこむ",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -841,44 +1588,55 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_026",
-    "version": 1,
+    "id": "g3_math_multiplication_table_134",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "expression_choice",
-    "prompt": "4こ入りのふくろが7ふくろあります。ぜんぶで何こかをもとめる式はどれ？",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "まちがっている計算は、どれ？",
     "choices": [
       {
         "id": "a",
-        "text": "4 × 7"
+        "text": "6 × 9 = 56"
       },
       {
         "id": "b",
-        "text": "4 + 7"
+        "text": "8 × 8 = 64"
       },
       {
         "id": "c",
-        "text": "7 - 4"
+        "text": "4 × 9 = 36"
       },
       {
         "id": "d",
-        "text": "4 ÷ 7"
+        "text": "3 × 7 = 21"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "4 × 7"
+      "value": "6 × 9 = 56"
     },
-    "explanation": "4こ入りが7ふくろあるので、4 × 7 です。",
-    "estimatedSeconds": 45,
+    "explanation": "6 × 9 = 54 です。56は 7 × 8 の答えです。",
+    "estimatedSeconds": 90,
     "skillTags": [
       "かけ算",
-      "式を選ぶ"
+      "たしかめ"
     ],
+    "familyId": "mul_find_mistake",
+    "learningObjective": "九九のまちがいを、きまりやたしかめで見つけられる",
+    "funMechanic": "find_mistake",
+    "commonMistake": "近いだんの答えを正しいと思いこむ",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -890,44 +1648,55 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_027",
-    "version": 1,
+    "id": "g3_math_multiplication_table_135",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "expression_choice",
-    "prompt": "5こ入りのふくろが8ふくろあります。ぜんぶで何こかをもとめる式はどれ？",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "みおさんは「どんな数に0をかけても、答えはその数のまま」と言いました。正しい直し方はどれ？",
     "choices": [
       {
         "id": "a",
-        "text": "5 × 8"
+        "text": "どんな数に0をかけても、答えは0"
       },
       {
         "id": "b",
-        "text": "5 + 8"
+        "text": "みおさんの言うとおりで正しい"
       },
       {
         "id": "c",
-        "text": "8 - 5"
+        "text": "答えは1になる"
       },
       {
         "id": "d",
-        "text": "5 ÷ 8"
+        "text": "答えは10になる"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "5 × 8"
+      "value": "どんな数に0をかけても、答えは0"
     },
-    "explanation": "5こ入りが8ふくろあるので、5 × 8 です。",
-    "estimatedSeconds": 45,
+    "explanation": "0が何こ分あっても0なので、どんな数に0をかけても答えは0です。",
+    "estimatedSeconds": 90,
     "skillTags": [
       "かけ算",
-      "式を選ぶ"
+      "たしかめ"
     ],
+    "familyId": "mul_find_mistake",
+    "learningObjective": "九九のまちがいを、きまりやたしかめで見つけられる",
+    "funMechanic": "find_mistake",
+    "commonMistake": "近いだんの答えを正しいと思いこむ",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -939,44 +1708,55 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_028",
-    "version": 1,
+    "id": "g3_math_multiplication_table_136",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "expression_choice",
-    "prompt": "6こ入りのふくろが9ふくろあります。ぜんぶで何こかをもとめる式はどれ？",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 3,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "はるとさんは 3 × 9 を「3 × 10 = 30 だから、30 + 3 で 33」と考えました。正しい直し方はどれ？",
     "choices": [
       {
         "id": "a",
-        "text": "6 × 9"
+        "text": "3 × 9 は 3 × 10 より3小さいから、30 - 3 で27"
       },
       {
         "id": "b",
-        "text": "6 + 9"
+        "text": "30 + 3 = 33 で正しい"
       },
       {
         "id": "c",
-        "text": "9 - 6"
+        "text": "30のままでよい"
       },
       {
         "id": "d",
-        "text": "6 ÷ 9"
+        "text": "3 × 9 は九九の表にないので計算できない"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "6 × 9"
+      "value": "3 × 9 は 3 × 10 より3小さいから、30 - 3 で27"
     },
-    "explanation": "6こ入りが9ふくろあるので、6 × 9 です。",
-    "estimatedSeconds": 45,
+    "explanation": "かける数が10から9に1へると、答えは3へります。30 - 3 = 27 です。",
+    "estimatedSeconds": 90,
     "skillTags": [
       "かけ算",
-      "式を選ぶ"
+      "たしかめ"
     ],
+    "familyId": "mul_find_mistake",
+    "learningObjective": "九九のまちがいを、きまりやたしかめで見つけられる",
+    "funMechanic": "find_mistake",
+    "commonMistake": "近いだんの答えを正しいと思いこむ",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -988,16 +1768,263 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_029",
-    "version": 1,
+    "id": "g3_math_multiplication_table_137",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "expression_choice",
-    "prompt": "7こ入りのふくろが8ふくろあります。ぜんぶで何こかをもとめる式はどれ？",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "はると「0 × 7 = 0」。みお「7 × 0 = 7」。正しいのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "はるとだけ正しい"
+      },
+      {
+        "id": "b",
+        "text": "二人とも正しい"
+      },
+      {
+        "id": "c",
+        "text": "みおだけ正しい"
+      },
+      {
+        "id": "d",
+        "text": "二人ともまちがい"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "はるとだけ正しい"
+    },
+    "explanation": "0に何をかけても、何に0をかけても答えは0です。7 × 0 = 0 なので、みおはまちがいです。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "かけ算",
+      "きまり見つけ"
+    ],
+    "familyId": "mul_judge_claim",
+    "learningObjective": "かけ算のきまりについての主張を、計算でたしかめて判断できる",
+    "funMechanic": "judge_claim",
+    "commonMistake": "形がちがう式は答えもちがうと思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_multiplication_table_138",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "multiplication_table",
+    "unitLabel": "九九の表とかけ算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "はると「6 × 9 は、9 × 6 と同じ答え」。みお「6 × 9 は、6 × 10 より6小さい」。正しいのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "二人とも正しい"
+      },
+      {
+        "id": "b",
+        "text": "はるとだけ正しい"
+      },
+      {
+        "id": "c",
+        "text": "みおだけ正しい"
+      },
+      {
+        "id": "d",
+        "text": "二人ともまちがい"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "二人とも正しい"
+    },
+    "explanation": "9 × 6 = 54 で同じです。6 × 10 = 60 から6ひくと54なので、みおの考え方も正しいです。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "かけ算",
+      "きまり見つけ"
+    ],
+    "familyId": "mul_judge_claim",
+    "learningObjective": "かけ算のきまりについての主張を、計算でたしかめて判断できる",
+    "funMechanic": "judge_claim",
+    "commonMistake": "形がちがう式は答えもちがうと思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_multiplication_table_139",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "multiplication_table",
+    "unitLabel": "九九の表とかけ算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "はると「九九の表で、答えが12になる九九は1つだけ」。みお「2つ以上ある」。正しいのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "みおだけ正しい"
+      },
+      {
+        "id": "b",
+        "text": "二人とも正しい"
+      },
+      {
+        "id": "c",
+        "text": "はるとだけ正しい"
+      },
+      {
+        "id": "d",
+        "text": "二人ともまちがい"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "みおだけ正しい"
+    },
+    "explanation": "2 × 6、6 × 2、3 × 4、4 × 3 など、答えが12になる九九はいくつもあります。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "かけ算",
+      "きまり見つけ"
+    ],
+    "familyId": "mul_judge_claim",
+    "learningObjective": "かけ算のきまりについての主張を、計算でたしかめて判断できる",
+    "funMechanic": "judge_claim",
+    "commonMistake": "形がちがう式は答えもちがうと思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_multiplication_table_140",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "multiplication_table",
+    "unitLabel": "九九の表とかけ算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "はると「4 × 8 の答えは、4 × 4 の答えを2ばいした数と同じ」。みお「そんなきまりはないよ」。正しいのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "はるとだけ正しい"
+      },
+      {
+        "id": "b",
+        "text": "二人とも正しい"
+      },
+      {
+        "id": "c",
+        "text": "みおだけ正しい"
+      },
+      {
+        "id": "d",
+        "text": "二人ともまちがい"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "はるとだけ正しい"
+    },
+    "explanation": "4 × 4 = 16 で、16の2ばいは32。4 × 8 = 32 なので同じです。かける数を半分にして2ばいしても答えは同じです。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "かけ算",
+      "きまり見つけ"
+    ],
+    "familyId": "mul_judge_claim",
+    "learningObjective": "かけ算のきまりについての主張を、計算でたしかめて判断できる",
+    "funMechanic": "judge_claim",
+    "commonMistake": "形がちがう式は答えもちがうと思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_multiplication_table_141",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "multiplication_table",
+    "unitLabel": "九九の表とかけ算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "6 × 9 と 7 × 8。答えが大きいのはどっち？(予想してからたしかめよう)",
     "choices": [
       {
         "id": "a",
@@ -1005,27 +2032,31 @@ window.CHIBI_QUEST_QUESTIONS = [
       },
       {
         "id": "b",
-        "text": "7 + 8"
+        "text": "6 × 9"
       },
       {
         "id": "c",
-        "text": "8 - 7"
+        "text": "どちらも同じ"
       },
       {
         "id": "d",
-        "text": "7 ÷ 8"
+        "text": "くらべられない"
       }
     ],
     "answer": {
       "type": "choice",
       "value": "7 × 8"
     },
-    "explanation": "7こ入りが8ふくろあるので、7 × 8 です。",
-    "estimatedSeconds": 45,
+    "explanation": "6 × 9 = 54、7 × 8 = 56 なので、7 × 8 のほうが大きいです。",
+    "estimatedSeconds": 75,
     "skillTags": [
       "かけ算",
-      "式を選ぶ"
+      "大小比較"
     ],
+    "familyId": "mul_predict_compare",
+    "learningObjective": "かけ算の答えの大きさを予想して、たしかめられる",
+    "funMechanic": "predict_check",
+    "commonMistake": "かける数が大きいほうが答えも大きいと思いこむ",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -1037,114 +2068,23 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_030",
-    "version": 1,
+    "id": "g3_math_multiplication_table_142",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "expression_choice",
-    "prompt": "8こ入りのふくろが9ふくろあります。ぜんぶで何こかをもとめる式はどれ？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "8 × 9"
-      },
-      {
-        "id": "b",
-        "text": "8 + 9"
-      },
-      {
-        "id": "c",
-        "text": "9 - 8"
-      },
-      {
-        "id": "d",
-        "text": "8 ÷ 9"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "8 × 9"
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
     },
-    "explanation": "8こ入りが9ふくろあるので、8 × 9 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "かけ算",
-      "式を選ぶ"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_multiplication_table_031",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "multiplication_table",
-    "unitLabel": "九九の表とかけ算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "expression_choice",
-    "prompt": "9こ入りのふくろが4ふくろあります。ぜんぶで何こかをもとめる式はどれ？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "9 × 4"
-      },
-      {
-        "id": "b",
-        "text": "9 + 4"
-      },
-      {
-        "id": "c",
-        "text": "4 - 9"
-      },
-      {
-        "id": "d",
-        "text": "9 ÷ 4"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "9 × 4"
-    },
-    "explanation": "9こ入りが4ふくろあるので、9 × 4 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "かけ算",
-      "式を選ぶ"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_multiplication_table_032",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "multiplication_table",
-    "unitLabel": "九九の表とかけ算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "expression_choice",
-    "prompt": "6こ入りのふくろが6ふくろあります。ぜんぶで何こかをもとめる式はどれ？",
+    "questionType": "multiple_choice",
+    "prompt": "5 × 7 と 6 × 6。答えが大きいのはどっち？",
     "choices": [
       {
         "id": "a",
@@ -1152,27 +2092,31 @@ window.CHIBI_QUEST_QUESTIONS = [
       },
       {
         "id": "b",
-        "text": "6 + 6"
+        "text": "5 × 7"
       },
       {
         "id": "c",
-        "text": "6 - 6"
+        "text": "どちらも同じ"
       },
       {
         "id": "d",
-        "text": "6 ÷ 6"
+        "text": "くらべられない"
       }
     ],
     "answer": {
       "type": "choice",
       "value": "6 × 6"
     },
-    "explanation": "6こ入りが6ふくろあるので、6 × 6 です。",
-    "estimatedSeconds": 45,
+    "explanation": "5 × 7 = 35、6 × 6 = 36 なので、6 × 6 のほうが1大きいです。",
+    "estimatedSeconds": 75,
     "skillTags": [
       "かけ算",
-      "式を選ぶ"
+      "大小比較"
     ],
+    "familyId": "mul_predict_compare",
+    "learningObjective": "かけ算の答えの大きさを予想して、たしかめられる",
+    "funMechanic": "predict_check",
+    "commonMistake": "かける数が大きいほうが答えも大きいと思いこむ",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -1184,44 +2128,55 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_033",
-    "version": 1,
+    "id": "g3_math_multiplication_table_143",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "expression_choice",
-    "prompt": "7こ入りのふくろが7ふくろあります。ぜんぶで何こかをもとめる式はどれ？",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "3 × 8 と 4 × 6。答えはどうなる？",
     "choices": [
       {
         "id": "a",
-        "text": "7 × 7"
+        "text": "どちらも同じ"
       },
       {
         "id": "b",
-        "text": "7 + 7"
+        "text": "3 × 8 が大きい"
       },
       {
         "id": "c",
-        "text": "7 - 7"
+        "text": "4 × 6 が大きい"
       },
       {
         "id": "d",
-        "text": "7 ÷ 7"
+        "text": "くらべられない"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "7 × 7"
+      "value": "どちらも同じ"
     },
-    "explanation": "7こ入りが7ふくろあるので、7 × 7 です。",
-    "estimatedSeconds": 45,
+    "explanation": "3 × 8 = 24、4 × 6 = 24 で、どちらも同じ24です。",
+    "estimatedSeconds": 75,
     "skillTags": [
       "かけ算",
-      "式を選ぶ"
+      "大小比較"
     ],
+    "familyId": "mul_predict_compare",
+    "learningObjective": "かけ算の答えの大きさを予想して、たしかめられる",
+    "funMechanic": "predict_check",
+    "commonMistake": "かける数が大きいほうが答えも大きいと思いこむ",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -1233,224 +2188,39 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_034",
-    "version": 1,
+    "id": "g3_math_multiplication_table_144",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "expression_choice",
-    "prompt": "8こ入りのふくろが5ふくろあります。ぜんぶで何こかをもとめる式はどれ？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "8 × 5"
-      },
-      {
-        "id": "b",
-        "text": "8 + 5"
-      },
-      {
-        "id": "c",
-        "text": "5 - 8"
-      },
-      {
-        "id": "d",
-        "text": "8 ÷ 5"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "8 × 5"
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
     },
-    "explanation": "8こ入りが5ふくろあるので、8 × 5 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "かけ算",
-      "式を選ぶ"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_multiplication_table_035",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "multiplication_table",
-    "unitLabel": "九九の表とかけ算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "expression_choice",
-    "prompt": "9こ入りのふくろが3ふくろあります。ぜんぶで何こかをもとめる式はどれ？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "9 × 3"
-      },
-      {
-        "id": "b",
-        "text": "9 + 3"
-      },
-      {
-        "id": "c",
-        "text": "3 - 9"
-      },
-      {
-        "id": "d",
-        "text": "9 ÷ 3"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "9 × 3"
-    },
-    "explanation": "9こ入りが3ふくろあるので、9 × 3 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "かけ算",
-      "式を選ぶ"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_multiplication_table_036",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "multiplication_table",
-    "unitLabel": "九九の表とかけ算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "expression_choice",
-    "prompt": "4こ入りのふくろが8ふくろあります。ぜんぶで何こかをもとめる式はどれ？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "4 × 8"
-      },
-      {
-        "id": "b",
-        "text": "4 + 8"
-      },
-      {
-        "id": "c",
-        "text": "8 - 4"
-      },
-      {
-        "id": "d",
-        "text": "4 ÷ 8"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "4 × 8"
-    },
-    "explanation": "4こ入りが8ふくろあるので、4 × 8 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "かけ算",
-      "式を選ぶ"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_multiplication_table_037",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "multiplication_table",
-    "unitLabel": "九九の表とかけ算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "expression_choice",
-    "prompt": "2こ入りのふくろが9ふくろあります。ぜんぶで何こかをもとめる式はどれ？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "2 × 9"
-      },
-      {
-        "id": "b",
-        "text": "2 + 9"
-      },
-      {
-        "id": "c",
-        "text": "9 - 2"
-      },
-      {
-        "id": "d",
-        "text": "2 ÷ 9"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "2 × 9"
-    },
-    "explanation": "2こ入りが9ふくろあるので、2 × 9 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "かけ算",
-      "式を選ぶ"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_multiplication_table_038",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "multiplication_table",
-    "unitLabel": "九九の表とかけ算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
     "questionType": "numeric_input",
-    "prompt": "同じ数ずつならんだカードがあります。4まいの列が8列あります。カードはぜんぶで何まい？",
+    "prompt": "ヒント1：九九の6のだんの答えです。ヒント2：50より大きいです。この数はいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 32,
-      "unit": "まい"
+      "value": 54,
+      "unit": ""
     },
-    "explanation": "4まいの列が8列あるので、4 × 8 = 32 です。",
-    "estimatedSeconds": 45,
+    "explanation": "6のだんで50より大きいのは 6 × 9 = 54 だけです。",
+    "estimatedSeconds": 120,
     "skillTags": [
       "かけ算",
-      "文章題"
+      "推理"
     ],
+    "familyId": "mul_hidden_number",
+    "learningObjective": "ヒントから九九の答えをしぼりこめる",
+    "funMechanic": "inference",
+    "commonMistake": "ヒントの1つだけで答えを決めてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -1462,28 +2232,39 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_039",
-    "version": 1,
+    "id": "g3_math_multiplication_table_145",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "同じ数ずつならんだカードがあります。5まいの列が3列あります。カードはぜんぶで何まい？",
+    "prompt": "ヒント1：3のだんにも4のだんにも出てくる答えです。ヒント2：20より小さいです。この数はいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 15,
-      "unit": "まい"
+      "value": 12,
+      "unit": ""
     },
-    "explanation": "5まいの列が3列あるので、5 × 3 = 15 です。",
-    "estimatedSeconds": 45,
+    "explanation": "3 × 4 = 12、4 × 3 = 12 で、どちらのだんにもある20より小さい数は12です。",
+    "estimatedSeconds": 120,
     "skillTags": [
       "かけ算",
-      "文章題"
+      "推理"
     ],
+    "familyId": "mul_hidden_number",
+    "learningObjective": "ヒントから九九の答えをしぼりこめる",
+    "funMechanic": "inference",
+    "commonMistake": "ヒントの1つだけで答えを決めてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -1495,28 +2276,39 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_040",
-    "version": 1,
+    "id": "g3_math_multiplication_table_146",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "同じ数ずつならんだカードがあります。6まいの列が6列あります。カードはぜんぶで何まい？",
+    "prompt": "ヒント1：九九の5のだんの答えです。ヒント2：30より大きくて、40より小さいです。この数はいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 36,
-      "unit": "まい"
+      "value": 35,
+      "unit": ""
     },
-    "explanation": "6まいの列が6列あるので、6 × 6 = 36 です。",
-    "estimatedSeconds": 45,
+    "explanation": "5のだんで30より大きく40より小さいのは 5 × 7 = 35 だけです。",
+    "estimatedSeconds": 120,
     "skillTags": [
       "かけ算",
-      "文章題"
+      "推理"
     ],
+    "familyId": "mul_hidden_number",
+    "learningObjective": "ヒントから九九の答えをしぼりこめる",
+    "funMechanic": "inference",
+    "commonMistake": "ヒントの1つだけで答えを決めてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -1528,28 +2320,39 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_041",
-    "version": 1,
+    "id": "g3_math_multiplication_table_147",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "同じ数ずつならんだカードがあります。7まいの列が9列あります。カードはぜんぶで何まい？",
+    "prompt": "ある数に4をかけると32になります。同じ「ある数」に6をかけると、いくつ？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 63,
-      "unit": "まい"
+      "value": 48,
+      "unit": ""
     },
-    "explanation": "7まいの列が9列あるので、7 × 9 = 63 です。",
-    "estimatedSeconds": 45,
+    "explanation": "4をかけて32になる数は8です。8 × 6 = 48 です。",
+    "estimatedSeconds": 120,
     "skillTags": [
       "かけ算",
-      "文章題"
+      "推理"
     ],
+    "familyId": "mul_hidden_number",
+    "learningObjective": "ヒントから九九の答えをしぼりこめる",
+    "funMechanic": "inference",
+    "commonMistake": "ヒントの1つだけで答えを決めてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -1561,28 +2364,40 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_042",
-    "version": 1,
+    "id": "g3_math_multiplication_table_148",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "同じ数ずつならんだカードがあります。8まいの列が4列あります。カードはぜんぶで何まい？",
+    "prompt": "1はこに2こずつ入ったガムが、1ふくろに3はこ入っています。2ふくろでは、ガムは何こ？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 32,
-      "unit": "まい"
+      "value": 12,
+      "unit": "こ"
     },
-    "explanation": "8まいの列が4列あるので、8 × 4 = 32 です。",
-    "estimatedSeconds": 45,
+    "explanation": "1ふくろ分は 2 × 3 = 6 こです。2ふくろで 6 × 2 = 12 こです。",
+    "estimatedSeconds": 120,
     "skillTags": [
       "かけ算",
-      "文章題"
+      "文章題",
+      "組み合わせ"
     ],
+    "familyId": "mul_multi_step",
+    "learningObjective": "かけ算を2回組み合わせて、ぜんぶの数を求められる",
+    "funMechanic": "inference",
+    "commonMistake": "1回のかけ算で計算をやめてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -1594,28 +2409,41 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_043",
-    "version": 1,
+    "id": "g3_math_multiplication_table_149",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "同じ数ずつならんだカードがあります。9まいの列が7列あります。カードはぜんぶで何まい？",
+    "prompt": "1チーム5人のチームが4つあります。全員に2まいずつカードをくばると、カードは何まい？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 63,
+      "value": 40,
       "unit": "まい"
     },
-    "explanation": "9まいの列が7列あるので、9 × 7 = 63 です。",
-    "estimatedSeconds": 45,
+    "explanation": "全員で 5 × 4 = 20 人です。カードは 20 × 2 = 40 まいです。",
+    "estimatedSeconds": 120,
     "skillTags": [
       "かけ算",
-      "文章題"
+      "文章題",
+      "組み合わせ",
+      "soccer_context"
     ],
+    "familyId": "mul_multi_step",
+    "learningObjective": "かけ算を2回組み合わせて、ぜんぶの数を求められる",
+    "funMechanic": "inference",
+    "commonMistake": "1回のかけ算で計算をやめてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -1627,226 +2455,40 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_multiplication_table_044",
-    "version": 1,
+    "id": "g3_math_multiplication_table_150",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "multiplication_table",
     "unitLabel": "九九の表とかけ算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "同じ数ずつならんだカードがあります。2まいの列が2列あります。カードはぜんぶで何まい？",
+    "prompt": "たてに3こ、横に3れつでクッキーをならべたお皿が、2まいあります。クッキーはぜんぶで何こ？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 4,
-      "unit": "まい"
+      "value": 18,
+      "unit": "こ"
     },
-    "explanation": "2まいの列が2列あるので、2 × 2 = 4 です。",
-    "estimatedSeconds": 45,
+    "explanation": "1まい分は 3 × 3 = 9 こです。2まいで 9 × 2 = 18 こです。",
+    "estimatedSeconds": 120,
     "skillTags": [
       "かけ算",
-      "文章題"
+      "文章題",
+      "組み合わせ"
     ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_multiplication_table_045",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "multiplication_table",
-    "unitLabel": "九九の表とかけ算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "同じ数ずつならんだカードがあります。3まいの列が5列あります。カードはぜんぶで何まい？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 15,
-      "unit": "まい"
-    },
-    "explanation": "3まいの列が5列あるので、3 × 5 = 15 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "かけ算",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_multiplication_table_046",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "multiplication_table",
-    "unitLabel": "九九の表とかけ算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "同じ数ずつならんだカードがあります。4まいの列が8列あります。カードはぜんぶで何まい？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 32,
-      "unit": "まい"
-    },
-    "explanation": "4まいの列が8列あるので、4 × 8 = 32 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "かけ算",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_multiplication_table_047",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "multiplication_table",
-    "unitLabel": "九九の表とかけ算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "同じ数ずつならんだカードがあります。5まいの列が3列あります。カードはぜんぶで何まい？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 15,
-      "unit": "まい"
-    },
-    "explanation": "5まいの列が3列あるので、5 × 3 = 15 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "かけ算",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_multiplication_table_048",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "multiplication_table",
-    "unitLabel": "九九の表とかけ算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "同じ数ずつならんだカードがあります。6まいの列が6列あります。カードはぜんぶで何まい？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 36,
-      "unit": "まい"
-    },
-    "explanation": "6まいの列が6列あるので、6 × 6 = 36 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "かけ算",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_multiplication_table_049",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "multiplication_table",
-    "unitLabel": "九九の表とかけ算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "同じ数ずつならんだカードがあります。7まいの列が9列あります。カードはぜんぶで何まい？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 63,
-      "unit": "まい"
-    },
-    "explanation": "7まいの列が9列あるので、7 × 9 = 63 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "かけ算",
-      "文章題"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_multiplication_table_050",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "multiplication_table",
-    "unitLabel": "九九の表とかけ算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "同じ数ずつならんだカードがあります。8まいの列が4列あります。カードはぜんぶで何まい？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 32,
-      "unit": "まい"
-    },
-    "explanation": "8まいの列が4列あるので、8 × 4 = 32 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "かけ算",
-      "文章題"
-    ],
+    "familyId": "mul_multi_step",
+    "learningObjective": "かけ算を2回組み合わせて、ぜんぶの数を求められる",
+    "funMechanic": "inference",
+    "commonMistake": "1回のかけ算で計算をやめてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -4923,28 +5565,39 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_addition_subtraction_written_001",
-    "version": 1,
+    "id": "g3_math_addition_subtraction_written_101",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "addition_subtraction_written",
     "unitLabel": "たし算とひき算の筆算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "126 + 238 はいくつ？",
+    "prompt": "358 + 264 はいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 364,
+      "value": 622,
       "unit": ""
     },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは364です。",
-    "estimatedSeconds": 45,
+    "explanation": "一の位、十の位、百の位をそろえて、くり上がりに気をつけて計算します。358 + 264 = 622 です。",
+    "estimatedSeconds": 60,
     "skillTags": [
       "筆算",
       "たし算"
     ],
+    "familyId": "add_calc",
+    "learningObjective": "くり上がりのある3けたのたし算を筆算でできる",
+    "funMechanic": "drill",
+    "commonMistake": "くり上がりの1をたし忘れる",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -4956,28 +5609,39 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_addition_subtraction_written_002",
-    "version": 1,
+    "id": "g3_math_addition_subtraction_written_102",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "addition_subtraction_written",
     "unitLabel": "たし算とひき算の筆算",
     "curriculumArea": "A 数と計算",
-    "difficulty": 2,
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "143 + 251 はいくつ？",
+    "prompt": "189 + 276 はいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 394,
+      "value": 465,
       "unit": ""
     },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは394です。",
-    "estimatedSeconds": 45,
+    "explanation": "一の位、十の位、百の位をそろえて、くり上がりに気をつけて計算します。189 + 276 = 465 です。",
+    "estimatedSeconds": 60,
     "skillTags": [
       "筆算",
       "たし算"
     ],
+    "familyId": "add_calc",
+    "learningObjective": "くり上がりのある3けたのたし算を筆算でできる",
+    "funMechanic": "drill",
+    "commonMistake": "くり上がりの1をたし忘れる",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -4989,28 +5653,1366 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_addition_subtraction_written_003",
-    "version": 1,
+    "id": "g3_math_addition_subtraction_written_103",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "347 + 285 はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 632,
+      "unit": ""
+    },
+    "explanation": "一の位、十の位、百の位をそろえて、くり上がりに気をつけて計算します。347 + 285 = 632 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "筆算",
+      "たし算"
+    ],
+    "familyId": "add_calc",
+    "learningObjective": "くり上がりのある3けたのたし算を筆算でできる",
+    "funMechanic": "drill",
+    "commonMistake": "くり上がりの1をたし忘れる",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_104",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "296 + 417 はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 713,
+      "unit": ""
+    },
+    "explanation": "一の位、十の位、百の位をそろえて、くり上がりに気をつけて計算します。296 + 417 = 713 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "筆算",
+      "たし算"
+    ],
+    "familyId": "add_calc",
+    "learningObjective": "くり上がりのある3けたのたし算を筆算でできる",
+    "funMechanic": "drill",
+    "commonMistake": "くり上がりの1をたし忘れる",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_105",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "158 + 563 はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 721,
+      "unit": ""
+    },
+    "explanation": "一の位、十の位、百の位をそろえて、くり上がりに気をつけて計算します。158 + 563 = 721 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "筆算",
+      "たし算"
+    ],
+    "familyId": "add_calc",
+    "learningObjective": "くり上がりのある3けたのたし算を筆算でできる",
+    "funMechanic": "drill",
+    "commonMistake": "くり上がりの1をたし忘れる",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_106",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "624 - 258 はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 366,
+      "unit": ""
+    },
+    "explanation": "位をそろえて、くり下がりに気をつけてひきます。624 - 258 = 366 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "筆算",
+      "ひき算"
+    ],
+    "familyId": "add_sub_calc",
+    "learningObjective": "くり下がりのある3けたのひき算を筆算でできる",
+    "funMechanic": "drill",
+    "commonMistake": "くり下がりのあとに、へった数をひき忘れる",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_107",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "512 - 178 はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 334,
+      "unit": ""
+    },
+    "explanation": "位をそろえて、くり下がりに気をつけてひきます。512 - 178 = 334 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "筆算",
+      "ひき算"
+    ],
+    "familyId": "add_sub_calc",
+    "learningObjective": "くり下がりのある3けたのひき算を筆算でできる",
+    "funMechanic": "drill",
+    "commonMistake": "くり下がりのあとに、へった数をひき忘れる",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_108",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "730 - 274 はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 456,
+      "unit": ""
+    },
+    "explanation": "位をそろえて、くり下がりに気をつけてひきます。730 - 274 = 456 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "筆算",
+      "ひき算"
+    ],
+    "familyId": "add_sub_calc",
+    "learningObjective": "くり下がりのある3けたのひき算を筆算でできる",
+    "funMechanic": "drill",
+    "commonMistake": "くり下がりのあとに、へった数をひき忘れる",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_109",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "405 - 138 はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 267,
+      "unit": ""
+    },
+    "explanation": "位をそろえて、くり下がりに気をつけてひきます。405 - 138 = 267 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "筆算",
+      "ひき算"
+    ],
+    "familyId": "add_sub_calc",
+    "learningObjective": "くり下がりのある3けたのひき算を筆算でできる",
+    "funMechanic": "drill",
+    "commonMistake": "くり下がりのあとに、へった数をひき忘れる",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_110",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "811 - 345 はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 466,
+      "unit": ""
+    },
+    "explanation": "位をそろえて、くり下がりに気をつけてひきます。811 - 345 = 466 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "筆算",
+      "ひき算"
+    ],
+    "familyId": "add_sub_calc",
+    "learningObjective": "くり下がりのある3けたのひき算を筆算でできる",
+    "funMechanic": "drill",
+    "commonMistake": "くり下がりのあとに、へった数をひき忘れる",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_111",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "addition_subtraction_written",
     "unitLabel": "たし算とひき算の筆算",
     "curriculumArea": "A 数と計算",
     "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "160 + 264 はいくつ？",
+    "prompt": "なわとびを、きのう156回、きょう178回とびました。あわせて何回？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 334,
+      "unit": "回"
+    },
+    "explanation": "あわせた数なのでたし算です。156 + 178 = 334 です。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "筆算",
+      "たし算",
+      "文章題"
+    ],
+    "familyId": "add_word_plus",
+    "learningObjective": "「あわせて」「〜より多い」の場面をたし算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "「多い」という言葉だけを見て、ひき算にしてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_112",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "どんぐりを208こ、くりを194こひろいました。あわせて何こ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 402,
+      "unit": "こ"
+    },
+    "explanation": "あわせた数なのでたし算です。208 + 194 = 402 です。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "筆算",
+      "たし算",
+      "文章題"
+    ],
+    "familyId": "add_word_plus",
+    "learningObjective": "「あわせて」「〜より多い」の場面をたし算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "「多い」という言葉だけを見て、ひき算にしてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_113",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "えきの前に自転車が316台、車が285台とまっています。あわせて何台？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 601,
+      "unit": "台"
+    },
+    "explanation": "あわせた数なのでたし算です。316 + 285 = 601 です。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "筆算",
+      "たし算",
+      "文章題"
+    ],
+    "familyId": "add_word_plus",
+    "learningObjective": "「あわせて」「〜より多い」の場面をたし算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "「多い」という言葉だけを見て、ひき算にしてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_114",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "花だんに赤い花が127本さいています。白い花は赤より165本多いです。白い花は何本？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 292,
+      "unit": "本"
+    },
+    "explanation": "赤より165本多いので、127 + 165 = 292 です。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "筆算",
+      "たし算",
+      "文章題"
+    ],
+    "familyId": "add_word_plus",
+    "learningObjective": "「あわせて」「〜より多い」の場面をたし算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "「多い」という言葉だけを見て、ひき算にしてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_115",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "サッカーの大会に、1日目は246人、2日目は259人が来ました。あわせて何人？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 505,
+      "unit": "人"
+    },
+    "explanation": "あわせた数なのでたし算です。246 + 259 = 505 です。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "筆算",
+      "たし算",
+      "文章題",
+      "soccer_context"
+    ],
+    "familyId": "add_word_plus",
+    "learningObjective": "「あわせて」「〜より多い」の場面をたし算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "「多い」という言葉だけを見て、ひき算にしてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_116",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "シールを412まい持っています。165まい使うと、のこりは何まい？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 247,
+      "unit": "まい"
+    },
+    "explanation": "のこりなのでひき算です。412 - 165 = 247 です。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "筆算",
+      "ひき算",
+      "文章題"
+    ],
+    "familyId": "add_word_minus",
+    "learningObjective": "「のこり」「ちがい」の場面をひき算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "大きい数から小さい数をひかず、式の順番をまちがえる",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_117",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "500円玉で274円のおかしを買うと、おつりは何円？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 226,
+      "unit": "円"
+    },
+    "explanation": "500円から代金をひきます。500 - 274 = 226 です。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "筆算",
+      "ひき算",
+      "文章題"
+    ],
+    "familyId": "add_word_minus",
+    "learningObjective": "「のこり」「ちがい」の場面をひき算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "大きい数から小さい数をひかず、式の順番をまちがえる",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_118",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "学校の本は634さつ、うちの本は158さつです。ちがいは何さつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 476,
+      "unit": "さつ"
+    },
+    "explanation": "ちがいなのでひき算です。634 - 158 = 476 です。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "筆算",
+      "ひき算",
+      "文章題"
+    ],
+    "familyId": "add_word_minus",
+    "learningObjective": "「のこり」「ちがい」の場面をひき算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "大きい数から小さい数をひかず、式の順番をまちがえる",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_119",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "電車に305人乗っています。えきで127人おりました。今、何人乗っている？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 178,
+      "unit": "人"
+    },
+    "explanation": "おりた分をひきます。305 - 127 = 178 です。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "筆算",
+      "ひき算",
+      "文章題"
+    ],
+    "familyId": "add_word_minus",
+    "learningObjective": "「のこり」「ちがい」の場面をひき算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "大きい数から小さい数をひかず、式の順番をまちがえる",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_120",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "あきかんを250こ集めます。もう183こ集めました。あと何こ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 67,
+      "unit": "こ"
+    },
+    "explanation": "目ひょうから集めた分をひきます。250 - 183 = 67 です。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "筆算",
+      "ひき算",
+      "文章題"
+    ],
+    "familyId": "add_word_minus",
+    "learningObjective": "「のこり」「ちがい」の場面をひき算の式に表せる",
+    "funMechanic": "drill",
+    "commonMistake": "大きい数から小さい数をひかず、式の順番をまちがえる",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_121",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 2
+    },
+    "questionType": "expression_choice",
+    "prompt": "スタジアムに425人いて、137人帰りました。今の人数をもとめる式はどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "425 - 137"
+      },
+      {
+        "id": "b",
+        "text": "425 + 137"
+      },
+      {
+        "id": "c",
+        "text": "137 - 425"
+      },
+      {
+        "id": "d",
+        "text": "425 × 137"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "425 - 137"
+    },
+    "explanation": "帰った分をひくので、425 - 137 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "筆算",
+      "式を選ぶ"
+    ],
+    "familyId": "add_expression",
+    "learningObjective": "場面から、たし算かひき算かを判断して式を選べる",
+    "funMechanic": "best_choice",
+    "commonMistake": "数字の順番だけ見て、場面に合わない式を選ぶ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_122",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 2
+    },
+    "questionType": "expression_choice",
+    "prompt": "きのうまでに268このつるを折りました。きょう75こ折りました。ぜんぶの数をもとめる式はどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "268 + 75"
+      },
+      {
+        "id": "b",
+        "text": "268 - 75"
+      },
+      {
+        "id": "c",
+        "text": "75 - 268"
+      },
+      {
+        "id": "d",
+        "text": "268 × 75"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "268 + 75"
+    },
+    "explanation": "ふえた分をたすので、268 + 75 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "筆算",
+      "式を選ぶ"
+    ],
+    "familyId": "add_expression",
+    "learningObjective": "場面から、たし算かひき算かを判断して式を選べる",
+    "funMechanic": "best_choice",
+    "commonMistake": "数字の順番だけ見て、場面に合わない式を選ぶ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_123",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 2
+    },
+    "questionType": "expression_choice",
+    "prompt": "350ページの本を、128ページまで読みました。のこりのページをもとめる式はどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "350 - 128"
+      },
+      {
+        "id": "b",
+        "text": "350 + 128"
+      },
+      {
+        "id": "c",
+        "text": "128 - 350"
+      },
+      {
+        "id": "d",
+        "text": "128 + 128"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "350 - 128"
+    },
+    "explanation": "ぜんぶから読んだ分をひくので、350 - 128 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "筆算",
+      "式を選ぶ"
+    ],
+    "familyId": "add_expression",
+    "learningObjective": "場面から、たし算かひき算かを判断して式を選べる",
+    "funMechanic": "best_choice",
+    "commonMistake": "数字の順番だけ見て、場面に合わない式を選ぶ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_124",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 2
+    },
+    "questionType": "expression_choice",
+    "prompt": "赤いテープは421cm、青いテープは386cmです。ちがいをもとめる式はどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "421 - 386"
+      },
+      {
+        "id": "b",
+        "text": "421 + 386"
+      },
+      {
+        "id": "c",
+        "text": "386 - 421"
+      },
+      {
+        "id": "d",
+        "text": "421 × 386"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "421 - 386"
+    },
+    "explanation": "ちがいは、大きい数から小さい数をひいてもとめます。421 - 386 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "筆算",
+      "式を選ぶ"
+    ],
+    "familyId": "add_expression",
+    "learningObjective": "場面から、たし算かひき算かを判断して式を選べる",
+    "funMechanic": "best_choice",
+    "commonMistake": "数字の順番だけ見て、場面に合わない式を選ぶ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_125",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "298 + 304 の答えは、600より大きい？小さい？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "600より大きい"
+      },
+      {
+        "id": "b",
+        "text": "600より小さい"
+      },
+      {
+        "id": "c",
+        "text": "ちょうど600"
+      },
+      {
+        "id": "d",
+        "text": "くらべられない"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "600より大きい"
+    },
+    "explanation": "だいたい300と300で600くらい。くわしく計算すると602で、600より大きいです。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "筆算",
+      "見積もり"
+    ],
+    "familyId": "add_estimate",
+    "learningObjective": "計算する前に答えのだいたいの大きさを予想できる",
+    "funMechanic": "predict_check",
+    "commonMistake": "予想せずに計算して、大きなまちがいに気づかない",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_126",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "512 - 189 の答えは、300より大きい？小さい？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "300より大きい"
+      },
+      {
+        "id": "b",
+        "text": "300より小さい"
+      },
+      {
+        "id": "c",
+        "text": "ちょうど300"
+      },
+      {
+        "id": "d",
+        "text": "くらべられない"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "300より大きい"
+    },
+    "explanation": "だいたい500 - 200 = 300くらい。くわしくは323で、300より大きいです。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "筆算",
+      "見積もり"
+    ],
+    "familyId": "add_estimate",
+    "learningObjective": "計算する前に答えのだいたいの大きさを予想できる",
+    "funMechanic": "predict_check",
+    "commonMistake": "予想せずに計算して、大きなまちがいに気づかない",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_127",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "195 + 402 の答えは、600より大きい？小さい？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "600より小さい"
+      },
+      {
+        "id": "b",
+        "text": "600より大きい"
+      },
+      {
+        "id": "c",
+        "text": "ちょうど600"
+      },
+      {
+        "id": "d",
+        "text": "くらべられない"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "600より小さい"
+    },
+    "explanation": "だいたい200 + 400 = 600くらい。くわしくは597で、600より少し小さいです。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "筆算",
+      "見積もり"
+    ],
+    "familyId": "add_estimate",
+    "learningObjective": "計算する前に答えのだいたいの大きさを予想できる",
+    "funMechanic": "predict_check",
+    "commonMistake": "予想せずに計算して、大きなまちがいに気づかない",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_128",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "703 - 315 の答えは、400より大きい？小さい？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "400より小さい"
+      },
+      {
+        "id": "b",
+        "text": "400より大きい"
+      },
+      {
+        "id": "c",
+        "text": "ちょうど400"
+      },
+      {
+        "id": "d",
+        "text": "くらべられない"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "400より小さい"
+    },
+    "explanation": "だいたい700 - 300 = 400くらい。くわしくは388で、400より小さいです。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "筆算",
+      "見積もり"
+    ],
+    "familyId": "add_estimate",
+    "learningObjective": "計算する前に答えのだいたいの大きさを予想できる",
+    "funMechanic": "predict_check",
+    "commonMistake": "予想せずに計算して、大きなまちがいに気づかない",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_129",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "みおさんは 500 - 137 を「463」と計算しました(くり下がりをわすれたようです)。正しい答えはいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 363,
+      "unit": ""
+    },
+    "explanation": "500からのくり下がりに気をつけると、500 - 137 = 363 です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "筆算",
+      "たしかめ"
+    ],
+    "familyId": "add_find_mistake",
+    "learningObjective": "筆算のよくあるまちがいに気づいて、正しく直せる",
+    "funMechanic": "find_mistake",
+    "commonMistake": "くり上がり・くり下がりのわすれに気づかない",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_130",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "はるとさんは 246 + 178 を「314」と計算しました(くり上がりをわすれたようです)。正しい答えはいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
       "value": 424,
       "unit": ""
     },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは424です。",
-    "estimatedSeconds": 45,
+    "explanation": "一の位と十の位のくり上がりをたすと、246 + 178 = 424 です。",
+    "estimatedSeconds": 90,
     "skillTags": [
       "筆算",
-      "たし算"
+      "たしかめ"
     ],
+    "familyId": "add_find_mistake",
+    "learningObjective": "筆算のよくあるまちがいに気づいて、正しく直せる",
+    "funMechanic": "find_mistake",
+    "commonMistake": "くり上がり・くり下がりのわすれに気づかない",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -5022,1382 +7024,39 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_addition_subtraction_written_004",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "177 + 277 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 454,
-      "unit": ""
-    },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは454です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "たし算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_005",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "194 + 290 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 484,
-      "unit": ""
-    },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは484です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "たし算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_006",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "211 + 303 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 514,
-      "unit": ""
-    },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは514です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "たし算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_007",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "228 + 316 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 544,
-      "unit": ""
-    },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは544です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "たし算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_008",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "245 + 329 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 574,
-      "unit": ""
-    },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは574です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "たし算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_009",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "262 + 342 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 604,
-      "unit": ""
-    },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは604です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "たし算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_010",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "279 + 355 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 634,
-      "unit": ""
-    },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは634です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "たし算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_011",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "296 + 368 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 664,
-      "unit": ""
-    },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは664です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "たし算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_012",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "313 + 381 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 694,
-      "unit": ""
-    },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは694です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "たし算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_013",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "330 + 394 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 724,
-      "unit": ""
-    },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは724です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "たし算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_014",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "347 + 407 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 754,
-      "unit": ""
-    },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは754です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "たし算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_015",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "364 + 420 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 784,
-      "unit": ""
-    },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは784です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "たし算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_016",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "381 + 433 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 814,
-      "unit": ""
-    },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは814です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "たし算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_017",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "398 + 446 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 844,
-      "unit": ""
-    },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは844です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "たし算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_018",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "415 + 459 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 874,
-      "unit": ""
-    },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは874です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "たし算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_019",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "432 + 472 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 904,
-      "unit": ""
-    },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは904です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "たし算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_020",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "449 + 485 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 934,
-      "unit": ""
-    },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは934です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "たし算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_021",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "466 + 498 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 964,
-      "unit": ""
-    },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは964です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "たし算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_022",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "483 + 511 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 994,
-      "unit": ""
-    },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは994です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "たし算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_023",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "500 + 524 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 1024,
-      "unit": ""
-    },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは1024です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "たし算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_024",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "517 + 537 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 1054,
-      "unit": ""
-    },
-    "explanation": "一の位、十の位、百の位をそろえて計算します。答えは1054です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "たし算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_025",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "359 - 146 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 213,
-      "unit": ""
-    },
-    "explanation": "位をそろえてひきます。359 - 146 = 213 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "ひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_026",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "377 - 157 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 220,
-      "unit": ""
-    },
-    "explanation": "位をそろえてひきます。377 - 157 = 220 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "ひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_027",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "395 - 168 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 227,
-      "unit": ""
-    },
-    "explanation": "位をそろえてひきます。395 - 168 = 227 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "ひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_028",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "413 - 179 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 234,
-      "unit": ""
-    },
-    "explanation": "位をそろえてひきます。413 - 179 = 234 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "ひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_029",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "431 - 190 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 241,
-      "unit": ""
-    },
-    "explanation": "位をそろえてひきます。431 - 190 = 241 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "ひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_030",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "449 - 201 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 248,
-      "unit": ""
-    },
-    "explanation": "位をそろえてひきます。449 - 201 = 248 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "ひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_031",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "467 - 212 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 255,
-      "unit": ""
-    },
-    "explanation": "位をそろえてひきます。467 - 212 = 255 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "ひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_032",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "485 - 223 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 262,
-      "unit": ""
-    },
-    "explanation": "位をそろえてひきます。485 - 223 = 262 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "ひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_033",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "503 - 234 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 269,
-      "unit": ""
-    },
-    "explanation": "位をそろえてひきます。503 - 234 = 269 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "ひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_034",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "521 - 245 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 276,
-      "unit": ""
-    },
-    "explanation": "位をそろえてひきます。521 - 245 = 276 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "ひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_035",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "539 - 256 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 283,
-      "unit": ""
-    },
-    "explanation": "位をそろえてひきます。539 - 256 = 283 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "ひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_036",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "557 - 267 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 290,
-      "unit": ""
-    },
-    "explanation": "位をそろえてひきます。557 - 267 = 290 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "ひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_037",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "575 - 278 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 297,
-      "unit": ""
-    },
-    "explanation": "位をそろえてひきます。575 - 278 = 297 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "ひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_038",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "593 - 289 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 304,
-      "unit": ""
-    },
-    "explanation": "位をそろえてひきます。593 - 289 = 304 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "ひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_039",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "611 - 300 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 311,
-      "unit": ""
-    },
-    "explanation": "位をそろえてひきます。611 - 300 = 311 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "ひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_040",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "629 - 311 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 318,
-      "unit": ""
-    },
-    "explanation": "位をそろえてひきます。629 - 311 = 318 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "ひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_041",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "647 - 322 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 325,
-      "unit": ""
-    },
-    "explanation": "位をそろえてひきます。647 - 322 = 325 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "ひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_042",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "665 - 333 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 332,
-      "unit": ""
-    },
-    "explanation": "位をそろえてひきます。665 - 333 = 332 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "ひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_043",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "683 - 344 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 339,
-      "unit": ""
-    },
-    "explanation": "位をそろえてひきます。683 - 344 = 339 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "ひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_044",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "701 - 355 はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 346,
-      "unit": ""
-    },
-    "explanation": "位をそろえてひきます。701 - 355 = 346 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "ひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_045",
-    "version": 1,
+    "id": "g3_math_addition_subtraction_written_131",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "addition_subtraction_written",
     "unitLabel": "たし算とひき算の筆算",
     "curriculumArea": "A 数と計算",
     "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "本が320さつありました。125さつふえて、98さつかし出しました。今は何さつありますか？",
+    "prompt": "みおさんは 632 - 458 を、位ごとに大きい数から小さい数をひいて「226」としました。正しい答えはいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 347,
-      "unit": "さつ"
+      "value": 174,
+      "unit": ""
     },
-    "explanation": "ふえた分をたして、かし出した分をひきます。320 + 125 - 98 = 347 です。",
-    "estimatedSeconds": 45,
+    "explanation": "ひき算は上の数から下の数をひきます。くり下がりを使うと 632 - 458 = 174 です。",
+    "estimatedSeconds": 90,
     "skillTags": [
       "筆算",
-      "文章題",
-      "たし算とひき算"
+      "たしかめ"
     ],
+    "familyId": "add_find_mistake",
+    "learningObjective": "筆算のよくあるまちがいに気づいて、正しく直せる",
+    "funMechanic": "find_mistake",
+    "commonMistake": "くり上がり・くり下がりのわすれに気づかない",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -6409,29 +7068,39 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_addition_subtraction_written_046",
-    "version": 1,
+    "id": "g3_math_addition_subtraction_written_132",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "addition_subtraction_written",
     "unitLabel": "たし算とひき算の筆算",
     "curriculumArea": "A 数と計算",
     "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "本が338さつありました。134さつふえて、104さつかし出しました。今は何さつありますか？",
+    "prompt": "はるとさんは 57 + 368 を、位をそろえずに「938」と計算しました。正しい答えはいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 368,
-      "unit": "さつ"
+      "value": 425,
+      "unit": ""
     },
-    "explanation": "ふえた分をたして、かし出した分をひきます。338 + 134 - 104 = 368 です。",
-    "estimatedSeconds": 45,
+    "explanation": "一の位どうしをそろえてたすと、57 + 368 = 425 です。",
+    "estimatedSeconds": 90,
     "skillTags": [
       "筆算",
-      "文章題",
-      "たし算とひき算"
+      "たしかめ"
     ],
+    "familyId": "add_find_mistake",
+    "learningObjective": "筆算のよくあるまちがいに気づいて、正しく直せる",
+    "funMechanic": "find_mistake",
+    "commonMistake": "くり上がり・くり下がりのわすれに気づかない",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -6443,29 +7112,39 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_addition_subtraction_written_047",
-    "version": 1,
+    "id": "g3_math_addition_subtraction_written_133",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "addition_subtraction_written",
     "unitLabel": "たし算とひき算の筆算",
     "curriculumArea": "A 数と計算",
     "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "本が356さつありました。143さつふえて、110さつかし出しました。今は何さつありますか？",
+    "prompt": "みおさんは 800 - 406 を「494」と計算しました。正しい答えはいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 389,
-      "unit": "さつ"
+      "value": 394,
+      "unit": ""
     },
-    "explanation": "ふえた分をたして、かし出した分をひきます。356 + 143 - 110 = 389 です。",
-    "estimatedSeconds": 45,
+    "explanation": "800 - 400 = 400、400 - 6 = 394 です。答えは394です。",
+    "estimatedSeconds": 90,
     "skillTags": [
       "筆算",
-      "文章題",
-      "たし算とひき算"
+      "たしかめ"
     ],
+    "familyId": "add_find_mistake",
+    "learningObjective": "筆算のよくあるまちがいに気づいて、正しく直せる",
+    "funMechanic": "find_mistake",
+    "commonMistake": "くり上がり・くり下がりのわすれに気づかない",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -6477,29 +7156,40 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_addition_subtraction_written_048",
-    "version": 1,
+    "id": "g3_math_addition_subtraction_written_134",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "addition_subtraction_written",
     "unitLabel": "たし算とひき算の筆算",
     "curriculumArea": "A 数と計算",
     "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "本が374さつありました。152さつふえて、116さつかし出しました。今は何さつありますか？",
+    "prompt": "3□6 + 258 = 614。□に入る数字はいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 410,
-      "unit": "さつ"
+      "value": 5,
+      "unit": ""
     },
-    "explanation": "ふえた分をたして、かし出した分をひきます。374 + 152 - 116 = 410 です。",
-    "estimatedSeconds": 45,
+    "explanation": "356 + 258 = 614 になります。□は5です。",
+    "estimatedSeconds": 120,
     "skillTags": [
       "筆算",
-      "文章題",
-      "たし算とひき算"
+      "虫食い算",
+      "推理"
     ],
+    "familyId": "add_hidden_digit",
+    "learningObjective": "筆算のしくみを使って、かくれた数字を見つけられる",
+    "funMechanic": "inference",
+    "commonMistake": "くり上がり・くり下がりを考えずに□を決めてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -6511,29 +7201,40 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_addition_subtraction_written_049",
-    "version": 1,
+    "id": "g3_math_addition_subtraction_written_135",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "addition_subtraction_written",
     "unitLabel": "たし算とひき算の筆算",
     "curriculumArea": "A 数と計算",
     "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "本が392さつありました。161さつふえて、122さつかし出しました。今は何さつありますか？",
+    "prompt": "47□ + 216 = 693。□に入る数字はいくつ？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 431,
-      "unit": "さつ"
+      "value": 7,
+      "unit": ""
     },
-    "explanation": "ふえた分をたして、かし出した分をひきます。392 + 161 - 122 = 431 です。",
-    "estimatedSeconds": 45,
+    "explanation": "477 + 216 = 693 になります。□は7です。",
+    "estimatedSeconds": 120,
     "skillTags": [
       "筆算",
-      "文章題",
-      "たし算とひき算"
+      "虫食い算",
+      "推理"
     ],
+    "familyId": "add_hidden_digit",
+    "learningObjective": "筆算のしくみを使って、かくれた数字を見つけられる",
+    "funMechanic": "inference",
+    "commonMistake": "くり上がり・くり下がりを考えずに□を決めてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -6545,418 +7246,190 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_addition_subtraction_written_050",
-    "version": 1,
+    "id": "g3_math_addition_subtraction_written_136",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "□24 - 158 = 466。□に入る数字はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 6,
+      "unit": ""
+    },
+    "explanation": "466 + 158 = 624 なので、□24は624。□は6です。",
+    "estimatedSeconds": 120,
+    "skillTags": [
+      "筆算",
+      "虫食い算",
+      "推理"
+    ],
+    "familyId": "add_hidden_digit",
+    "learningObjective": "筆算のしくみを使って、かくれた数字を見つけられる",
+    "funMechanic": "inference",
+    "commonMistake": "くり上がり・くり下がりを考えずに□を決めてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_137",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "5□2 - 236 = 296。□に入る数字はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 3,
+      "unit": ""
+    },
+    "explanation": "296 + 236 = 532 なので、5□2は532。□は3です。",
+    "estimatedSeconds": 120,
+    "skillTags": [
+      "筆算",
+      "虫食い算",
+      "推理"
+    ],
+    "familyId": "add_hidden_digit",
+    "learningObjective": "筆算のしくみを使って、かくれた数字を見つけられる",
+    "funMechanic": "inference",
+    "commonMistake": "くり上がり・くり下がりを考えずに□を決めてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_138",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "638 - 2□5 = 393。□に入る数字はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 4,
+      "unit": ""
+    },
+    "explanation": "638 - 393 = 245 なので、2□5は245。□は4です。",
+    "estimatedSeconds": 120,
+    "skillTags": [
+      "筆算",
+      "虫食い算",
+      "推理"
+    ],
+    "familyId": "add_hidden_digit",
+    "learningObjective": "筆算のしくみを使って、かくれた数字を見つけられる",
+    "funMechanic": "inference",
+    "commonMistake": "くり上がり・くり下がりを考えずに□を決めてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_139",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "addition_subtraction_written",
     "unitLabel": "たし算とひき算の筆算",
     "curriculumArea": "A 数と計算",
     "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "本が410さつありました。170さつふえて、128さつかし出しました。今は何さつありますか？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 452,
-      "unit": "さつ"
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
     },
-    "explanation": "ふえた分をたして、かし出した分をひきます。410 + 170 - 128 = 452 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "文章題",
-      "たし算とひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_051",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "本が428さつありました。179さつふえて、134さつかし出しました。今は何さつありますか？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 473,
-      "unit": "さつ"
-    },
-    "explanation": "ふえた分をたして、かし出した分をひきます。428 + 179 - 134 = 473 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "文章題",
-      "たし算とひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_052",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "本が446さつありました。188さつふえて、140さつかし出しました。今は何さつありますか？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 494,
-      "unit": "さつ"
-    },
-    "explanation": "ふえた分をたして、かし出した分をひきます。446 + 188 - 140 = 494 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "文章題",
-      "たし算とひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_053",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "本が464さつありました。197さつふえて、146さつかし出しました。今は何さつありますか？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 515,
-      "unit": "さつ"
-    },
-    "explanation": "ふえた分をたして、かし出した分をひきます。464 + 197 - 146 = 515 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "文章題",
-      "たし算とひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_054",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "本が482さつありました。206さつふえて、152さつかし出しました。今は何さつありますか？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 536,
-      "unit": "さつ"
-    },
-    "explanation": "ふえた分をたして、かし出した分をひきます。482 + 206 - 152 = 536 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "文章題",
-      "たし算とひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_055",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "本が500さつありました。215さつふえて、158さつかし出しました。今は何さつありますか？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 557,
-      "unit": "さつ"
-    },
-    "explanation": "ふえた分をたして、かし出した分をひきます。500 + 215 - 158 = 557 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "文章題",
-      "たし算とひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_056",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "本が518さつありました。224さつふえて、164さつかし出しました。今は何さつありますか？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 578,
-      "unit": "さつ"
-    },
-    "explanation": "ふえた分をたして、かし出した分をひきます。518 + 224 - 164 = 578 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "文章題",
-      "たし算とひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_057",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "本が536さつありました。233さつふえて、170さつかし出しました。今は何さつありますか？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 599,
-      "unit": "さつ"
-    },
-    "explanation": "ふえた分をたして、かし出した分をひきます。536 + 233 - 170 = 599 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "文章題",
-      "たし算とひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_058",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "本が554さつありました。242さつふえて、176さつかし出しました。今は何さつありますか？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 620,
-      "unit": "さつ"
-    },
-    "explanation": "ふえた分をたして、かし出した分をひきます。554 + 242 - 176 = 620 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "文章題",
-      "たし算とひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_059",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "本が572さつありました。251さつふえて、182さつかし出しました。今は何さつありますか？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 641,
-      "unit": "さつ"
-    },
-    "explanation": "ふえた分をたして、かし出した分をひきます。572 + 251 - 182 = 641 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "文章題",
-      "たし算とひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_addition_subtraction_written_060",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "addition_subtraction_written",
-    "unitLabel": "たし算とひき算の筆算",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "本が590さつありました。260さつふえて、188さつかし出しました。今は何さつありますか？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 662,
-      "unit": "さつ"
-    },
-    "explanation": "ふえた分をたして、かし出した分をひきます。590 + 260 - 188 = 662 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "筆算",
-      "文章題",
-      "たし算とひき算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_time_duration_001",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "time_duration",
-    "unitLabel": "時こくと時間",
-    "curriculumArea": "C 測定",
-    "difficulty": 2,
     "questionType": "multiple_choice",
-    "prompt": "7時10分の15分後は何時何分？",
+    "prompt": "はると「たし算は、たすじゅんばんを入れかえても答えが同じ」。みお「ひき算も、ひくじゅんばんを入れかえても答えが同じ」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "7時25分"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "b",
-        "text": "8時25分"
+        "text": "二人とも正しい"
       },
       {
         "id": "c",
-        "text": "7時35分"
+        "text": "みおだけ正しい"
       },
       {
         "id": "d",
-        "text": "6時25分"
+        "text": "二人ともまちがい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "7時25分"
+      "value": "はるとだけ正しい"
     },
-    "explanation": "10分に15分をたすと25分です。60分をこえたら1時間くり上げます。",
-    "estimatedSeconds": 45,
+    "explanation": "たし算は入れかえても同じですが、ひき算は入れかえると答えが変わります(たとえば 5 - 3 と 3 - 5)。",
+    "estimatedSeconds": 90,
     "skillTags": [
-      "時こく",
-      "時間"
+      "筆算",
+      "きまり見つけ"
     ],
+    "familyId": "add_judge_claim",
+    "learningObjective": "たし算・ひき算のきまりについての主張を、計算でたしかめて判断できる",
+    "funMechanic": "judge_claim",
+    "commonMistake": "たし算のきまりが、ひき算にもそのまま使えると思いこむ",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -6968,28 +7441,1300 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_time_duration_002",
-    "version": 1,
+    "id": "g3_math_addition_subtraction_written_140",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "325 + 175 について。はると「答えはちょうど500」。みお「答えは501」。正しいのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "はるとだけ正しい"
+      },
+      {
+        "id": "b",
+        "text": "二人とも正しい"
+      },
+      {
+        "id": "c",
+        "text": "みおだけ正しい"
+      },
+      {
+        "id": "d",
+        "text": "二人ともまちがい"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "はるとだけ正しい"
+    },
+    "explanation": "325 + 175 = 500 です。ちょうど500になります。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "筆算",
+      "きまり見つけ"
+    ],
+    "familyId": "add_judge_claim",
+    "learningObjective": "たし算・ひき算のきまりについての主張を、計算でたしかめて判断できる",
+    "funMechanic": "judge_claim",
+    "commonMistake": "たし算のきまりが、ひき算にもそのまま使えると思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_141",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "はると「どんな数に0をたしても、数は変わらない」。みお「どんな数から0をひいても、数は変わらない」。正しいのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "二人とも正しい"
+      },
+      {
+        "id": "b",
+        "text": "はるとだけ正しい"
+      },
+      {
+        "id": "c",
+        "text": "みおだけ正しい"
+      },
+      {
+        "id": "d",
+        "text": "二人ともまちがい"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "二人とも正しい"
+    },
+    "explanation": "0をたしても0をひいても、数は変わりません。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "筆算",
+      "きまり見つけ"
+    ],
+    "familyId": "add_judge_claim",
+    "learningObjective": "たし算・ひき算のきまりについての主張を、計算でたしかめて判断できる",
+    "funMechanic": "judge_claim",
+    "commonMistake": "たし算のきまりが、ひき算にもそのまま使えると思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_142",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "600 - 299 について。はると「600 - 300 = 300 で、ひきすぎた1をたして301」。みお「600 - 300 = 300 で、さらに1をひいて299」。正しいのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "はるとだけ正しい"
+      },
+      {
+        "id": "b",
+        "text": "二人とも正しい"
+      },
+      {
+        "id": "c",
+        "text": "みおだけ正しい"
+      },
+      {
+        "id": "d",
+        "text": "二人ともまちがい"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "はるとだけ正しい"
+    },
+    "explanation": "299は300より1小さいので、300をひくと1ひきすぎです。ひきすぎた1をたして301です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "筆算",
+      "きまり見つけ"
+    ],
+    "familyId": "add_judge_claim",
+    "learningObjective": "たし算・ひき算のきまりについての主張を、計算でたしかめて判断できる",
+    "funMechanic": "judge_claim",
+    "commonMistake": "たし算のきまりが、ひき算にもそのまま使えると思いこむ",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_143",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 3,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "バスに26人乗っていました。バスていで13人おりて、8人乗ってきました。今、何人？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 21,
+      "unit": "人"
+    },
+    "explanation": "26 - 13 = 13、13 + 8 = 21 です。じゅんに計算します。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "筆算",
+      "文章題",
+      "組み合わせ"
+    ],
+    "familyId": "add_three_term",
+    "learningObjective": "ふえたりへったりする場面を、じゅんに式に表して計算できる",
+    "funMechanic": "inference",
+    "commonMistake": "とちゅうの計算だけで答えにしてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_144",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 3,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "シールを135まい持っていました。妹に47まいあげて、お母さんから60まいもらいました。今、何まい？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 148,
+      "unit": "まい"
+    },
+    "explanation": "135 - 47 = 88、88 + 60 = 148 です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "筆算",
+      "文章題",
+      "組み合わせ"
+    ],
+    "familyId": "add_three_term",
+    "learningObjective": "ふえたりへったりする場面を、じゅんに式に表して計算できる",
+    "funMechanic": "inference",
+    "commonMistake": "とちゅうの計算だけで答えにしてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_145",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 3,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "図書室に本が248さつありました。あたらしく75さつ入り、36さつかし出されました。今、何さつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 287,
+      "unit": "さつ"
+    },
+    "explanation": "248 + 75 = 323、323 - 36 = 287 です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "筆算",
+      "文章題",
+      "組み合わせ"
+    ],
+    "familyId": "add_three_term",
+    "learningObjective": "ふえたりへったりする場面を、じゅんに式に表して計算できる",
+    "funMechanic": "inference",
+    "commonMistake": "とちゅうの計算だけで答えにしてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_146",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 3,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "おこづかいが500円あります。180円のノートと120円のえんぴつを買いました。のこりは何円？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 200,
+      "unit": "円"
+    },
+    "explanation": "500 - 180 = 320、320 - 120 = 200 です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "筆算",
+      "文章題",
+      "組み合わせ"
+    ],
+    "familyId": "add_three_term",
+    "learningObjective": "ふえたりへったりする場面を、じゅんに式に表して計算できる",
+    "funMechanic": "inference",
+    "commonMistake": "とちゅうの計算だけで答えにしてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_147",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 3,
+      "steps": 3,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "チケットが350まいありました。きのう127まい、きょう96まい売れました。のこりは何まい？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 127,
+      "unit": "まい"
+    },
+    "explanation": "350 - 127 = 223、223 - 96 = 127 です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "筆算",
+      "文章題",
+      "組み合わせ"
+    ],
+    "familyId": "add_three_term",
+    "learningObjective": "ふえたりへったりする場面を、じゅんに式に表して計算できる",
+    "funMechanic": "inference",
+    "commonMistake": "とちゅうの計算だけで答えにしてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_148",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "486 - 217 = 269 が正しいか、たしかめる式はどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "269 + 217"
+      },
+      {
+        "id": "b",
+        "text": "269 - 217"
+      },
+      {
+        "id": "c",
+        "text": "486 + 217"
+      },
+      {
+        "id": "d",
+        "text": "486 + 269"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "269 + 217"
+    },
+    "explanation": "ひき算の答えにひいた数をたして、もとの数にもどれば正しいです。269 + 217 = 486 でぴったりです。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "筆算",
+      "たしかめ"
+    ],
+    "familyId": "add_check_method",
+    "learningObjective": "たし算とひき算の関係を使って、答えのたしかめができる",
+    "funMechanic": "compare_methods",
+    "commonMistake": "たしかめの式で、どの数を使えばよいか迷う",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_149",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "358 + 164 = 522 が正しいか、たしかめる式はどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "522 - 164"
+      },
+      {
+        "id": "b",
+        "text": "522 + 164"
+      },
+      {
+        "id": "c",
+        "text": "358 - 164"
+      },
+      {
+        "id": "d",
+        "text": "522 + 358"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "522 - 164"
+    },
+    "explanation": "たし算の答えから、たした数をひいて、もとの数にもどれば正しいです。522 - 164 = 358 でぴったりです。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "筆算",
+      "たしかめ"
+    ],
+    "familyId": "add_check_method",
+    "learningObjective": "たし算とひき算の関係を使って、答えのたしかめができる",
+    "funMechanic": "compare_methods",
+    "commonMistake": "たしかめの式で、どの数を使えばよいか迷う",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_150",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "705 - 428 = 277 のたしかめとして、277 + 428 を計算すると、いくつになれば正しい？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 705,
+      "unit": ""
+    },
+    "explanation": "もとの数の705にもどれば正しいです。277 + 428 = 705 でぴったりです。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "筆算",
+      "たしかめ"
+    ],
+    "familyId": "add_check_method",
+    "learningObjective": "たし算とひき算の関係を使って、答えのたしかめができる",
+    "funMechanic": "compare_methods",
+    "commonMistake": "たしかめの式で、どの数を使えばよいか迷う",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_151",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 3
+    },
+    "questionType": "multiple_choice",
+    "prompt": "433 + 199 = 632 です。この式を使うと、632 - 199 の答えはどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "433"
+      },
+      {
+        "id": "b",
+        "text": "434"
+      },
+      {
+        "id": "c",
+        "text": "432"
+      },
+      {
+        "id": "d",
+        "text": "443"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "433"
+    },
+    "explanation": "たし算とひき算は反対の関係なので、632 - 199 = 433 と計算しなくてもわかります。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "筆算",
+      "たしかめ"
+    ],
+    "familyId": "add_check_method",
+    "learningObjective": "たし算とひき算の関係を使って、答えのたしかめができる",
+    "funMechanic": "compare_methods",
+    "commonMistake": "たしかめの式で、どの数を使えばよいか迷う",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_152",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "ある数から265をひくと、148になります。ある数はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 413,
+      "unit": ""
+    },
+    "explanation": "ひく前にもどすには、たします。148 + 265 = 413 です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "筆算",
+      "推理"
+    ],
+    "familyId": "add_hidden_number",
+    "learningObjective": "たし算とひき算の関係を使って、かくれた数を求められる",
+    "funMechanic": "inference",
+    "commonMistake": "問題の数をそのままたしたりひいたりしてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_153",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "ある数に180をたすと、520になります。ある数はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 340,
+      "unit": ""
+    },
+    "explanation": "たす前にもどすには、ひきます。520 - 180 = 340 です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "筆算",
+      "推理"
+    ],
+    "familyId": "add_hidden_number",
+    "learningObjective": "たし算とひき算の関係を使って、かくれた数を求められる",
+    "funMechanic": "inference",
+    "commonMistake": "問題の数をそのままたしたりひいたりしてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_154",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "はこにビー玉が何こか入っています。125こたしたら、ぜんぶで312こになりました。はじめに何こ入っていた？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 187,
+      "unit": "こ"
+    },
+    "explanation": "312 - 125 = 187 なので、はじめは187こです。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "筆算",
+      "推理"
+    ],
+    "familyId": "add_hidden_number",
+    "learningObjective": "たし算とひき算の関係を使って、かくれた数を求められる",
+    "funMechanic": "inference",
+    "commonMistake": "問題の数をそのままたしたりひいたりしてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_155",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "ジュースが何本かありました。86本くばったら、のこりが214本でした。はじめに何本あった？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 300,
+      "unit": "本"
+    },
+    "explanation": "くばった分をのこりにたすと、214 + 86 = 300 で、はじめは300本です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "筆算",
+      "推理"
+    ],
+    "familyId": "add_hidden_number",
+    "learningObjective": "たし算とひき算の関係を使って、かくれた数を求められる",
+    "funMechanic": "inference",
+    "commonMistake": "問題の数をそのままたしたりひいたりしてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_156",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "456 + 99 を、456 + 100 - 1 とくふうして計算すると、いくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 555,
+      "unit": ""
+    },
+    "explanation": "100をたしてから、たしすぎた1をひきます。556 - 1 = 555 です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "筆算",
+      "計算のくふう"
+    ],
+    "familyId": "add_smart_calc",
+    "learningObjective": "きりのよい数を使った計算のくふうができる",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "100たしたあとの1のちょうせいを、たすかひくか逆にする",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_157",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "327 + 198 を、327 + 200 - 2 とくふうして計算すると、いくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 525,
+      "unit": ""
+    },
+    "explanation": "200をたしてから、たしすぎた2をひきます。527 - 2 = 525 です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "筆算",
+      "計算のくふう"
+    ],
+    "familyId": "add_smart_calc",
+    "learningObjective": "きりのよい数を使った計算のくふうができる",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "100たしたあとの1のちょうせいを、たすかひくか逆にする",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_158",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "634 - 99 を、634 - 100 + 1 とくふうして計算すると、いくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 535,
+      "unit": ""
+    },
+    "explanation": "100をひいてから、ひきすぎた1をたします。534 + 1 = 535 です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "筆算",
+      "計算のくふう"
+    ],
+    "familyId": "add_smart_calc",
+    "learningObjective": "きりのよい数を使った計算のくふうができる",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "100たしたあとの1のちょうせいを、たすかひくか逆にする",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_159",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "700 - 356 と 699 - 355 は、同じ答えになります。699 - 355 はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 344,
+      "unit": ""
+    },
+    "explanation": "どちらの数も1ずつ小さくしても、ちがいは変わりません。答えは344です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "筆算",
+      "計算のくふう"
+    ],
+    "familyId": "add_smart_calc",
+    "learningObjective": "きりのよい数を使った計算のくふうができる",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "100たしたあとの1のちょうせいを、たすかひくか逆にする",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_addition_subtraction_written_160",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "addition_subtraction_written",
+    "unitLabel": "たし算とひき算の筆算",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "250 + 250 = 500 を使って考えます。251 + 249 はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 500,
+      "unit": ""
+    },
+    "explanation": "251は250より1大きく、249は250より1小さいので、答えは同じ500です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "筆算",
+      "計算のくふう"
+    ],
+    "familyId": "add_smart_calc",
+    "learningObjective": "きりのよい数を使った計算のくふうができる",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "100たしたあとの1のちょうせいを、たすかひくか逆にする",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_time_duration_101",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "time_duration",
     "unitLabel": "時こくと時間",
     "curriculumArea": "C 測定",
     "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 2
+    },
     "questionType": "multiple_choice",
-    "prompt": "8時20分の20分後は何時何分？",
+    "prompt": "7時40分の30分後は、何時何分？",
     "choices": [
       {
         "id": "a",
-        "text": "8時40分"
+        "text": "8時10分"
       },
       {
         "id": "b",
-        "text": "9時40分"
+        "text": "7時70分"
       },
       {
         "id": "c",
-        "text": "8時50分"
+        "text": "8時20分"
+      },
+      {
+        "id": "d",
+        "text": "7時10分"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "8時10分"
+    },
+    "explanation": "40分 + 30分 = 70分。60分で1時間くり上げて、8時10分です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "時こく",
+      "時間"
+    ],
+    "familyId": "time_after",
+    "learningObjective": "ある時こくから何分後の時こくを求められる",
+    "funMechanic": "drill",
+    "commonMistake": "60分をこえたときに、時間へのくり上げをわすれる(9時70分など)",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_time_duration_102",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "time_duration",
+    "unitLabel": "時こくと時間",
+    "curriculumArea": "C 測定",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "9時15分の50分後は、何時何分？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "10時5分"
+      },
+      {
+        "id": "b",
+        "text": "9時65分"
+      },
+      {
+        "id": "c",
+        "text": "10時15分"
+      },
+      {
+        "id": "d",
+        "text": "9時55分"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "10時5分"
+    },
+    "explanation": "15分 + 50分 = 65分。60分をくり上げて、10時5分です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "時こく",
+      "時間"
+    ],
+    "familyId": "time_after",
+    "learningObjective": "ある時こくから何分後の時こくを求められる",
+    "funMechanic": "drill",
+    "commonMistake": "60分をこえたときに、時間へのくり上げをわすれる(9時70分など)",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_time_duration_103",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "time_duration",
+    "unitLabel": "時こくと時間",
+    "curriculumArea": "C 測定",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "11時35分の40分後は、何時何分？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "12時15分"
+      },
+      {
+        "id": "b",
+        "text": "11時75分"
+      },
+      {
+        "id": "c",
+        "text": "12時5分"
+      },
+      {
+        "id": "d",
+        "text": "12時35分"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "12時15分"
+    },
+    "explanation": "35分 + 40分 = 75分。60分をくり上げて、12時15分です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "時こく",
+      "時間"
+    ],
+    "familyId": "time_after",
+    "learningObjective": "ある時こくから何分後の時こくを求められる",
+    "funMechanic": "drill",
+    "commonMistake": "60分をこえたときに、時間へのくり上げをわすれる(9時70分など)",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_time_duration_104",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "time_duration",
+    "unitLabel": "時こくと時間",
+    "curriculumArea": "C 測定",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "6時20分の45分後は、何時何分？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "7時5分"
+      },
+      {
+        "id": "b",
+        "text": "6時65分"
+      },
+      {
+        "id": "c",
+        "text": "7時15分"
+      },
+      {
+        "id": "d",
+        "text": "6時5分"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "7時5分"
+    },
+    "explanation": "20分 + 45分 = 65分。60分をくり上げて、7時5分です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "時こく",
+      "時間"
+    ],
+    "familyId": "time_after",
+    "learningObjective": "ある時こくから何分後の時こくを求められる",
+    "funMechanic": "drill",
+    "commonMistake": "60分をこえたときに、時間へのくり上げをわすれる(9時70分など)",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_time_duration_105",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "time_duration",
+    "unitLabel": "時こくと時間",
+    "curriculumArea": "C 測定",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 2,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "8時10分の20分前は、何時何分？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "7時50分"
+      },
+      {
+        "id": "b",
+        "text": "8時30分"
+      },
+      {
+        "id": "c",
+        "text": "7時30分"
       },
       {
         "id": "d",
@@ -6998,14 +8743,18 @@ window.CHIBI_QUEST_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "8時40分"
+      "value": "7時50分"
     },
-    "explanation": "20分に20分をたすと40分です。60分をこえたら1時間くり上げます。",
-    "estimatedSeconds": 45,
+    "explanation": "10分から20分はひけないので、1時間くり下げます。7時70分 - 20分 = 7時50分です。",
+    "estimatedSeconds": 60,
     "skillTags": [
       "時こく",
       "時間"
     ],
+    "familyId": "time_before",
+    "learningObjective": "ある時こくから何分前の時こくを求められる",
+    "funMechanic": "drill",
+    "commonMistake": "「前」なのに分をたしてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -7017,44 +8766,55 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_time_duration_003",
-    "version": 1,
+    "id": "g3_math_time_duration_106",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "time_duration",
     "unitLabel": "時こくと時間",
     "curriculumArea": "C 測定",
-    "difficulty": 2,
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 2,
+      "choices": 2
+    },
     "questionType": "multiple_choice",
-    "prompt": "9時35分の25分後は何時何分？",
+    "prompt": "3時5分の15分前は、何時何分？",
     "choices": [
       {
         "id": "a",
-        "text": "10時0分"
+        "text": "2時50分"
       },
       {
         "id": "b",
-        "text": "11時0分"
+        "text": "3時20分"
       },
       {
         "id": "c",
-        "text": "10時10分"
+        "text": "2時40分"
       },
       {
         "id": "d",
-        "text": "9時0分"
+        "text": "2時55分"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "10時0分"
+      "value": "2時50分"
     },
-    "explanation": "35分に25分をたすと60分です。60分をこえたら1時間くり上げます。",
-    "estimatedSeconds": 45,
+    "explanation": "5分から15分はひけないので、2時65分と考えて、65 - 15 = 50。2時50分です。",
+    "estimatedSeconds": 60,
     "skillTags": [
       "時こく",
       "時間"
     ],
+    "familyId": "time_before",
+    "learningObjective": "ある時こくから何分前の時こくを求められる",
+    "funMechanic": "drill",
+    "commonMistake": "「前」なのに分をたしてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -7066,24 +8826,31 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_time_duration_004",
-    "version": 1,
+    "id": "g3_math_time_duration_107",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "time_duration",
     "unitLabel": "時こくと時間",
     "curriculumArea": "C 測定",
-    "difficulty": 2,
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 2,
+      "choices": 2
+    },
     "questionType": "multiple_choice",
-    "prompt": "10時45分の30分後は何時何分？",
+    "prompt": "12時ちょうどの25分前は、何時何分？",
     "choices": [
       {
         "id": "a",
-        "text": "11時15分"
+        "text": "11時35分"
       },
       {
         "id": "b",
-        "text": "12時15分"
+        "text": "12時25分"
       },
       {
         "id": "c",
@@ -7091,19 +8858,23 @@ window.CHIBI_QUEST_QUESTIONS = [
       },
       {
         "id": "d",
-        "text": "10時15分"
+        "text": "11時45分"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "11時15分"
+      "value": "11時35分"
     },
-    "explanation": "45分に30分をたすと75分です。60分をこえたら1時間くり上げます。",
-    "estimatedSeconds": 45,
+    "explanation": "12時は11時60分と同じです。60 - 25 = 35 で、11時35分です。",
+    "estimatedSeconds": 60,
     "skillTags": [
       "時こく",
       "時間"
     ],
+    "familyId": "time_before",
+    "learningObjective": "ある時こくから何分前の時こくを求められる",
+    "funMechanic": "drill",
+    "commonMistake": "「前」なのに分をたしてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -7115,44 +8886,319 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_time_duration_005",
-    "version": 1,
+    "id": "g3_math_time_duration_108",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "time_duration",
     "unitLabel": "時こくと時間",
     "curriculumArea": "C 測定",
     "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "8時10分から8時55分までは、何分？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 45,
+      "unit": "分"
+    },
+    "explanation": "55 - 10 = 45 で、45分です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "時こく",
+      "時間の長さ"
+    ],
+    "familyId": "time_duration_len",
+    "learningObjective": "2つの時こくの間の時間を求められる",
+    "funMechanic": "drill",
+    "commonMistake": "時こくの数字どうしをそのままひいてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_time_duration_109",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "time_duration",
+    "unitLabel": "時こくと時間",
+    "curriculumArea": "C 測定",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "9時40分から10時20分までは、何分？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 40,
+      "unit": "分"
+    },
+    "explanation": "9時40分から10時までが20分、10時から10時20分までが20分。あわせて40分です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "時こく",
+      "時間の長さ"
+    ],
+    "familyId": "time_duration_len",
+    "learningObjective": "2つの時こくの間の時間を求められる",
+    "funMechanic": "drill",
+    "commonMistake": "時こくの数字どうしをそのままひいてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_time_duration_110",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "time_duration",
+    "unitLabel": "時こくと時間",
+    "curriculumArea": "C 測定",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "11時50分から12時30分までは、何分？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 40,
+      "unit": "分"
+    },
+    "explanation": "11時50分から12時までが10分、12時から12時30分までが30分。あわせて40分です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "時こく",
+      "時間の長さ"
+    ],
+    "familyId": "time_duration_len",
+    "learningObjective": "2つの時こくの間の時間を求められる",
+    "funMechanic": "drill",
+    "commonMistake": "時こくの数字どうしをそのままひいてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_time_duration_111",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "time_duration",
+    "unitLabel": "時こくと時間",
+    "curriculumArea": "C 測定",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "2時35分から4時5分までは、何分？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 90,
+      "unit": "分"
+    },
+    "explanation": "2時35分から3時35分までが60分、3時35分から4時5分までが30分。あわせて90分です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "時こく",
+      "時間の長さ"
+    ],
+    "familyId": "time_duration_len",
+    "learningObjective": "2つの時こくの間の時間を求められる",
+    "funMechanic": "drill",
+    "commonMistake": "時こくの数字どうしをそのままひいてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_time_duration_112",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "time_duration",
+    "unitLabel": "時こくと時間",
+    "curriculumArea": "C 測定",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "6時15分から7時ちょうどまでは、何分？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 45,
+      "unit": "分"
+    },
+    "explanation": "60 - 15 = 45 で、45分です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "時こく",
+      "時間の長さ"
+    ],
+    "familyId": "time_duration_len",
+    "learningObjective": "2つの時こくの間の時間を求められる",
+    "funMechanic": "drill",
+    "commonMistake": "時こくの数字どうしをそのままひいてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_time_duration_113",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "time_duration",
+    "unitLabel": "時こくと時間",
+    "curriculumArea": "C 測定",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 1,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "1分 = 60秒です。2分は何秒？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 120,
+      "unit": "秒"
+    },
+    "explanation": "60秒の2つ分なので、60 × 2 = 120秒です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "時間",
+      "単位変換"
+    ],
+    "familyId": "time_convert",
+    "learningObjective": "分と秒、時間と分の関係(1分=60秒、1時間=60分)を使って表しかえられる",
+    "funMechanic": "drill",
+    "commonMistake": "60ではなく100で計算してしまう(1分=100秒など)",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_time_duration_114",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "time_duration",
+    "unitLabel": "時こくと時間",
+    "curriculumArea": "C 測定",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 1,
+      "steps": 2,
+      "format": 1,
+      "choices": 2
+    },
     "questionType": "multiple_choice",
-    "prompt": "13時5分の35分後は何時何分？",
+    "prompt": "90秒は、何分何秒？",
     "choices": [
       {
         "id": "a",
-        "text": "13時40分"
+        "text": "1分30秒"
       },
       {
         "id": "b",
-        "text": "14時40分"
+        "text": "9分0秒"
       },
       {
         "id": "c",
-        "text": "13時50分"
+        "text": "1分20秒"
       },
       {
         "id": "d",
-        "text": "12時40分"
+        "text": "0分90秒"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "13時40分"
+      "value": "1分30秒"
     },
-    "explanation": "5分に35分をたすと40分です。60分をこえたら1時間くり上げます。",
-    "estimatedSeconds": 45,
+    "explanation": "90秒 = 60秒 + 30秒 なので、1分30秒です。",
+    "estimatedSeconds": 60,
     "skillTags": [
-      "時こく",
-      "時間"
+      "時間",
+      "単位変換"
     ],
+    "familyId": "time_convert",
+    "learningObjective": "分と秒、時間と分の関係(1分=60秒、1時間=60分)を使って表しかえられる",
+    "funMechanic": "drill",
+    "commonMistake": "60ではなく100で計算してしまう(1分=100秒など)",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -7164,44 +9210,55 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_time_duration_006",
-    "version": 1,
+    "id": "g3_math_time_duration_115",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "time_duration",
     "unitLabel": "時こくと時間",
     "curriculumArea": "C 測定",
     "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 1,
+      "steps": 2,
+      "format": 1,
+      "choices": 2
+    },
     "questionType": "multiple_choice",
-    "prompt": "14時30分の40分後は何時何分？",
+    "prompt": "80分は、何時間何分？",
     "choices": [
       {
         "id": "a",
-        "text": "15時10分"
+        "text": "1時間20分"
       },
       {
         "id": "b",
-        "text": "16時10分"
+        "text": "8時間0分"
       },
       {
         "id": "c",
-        "text": "15時20分"
+        "text": "1時間40分"
       },
       {
         "id": "d",
-        "text": "14時10分"
+        "text": "2時間20分"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "15時10分"
+      "value": "1時間20分"
     },
-    "explanation": "30分に40分をたすと70分です。60分をこえたら1時間くり上げます。",
-    "estimatedSeconds": 45,
+    "explanation": "80分 = 60分 + 20分 なので、1時間20分です。",
+    "estimatedSeconds": 60,
     "skillTags": [
-      "時こく",
-      "時間"
+      "時間",
+      "単位変換"
     ],
+    "familyId": "time_convert",
+    "learningObjective": "分と秒、時間と分の関係(1分=60秒、1時間=60分)を使って表しかえられる",
+    "funMechanic": "drill",
+    "commonMistake": "60ではなく100で計算してしまう(1分=100秒など)",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -7213,44 +9270,99 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_time_duration_007",
-    "version": 1,
+    "id": "g3_math_time_duration_116",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "time_duration",
     "unitLabel": "時こくと時間",
     "curriculumArea": "C 測定",
     "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 1,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "1時間45分は、何分？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 105,
+      "unit": "分"
+    },
+    "explanation": "1時間 = 60分 なので、60 + 45 = 105分です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "時間",
+      "単位変換"
+    ],
+    "familyId": "time_convert",
+    "learningObjective": "分と秒、時間と分の関係(1分=60秒、1時間=60分)を使って表しかえられる",
+    "funMechanic": "drill",
+    "commonMistake": "60ではなく100で計算してしまう(1分=100秒など)",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_time_duration_117",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "time_duration",
+    "unitLabel": "時こくと時間",
+    "curriculumArea": "C 測定",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 2
+    },
     "questionType": "multiple_choice",
-    "prompt": "15時50分の45分後は何時何分？",
+    "prompt": "はるとさんは「9時50分の20分後は9時70分」と言いました。正しく直すと？",
     "choices": [
       {
         "id": "a",
-        "text": "16時35分"
+        "text": "10時10分"
       },
       {
         "id": "b",
-        "text": "17時35分"
+        "text": "9時70分で正しい"
       },
       {
         "id": "c",
-        "text": "16時45分"
+        "text": "10時20分"
       },
       {
         "id": "d",
-        "text": "15時35分"
+        "text": "9時30分"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "16時35分"
+      "value": "10時10分"
     },
-    "explanation": "50分に45分をたすと95分です。60分をこえたら1時間くり上げます。",
-    "estimatedSeconds": 45,
+    "explanation": "70分は1時間10分なので、9時70分ではなく10時10分です。",
+    "estimatedSeconds": 90,
     "skillTags": [
       "時こく",
-      "時間"
+      "たしかめ"
     ],
+    "familyId": "time_find_mistake",
+    "learningObjective": "時こく・時間のよくあるまちがいに気づいて、正しく直せる",
+    "funMechanic": "find_mistake",
+    "commonMistake": "60進法を10進法と混同する(9時70分、1時間=100分など)",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -7262,44 +9374,55 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_time_duration_008",
-    "version": 1,
+    "id": "g3_math_time_duration_118",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "time_duration",
     "unitLabel": "時こくと時間",
     "curriculumArea": "C 測定",
-    "difficulty": 2,
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 2
+    },
     "questionType": "multiple_choice",
-    "prompt": "16時15分の50分後は何時何分？",
+    "prompt": "みおさんは「1時間30分は130分」と言いました。正しく直すと？",
     "choices": [
       {
         "id": "a",
-        "text": "17時5分"
+        "text": "90分"
       },
       {
         "id": "b",
-        "text": "18時5分"
+        "text": "130分で正しい"
       },
       {
         "id": "c",
-        "text": "17時15分"
+        "text": "60分"
       },
       {
         "id": "d",
-        "text": "16時5分"
+        "text": "100分"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "17時5分"
+      "value": "90分"
     },
-    "explanation": "15分に50分をたすと65分です。60分をこえたら1時間くり上げます。",
-    "estimatedSeconds": 45,
+    "explanation": "1時間 = 60分 なので、60 + 30 = 90分です。",
+    "estimatedSeconds": 90,
     "skillTags": [
       "時こく",
-      "時間"
+      "たしかめ"
     ],
+    "familyId": "time_find_mistake",
+    "learningObjective": "時こく・時間のよくあるまちがいに気づいて、正しく直せる",
+    "funMechanic": "find_mistake",
+    "commonMistake": "60進法を10進法と混同する(9時70分、1時間=100分など)",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -7311,436 +9434,477 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_time_duration_009",
-    "version": 1,
+    "id": "g3_math_time_duration_119",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "time_duration",
     "unitLabel": "時こくと時間",
     "curriculumArea": "C 測定",
-    "difficulty": 2,
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 2
+    },
     "questionType": "multiple_choice",
-    "prompt": "7時10分の55分後は何時何分？",
+    "prompt": "はるとさんは「2分 = 100秒」と言いました。正しく直すと？",
     "choices": [
       {
         "id": "a",
-        "text": "8時5分"
+        "text": "120秒"
       },
       {
         "id": "b",
-        "text": "9時5分"
+        "text": "100秒で正しい"
       },
       {
         "id": "c",
+        "text": "200秒"
+      },
+      {
+        "id": "d",
+        "text": "60秒"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "120秒"
+    },
+    "explanation": "1分 = 60秒 なので、2分は 60 × 2 = 120秒です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "時こく",
+      "たしかめ"
+    ],
+    "familyId": "time_find_mistake",
+    "learningObjective": "時こく・時間のよくあるまちがいに気づいて、正しく直せる",
+    "funMechanic": "find_mistake",
+    "commonMistake": "60進法を10進法と混同する(9時70分、1時間=100分など)",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_time_duration_120",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "time_duration",
+    "unitLabel": "時こくと時間",
+    "curriculumArea": "C 測定",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "みおさんは「3時40分の30分後は3時10分」と言いました(時こくがもどってしまいました)。正しく直すと？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "4時10分"
+      },
+      {
+        "id": "b",
+        "text": "3時10分で正しい"
+      },
+      {
+        "id": "c",
+        "text": "4時40分"
+      },
+      {
+        "id": "d",
+        "text": "3時70分"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "4時10分"
+    },
+    "explanation": "40分 + 30分 = 70分で、1時間くり上がります。4時10分です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "時こく",
+      "たしかめ"
+    ],
+    "familyId": "time_find_mistake",
+    "learningObjective": "時こく・時間のよくあるまちがいに気づいて、正しく直せる",
+    "funMechanic": "find_mistake",
+    "commonMistake": "60進法を10進法と混同する(9時70分、1時間=100分など)",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_time_duration_121",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "time_duration",
+    "unitLabel": "時こくと時間",
+    "curriculumArea": "C 測定",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 1,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "はると「1時間は60分」。みお「1分は60秒」。正しいのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "二人とも正しい"
+      },
+      {
+        "id": "b",
+        "text": "はるとだけ正しい"
+      },
+      {
+        "id": "c",
+        "text": "みおだけ正しい"
+      },
+      {
+        "id": "d",
+        "text": "二人ともまちがい"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "二人とも正しい"
+    },
+    "explanation": "時間も分も、60ずつで次の単位になります。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "時間",
+      "単位のきまり"
+    ],
+    "familyId": "time_judge_claim",
+    "learningObjective": "時間の単位のきまりについての主張を判断できる",
+    "funMechanic": "judge_claim",
+    "commonMistake": "時間の単位を10進法で考えてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_time_duration_122",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "time_duration",
+    "unitLabel": "時こくと時間",
+    "curriculumArea": "C 測定",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "100分について。はると「1時間40分と同じ」。みお「1時間より短い」。正しいのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "はるとだけ正しい"
+      },
+      {
+        "id": "b",
+        "text": "二人とも正しい"
+      },
+      {
+        "id": "c",
+        "text": "みおだけ正しい"
+      },
+      {
+        "id": "d",
+        "text": "二人ともまちがい"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "はるとだけ正しい"
+    },
+    "explanation": "100分 = 60分 + 40分 = 1時間40分です。1時間(60分)より長いです。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "時間",
+      "単位のきまり"
+    ],
+    "familyId": "time_judge_claim",
+    "learningObjective": "時間の単位のきまりについての主張を判断できる",
+    "funMechanic": "judge_claim",
+    "commonMistake": "時間の単位を10進法で考えてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_time_duration_123",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "time_duration",
+    "unitLabel": "時こくと時間",
+    "curriculumArea": "C 測定",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 1,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "はると「午前は12時間、午後も12時間」。みお「1日は24時間」。正しいのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "二人とも正しい"
+      },
+      {
+        "id": "b",
+        "text": "はるとだけ正しい"
+      },
+      {
+        "id": "c",
+        "text": "みおだけ正しい"
+      },
+      {
+        "id": "d",
+        "text": "二人ともまちがい"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "二人とも正しい"
+    },
+    "explanation": "午前12時間と午後12時間をあわせて、1日は24時間です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "時間",
+      "単位のきまり"
+    ],
+    "familyId": "time_judge_claim",
+    "learningObjective": "時間の単位のきまりについての主張を判断できる",
+    "funMechanic": "judge_claim",
+    "commonMistake": "時間の単位を10進法で考えてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_time_duration_124",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "time_duration",
+    "unitLabel": "時こくと時間",
+    "curriculumArea": "C 測定",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "はると「時計の長いはりが1まわりすると1時間」。みお「時計のみじかいはりが1まわりすると1時間」。正しいのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "はるとだけ正しい"
+      },
+      {
+        "id": "b",
+        "text": "二人とも正しい"
+      },
+      {
+        "id": "c",
+        "text": "みおだけ正しい"
+      },
+      {
+        "id": "d",
+        "text": "二人ともまちがい"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "はるとだけ正しい"
+    },
+    "explanation": "長いはり(分しん)は1まわりで60分 = 1時間。みじかいはり(時しん)は1まわりで12時間です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "時間",
+      "単位のきまり"
+    ],
+    "familyId": "time_judge_claim",
+    "learningObjective": "時間の単位のきまりについての主張を判断できる",
+    "funMechanic": "judge_claim",
+    "commonMistake": "時間の単位を10進法で考えてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_time_duration_125",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "time_duration",
+    "unitLabel": "時こくと時間",
+    "curriculumArea": "C 測定",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "4時までに、40分かかる宿題を終わらせたい。おそくとも何時何分までに始めればいい？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "3時20分"
+      },
+      {
+        "id": "b",
+        "text": "3時40分"
+      },
+      {
+        "id": "c",
+        "text": "4時40分"
+      },
+      {
+        "id": "d",
+        "text": "3時0分"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "3時20分"
+    },
+    "explanation": "4時の40分前なので、3時20分までに始めます。",
+    "estimatedSeconds": 120,
+    "skillTags": [
+      "時こく",
+      "時間",
+      "文章題"
+    ],
+    "familyId": "time_schedule",
+    "learningObjective": "目当ての時こくから逆算したり、時間をつないだりして予定を考えられる",
+    "funMechanic": "inference",
+    "commonMistake": "逆算なのに、時こくに時間をたしてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_time_duration_126",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "time_duration",
+    "unitLabel": "時こくと時間",
+    "curriculumArea": "C 測定",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "学校まで15分かかります。8時ちょうどに着きたいとき、家を出るのは何時何分？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "7時45分"
+      },
+      {
+        "id": "b",
         "text": "8時15分"
       },
       {
-        "id": "d",
-        "text": "7時5分"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "8時5分"
-    },
-    "explanation": "10分に55分をたすと65分です。60分をこえたら1時間くり上げます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "時こく",
-      "時間"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_time_duration_010",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "time_duration",
-    "unitLabel": "時こくと時間",
-    "curriculumArea": "C 測定",
-    "difficulty": 2,
-    "questionType": "multiple_choice",
-    "prompt": "8時20分の70分後は何時何分？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "9時30分"
-      },
-      {
-        "id": "b",
-        "text": "10時30分"
-      },
-      {
         "id": "c",
-        "text": "9時40分"
-      },
-      {
-        "id": "d",
-        "text": "8時30分"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "9時30分"
-    },
-    "explanation": "20分に70分をたすと90分です。60分をこえたら1時間くり上げます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "時こく",
-      "時間"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_time_duration_011",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "time_duration",
-    "unitLabel": "時こくと時間",
-    "curriculumArea": "C 測定",
-    "difficulty": 2,
-    "questionType": "multiple_choice",
-    "prompt": "9時35分の15分後は何時何分？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "9時50分"
-      },
-      {
-        "id": "b",
-        "text": "10時50分"
-      },
-      {
-        "id": "c",
-        "text": "9時0分"
-      },
-      {
-        "id": "d",
-        "text": "8時50分"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "9時50分"
-    },
-    "explanation": "35分に15分をたすと50分です。60分をこえたら1時間くり上げます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "時こく",
-      "時間"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_time_duration_012",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "time_duration",
-    "unitLabel": "時こくと時間",
-    "curriculumArea": "C 測定",
-    "difficulty": 2,
-    "questionType": "multiple_choice",
-    "prompt": "10時45分の20分後は何時何分？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "11時5分"
-      },
-      {
-        "id": "b",
-        "text": "12時5分"
-      },
-      {
-        "id": "c",
-        "text": "11時15分"
-      },
-      {
-        "id": "d",
-        "text": "10時5分"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "11時5分"
-    },
-    "explanation": "45分に20分をたすと65分です。60分をこえたら1時間くり上げます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "時こく",
-      "時間"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_time_duration_013",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "time_duration",
-    "unitLabel": "時こくと時間",
-    "curriculumArea": "C 測定",
-    "difficulty": 2,
-    "questionType": "multiple_choice",
-    "prompt": "13時5分の25分後は何時何分？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "13時30分"
-      },
-      {
-        "id": "b",
-        "text": "14時30分"
-      },
-      {
-        "id": "c",
-        "text": "13時40分"
-      },
-      {
-        "id": "d",
-        "text": "12時30分"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "13時30分"
-    },
-    "explanation": "5分に25分をたすと30分です。60分をこえたら1時間くり上げます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "時こく",
-      "時間"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_time_duration_014",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "time_duration",
-    "unitLabel": "時こくと時間",
-    "curriculumArea": "C 測定",
-    "difficulty": 2,
-    "questionType": "multiple_choice",
-    "prompt": "14時30分の30分後は何時何分？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "15時0分"
-      },
-      {
-        "id": "b",
-        "text": "16時0分"
-      },
-      {
-        "id": "c",
-        "text": "15時10分"
-      },
-      {
-        "id": "d",
-        "text": "14時0分"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "15時0分"
-    },
-    "explanation": "30分に30分をたすと60分です。60分をこえたら1時間くり上げます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "時こく",
-      "時間"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_time_duration_015",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "time_duration",
-    "unitLabel": "時こくと時間",
-    "curriculumArea": "C 測定",
-    "difficulty": 2,
-    "questionType": "multiple_choice",
-    "prompt": "15時50分の35分後は何時何分？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "16時25分"
-      },
-      {
-        "id": "b",
-        "text": "17時25分"
-      },
-      {
-        "id": "c",
-        "text": "16時35分"
-      },
-      {
-        "id": "d",
-        "text": "15時25分"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "16時25分"
-    },
-    "explanation": "50分に35分をたすと85分です。60分をこえたら1時間くり上げます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "時こく",
-      "時間"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_time_duration_016",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "time_duration",
-    "unitLabel": "時こくと時間",
-    "curriculumArea": "C 測定",
-    "difficulty": 2,
-    "questionType": "multiple_choice",
-    "prompt": "16時15分の40分後は何時何分？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "16時55分"
-      },
-      {
-        "id": "b",
-        "text": "17時55分"
-      },
-      {
-        "id": "c",
-        "text": "16時5分"
-      },
-      {
-        "id": "d",
-        "text": "15時55分"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "16時55分"
-    },
-    "explanation": "15分に40分をたすと55分です。60分をこえたら1時間くり上げます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "時こく",
-      "時間"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_time_duration_017",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "time_duration",
-    "unitLabel": "時こくと時間",
-    "curriculumArea": "C 測定",
-    "difficulty": 2,
-    "questionType": "multiple_choice",
-    "prompt": "7時10分の45分後は何時何分？",
-    "choices": [
-      {
-        "id": "a",
         "text": "7時55分"
       },
       {
-        "id": "b",
-        "text": "8時55分"
-      },
-      {
-        "id": "c",
-        "text": "7時5分"
-      },
-      {
         "id": "d",
-        "text": "6時55分"
+        "text": "7時30分"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "7時55分"
+      "value": "7時45分"
     },
-    "explanation": "10分に45分をたすと55分です。60分をこえたら1時間くり上げます。",
-    "estimatedSeconds": 45,
+    "explanation": "8時の15分前なので、7時45分に出ます。",
+    "estimatedSeconds": 120,
     "skillTags": [
       "時こく",
-      "時間"
+      "時間",
+      "文章題"
     ],
+    "familyId": "time_schedule",
+    "learningObjective": "目当ての時こくから逆算したり、時間をつないだりして予定を考えられる",
+    "funMechanic": "inference",
+    "commonMistake": "逆算なのに、時こくに時間をたしてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -7752,20 +9916,150 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_time_duration_018",
-    "version": 1,
+    "id": "g3_math_time_duration_127",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "time_duration",
     "unitLabel": "時こくと時間",
     "curriculumArea": "C 測定",
-    "difficulty": 2,
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 2,
+      "choices": 2
+    },
     "questionType": "multiple_choice",
-    "prompt": "8時20分の50分後は何時何分？",
+    "prompt": "50分の映画(えいが)が、3時10分に終わりました。始まったのは何時何分？",
     "choices": [
       {
         "id": "a",
-        "text": "9時10分"
+        "text": "2時20分"
+      },
+      {
+        "id": "b",
+        "text": "4時0分"
+      },
+      {
+        "id": "c",
+        "text": "2時40分"
+      },
+      {
+        "id": "d",
+        "text": "3時0分"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "2時20分"
+    },
+    "explanation": "3時10分の50分前です。2時70分と考えて、70 - 50 = 20。2時20分です。",
+    "estimatedSeconds": 120,
+    "skillTags": [
+      "時こく",
+      "時間",
+      "文章題"
+    ],
+    "familyId": "time_schedule",
+    "learningObjective": "目当ての時こくから逆算したり、時間をつないだりして予定を考えられる",
+    "funMechanic": "inference",
+    "commonMistake": "逆算なのに、時こくに時間をたしてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_time_duration_128",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "time_duration",
+    "unitLabel": "時こくと時間",
+    "curriculumArea": "C 測定",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 2,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "サッカーのれんしゅうは4時30分から始まり、1時間10分やります。終わるのは何時何分？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "5時40分"
+      },
+      {
+        "id": "b",
+        "text": "5時30分"
+      },
+      {
+        "id": "c",
+        "text": "5時50分"
+      },
+      {
+        "id": "d",
+        "text": "4時40分"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "5時40分"
+    },
+    "explanation": "4時30分の1時間後が5時30分、さらに10分後で5時40分です。",
+    "estimatedSeconds": 120,
+    "skillTags": [
+      "時こく",
+      "時間",
+      "文章題",
+      "soccer_context"
+    ],
+    "familyId": "time_schedule",
+    "learningObjective": "目当ての時こくから逆算したり、時間をつないだりして予定を考えられる",
+    "funMechanic": "inference",
+    "commonMistake": "逆算なのに、時こくに時間をたしてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_time_duration_129",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "time_duration",
+    "unitLabel": "時こくと時間",
+    "curriculumArea": "C 測定",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 2,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "9時40分から20分休けいして、そのあと30分本を読みます。読み終わるのは何時何分？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "10時30分"
       },
       {
         "id": "b",
@@ -7773,23 +10067,28 @@ window.CHIBI_QUEST_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "9時20分"
+        "text": "10時50分"
       },
       {
         "id": "d",
-        "text": "8時10分"
+        "text": "9時90分"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "9時10分"
+      "value": "10時30分"
     },
-    "explanation": "20分に50分をたすと70分です。60分をこえたら1時間くり上げます。",
-    "estimatedSeconds": 45,
+    "explanation": "9時40分 + 20分 = 10時。10時 + 30分 = 10時30分です。",
+    "estimatedSeconds": 120,
     "skillTags": [
       "時こく",
-      "時間"
+      "時間",
+      "文章題"
     ],
+    "familyId": "time_schedule",
+    "learningObjective": "目当ての時こくから逆算したり、時間をつないだりして予定を考えられる",
+    "funMechanic": "inference",
+    "commonMistake": "逆算なのに、時こくに時間をたしてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -7801,506 +10100,55 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_time_duration_019",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "time_duration",
-    "unitLabel": "時こくと時間",
-    "curriculumArea": "C 測定",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "8時0分から8時35分までは何分？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 35,
-      "unit": "分"
-    },
-    "explanation": "始まりから終わりまでを分で数えると35分です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "時こく",
-      "時間の長さ"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_time_duration_020",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "time_duration",
-    "unitLabel": "時こくと時間",
-    "curriculumArea": "C 測定",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "9時10分から9時55分までは何分？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 45,
-      "unit": "分"
-    },
-    "explanation": "始まりから終わりまでを分で数えると45分です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "時こく",
-      "時間の長さ"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_time_duration_021",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "time_duration",
-    "unitLabel": "時こくと時間",
-    "curriculumArea": "C 測定",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "10時20分から11時10分までは何分？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 50,
-      "unit": "分"
-    },
-    "explanation": "始まりから終わりまでを分で数えると50分です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "時こく",
-      "時間の長さ"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_time_duration_022",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "time_duration",
-    "unitLabel": "時こくと時間",
-    "curriculumArea": "C 測定",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "11時30分から12時35分までは何分？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 65,
-      "unit": "分"
-    },
-    "explanation": "始まりから終わりまでを分で数えると65分です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "時こく",
-      "時間の長さ"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_time_duration_023",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "time_duration",
-    "unitLabel": "時こくと時間",
-    "curriculumArea": "C 測定",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "12時40分から14時0分までは何分？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 80,
-      "unit": "分"
-    },
-    "explanation": "始まりから終わりまでを分で数えると80分です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "時こく",
-      "時間の長さ"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_time_duration_024",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "time_duration",
-    "unitLabel": "時こくと時間",
-    "curriculumArea": "C 測定",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "8時0分から9時35分までは何分？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 95,
-      "unit": "分"
-    },
-    "explanation": "始まりから終わりまでを分で数えると95分です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "時こく",
-      "時間の長さ"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_time_duration_025",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "time_duration",
-    "unitLabel": "時こくと時間",
-    "curriculumArea": "C 測定",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "9時10分から11時0分までは何分？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 110,
-      "unit": "分"
-    },
-    "explanation": "始まりから終わりまでを分で数えると110分です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "時こく",
-      "時間の長さ"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_time_duration_026",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "time_duration",
-    "unitLabel": "時こくと時間",
-    "curriculumArea": "C 測定",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "10時20分から10時55分までは何分？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 35,
-      "unit": "分"
-    },
-    "explanation": "始まりから終わりまでを分で数えると35分です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "時こく",
-      "時間の長さ"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_time_duration_027",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "time_duration",
-    "unitLabel": "時こくと時間",
-    "curriculumArea": "C 測定",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "11時30分から12時15分までは何分？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 45,
-      "unit": "分"
-    },
-    "explanation": "始まりから終わりまでを分で数えると45分です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "時こく",
-      "時間の長さ"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_time_duration_028",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "time_duration",
-    "unitLabel": "時こくと時間",
-    "curriculumArea": "C 測定",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "12時40分から13時30分までは何分？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 50,
-      "unit": "分"
-    },
-    "explanation": "始まりから終わりまでを分で数えると50分です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "時こく",
-      "時間の長さ"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_time_duration_029",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "time_duration",
-    "unitLabel": "時こくと時間",
-    "curriculumArea": "C 測定",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "8時0分から9時5分までは何分？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 65,
-      "unit": "分"
-    },
-    "explanation": "始まりから終わりまでを分で数えると65分です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "時こく",
-      "時間の長さ"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_time_duration_030",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "time_duration",
-    "unitLabel": "時こくと時間",
-    "curriculumArea": "C 測定",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "9時10分から10時30分までは何分？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 80,
-      "unit": "分"
-    },
-    "explanation": "始まりから終わりまでを分で数えると80分です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "時こく",
-      "時間の長さ"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_time_duration_031",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "time_duration",
-    "unitLabel": "時こくと時間",
-    "curriculumArea": "C 測定",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "10時20分から11時55分までは何分？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 95,
-      "unit": "分"
-    },
-    "explanation": "始まりから終わりまでを分で数えると95分です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "時こく",
-      "時間の長さ"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_time_duration_032",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "time_duration",
-    "unitLabel": "時こくと時間",
-    "curriculumArea": "C 測定",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "11時30分から13時20分までは何分？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 110,
-      "unit": "分"
-    },
-    "explanation": "始まりから終わりまでを分で数えると110分です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "時こく",
-      "時間の長さ"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_time_duration_033",
-    "version": 1,
+    "id": "g3_math_time_duration_130",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "time_duration",
     "unitLabel": "時こくと時間",
     "curriculumArea": "C 測定",
     "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
     "questionType": "multiple_choice",
-    "prompt": "75分は、何時間何分？",
+    "prompt": "80分と1時間15分。長いのはどっち？",
     "choices": [
       {
         "id": "a",
+        "text": "80分"
+      },
+      {
+        "id": "b",
         "text": "1時間15分"
       },
       {
-        "id": "b",
-        "text": "1時間25分"
-      },
-      {
         "id": "c",
-        "text": "2時間15分"
+        "text": "どちらも同じ"
       },
       {
         "id": "d",
-        "text": "0時間15分"
+        "text": "くらべられない"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "1時間15分"
+      "value": "80分"
     },
-    "explanation": "60分で1時間です。75分は1時間15分です。",
-    "estimatedSeconds": 45,
+    "explanation": "1時間15分 = 75分 なので、80分のほうが長いです。",
+    "estimatedSeconds": 90,
     "skillTags": [
       "時間",
-      "単位変換"
+      "大小比較"
     ],
+    "familyId": "time_compare",
+    "learningObjective": "ちがう単位の時間を、同じ単位にそろえてくらべられる",
+    "funMechanic": "predict_check",
+    "commonMistake": "数字の大きさだけでくらべてしまう(90秒 > 2分 など)",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -8312,44 +10160,55 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_time_duration_034",
-    "version": 1,
+    "id": "g3_math_time_duration_131",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "time_duration",
     "unitLabel": "時こくと時間",
     "curriculumArea": "C 測定",
     "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
     "questionType": "multiple_choice",
-    "prompt": "90分は、何時間何分？",
+    "prompt": "1時間30分と100分。長いのはどっち？",
     "choices": [
       {
         "id": "a",
+        "text": "100分"
+      },
+      {
+        "id": "b",
         "text": "1時間30分"
       },
       {
-        "id": "b",
-        "text": "1時間40分"
-      },
-      {
         "id": "c",
-        "text": "2時間30分"
+        "text": "どちらも同じ"
       },
       {
         "id": "d",
-        "text": "0時間30分"
+        "text": "くらべられない"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "1時間30分"
+      "value": "100分"
     },
-    "explanation": "60分で1時間です。90分は1時間30分です。",
-    "estimatedSeconds": 45,
+    "explanation": "1時間30分 = 90分 なので、100分のほうが長いです。",
+    "estimatedSeconds": 90,
     "skillTags": [
       "時間",
-      "単位変換"
+      "大小比較"
     ],
+    "familyId": "time_compare",
+    "learningObjective": "ちがう単位の時間を、同じ単位にそろえてくらべられる",
+    "funMechanic": "predict_check",
+    "commonMistake": "数字の大きさだけでくらべてしまう(90秒 > 2分 など)",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -8361,44 +10220,55 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_time_duration_035",
-    "version": 1,
+    "id": "g3_math_time_duration_132",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "time_duration",
     "unitLabel": "時こくと時間",
     "curriculumArea": "C 測定",
     "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
     "questionType": "multiple_choice",
-    "prompt": "100分は、何時間何分？",
+    "prompt": "2分と90秒。長いのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "1時間40分"
+        "text": "2分"
       },
       {
         "id": "b",
-        "text": "1時間50分"
+        "text": "90秒"
       },
       {
         "id": "c",
-        "text": "2時間40分"
+        "text": "どちらも同じ"
       },
       {
         "id": "d",
-        "text": "0時間40分"
+        "text": "くらべられない"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "1時間40分"
+      "value": "2分"
     },
-    "explanation": "60分で1時間です。100分は1時間40分です。",
-    "estimatedSeconds": 45,
+    "explanation": "2分 = 120秒 なので、2分のほうが長いです。",
+    "estimatedSeconds": 90,
     "skillTags": [
       "時間",
-      "単位変換"
+      "大小比較"
     ],
+    "familyId": "time_compare",
+    "learningObjective": "ちがう単位の時間を、同じ単位にそろえてくらべられる",
+    "funMechanic": "predict_check",
+    "commonMistake": "数字の大きさだけでくらべてしまう(90秒 > 2分 など)",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -8410,44 +10280,55 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_time_duration_036",
-    "version": 1,
+    "id": "g3_math_time_duration_133",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "time_duration",
     "unitLabel": "時こくと時間",
     "curriculumArea": "C 測定",
     "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
     "questionType": "multiple_choice",
-    "prompt": "120分は、何時間何分？",
+    "prompt": "150秒と2分30秒。どうなる？",
     "choices": [
       {
         "id": "a",
-        "text": "2時間0分"
+        "text": "どちらも同じ"
       },
       {
         "id": "b",
-        "text": "2時間10分"
+        "text": "150秒が長い"
       },
       {
         "id": "c",
-        "text": "3時間0分"
+        "text": "2分30秒が長い"
       },
       {
         "id": "d",
-        "text": "1時間0分"
+        "text": "くらべられない"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "2時間0分"
+      "value": "どちらも同じ"
     },
-    "explanation": "60分で1時間です。120分は2時間0分です。",
-    "estimatedSeconds": 45,
+    "explanation": "2分30秒 = 120秒 + 30秒 = 150秒 で、同じ長さです。",
+    "estimatedSeconds": 90,
     "skillTags": [
       "時間",
-      "単位変換"
+      "大小比較"
     ],
+    "familyId": "time_compare",
+    "learningObjective": "ちがう単位の時間を、同じ単位にそろえてくらべられる",
+    "funMechanic": "predict_check",
+    "commonMistake": "数字の大きさだけでくらべてしまう(90秒 > 2分 など)",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -8459,44 +10340,55 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_time_duration_037",
-    "version": 1,
+    "id": "g3_math_time_duration_134",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "time_duration",
     "unitLabel": "時こくと時間",
     "curriculumArea": "C 測定",
     "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
     "questionType": "multiple_choice",
-    "prompt": "135分は、何時間何分？",
+    "prompt": "45分の番組1つと、30分の番組2つ(つづけて見る)。長いのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "2時間15分"
+        "text": "30分の番組2つ"
       },
       {
         "id": "b",
-        "text": "2時間25分"
+        "text": "45分の番組1つ"
       },
       {
         "id": "c",
-        "text": "3時間15分"
+        "text": "どちらも同じ"
       },
       {
         "id": "d",
-        "text": "1時間15分"
+        "text": "くらべられない"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "2時間15分"
+      "value": "30分の番組2つ"
     },
-    "explanation": "60分で1時間です。135分は2時間15分です。",
-    "estimatedSeconds": 45,
+    "explanation": "30分 × 2 = 60分 なので、30分の番組2つのほうが長いです。",
+    "estimatedSeconds": 90,
     "skillTags": [
       "時間",
-      "単位変換"
+      "大小比較"
     ],
+    "familyId": "time_compare",
+    "learningObjective": "ちがう単位の時間を、同じ単位にそろえてくらべられる",
+    "funMechanic": "predict_check",
+    "commonMistake": "数字の大きさだけでくらべてしまう(90秒 > 2分 など)",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -8508,44 +10400,55 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_time_duration_038",
-    "version": 1,
+    "id": "g3_math_time_duration_135",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "time_duration",
     "unitLabel": "時こくと時間",
     "curriculumArea": "C 測定",
-    "difficulty": 3,
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
     "questionType": "multiple_choice",
-    "prompt": "150分は、何時間何分？",
+    "prompt": "歯みがきにかかる時間として、いちばん近いのはどれ？",
     "choices": [
       {
         "id": "a",
-        "text": "2時間30分"
+        "text": "3分"
       },
       {
         "id": "b",
-        "text": "2時間40分"
+        "text": "3秒"
       },
       {
         "id": "c",
-        "text": "3時間30分"
+        "text": "3時間"
       },
       {
         "id": "d",
-        "text": "1時間30分"
+        "text": "30時間"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "2時間30分"
+      "value": "3分"
     },
-    "explanation": "60分で1時間です。150分は2時間30分です。",
+    "explanation": "歯みがきはだいたい3分くらいです。3秒ではみじかすぎ、3時間では長すぎます。",
     "estimatedSeconds": 45,
     "skillTags": [
       "時間",
-      "単位変換"
+      "量感"
     ],
+    "familyId": "time_sense",
+    "learningObjective": "身のまわりのことにかかる時間を、単位をえらんで見当づけられる",
+    "funMechanic": "best_choice",
+    "commonMistake": "秒・分・時間のどれを使うか、けたちがいの単位を選んでしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -8557,44 +10460,55 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_time_duration_039",
-    "version": 1,
+    "id": "g3_math_time_duration_136",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "time_duration",
     "unitLabel": "時こくと時間",
     "curriculumArea": "C 測定",
-    "difficulty": 3,
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
     "questionType": "multiple_choice",
-    "prompt": "180分は、何時間何分？",
+    "prompt": "夜にねむる時間として、いちばん近いのはどれ？",
     "choices": [
       {
         "id": "a",
-        "text": "3時間0分"
+        "text": "9時間"
       },
       {
         "id": "b",
-        "text": "3時間10分"
+        "text": "9分"
       },
       {
         "id": "c",
-        "text": "4時間0分"
+        "text": "9秒"
       },
       {
         "id": "d",
-        "text": "2時間0分"
+        "text": "90時間"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "3時間0分"
+      "value": "9時間"
     },
-    "explanation": "60分で1時間です。180分は3時間0分です。",
+    "explanation": "夜のすいみんはだいたい9時間くらいです。",
     "estimatedSeconds": 45,
     "skillTags": [
       "時間",
-      "単位変換"
+      "量感"
     ],
+    "familyId": "time_sense",
+    "learningObjective": "身のまわりのことにかかる時間を、単位をえらんで見当づけられる",
+    "funMechanic": "best_choice",
+    "commonMistake": "秒・分・時間のどれを使うか、けたちがいの単位を選んでしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -8606,44 +10520,55 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_time_duration_040",
-    "version": 1,
+    "id": "g3_math_time_duration_137",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "time_duration",
     "unitLabel": "時こくと時間",
     "curriculumArea": "C 測定",
-    "difficulty": 3,
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
     "questionType": "multiple_choice",
-    "prompt": "195分は、何時間何分？",
+    "prompt": "カップラーメンができるまでにまつ時間として、いちばん近いのはどれ？",
     "choices": [
       {
         "id": "a",
-        "text": "3時間15分"
+        "text": "3分"
       },
       {
         "id": "b",
-        "text": "3時間25分"
+        "text": "3秒"
       },
       {
         "id": "c",
-        "text": "4時間15分"
+        "text": "30秒"
       },
       {
         "id": "d",
-        "text": "2時間15分"
+        "text": "3時間"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "3時間15分"
+      "value": "3分"
     },
-    "explanation": "60分で1時間です。195分は3時間15分です。",
+    "explanation": "カップラーメンはだいたい3分まちます。",
     "estimatedSeconds": 45,
     "skillTags": [
       "時間",
-      "単位変換"
+      "量感"
     ],
+    "familyId": "time_sense",
+    "learningObjective": "身のまわりのことにかかる時間を、単位をえらんで見当づけられる",
+    "funMechanic": "best_choice",
+    "commonMistake": "秒・分・時間のどれを使うか、けたちがいの単位を選んでしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -8655,45 +10580,222 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_large_numbers_001",
-    "version": 1,
+    "id": "g3_math_time_duration_138",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "time_duration",
+    "unitLabel": "時こくと時間",
+    "curriculumArea": "C 測定",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "学校のじゅぎょう1回の長さとして、いちばん近いのはどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "45分"
+      },
+      {
+        "id": "b",
+        "text": "45秒"
+      },
+      {
+        "id": "c",
+        "text": "4時間"
+      },
+      {
+        "id": "d",
+        "text": "5分"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "45分"
+    },
+    "explanation": "じゅぎょう1回はだいたい45分です。",
+    "estimatedSeconds": 45,
+    "skillTags": [
+      "時間",
+      "量感"
+    ],
+    "familyId": "time_sense",
+    "learningObjective": "身のまわりのことにかかる時間を、単位をえらんで見当づけられる",
+    "funMechanic": "best_choice",
+    "commonMistake": "秒・分・時間のどれを使うか、けたちがいの単位を選んでしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_time_duration_139",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "time_duration",
+    "unitLabel": "時こくと時間",
+    "curriculumArea": "C 測定",
+    "difficulty": 5,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 3,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "90秒、2分、1時間、65分を、みじかいじゅんにならべたものとして正しいのはどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "90秒 → 2分 → 1時間 → 65分"
+      },
+      {
+        "id": "b",
+        "text": "90秒 → 2分 → 65分 → 1時間"
+      },
+      {
+        "id": "c",
+        "text": "2分 → 90秒 → 1時間 → 65分"
+      },
+      {
+        "id": "d",
+        "text": "65分 → 1時間 → 2分 → 90秒"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "90秒 → 2分 → 1時間 → 65分"
+    },
+    "explanation": "90秒 = 1分30秒、2分、1時間 = 60分、65分。みじかいじゅんは 90秒 → 2分 → 1時間 → 65分 です。",
+    "estimatedSeconds": 120,
+    "skillTags": [
+      "時間",
+      "大小比較",
+      "ならべ替え"
+    ],
+    "familyId": "time_reorder",
+    "learningObjective": "ちがう単位の時間を、ぜんぶ同じ単位にそろえてならべられる",
+    "funMechanic": "reorder",
+    "commonMistake": "一部だけ単位をそろえて、のこりは数字のままくらべてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_time_duration_140",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "time_duration",
+    "unitLabel": "時こくと時間",
+    "curriculumArea": "C 測定",
+    "difficulty": 5,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 3,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "100分、1時間30分、2時間を、長いじゅんにならべたものとして正しいのはどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "2時間 → 100分 → 1時間30分"
+      },
+      {
+        "id": "b",
+        "text": "100分 → 2時間 → 1時間30分"
+      },
+      {
+        "id": "c",
+        "text": "1時間30分 → 100分 → 2時間"
+      },
+      {
+        "id": "d",
+        "text": "2時間 → 1時間30分 → 100分"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "2時間 → 100分 → 1時間30分"
+    },
+    "explanation": "2時間 = 120分、100分、1時間30分 = 90分。長いじゅんは 2時間 → 100分 → 1時間30分 です。",
+    "estimatedSeconds": 120,
+    "skillTags": [
+      "時間",
+      "大小比較",
+      "ならべ替え"
+    ],
+    "familyId": "time_reorder",
+    "learningObjective": "ちがう単位の時間を、ぜんぶ同じ単位にそろえてならべられる",
+    "funMechanic": "reorder",
+    "commonMistake": "一部だけ単位をそろえて、のこりは数字のままくらべてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_101",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "large_numbers",
     "unitLabel": "一万をこえる数",
     "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "multiple_choice",
-    "prompt": "34820 の表し方として正しいものはどれ？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "3万と4千と8百と2十"
-      },
-      {
-        "id": "b",
-        "text": "3千と4百と8十と2"
-      },
-      {
-        "id": "c",
-        "text": "3万と4百と8十と2"
-      },
-      {
-        "id": "d",
-        "text": "3万と4千と8十と2"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "3万と4千と8百と2十"
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
     },
-    "explanation": "34820 は、万・千・百・十・一の位に分けて考えます。",
-    "estimatedSeconds": 45,
+    "questionType": "numeric_input",
+    "prompt": "4万と6千と3百を合わせた数は？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 46300,
+      "unit": ""
+    },
+    "explanation": "40000 + 6000 + 300 = 46300 です。",
+    "estimatedSeconds": 60,
     "skillTags": [
       "大きな数",
       "位取り",
       "数の構成"
     ],
+    "familyId": "num_compose",
+    "learningObjective": "万・千・百・十・一を組み合わせた数を書ける",
+    "funMechanic": "drill",
+    "commonMistake": "ない位に0を書きわすれる(7万と5百と9を759にするなど)",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -8705,16 +10807,379 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_large_numbers_002",
-    "version": 1,
+    "id": "g3_math_large_numbers_102",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "large_numbers",
     "unitLabel": "一万をこえる数",
     "curriculumArea": "A 数と計算",
-    "difficulty": 3,
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "7万と5百と9を合わせた数は？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 70509,
+      "unit": ""
+    },
+    "explanation": "千の位と十の位には何もないので0を書きます。70509です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "大きな数",
+      "位取り",
+      "数の構成"
+    ],
+    "familyId": "num_compose",
+    "learningObjective": "万・千・百・十・一を組み合わせた数を書ける",
+    "funMechanic": "drill",
+    "commonMistake": "ない位に0を書きわすれる(7万と5百と9を759にするなど)",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_103",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "2万と8千と4十を合わせた数は？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 28040,
+      "unit": ""
+    },
+    "explanation": "百の位と一の位は0です。28040です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "大きな数",
+      "位取り",
+      "数の構成"
+    ],
+    "familyId": "num_compose",
+    "learningObjective": "万・千・百・十・一を組み合わせた数を書ける",
+    "funMechanic": "drill",
+    "commonMistake": "ない位に0を書きわすれる(7万と5百と9を759にするなど)",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_104",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "9万と9を合わせた数は？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 90009,
+      "unit": ""
+    },
+    "explanation": "千・百・十の位はぜんぶ0です。90009です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "大きな数",
+      "位取り",
+      "数の構成"
+    ],
+    "familyId": "num_compose",
+    "learningObjective": "万・千・百・十・一を組み合わせた数を書ける",
+    "funMechanic": "drill",
+    "commonMistake": "ない位に0を書きわすれる(7万と5百と9を759にするなど)",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_105",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "5万と1千と6百と2十と3を合わせた数は？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 51623,
+      "unit": ""
+    },
+    "explanation": "位のじゅんにならべると51623です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "大きな数",
+      "位取り",
+      "数の構成"
+    ],
+    "familyId": "num_compose",
+    "learningObjective": "万・千・百・十・一を組み合わせた数を書ける",
+    "funMechanic": "drill",
+    "commonMistake": "ない位に0を書きわすれる(7万と5百と9を759にするなど)",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_106",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "35062 の千の位の数字はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 5,
+      "unit": ""
+    },
+    "explanation": "35062は、3万5千62です。千の位は5です。",
+    "estimatedSeconds": 45,
+    "skillTags": [
+      "大きな数",
+      "位取り"
+    ],
+    "familyId": "num_digit",
+    "learningObjective": "5けたの数の、それぞれの位の数字を読み取れる",
+    "funMechanic": "drill",
+    "commonMistake": "位を1つずらして読んでしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_107",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "80417 の万の位の数字はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 8,
+      "unit": ""
+    },
+    "explanation": "5けたの数は、いちばん左が万の位です。80417の万の位は8です。",
+    "estimatedSeconds": 45,
+    "skillTags": [
+      "大きな数",
+      "位取り"
+    ],
+    "familyId": "num_digit",
+    "learningObjective": "5けたの数の、それぞれの位の数字を読み取れる",
+    "funMechanic": "drill",
+    "commonMistake": "位を1つずらして読んでしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_108",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "62950 の十の位の数字はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 5,
+      "unit": ""
+    },
+    "explanation": "右から2ばんめが十の位です。5です。",
+    "estimatedSeconds": 45,
+    "skillTags": [
+      "大きな数",
+      "位取り"
+    ],
+    "familyId": "num_digit",
+    "learningObjective": "5けたの数の、それぞれの位の数字を読み取れる",
+    "funMechanic": "drill",
+    "commonMistake": "位を1つずらして読んでしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_109",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 1,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 1,
+      "steps": 1,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "49006 の百の位の数字はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 0,
+      "unit": ""
+    },
+    "explanation": "右から3ばんめが百の位です。0です。",
+    "estimatedSeconds": 45,
+    "skillTags": [
+      "大きな数",
+      "位取り"
+    ],
+    "familyId": "num_digit",
+    "learningObjective": "5けたの数の、それぞれの位の数字を読み取れる",
+    "funMechanic": "drill",
+    "commonMistake": "位を1つずらして読んでしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_110",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 2
+    },
     "questionType": "multiple_choice",
-    "prompt": "52006 の表し方として正しいものはどれ？",
+    "prompt": "52006 の表し方として正しいのはどれ？",
     "choices": [
       {
         "id": "a",
@@ -8722,28 +11187,32 @@ window.CHIBI_QUEST_QUESTIONS = [
       },
       {
         "id": "b",
-        "text": "5千と2百と6"
-      },
-      {
-        "id": "c",
         "text": "5万と2百と6"
       },
       {
-        "id": "d",
+        "id": "c",
         "text": "5万と2千と6十"
+      },
+      {
+        "id": "d",
+        "text": "5千と2百と6"
       }
     ],
     "answer": {
       "type": "choice",
       "value": "5万と2千と6"
     },
-    "explanation": "52006 は、万・千・百・十・一の位に分けて考えます。",
-    "estimatedSeconds": 45,
+    "explanation": "52006は、5万と2千と6です。百の位と十の位は0です。",
+    "estimatedSeconds": 60,
     "skillTags": [
       "大きな数",
       "位取り",
       "数の構成"
     ],
+    "familyId": "num_compose_choice",
+    "learningObjective": "数を万・千・百・十・一の組み合わせで表せる",
+    "funMechanic": "drill",
+    "commonMistake": "0のある位をとばして、となりの位とまちがえる",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -8755,16 +11224,23 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_large_numbers_003",
-    "version": 1,
+    "id": "g3_math_large_numbers_111",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "large_numbers",
     "unitLabel": "一万をこえる数",
     "curriculumArea": "A 数と計算",
-    "difficulty": 3,
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 2
+    },
     "questionType": "multiple_choice",
-    "prompt": "70940 の表し方として正しいものはどれ？",
+    "prompt": "70940 の表し方として正しいのはどれ？",
     "choices": [
       {
         "id": "a",
@@ -8772,11 +11248,11 @@ window.CHIBI_QUEST_QUESTIONS = [
       },
       {
         "id": "b",
-        "text": "7千と9百と4十"
+        "text": "7万と9千と4十"
       },
       {
         "id": "c",
-        "text": "7万と9千と4十"
+        "text": "7千と9百と4十"
       },
       {
         "id": "d",
@@ -8787,13 +11263,17 @@ window.CHIBI_QUEST_QUESTIONS = [
       "type": "choice",
       "value": "7万と9百と4十"
     },
-    "explanation": "70940 は、万・千・百・十・一の位に分けて考えます。",
-    "estimatedSeconds": 45,
+    "explanation": "70940は、7万と9百と4十です。千の位は0です。",
+    "estimatedSeconds": 60,
     "skillTags": [
       "大きな数",
       "位取り",
       "数の構成"
     ],
+    "familyId": "num_compose_choice",
+    "learningObjective": "数を万・千・百・十・一の組み合わせで表せる",
+    "funMechanic": "drill",
+    "commonMistake": "0のある位をとばして、となりの位とまちがえる",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -8805,266 +11285,23 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_large_numbers_004",
-    "version": 1,
+    "id": "g3_math_large_numbers_112",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "large_numbers",
     "unitLabel": "一万をこえる数",
     "curriculumArea": "A 数と計算",
-    "difficulty": 3,
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 2
+    },
     "questionType": "multiple_choice",
-    "prompt": "86105 の表し方として正しいものはどれ？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "8万と6千と1百と5"
-      },
-      {
-        "id": "b",
-        "text": "8千と6百と1十と5"
-      },
-      {
-        "id": "c",
-        "text": "8万と6千と1十と5"
-      },
-      {
-        "id": "d",
-        "text": "8万と6百と1百と5"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "8万と6千と1百と5"
-    },
-    "explanation": "86105 は、万・千・百・十・一の位に分けて考えます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り",
-      "数の構成"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_005",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "multiple_choice",
-    "prompt": "43070 の表し方として正しいものはどれ？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "4万と3千と7十"
-      },
-      {
-        "id": "b",
-        "text": "4千と3百と7十"
-      },
-      {
-        "id": "c",
-        "text": "4万と3十と7"
-      },
-      {
-        "id": "d",
-        "text": "4万と3千と7百"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "4万と3千と7十"
-    },
-    "explanation": "43070 は、万・千・百・十・一の位に分けて考えます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り",
-      "数の構成"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_006",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "multiple_choice",
-    "prompt": "90508 の表し方として正しいものはどれ？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "9万と5百と8"
-      },
-      {
-        "id": "b",
-        "text": "9千と5百と8"
-      },
-      {
-        "id": "c",
-        "text": "9万と5千と8"
-      },
-      {
-        "id": "d",
-        "text": "9万と5十と8"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "9万と5百と8"
-    },
-    "explanation": "90508 は、万・千・百・十・一の位に分けて考えます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り",
-      "数の構成"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_007",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "multiple_choice",
-    "prompt": "67890 の表し方として正しいものはどれ？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "6万と7千と8百と9十"
-      },
-      {
-        "id": "b",
-        "text": "6千と7百と8十と9"
-      },
-      {
-        "id": "c",
-        "text": "6万と7千と8十と9"
-      },
-      {
-        "id": "d",
-        "text": "6万と8千と7百と9十"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "6万と7千と8百と9十"
-    },
-    "explanation": "67890 は、万・千・百・十・一の位に分けて考えます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り",
-      "数の構成"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_008",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "multiple_choice",
-    "prompt": "10450 の表し方として正しいものはどれ？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "1万と4百と5十"
-      },
-      {
-        "id": "b",
-        "text": "1千と4百と5十"
-      },
-      {
-        "id": "c",
-        "text": "1万と4千と5十"
-      },
-      {
-        "id": "d",
-        "text": "1万と4百と5"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "1万と4百と5十"
-    },
-    "explanation": "10450 は、万・千・百・十・一の位に分けて考えます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り",
-      "数の構成"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_009",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "multiple_choice",
-    "prompt": "30009 の表し方として正しいものはどれ？",
+    "prompt": "30009 の表し方として正しいのはどれ？",
     "choices": [
       {
         "id": "a",
@@ -9072,28 +11309,32 @@ window.CHIBI_QUEST_QUESTIONS = [
       },
       {
         "id": "b",
-        "text": "3千と9"
-      },
-      {
-        "id": "c",
         "text": "3万と9十"
       },
       {
-        "id": "d",
+        "id": "c",
         "text": "3万と9百"
+      },
+      {
+        "id": "d",
+        "text": "3千と9"
       }
     ],
     "answer": {
       "type": "choice",
       "value": "3万と9"
     },
-    "explanation": "30009 は、万・千・百・十・一の位に分けて考えます。",
-    "estimatedSeconds": 45,
+    "explanation": "30009は、3万と9です。あいだの位はぜんぶ0です。",
+    "estimatedSeconds": 60,
     "skillTags": [
       "大きな数",
       "位取り",
       "数の構成"
     ],
+    "familyId": "num_compose_choice",
+    "learningObjective": "数を万・千・百・十・一の組み合わせで表せる",
+    "funMechanic": "drill",
+    "commonMistake": "0のある位をとばして、となりの位とまちがえる",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -9105,1302 +11346,31 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_large_numbers_010",
-    "version": 1,
+    "id": "g3_math_large_numbers_113",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "large_numbers",
     "unitLabel": "一万をこえる数",
     "curriculumArea": "A 数と計算",
-    "difficulty": 3,
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
     "questionType": "multiple_choice",
-    "prompt": "25080 の表し方として正しいものはどれ？",
+    "prompt": "34820 と 38420。大きいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "2万と5千と8十"
+        "text": "38420"
       },
       {
         "id": "b",
-        "text": "2千と5百と8十"
-      },
-      {
-        "id": "c",
-        "text": "2万と5百と8十"
-      },
-      {
-        "id": "d",
-        "text": "2万と5千と8百"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "2万と5千と8十"
-    },
-    "explanation": "25080 は、万・千・百・十・一の位に分けて考えます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り",
-      "数の構成"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_011",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "48251 の 万の位 の数字はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 4,
-      "unit": ""
-    },
-    "explanation": "48251 を位ごとに見ると、万の位 の数字は 4 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_012",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "73508 の 万の位 の数字はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 7,
-      "unit": ""
-    },
-    "explanation": "73508 を位ごとに見ると、万の位 の数字は 7 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_013",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "60842 の 千の位 の数字はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 0,
-      "unit": ""
-    },
-    "explanation": "60842 を位ごとに見ると、千の位 の数字は 0 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_014",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "91630 の 百の位 の数字はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 6,
-      "unit": ""
-    },
-    "explanation": "91630 を位ごとに見ると、百の位 の数字は 6 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_015",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "25047 の 十の位 の数字はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 4,
-      "unit": ""
-    },
-    "explanation": "25047 を位ごとに見ると、十の位 の数字は 4 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_016",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "80905 の 一の位 の数字はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 5,
-      "unit": ""
-    },
-    "explanation": "80905 を位ごとに見ると、一の位 の数字は 5 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_017",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "34012 の 万の位 の数字はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 3,
-      "unit": ""
-    },
-    "explanation": "34012 を位ごとに見ると、万の位 の数字は 3 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_018",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "19080 の 千の位 の数字はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 9,
-      "unit": ""
-    },
-    "explanation": "19080 を位ごとに見ると、千の位 の数字は 9 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_019",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "50076 の 百の位 の数字はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 0,
-      "unit": ""
-    },
-    "explanation": "50076 を位ごとに見ると、百の位 の数字は 0 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_020",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "numeric_input",
-    "prompt": "76003 の 一の位 の数字はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 3,
-      "unit": ""
-    },
-    "explanation": "76003 を位ごとに見ると、一の位 の数字は 3 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_021",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "multiple_choice",
-    "prompt": "34820 と 38420 の大小をくらべます。正しいのはどれ？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "34820 < 38420"
-      },
-      {
-        "id": "b",
-        "text": "34820 > 38420"
-      },
-      {
-        "id": "c",
-        "text": "34820 = 38420"
-      },
-      {
-        "id": "d",
-        "text": "38420 < 34820"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "34820 < 38420"
-    },
-    "explanation": "万、千、百の位の順にくらべます。正しいのは 34820 < 38420 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "大小比較"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_022",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "multiple_choice",
-    "prompt": "52006 と 50260 の大小をくらべます。正しいのはどれ？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "52006 > 50260"
-      },
-      {
-        "id": "b",
-        "text": "52006 < 50260"
-      },
-      {
-        "id": "c",
-        "text": "52006 = 50260"
-      },
-      {
-        "id": "d",
-        "text": "50260 > 52006"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "52006 > 50260"
-    },
-    "explanation": "万、千、百の位の順にくらべます。正しいのは 52006 > 50260 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "大小比較"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_023",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "multiple_choice",
-    "prompt": "70940 と 70490 の大小をくらべます。正しいのはどれ？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "70940 > 70490"
-      },
-      {
-        "id": "b",
-        "text": "70940 < 70490"
-      },
-      {
-        "id": "c",
-        "text": "70940 = 70490"
-      },
-      {
-        "id": "d",
-        "text": "70490 > 70940"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "70940 > 70490"
-    },
-    "explanation": "万、千、百の位の順にくらべます。正しいのは 70940 > 70490 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "大小比較"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_024",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "multiple_choice",
-    "prompt": "86105 と 81650 の大小をくらべます。正しいのはどれ？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "86105 > 81650"
-      },
-      {
-        "id": "b",
-        "text": "86105 < 81650"
-      },
-      {
-        "id": "c",
-        "text": "86105 = 81650"
-      },
-      {
-        "id": "d",
-        "text": "81650 > 86105"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "86105 > 81650"
-    },
-    "explanation": "万、千、百の位の順にくらべます。正しいのは 86105 > 81650 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "大小比較"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_025",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "multiple_choice",
-    "prompt": "43070 と 40370 の大小をくらべます。正しいのはどれ？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "43070 > 40370"
-      },
-      {
-        "id": "b",
-        "text": "43070 < 40370"
-      },
-      {
-        "id": "c",
-        "text": "43070 = 40370"
-      },
-      {
-        "id": "d",
-        "text": "40370 > 43070"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "43070 > 40370"
-    },
-    "explanation": "万、千、百の位の順にくらべます。正しいのは 43070 > 40370 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "大小比較"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_026",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "multiple_choice",
-    "prompt": "90508 と 95080 の大小をくらべます。正しいのはどれ？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "90508 < 95080"
-      },
-      {
-        "id": "b",
-        "text": "90508 > 95080"
-      },
-      {
-        "id": "c",
-        "text": "90508 = 95080"
-      },
-      {
-        "id": "d",
-        "text": "95080 < 90508"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "90508 < 95080"
-    },
-    "explanation": "万、千、百の位の順にくらべます。正しいのは 90508 < 95080 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "大小比較"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_027",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "multiple_choice",
-    "prompt": "67890 と 68790 の大小をくらべます。正しいのはどれ？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "67890 < 68790"
-      },
-      {
-        "id": "b",
-        "text": "67890 > 68790"
-      },
-      {
-        "id": "c",
-        "text": "67890 = 68790"
-      },
-      {
-        "id": "d",
-        "text": "68790 < 67890"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "67890 < 68790"
-    },
-    "explanation": "万、千、百の位の順にくらべます。正しいのは 67890 < 68790 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "大小比較"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_028",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "multiple_choice",
-    "prompt": "10450 と 10045 の大小をくらべます。正しいのはどれ？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "10450 > 10045"
-      },
-      {
-        "id": "b",
-        "text": "10450 < 10045"
-      },
-      {
-        "id": "c",
-        "text": "10450 = 10045"
-      },
-      {
-        "id": "d",
-        "text": "10045 > 10450"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "10450 > 10045"
-    },
-    "explanation": "万、千、百の位の順にくらべます。正しいのは 10450 > 10045 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "大小比較"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_029",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "multiple_choice",
-    "prompt": "30009 と 30900 の大小をくらべます。正しいのはどれ？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "30009 < 30900"
-      },
-      {
-        "id": "b",
-        "text": "30009 > 30900"
-      },
-      {
-        "id": "c",
-        "text": "30009 = 30900"
-      },
-      {
-        "id": "d",
-        "text": "30900 < 30009"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "30009 < 30900"
-    },
-    "explanation": "万、千、百の位の順にくらべます。正しいのは 30009 < 30900 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "大小比較"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_030",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 2,
-    "questionType": "multiple_choice",
-    "prompt": "25080 と 20580 の大小をくらべます。正しいのはどれ？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "25080 > 20580"
-      },
-      {
-        "id": "b",
-        "text": "25080 < 20580"
-      },
-      {
-        "id": "c",
-        "text": "25080 = 20580"
-      },
-      {
-        "id": "d",
-        "text": "20580 > 25080"
-      }
-    ],
-    "answer": {
-      "type": "choice",
-      "value": "25080 > 20580"
-    },
-    "explanation": "万、千、百の位の順にくらべます。正しいのは 25080 > 20580 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "大小比較"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_031",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "24800 に 1000 をたすといくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 25800,
-      "unit": ""
-    },
-    "explanation": "24800 に 1000 をたすので、答えは 25800 です。位がどう変わるかを考えます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り",
-      "計算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_032",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "50600 に 10000 をたすといくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 60600,
-      "unit": ""
-    },
-    "explanation": "50600 に 10000 をたすので、答えは 60600 です。位がどう変わるかを考えます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り",
-      "計算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_033",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "73200 に 1000 をひくといくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 72200,
-      "unit": ""
-    },
-    "explanation": "73200 に 1000 をひくので、答えは 72200 です。位がどう変わるかを考えます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り",
-      "計算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_034",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "91050 に 100 をひくといくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 90950,
-      "unit": ""
-    },
-    "explanation": "91050 に 100 をひくので、答えは 90950 です。位がどう変わるかを考えます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り",
-      "計算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_035",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "45980 に 10 をたすといくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 45990,
-      "unit": ""
-    },
-    "explanation": "45980 に 10 をたすので、答えは 45990 です。位がどう変わるかを考えます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り",
-      "計算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_036",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "68000 に 10000 をひくといくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 58000,
-      "unit": ""
-    },
-    "explanation": "68000 に 10000 をひくので、答えは 58000 です。位がどう変わるかを考えます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り",
-      "計算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_037",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "29900 に 100 をたすといくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 30000,
-      "unit": ""
-    },
-    "explanation": "29900 に 100 をたすので、答えは 30000 です。位がどう変わるかを考えます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り",
-      "計算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_038",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "80420 に 1000 をひくといくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 79420,
-      "unit": ""
-    },
-    "explanation": "80420 に 1000 をひくので、答えは 79420 です。位がどう変わるかを考えます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り",
-      "計算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_039",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "12090 に 10 をひくといくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 12080,
-      "unit": ""
-    },
-    "explanation": "12090 に 10 をひくので、答えは 12080 です。位がどう変わるかを考えます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り",
-      "計算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_040",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "39000 に 1000 をたすといくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 40000,
-      "unit": ""
-    },
-    "explanation": "39000 に 1000 をたすので、答えは 40000 です。位がどう変わるかを考えます。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "位取り",
-      "計算"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_041",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "図書館に本が 24850 さつあります。新しく 1000 さつ入りました。全部で何さつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 25850,
-      "unit": ""
-    },
-    "explanation": "24850 に 1000 をたすと 25850 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "文章題",
-      "位取り"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_042",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "店にカードが 36200 まいあります。2000 まい売れました。残りは何まい？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 34200,
-      "unit": ""
-    },
-    "explanation": "36200 から 2000 をひくと 34200 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "文章題",
-      "位取り"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_043",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "multiple_choice",
-    "prompt": "A町の人口は 50340 人、B町は 53040 人です。多い方はどれ？",
-    "choices": [
-      {
-        "id": "a",
-        "text": "B町"
-      },
-      {
-        "id": "b",
-        "text": "A町"
+        "text": "34820"
       },
       {
         "id": "c",
@@ -10413,15 +11383,18 @@ window.CHIBI_QUEST_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "B町"
+      "value": "38420"
     },
-    "explanation": "万の位が同じなので、千の位から順にくらべます。B町の方が多いです。",
-    "estimatedSeconds": 45,
+    "explanation": "万の位からじゅんにくらべます。大きいのは 38420 です。",
+    "estimatedSeconds": 60,
     "skillTags": [
       "大きな数",
-      "文章題",
       "大小比較"
     ],
+    "familyId": "num_compare",
+    "learningObjective": "大きな数を、上の位からじゅんにくらべられる",
+    "funMechanic": "drill",
+    "commonMistake": "とちゅうの大きい数字だけを見てくらべてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -10433,181 +11406,55 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_large_numbers_044",
-    "version": 1,
+    "id": "g3_math_large_numbers_114",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "large_numbers",
     "unitLabel": "一万をこえる数",
     "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "85000 は 80000 よりいくつ大きい？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 5000,
-      "unit": ""
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
     },
-    "explanation": "85000 と 80000 の差は 5000 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "文章題",
-      "位取り"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_045",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "4万、6千、3百を合わせた数はいくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 46300,
-      "unit": ""
-    },
-    "explanation": "4万=40000、6千=6000、3百=300 なので 46300 です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "文章題",
-      "位取り"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_046",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "70200 は 70000 とあといくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 200,
-      "unit": ""
-    },
-    "explanation": "70200 は 70000 より 200 大きい数です。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "文章題",
-      "位取り"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_047",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
-    "questionType": "numeric_input",
-    "prompt": "9990 に 10 をたすと、位が変わっていくつ？",
-    "choices": [],
-    "answer": {
-      "type": "number",
-      "value": 10000,
-      "unit": ""
-    },
-    "explanation": "9990 に 10 をたすと 10000 になります。",
-    "estimatedSeconds": 45,
-    "skillTags": [
-      "大きな数",
-      "文章題",
-      "位取り"
-    ],
-    "sourcePolicy": {
-      "basis": [
-        "学習指導要領",
-        "教科書目次"
-      ],
-      "usesTextbookText": false,
-      "originalContent": true
-    },
-    "status": "active"
-  },
-  {
-    "id": "g3_math_large_numbers_048",
-    "version": 1,
-    "grade": 3,
-    "subject": "math",
-    "unit": "large_numbers",
-    "unitLabel": "一万をこえる数",
-    "curriculumArea": "A 数と計算",
-    "difficulty": 3,
     "questionType": "multiple_choice",
-    "prompt": "59000 に 1000 をたすと、何万になる？",
+    "prompt": "52006 と 50260。大きいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "6万"
+        "text": "52006"
       },
       {
         "id": "b",
-        "text": "5万"
+        "text": "50260"
       },
       {
         "id": "c",
-        "text": "59万"
+        "text": "同じ"
       },
       {
         "id": "d",
-        "text": "6000"
+        "text": "くらべられない"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "6万"
+      "value": "52006"
     },
-    "explanation": "59000 + 1000 = 60000 なので 6万です。",
-    "estimatedSeconds": 45,
+    "explanation": "万の位からじゅんにくらべます。大きいのは 52006 です。",
+    "estimatedSeconds": 60,
     "skillTags": [
       "大きな数",
-      "文章題",
       "大小比較"
     ],
+    "familyId": "num_compare",
+    "learningObjective": "大きな数を、上の位からじゅんにくらべられる",
+    "funMechanic": "drill",
+    "commonMistake": "とちゅうの大きい数字だけを見てくらべてしまう",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -10619,29 +11466,159 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_large_numbers_049",
-    "version": 1,
+    "id": "g3_math_large_numbers_115",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "67890 と 68790。大きいのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "68790"
+      },
+      {
+        "id": "b",
+        "text": "67890"
+      },
+      {
+        "id": "c",
+        "text": "同じ"
+      },
+      {
+        "id": "d",
+        "text": "くらべられない"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "68790"
+    },
+    "explanation": "万の位からじゅんにくらべます。大きいのは 68790 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "大きな数",
+      "大小比較"
+    ],
+    "familyId": "num_compare",
+    "learningObjective": "大きな数を、上の位からじゅんにくらべられる",
+    "funMechanic": "drill",
+    "commonMistake": "とちゅうの大きい数字だけを見てくらべてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_116",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "10450 と 10045。大きいのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "10450"
+      },
+      {
+        "id": "b",
+        "text": "10045"
+      },
+      {
+        "id": "c",
+        "text": "同じ"
+      },
+      {
+        "id": "d",
+        "text": "くらべられない"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "10450"
+    },
+    "explanation": "万の位からじゅんにくらべます。大きいのは 10450 です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "大きな数",
+      "大小比較"
+    ],
+    "familyId": "num_compare",
+    "learningObjective": "大きな数を、上の位からじゅんにくらべられる",
+    "funMechanic": "drill",
+    "commonMistake": "とちゅうの大きい数字だけを見てくらべてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_117",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "large_numbers",
     "unitLabel": "一万をこえる数",
     "curriculumArea": "A 数と計算",
     "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 2,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "数直線で 30000 と 40000 のちょうどまん中はどれ？",
+    "prompt": "30000 と 40000 のちょうどまん中の数は？",
     "choices": [],
     "answer": {
       "type": "number",
       "value": 35000,
       "unit": ""
     },
-    "explanation": "30000 と 40000 のまん中は 35000 です。",
-    "estimatedSeconds": 45,
+    "explanation": "30000と40000の間は10000。その半分の5000をたして35000です。",
+    "estimatedSeconds": 90,
     "skillTags": [
       "大きな数",
-      "文章題",
-      "位取り"
+      "数直線"
     ],
+    "familyId": "num_number_line",
+    "learningObjective": "数直線やならびの中で、数の位置をつかめる",
+    "funMechanic": "inference",
+    "commonMistake": "1めもりの大きさをたしかめずに数える",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",
@@ -10653,29 +11630,1564 @@ window.CHIBI_QUEST_QUESTIONS = [
     "status": "active"
   },
   {
-    "id": "g3_math_large_numbers_050",
-    "version": 1,
+    "id": "g3_math_large_numbers_118",
+    "version": 2,
     "grade": 3,
     "subject": "math",
     "unit": "large_numbers",
     "unitLabel": "一万をこえる数",
     "curriculumArea": "A 数と計算",
     "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 2,
+      "choices": 1
+    },
     "questionType": "numeric_input",
-    "prompt": "72000、70200、70020 を大きい順にした最初の数はどれ？",
+    "prompt": "数直線で、1めもりは1000です。47000から右へ3めもり進んだ数は？",
     "choices": [],
     "answer": {
       "type": "number",
-      "value": 72000,
+      "value": 50000,
       "unit": ""
     },
-    "explanation": "万の位、千の位、百の位の順にくらべると 72000 がいちばん大きいです。",
-    "estimatedSeconds": 45,
+    "explanation": "1000が3つ分で3000ふえます。47000 + 3000 = 50000 です。",
+    "estimatedSeconds": 90,
     "skillTags": [
       "大きな数",
-      "文章題",
-      "位取り"
+      "数直線"
     ],
+    "familyId": "num_number_line",
+    "learningObjective": "数直線やならびの中で、数の位置をつかめる",
+    "funMechanic": "inference",
+    "commonMistake": "1めもりの大きさをたしかめずに数える",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_119",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "0から100000までを、同じ長さで10に分けた数直線があります。1めもりの大きさは？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 10000,
+      "unit": ""
+    },
+    "explanation": "100000を10に分けると、1めもりは10000です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "大きな数",
+      "数直線"
+    ],
+    "familyId": "num_number_line",
+    "learningObjective": "数直線やならびの中で、数の位置をつかめる",
+    "funMechanic": "inference",
+    "commonMistake": "1めもりの大きさをたしかめずに数える",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_120",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "69000 より 1000 大きい数は？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 70000,
+      "unit": ""
+    },
+    "explanation": "69000 + 1000 = 70000 です。千の位がくり上がって万の位が変わります。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "大きな数",
+      "数直線"
+    ],
+    "familyId": "num_number_line",
+    "learningObjective": "数直線やならびの中で、数の位置をつかめる",
+    "funMechanic": "inference",
+    "commonMistake": "1めもりの大きさをたしかめずに数える",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_121",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "100000 より 1 小さい数は？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 99999,
+      "unit": ""
+    },
+    "explanation": "100000の1つ前の数は99999です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "大きな数",
+      "数直線"
+    ],
+    "familyId": "num_number_line",
+    "learningObjective": "数直線やならびの中で、数の位置をつかめる",
+    "funMechanic": "inference",
+    "commonMistake": "1めもりの大きさをたしかめずに数える",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_122",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 1,
+      "steps": 2,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "25 を10ばいすると、いくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 250,
+      "unit": ""
+    },
+    "explanation": "10ばいすると位が1つ上がり、右に0が1つつきます。250です。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "大きな数",
+      "10ばい"
+    ],
+    "familyId": "num_times10",
+    "learningObjective": "10ばい・100ばい・10でわると位が動くきまりがわかる",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "10ばいで0を2つつけるなど、0の数をまちがえる",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_123",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 1,
+      "steps": 2,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "25 を100ばいすると、いくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 2500,
+      "unit": ""
+    },
+    "explanation": "100ばいは10ばいの10ばい。右に0が2つついて2500です。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "大きな数",
+      "10ばい"
+    ],
+    "familyId": "num_times10",
+    "learningObjective": "10ばい・100ばい・10でわると位が動くきまりがわかる",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "10ばいで0を2つつけるなど、0の数をまちがえる",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_124",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 1,
+      "steps": 2,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "380 を10でわると、いくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 38,
+      "unit": ""
+    },
+    "explanation": "10でわると位が1つ下がり、一の位の0が1つとれます。38です。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "大きな数",
+      "10ばい"
+    ],
+    "familyId": "num_times10",
+    "learningObjective": "10ばい・100ばい・10でわると位が動くきまりがわかる",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "10ばいで0を2つつけるなど、0の数をまちがえる",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_125",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "7 を10ばいして、さらに10ばいすると、いくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 700,
+      "unit": ""
+    },
+    "explanation": "7 → 70 → 700 と、0が1つずつふえます。700です。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "大きな数",
+      "10ばい"
+    ],
+    "familyId": "num_times10",
+    "learningObjective": "10ばい・100ばい・10でわると位が動くきまりがわかる",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "10ばいで0を2つつけるなど、0の数をまちがえる",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_126",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 1,
+      "steps": 2,
+      "format": 2,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "10ばいすると位が1つ上がるきまりを使うと、60 の10ばいは？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 600,
+      "unit": ""
+    },
+    "explanation": "60の右に0が1つついて600です。",
+    "estimatedSeconds": 75,
+    "skillTags": [
+      "大きな数",
+      "10ばい"
+    ],
+    "familyId": "num_times10",
+    "learningObjective": "10ばい・100ばい・10でわると位が動くきまりがわかる",
+    "funMechanic": "rule_discovery",
+    "commonMistake": "10ばいで0を2つつけるなど、0の数をまちがえる",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_127",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "みおさんは 70086 を「七万八百六十」と読みました。正しい読み方はどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "七万八十六"
+      },
+      {
+        "id": "b",
+        "text": "七万八百六十で正しい"
+      },
+      {
+        "id": "c",
+        "text": "七万八千六"
+      },
+      {
+        "id": "d",
+        "text": "七千八十六"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "七万八十六"
+    },
+    "explanation": "70086は、7万と80と6なので「七万八十六」です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "大きな数",
+      "たしかめ"
+    ],
+    "familyId": "num_find_mistake",
+    "learningObjective": "大きな数の読み方・くらべ方のまちがいに気づいて直せる",
+    "funMechanic": "find_mistake",
+    "commonMistake": "0のある位をとばして読んでしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_128",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "はるとさんは「3万と300をあわせると3300」と言いました。正しい数はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 30300,
+      "unit": ""
+    },
+    "explanation": "30000 + 300 = 30300 です。千の位と十の位、一の位は0です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "大きな数",
+      "たしかめ"
+    ],
+    "familyId": "num_find_mistake",
+    "learningObjective": "大きな数の読み方・くらべ方のまちがいに気づいて直せる",
+    "funMechanic": "find_mistake",
+    "commonMistake": "0のある位をとばして読んでしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_129",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 2
+    },
+    "questionType": "multiple_choice",
+    "prompt": "みおさんは「41000より39800のほうが大きい。9は4より大きいから」と言いました。正しいのはどれ？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "41000のほうが大きい。まず万の位でくらべるから"
+      },
+      {
+        "id": "b",
+        "text": "39800のほうが大きいで正しい"
+      },
+      {
+        "id": "c",
+        "text": "同じ大きさ"
+      },
+      {
+        "id": "d",
+        "text": "くらべられない"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "41000のほうが大きい。まず万の位でくらべるから"
+    },
+    "explanation": "くらべるときは、いちばん上の万の位から見ます。4万と3万で、41000のほうが大きいです。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "大きな数",
+      "たしかめ"
+    ],
+    "familyId": "num_find_mistake",
+    "learningObjective": "大きな数の読み方・くらべ方のまちがいに気づいて直せる",
+    "funMechanic": "find_mistake",
+    "commonMistake": "0のある位をとばして読んでしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_130",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "はるとさんは 99999 に 1 をたして「99100」と言いました。正しい答えはいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 100000,
+      "unit": ""
+    },
+    "explanation": "99999 + 1 = 100000(十万)です。ぜんぶの位がくり上がります。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "大きな数",
+      "たしかめ"
+    ],
+    "familyId": "num_find_mistake",
+    "learningObjective": "大きな数の読み方・くらべ方のまちがいに気づいて直せる",
+    "funMechanic": "find_mistake",
+    "commonMistake": "0のある位をとばして読んでしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_131",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "みおさんは「60000 は 600 を10ばいした数」と言いました。正しくは、600を何ばいした数？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 100,
+      "unit": ""
+    },
+    "explanation": "600の10ばいは6000です。60000は600の100ばいです。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "大きな数",
+      "たしかめ"
+    ],
+    "familyId": "num_find_mistake",
+    "learningObjective": "大きな数の読み方・くらべ方のまちがいに気づいて直せる",
+    "funMechanic": "find_mistake",
+    "commonMistake": "0のある位をとばして読んでしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_132",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "はると「10000 は、9999 より1大きい数」。みお「10000 は、1000 を10こ集めた数」。正しいのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "二人とも正しい"
+      },
+      {
+        "id": "b",
+        "text": "はるとだけ正しい"
+      },
+      {
+        "id": "c",
+        "text": "みおだけ正しい"
+      },
+      {
+        "id": "d",
+        "text": "二人ともまちがい"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "二人とも正しい"
+    },
+    "explanation": "9999 + 1 = 10000 で、1000 × 10 = 10000。どちらも10000の正しい見方です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "大きな数",
+      "数の構成"
+    ],
+    "familyId": "num_judge_claim",
+    "learningObjective": "大きな数の見方(いくつ集めた数か)について判断できる",
+    "funMechanic": "judge_claim",
+    "commonMistake": "「1000を〜こ」と「100を〜こ」を混同する",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_133",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "48000 について。はると「1000 を48こ集めた数」。みお「100 を48こ集めた数」。正しいのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "はるとだけ正しい"
+      },
+      {
+        "id": "b",
+        "text": "二人とも正しい"
+      },
+      {
+        "id": "c",
+        "text": "みおだけ正しい"
+      },
+      {
+        "id": "d",
+        "text": "二人ともまちがい"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "はるとだけ正しい"
+    },
+    "explanation": "1000 × 48 = 48000 です。100を48こだと4800になります。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "大きな数",
+      "数の構成"
+    ],
+    "familyId": "num_judge_claim",
+    "learningObjective": "大きな数の見方(いくつ集めた数か)について判断できる",
+    "funMechanic": "judge_claim",
+    "commonMistake": "「1000を〜こ」と「100を〜こ」を混同する",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_134",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "はると「一万円さつ1まいは、千円さつ10まい分」。みお「一万円さつ1まいは、百円玉100こ分」。正しいのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "二人とも正しい"
+      },
+      {
+        "id": "b",
+        "text": "はるとだけ正しい"
+      },
+      {
+        "id": "c",
+        "text": "みおだけ正しい"
+      },
+      {
+        "id": "d",
+        "text": "二人ともまちがい"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "二人とも正しい"
+    },
+    "explanation": "1000円 × 10 = 10000円、100円 × 100 = 10000円。どちらも一万円です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "大きな数",
+      "数の構成"
+    ],
+    "familyId": "num_judge_claim",
+    "learningObjective": "大きな数の見方(いくつ集めた数か)について判断できる",
+    "funMechanic": "judge_claim",
+    "commonMistake": "「1000を〜こ」と「100を〜こ」を混同する",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_135",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "70000 と 68999。はると「70000が大きい」。みお「68999は9がたくさんあるから大きい」。正しいのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "はるとだけ正しい"
+      },
+      {
+        "id": "b",
+        "text": "二人とも正しい"
+      },
+      {
+        "id": "c",
+        "text": "みおだけ正しい"
+      },
+      {
+        "id": "d",
+        "text": "二人ともまちがい"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "はるとだけ正しい"
+    },
+    "explanation": "万の位が7と6なので、70000のほうが大きいです。下の位の9は関係ありません。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "大きな数",
+      "数の構成"
+    ],
+    "familyId": "num_judge_claim",
+    "learningObjective": "大きな数の見方(いくつ集めた数か)について判断できる",
+    "funMechanic": "judge_claim",
+    "commonMistake": "「1000を〜こ」と「100を〜こ」を混同する",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_136",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 3,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 2,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "multiple_choice",
+    "prompt": "0、2、5、7、9 のカードで作れるいちばん大きい5けたの数。はると「97520」。みお「92750」。正しいのはどっち？",
+    "choices": [
+      {
+        "id": "a",
+        "text": "はるとだけ正しい"
+      },
+      {
+        "id": "b",
+        "text": "二人とも正しい"
+      },
+      {
+        "id": "c",
+        "text": "みおだけ正しい"
+      },
+      {
+        "id": "d",
+        "text": "二人ともまちがい"
+      }
+    ],
+    "answer": {
+      "type": "choice",
+      "value": "はるとだけ正しい"
+    },
+    "explanation": "大きいじゅんに左からならべると 97520 です。",
+    "estimatedSeconds": 90,
+    "skillTags": [
+      "大きな数",
+      "数の構成"
+    ],
+    "familyId": "num_judge_claim",
+    "learningObjective": "大きな数の見方(いくつ集めた数か)について判断できる",
+    "funMechanic": "judge_claim",
+    "commonMistake": "「1000を〜こ」と「100を〜こ」を混同する",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_137",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "1、3、6、8 の4まいのカードをぜんぶ使って、いちばん大きい4けたの数を作ると？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 8631,
+      "unit": ""
+    },
+    "explanation": "大きい数字から左にならべます。8631です。",
+    "estimatedSeconds": 120,
+    "skillTags": [
+      "大きな数",
+      "数作り",
+      "推理"
+    ],
+    "familyId": "num_make_number",
+    "learningObjective": "条件に合う数を、数字カードの組み合わせで作れる",
+    "funMechanic": "inference",
+    "commonMistake": "いちばん小さい数を作るとき、0を先頭に置いてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_138",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 2,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "1、3、6、8 の4まいのカードをぜんぶ使って、いちばん小さい4けたの数を作ると？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 1368,
+      "unit": ""
+    },
+    "explanation": "小さい数字から左にならべます。1368です。",
+    "estimatedSeconds": 120,
+    "skillTags": [
+      "大きな数",
+      "数作り",
+      "推理"
+    ],
+    "familyId": "num_make_number",
+    "learningObjective": "条件に合う数を、数字カードの組み合わせで作れる",
+    "funMechanic": "inference",
+    "commonMistake": "いちばん小さい数を作るとき、0を先頭に置いてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_139",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "0、2、4、7 の4まいのカードをぜんぶ使って、いちばん小さい4けたの数を作ると？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 2047,
+      "unit": ""
+    },
+    "explanation": "0は先頭に置けないので、2を先頭にして、つぎに0を置きます。2047です。",
+    "estimatedSeconds": 120,
+    "skillTags": [
+      "大きな数",
+      "数作り",
+      "推理"
+    ],
+    "familyId": "num_make_number",
+    "learningObjective": "条件に合う数を、数字カードの組み合わせで作れる",
+    "funMechanic": "inference",
+    "commonMistake": "いちばん小さい数を作るとき、0を先頭に置いてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_140",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "2、5、9 の3まいのカードをぜんぶ使って作れる3けたの数のうち、2ばんめに大きい数は？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 925,
+      "unit": ""
+    },
+    "explanation": "いちばん大きいのは952。2ばんめは925です。",
+    "estimatedSeconds": 120,
+    "skillTags": [
+      "大きな数",
+      "数作り",
+      "推理"
+    ],
+    "familyId": "num_make_number",
+    "learningObjective": "条件に合う数を、数字カードの組み合わせで作れる",
+    "funMechanic": "inference",
+    "commonMistake": "いちばん小さい数を作るとき、0を先頭に置いてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_141",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 5,
+    "difficultyAxes": {
+      "knowledge": 3,
+      "info": 3,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "0、1、5、8 の4まいのカードをぜんぶ使って、5000にいちばん近い4けたの数を作ると？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 5018,
+      "unit": ""
+    },
+    "explanation": "5000より大きい数では5018がいちばん近いです(ちがいは18)。5000より小さい数は1850までしか作れません。",
+    "estimatedSeconds": 120,
+    "skillTags": [
+      "大きな数",
+      "数作り",
+      "推理"
+    ],
+    "familyId": "num_make_number",
+    "learningObjective": "条件に合う数を、数字カードの組み合わせで作れる",
+    "funMechanic": "inference",
+    "commonMistake": "いちばん小さい数を作るとき、0を先頭に置いてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_142",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "ヒント1：5けたの数。ヒント2：万の位は3、千の位は0。ヒント3：のこりの位はぜんぶ7。この数は？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 30777,
+      "unit": ""
+    },
+    "explanation": "万の位3、千の位0、百・十・一の位が7で、30777です。",
+    "estimatedSeconds": 120,
+    "skillTags": [
+      "大きな数",
+      "推理"
+    ],
+    "familyId": "num_riddle",
+    "learningObjective": "位のヒントから数をしぼりこめる",
+    "funMechanic": "inference",
+    "commonMistake": "ヒントの一部だけで数を決めてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_143",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "ヒント1：40000より大きくて50000より小さい。ヒント2：千の位は9。ヒント3：百・十・一の位はぜんぶ0。この数は？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 49000,
+      "unit": ""
+    },
+    "explanation": "40000と50000の間なので万の位は4です。千の位が9、あとは0で、49000です。",
+    "estimatedSeconds": 120,
+    "skillTags": [
+      "大きな数",
+      "推理"
+    ],
+    "familyId": "num_riddle",
+    "learningObjective": "位のヒントから数をしぼりこめる",
+    "funMechanic": "inference",
+    "commonMistake": "ヒントの一部だけで数を決めてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_144",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "ある数を10ばいしたら 35000 になりました。ある数はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 3500,
+      "unit": ""
+    },
+    "explanation": "10ばいのぎゃくは10でわることです。35000 ÷ 10 = 3500 です。",
+    "estimatedSeconds": 120,
+    "skillTags": [
+      "大きな数",
+      "推理"
+    ],
+    "familyId": "num_riddle",
+    "learningObjective": "位のヒントから数をしぼりこめる",
+    "funMechanic": "inference",
+    "commonMistake": "ヒントの一部だけで数を決めてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_145",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "1000 を10こ集めた数に、100 を5こ集めた数をたすと、いくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 10500,
+      "unit": ""
+    },
+    "explanation": "1000 × 10 = 10000、100 × 5 = 500。あわせて10500です。",
+    "estimatedSeconds": 120,
+    "skillTags": [
+      "大きな数",
+      "推理"
+    ],
+    "familyId": "num_riddle",
+    "learningObjective": "位のヒントから数をしぼりこめる",
+    "funMechanic": "inference",
+    "commonMistake": "ヒントの一部だけで数を決めてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_146",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 4,
+    "difficultyAxes": {
+      "knowledge": 2,
+      "info": 3,
+      "steps": 3,
+      "format": 3,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "ヒント1：一の位が0の5けたの数。ヒント2：10でわると 6070 になる。この数は？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 60700,
+      "unit": ""
+    },
+    "explanation": "10でわって6070になる数は、6070の10ばいで60700です。",
+    "estimatedSeconds": 120,
+    "skillTags": [
+      "大きな数",
+      "推理"
+    ],
+    "familyId": "num_riddle",
+    "learningObjective": "位のヒントから数をしぼりこめる",
+    "funMechanic": "inference",
+    "commonMistake": "ヒントの一部だけで数を決めてしまう",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_147",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "48000 + 3000 はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 51000,
+      "unit": ""
+    },
+    "explanation": "1000のまとまりで考えると、48 + 3 = 51 で、51000です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "大きな数",
+      "計算"
+    ],
+    "familyId": "num_unit_calc",
+    "learningObjective": "何千・何万のまとまりで、たし算・ひき算ができる",
+    "funMechanic": "drill",
+    "commonMistake": "0の数をまちがえて、位がずれた答えを書く",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_148",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "26000 - 4000 はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 22000,
+      "unit": ""
+    },
+    "explanation": "1000のまとまりで考えると、26 - 4 = 22 で、22000です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "大きな数",
+      "計算"
+    ],
+    "familyId": "num_unit_calc",
+    "learningObjective": "何千・何万のまとまりで、たし算・ひき算ができる",
+    "funMechanic": "drill",
+    "commonMistake": "0の数をまちがえて、位がずれた答えを書く",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_149",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "70000 + 30000 はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 100000,
+      "unit": ""
+    },
+    "explanation": "1万のまとまりで考えると、7 + 3 = 10 で、100000(十万)です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "大きな数",
+      "計算"
+    ],
+    "familyId": "num_unit_calc",
+    "learningObjective": "何千・何万のまとまりで、たし算・ひき算ができる",
+    "funMechanic": "drill",
+    "commonMistake": "0の数をまちがえて、位がずれた答えを書く",
+    "sourcePolicy": {
+      "basis": [
+        "学習指導要領",
+        "教科書目次"
+      ],
+      "usesTextbookText": false,
+      "originalContent": true
+    },
+    "status": "active"
+  },
+  {
+    "id": "g3_math_large_numbers_150",
+    "version": 2,
+    "grade": 3,
+    "subject": "math",
+    "unit": "large_numbers",
+    "unitLabel": "一万をこえる数",
+    "curriculumArea": "A 数と計算",
+    "difficulty": 2,
+    "difficultyAxes": {
+      "knowledge": 1,
+      "info": 2,
+      "steps": 2,
+      "format": 1,
+      "choices": 1
+    },
+    "questionType": "numeric_input",
+    "prompt": "9000 + 5000 はいくつ？",
+    "choices": [],
+    "answer": {
+      "type": "number",
+      "value": 14000,
+      "unit": ""
+    },
+    "explanation": "1000のまとまりで考えると、9 + 5 = 14 で、14000です。",
+    "estimatedSeconds": 60,
+    "skillTags": [
+      "大きな数",
+      "計算"
+    ],
+    "familyId": "num_unit_calc",
+    "learningObjective": "何千・何万のまとまりで、たし算・ひき算ができる",
+    "funMechanic": "drill",
+    "commonMistake": "0の数をまちがえて、位がずれた答えを書く",
     "sourcePolicy": {
       "basis": [
         "学習指導要領",

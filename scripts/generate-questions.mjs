@@ -17,128 +17,21 @@ function pad(number) {
   return String(number).padStart(3, "0");
 }
 
-function q(unit, index, difficulty, questionType, prompt, answer, explanation, extra = {}) {
-  const adjustedDifficulty = Math.max(2, difficulty);
-  return {
-    id: `g3_math_${unit}_${pad(index)}`,
-    version: 1,
-    grade: 3,
-    subject: "math",
-    unit,
-    unitLabel: unitLabels[unit],
-    curriculumArea: unit === "time_duration" ? "C 測定" : area,
-    difficulty: adjustedDifficulty,
-    questionType,
-    prompt,
-    choices: extra.choices ?? [],
-    answer,
-    explanation,
-    estimatedSeconds: extra.estimatedSeconds ?? 45,
-    skillTags: extra.skillTags ?? [unitLabels[unit]],
-    sourcePolicy: {
-      basis: ["学習指導要領", "教科書目次"],
-      usesTextbookText: false,
-      originalContent: true
-    },
-    status: "active"
-  };
-}
-
-function numberAnswer(value, unit = "") {
-  return { type: "number", value, unit };
-}
-
-function textChoices(correct, wrongs) {
-  const values = [...new Set([correct, ...wrongs].map(String))];
-  const fallback = ["もう一度考える", "わからない", "そのほか"];
-  for (const item of fallback) {
-    if (values.length >= 4) break;
-    if (!values.includes(item)) values.push(item);
-  }
-  return values.slice(0, 4).map((text, index) => ({ id: String.fromCharCode(97 + index), text }));
-}
-
-function choiceAnswer(text) {
-  return { type: "choice", value: String(text) };
-}
-
-function makeMultiplication() {
+// 全単元共通のfamilyビルダー(chibique-question-design-core準拠)。
+// IDは101番台から振る(旧IDの解答履歴と混ざらないよう再利用しない)。
+function makeFamilyBuilder(unit, startIndex = 101) {
   const questions = [];
-  let i = 1;
-  for (let a = 2; a <= 9 && questions.length < 24; a += 1) {
-    for (let b = 2; b <= 9 && questions.length < 24; b += 1) {
-      questions.push(q(
-        "multiplication_table",
-        i++,
-        1,
-        "numeric_input",
-        `${a} × ${b} はいくつ？`,
-        numberAnswer(a * b),
-        `${a}を${b}こ分あわせるので、${a} × ${b} = ${a * b} です。`,
-        { skillTags: ["九九", "かけ算"] }
-      ));
-    }
-  }
-  const pairs = [[3, 6], [4, 7], [5, 8], [6, 9], [7, 8], [8, 9], [9, 4], [6, 6], [7, 7], [8, 5], [9, 3], [4, 8], [2, 9]];
-  for (const [a, b] of pairs) {
-    questions.push(q(
-      "multiplication_table",
-      i++,
-      2,
-      "expression_choice",
-      `${a}こ入りのふくろが${b}ふくろあります。ぜんぶで何こかをもとめる式はどれ？`,
-      choiceAnswer(`${a} × ${b}`),
-      `${a}こ入りが${b}ふくろあるので、${a} × ${b} です。`,
-      {
-        choices: textChoices(`${a} × ${b}`, [`${a} + ${b}`, `${b} - ${a}`, `${a} ÷ ${b}`]),
-        skillTags: ["かけ算", "式を選ぶ"]
-      }
-    ));
-  }
-  for (let n = 2; questions.length < 50; n += 1) {
-    const a = (n % 8) + 2;
-    const b = ((n * 3) % 8) + 2;
-    questions.push(q(
-      "multiplication_table",
-      i++,
-      2,
-      "numeric_input",
-      `同じ数ずつならんだカードがあります。${a}まいの列が${b}列あります。カードはぜんぶで何まい？`,
-      numberAnswer(a * b, "まい"),
-      `${a}まいの列が${b}列あるので、${a} × ${b} = ${a * b} です。`,
-      { skillTags: ["かけ算", "文章題"] }
-    ));
-  }
-  return questions;
-}
-
-// division_basic は chibique-question-design-core 準拠の刷新版(パイロット単元)。
-// IDは101番台(旧001-060の解答履歴と混ざらないよう再利用しない)。
-// difficultyは5軸(knowledge/info/steps/format/choices 各1-3)の合計から算出する。
-function difficultyFromAxes(axes) {
-  const sum = axes.knowledge + axes.info + axes.steps + axes.format + axes.choices;
-  if (sum <= 6) return 1;
-  if (sum <= 8) return 2;
-  if (sum <= 10) return 3;
-  if (sum <= 12) return 4;
-  return 5;
-}
-
-function makeDivision() {
-  const questions = [];
-  let index = 101;
-
-  // family単位の共通メタデータを1回だけ書き、各問題に展開する
+  let index = startIndex;
   const fam = (meta, items) => {
     for (const item of items) {
       questions.push({
-        id: `g3_math_division_basic_${pad(index++)}`,
+        id: `g3_math_${unit}_${pad(index++)}`,
         version: 2,
         grade: 3,
         subject: "math",
-        unit: "division_basic",
-        unitLabel: unitLabels.division_basic,
-        curriculumArea: area,
+        unit,
+        unitLabel: unitLabels[unit],
+        curriculumArea: unit === "time_duration" ? "C 測定" : area,
         difficulty: difficultyFromAxes(item.axes),
         difficultyAxes: item.axes,
         questionType: item.questionType,
@@ -161,6 +54,272 @@ function makeDivision() {
       });
     }
   };
+  return { questions, fam };
+}
+
+// difficultyは5軸(knowledge/info/steps/format/choices 各1-3)の合計から算出する。
+function difficultyFromAxes(axes) {
+  const sum = axes.knowledge + axes.info + axes.steps + axes.format + axes.choices;
+  if (sum <= 6) return 1;
+  if (sum <= 8) return 2;
+  if (sum <= 10) return 3;
+  if (sum <= 12) return 4;
+  return 5;
+}
+
+function numberAnswer(value, unit = "") {
+  return { type: "number", value, unit };
+}
+
+function textChoices(correct, wrongs) {
+  const values = [...new Set([correct, ...wrongs].map(String))];
+  const fallback = ["もう一度考える", "わからない", "そのほか"];
+  for (const item of fallback) {
+    if (values.length >= 4) break;
+    if (!values.includes(item)) values.push(item);
+  }
+  return values.slice(0, 4).map((text, index) => ({ id: String.fromCharCode(97 + index), text }));
+}
+
+function choiceAnswer(text) {
+  return { type: "choice", value: String(text) };
+}
+
+function makeMultiplication() {
+  const { questions, fam } = makeFamilyBuilder("multiplication_table");
+
+  const drillAxes = { knowledge: 1, info: 1, steps: 1, format: 1, choices: 1 };
+
+  // F1 九九そのまま(drill, d1)
+  fam({
+    familyId: "mul_fact",
+    funMechanic: "drill",
+    learningObjective: "九九の答えをすぐに出せる",
+    commonMistake: "となりのだんの九九と混同して1ずれで答える",
+    estimatedSeconds: 30,
+    skillTags: ["九九", "かけ算"]
+  }, [
+    [7, 6], [8, 4], [9, 7], [6, 6], [3, 9]
+  ].map(([a, b]) => ({
+    axes: drillAxes,
+    questionType: "numeric_input",
+    prompt: `${a} × ${b} はいくつ？`,
+    answer: numberAnswer(a * b),
+    explanation: `${a}を${b}こ分あわせるので、${a} × ${b} = ${a * b} です。`
+  })));
+
+  // F2 九九の□をうめる(drill, d1)
+  fam({
+    familyId: "mul_gap",
+    funMechanic: "drill",
+    learningObjective: "九九の式の□に入る数を見つけられる",
+    commonMistake: "□をとばして、見えている2つの数をかけてしまう",
+    estimatedSeconds: 45,
+    skillTags: ["九九", "かけ算"]
+  }, [
+    { prompt: "6 × □ = 48。□に入る数はいくつ？", answer: numberAnswer(8), explanation: "6のだんで48になるのは 6 × 8 = 48 です。□は8です。" },
+    { prompt: "□ × 7 = 35。□に入る数はいくつ？", answer: numberAnswer(5), explanation: "5 × 7 = 35 なので、□は5です。" },
+    { prompt: "9 × □ = 81。□に入る数はいくつ？", answer: numberAnswer(9), explanation: "9 × 9 = 81 なので、□は9です。" },
+    { prompt: "□ × 3 = 24。□に入る数はいくつ？", answer: numberAnswer(8), explanation: "8 × 3 = 24 なので、□は8です。" },
+    { prompt: "8 × □ = 56。□に入る数はいくつ？", answer: numberAnswer(7), explanation: "8 × 7 = 56 なので、□は7です。" }
+  ].map((item) => ({ ...item, axes: { knowledge: 1, info: 1, steps: 1, format: 2, choices: 1 }, questionType: "numeric_input" })));
+
+  // F3 ならび・まとまりの文章題(drill, d2)
+  fam({
+    familyId: "mul_array_word",
+    funMechanic: "drill",
+    learningObjective: "「1つ分×いくつ分」の場面をかけ算の式に表せる",
+    commonMistake: "かけ算にせず、2つの数をたしてしまう",
+    estimatedSeconds: 60,
+    skillTags: ["かけ算", "文章題"]
+  }, [
+    { prompt: "1れつに6人ずつ、4れつにならびます。ぜんぶで何人？", answer: numberAnswer(6 * 4, "人"), explanation: "6人の4れつ分なので、6 × 4 = 24 です。" },
+    { prompt: "1週間は7日です。3週間は何日？", answer: numberAnswer(7 * 3, "日"), explanation: "7日が3つ分なので、7 × 3 = 21 です。" },
+    { prompt: "1はこに8こ入りのチョコが5はこあります。ぜんぶで何こ？", answer: numberAnswer(8 * 5, "こ"), explanation: "8こが5はこ分なので、8 × 5 = 40 です。" },
+    { prompt: "自転車が9台あります。タイヤは1台に2つずつです。タイヤはぜんぶでいくつ？", answer: numberAnswer(2 * 9, "つ"), explanation: "2つが9台分なので、2 × 9 = 18 です。" },
+    { prompt: "シュートれんしゅうを1日に4回ずつ、6日間しました。ぜんぶで何回？", answer: numberAnswer(4 * 6, "回"), explanation: "4回が6日分なので、4 × 6 = 24 です。", soccer: true }
+  ].map((item) => ({ ...item, axes: { knowledge: 1, info: 2, steps: 3, format: 1, choices: 1 }, questionType: "numeric_input" })));
+
+  // F4 「〜ばい」の文章題(drill, d2)
+  fam({
+    familyId: "mul_times_word",
+    funMechanic: "drill",
+    learningObjective: "「〜ばい」の大きさをかけ算で求められる",
+    commonMistake: "ばいの数をかけずに、たしてしまう(5+3など)",
+    estimatedSeconds: 60,
+    skillTags: ["かけ算", "ばい", "文章題"]
+  }, [
+    { prompt: "赤いリボンは5cmです。青いリボンは赤の3ばいの長さです。青いリボンは何cm？", answer: numberAnswer(5 * 3, "cm"), explanation: "5cmの3ばいなので、5 × 3 = 15 です。" },
+    { prompt: "みかんが4こあります。りんごはみかんの2ばいの数です。りんごは何こ？", answer: numberAnswer(4 * 2, "こ"), explanation: "4この2ばいなので、4 × 2 = 8 です。" },
+    { prompt: "弟は6さいです。お父さんの年れいは弟の6ばいです。お父さんは何さい？", answer: numberAnswer(6 * 6, "さい"), explanation: "6さいの6ばいなので、6 × 6 = 36 です。" },
+    { prompt: "白いテープは7cmです。黒いテープは白の4ばいの長さです。黒いテープは何cm？", answer: numberAnswer(7 * 4, "cm"), explanation: "7cmの4ばいなので、7 × 4 = 28 です。" },
+    { prompt: "水そうに金魚が3びきいます。メダカは金魚の5ばいの数です。メダカは何びき？", answer: numberAnswer(3 * 5, "ひき"), explanation: "3びきの5ばいなので、3 × 5 = 15 です。" }
+  ].map((item) => ({ ...item, axes: { knowledge: 1, info: 2, steps: 3, format: 1, choices: 1 }, questionType: "numeric_input" })));
+
+  // F5 場面に合う式を選ぶ(best_choice, d2)
+  fam({
+    familyId: "mul_expression",
+    funMechanic: "best_choice",
+    learningObjective: "かけ算を使う場面かどうかを判断して式を選べる",
+    commonMistake: "「ずつ」「ばい」の場面でもたし算の式を選んでしまう",
+    estimatedSeconds: 60,
+    skillTags: ["かけ算", "式を選ぶ"]
+  }, [
+    { prompt: "1ふくろ6こ入りのあめが7ふくろあります。ぜんぶの数をもとめる式はどれ？", correct: "6 × 7", wrongs: ["6 + 7", "7 - 6", "6 + 6"], explanation: "6こが7ふくろ分なので、6 × 7 です。" },
+    { prompt: "8人に3まいずつカードをくばります。いるカードの数をもとめる式はどれ？", correct: "3 × 8", wrongs: ["3 + 8", "8 - 3", "3 + 3"], explanation: "1人分3まいが8人分なので、3 × 8 です。" },
+    { prompt: "1チームは5人です。4チームぶんの人数をもとめる式はどれ？", correct: "5 × 4", wrongs: ["5 + 4", "5 + 5 + 5", "5 - 4"], explanation: "5人が4チーム分なので、5 × 4 です。5 + 5 + 5 は3チーム分になってしまいます。", soccer: true },
+    { prompt: "1しあいで2点ずつ、5しあいで取った点の数をもとめる式はどれ？", correct: "2 × 5", wrongs: ["2 + 5", "5 - 2", "2 + 2"], explanation: "2点が5しあい分なので、2 × 5 です。", soccer: true }
+  ].map((item) => ({
+    axes: { knowledge: 1, info: 2, steps: 2, format: 1, choices: 2 },
+    questionType: "expression_choice",
+    prompt: item.prompt,
+    choices: textChoices(item.correct, item.wrongs),
+    answer: choiceAnswer(item.correct),
+    explanation: item.explanation,
+    soccer: item.soccer
+  })));
+
+  // F6 入れかえ・ならびのきまり(rule_discovery, d2-d3)
+  fam({
+    familyId: "mul_swap_rule",
+    funMechanic: "rule_discovery",
+    learningObjective: "かけられる数とかける数を入れかえても答えが同じきまりに気づく",
+    commonMistake: "入れかえると答えも変わると思いこむ",
+    estimatedSeconds: 60,
+    skillTags: ["かけ算", "きまり見つけ"]
+  }, [
+    { prompt: "6 × 8 = 48 です。計算しないで答えられるかな。8 × 6 はいくつ？", answer: numberAnswer(48), explanation: "かけられる数とかける数を入れかえても、答えは同じです。8 × 6 = 48 です。", axes: { knowledge: 1, info: 1, steps: 2, format: 3, choices: 1 }, questionType: "numeric_input" },
+    { prompt: "九九の表で、3 × 7 と同じ答えになる九九はどれ？", correct: "7 × 3", wrongs: ["3 × 8", "4 × 7", "7 × 7"], explanation: "入れかえた 7 × 3 も答えは21で同じです。", axes: { knowledge: 1, info: 2, steps: 2, format: 3, choices: 2 }, questionType: "multiple_choice" },
+    { prompt: "7 × 4、4 × 7、7 + 4 のうち、答えがほかとちがうのはどれ？", correct: "7 + 4", wrongs: ["7 × 4", "4 × 7", "どれも同じ"], explanation: "7 × 4 と 4 × 7 はどちらも28ですが、7 + 4 は11です。", axes: { knowledge: 1, info: 2, steps: 2, format: 3, choices: 2 }, questionType: "multiple_choice" },
+    { prompt: "5のだんの九九の答え(5、10、15…)の一の位に、いつも出てくる数字はどれとどれ？", correct: "0と5", wrongs: ["1と5", "0と2", "5だけ"], explanation: "5、10、15、20…と、一の位は5と0がくりかえし出てきます。", axes: { knowledge: 1, info: 2, steps: 2, format: 3, choices: 2 }, questionType: "multiple_choice" }
+  ].map((item) => ({
+    axes: item.axes,
+    questionType: item.questionType,
+    prompt: item.prompt,
+    choices: item.correct ? textChoices(item.correct, item.wrongs) : [],
+    answer: item.correct ? choiceAnswer(item.correct) : item.answer,
+    explanation: item.explanation
+  })));
+
+  // F7 かける数が1ふえると(rule_discovery, d3)
+  fam({
+    familyId: "mul_add_one",
+    funMechanic: "rule_discovery",
+    learningObjective: "かける数が1ふえると、答えはかけられる数だけふえるきまりがわかる",
+    commonMistake: "答えが1だけふえると思いこむ",
+    estimatedSeconds: 75,
+    skillTags: ["かけ算", "きまり見つけ"]
+  }, [
+    { prompt: "7 × 5 = 35 です。7 × 6 の答えは、35にいくつたした数？", answer: numberAnswer(7), explanation: "かける数が1ふえると、答えはかけられる数の7だけふえます。", axes: { knowledge: 1, info: 2, steps: 2, format: 3, choices: 1 } },
+    { prompt: "9 × 4 = 36 です。36にたして考えると、9 × 5 はいくつ？", answer: numberAnswer(45), explanation: "9 × 5 は 9 × 4 より9大きいので、36 + 9 = 45 です。", axes: { knowledge: 1, info: 2, steps: 2, format: 3, choices: 1 } },
+    { prompt: "6 × 7 = 42 です。42から考えると、6 × 6 はいくつ？", answer: numberAnswer(36), explanation: "かける数が1へると、答えは6だけへります。42 - 6 = 36 です。", axes: { knowledge: 1, info: 2, steps: 2, format: 3, choices: 1 } },
+    { prompt: "8 × 3 と 8 × 4 の答えのちがいはいくつ？", answer: numberAnswer(8), explanation: "8 × 3 = 24、8 × 4 = 32 で、ちがいは8です。かける数が1ちがうと、答えはかけられる数だけちがいます。", axes: { knowledge: 1, info: 2, steps: 3, format: 3, choices: 1 } }
+  ].map((item) => ({ ...item, questionType: "numeric_input" })));
+
+  // F8 まちがい見つけ(find_mistake, d3-d4)
+  fam({
+    familyId: "mul_find_mistake",
+    funMechanic: "find_mistake",
+    learningObjective: "九九のまちがいを、きまりやたしかめで見つけられる",
+    commonMistake: "近いだんの答えを正しいと思いこむ",
+    estimatedSeconds: 90,
+    skillTags: ["かけ算", "たしかめ"]
+  }, [
+    { prompt: "まちがっている計算は、どれ？", correct: "7 × 8 = 54", wrongs: ["6 × 4 = 24", "9 × 3 = 27", "5 × 6 = 30"], explanation: "7 × 8 = 56 です。54は 6 × 9 の答えです。", axes: { knowledge: 1, info: 2, steps: 2, format: 3, choices: 2 } },
+    { prompt: "まちがっている計算は、どれ？", correct: "6 × 9 = 56", wrongs: ["8 × 8 = 64", "4 × 9 = 36", "3 × 7 = 21"], explanation: "6 × 9 = 54 です。56は 7 × 8 の答えです。", axes: { knowledge: 1, info: 2, steps: 2, format: 3, choices: 2 } },
+    { prompt: "みおさんは「どんな数に0をかけても、答えはその数のまま」と言いました。正しい直し方はどれ？", correct: "どんな数に0をかけても、答えは0", wrongs: ["みおさんの言うとおりで正しい", "答えは1になる", "答えは10になる"], explanation: "0が何こ分あっても0なので、どんな数に0をかけても答えは0です。", axes: { knowledge: 1, info: 2, steps: 2, format: 3, choices: 2 } },
+    { prompt: "はるとさんは 3 × 9 を「3 × 10 = 30 だから、30 + 3 で 33」と考えました。正しい直し方はどれ？", correct: "3 × 9 は 3 × 10 より3小さいから、30 - 3 で27", wrongs: ["30 + 3 = 33 で正しい", "30のままでよい", "3 × 9 は九九の表にないので計算できない"], explanation: "かける数が10から9に1へると、答えは3へります。30 - 3 = 27 です。", axes: { knowledge: 2, info: 2, steps: 3, format: 3, choices: 2 } }
+  ].map((item) => ({
+    axes: item.axes,
+    questionType: "multiple_choice",
+    prompt: item.prompt,
+    choices: textChoices(item.correct, item.wrongs),
+    answer: choiceAnswer(item.correct),
+    explanation: item.explanation
+  })));
+
+  // F9 どっちの言い分が正しい？(judge_claim, d3-d4)
+  const judgeChoices = ["二人とも正しい", "はるとだけ正しい", "みおだけ正しい", "二人ともまちがい"];
+  fam({
+    familyId: "mul_judge_claim",
+    funMechanic: "judge_claim",
+    learningObjective: "かけ算のきまりについての主張を、計算でたしかめて判断できる",
+    commonMistake: "形がちがう式は答えもちがうと思いこむ",
+    estimatedSeconds: 90,
+    skillTags: ["かけ算", "きまり見つけ"]
+  }, [
+    { prompt: "はると「0 × 7 = 0」。みお「7 × 0 = 7」。正しいのはどっち？", correct: "はるとだけ正しい", explanation: "0に何をかけても、何に0をかけても答えは0です。7 × 0 = 0 なので、みおはまちがいです。", axes: { knowledge: 2, info: 2, steps: 2, format: 3, choices: 1 } },
+    { prompt: "はると「6 × 9 は、9 × 6 と同じ答え」。みお「6 × 9 は、6 × 10 より6小さい」。正しいのはどっち？", correct: "二人とも正しい", explanation: "9 × 6 = 54 で同じです。6 × 10 = 60 から6ひくと54なので、みおの考え方も正しいです。", axes: { knowledge: 2, info: 2, steps: 3, format: 3, choices: 1 } },
+    { prompt: "はると「九九の表で、答えが12になる九九は1つだけ」。みお「2つ以上ある」。正しいのはどっち？", correct: "みおだけ正しい", explanation: "2 × 6、6 × 2、3 × 4、4 × 3 など、答えが12になる九九はいくつもあります。", axes: { knowledge: 2, info: 2, steps: 2, format: 3, choices: 1 } },
+    { prompt: "はると「4 × 8 の答えは、4 × 4 の答えを2ばいした数と同じ」。みお「そんなきまりはないよ」。正しいのはどっち？", correct: "はるとだけ正しい", explanation: "4 × 4 = 16 で、16の2ばいは32。4 × 8 = 32 なので同じです。かける数を半分にして2ばいしても答えは同じです。", axes: { knowledge: 2, info: 2, steps: 3, format: 3, choices: 1 } }
+  ].map((item) => ({
+    axes: item.axes,
+    questionType: "multiple_choice",
+    prompt: item.prompt,
+    choices: textChoices(item.correct, judgeChoices.filter((choice) => choice !== item.correct)),
+    answer: choiceAnswer(item.correct),
+    explanation: item.explanation
+  })));
+
+  // F10 どっちが大きい？を予想してたしかめる(predict_check, d3)
+  fam({
+    familyId: "mul_predict_compare",
+    funMechanic: "predict_check",
+    learningObjective: "かけ算の答えの大きさを予想して、たしかめられる",
+    commonMistake: "かける数が大きいほうが答えも大きいと思いこむ",
+    estimatedSeconds: 75,
+    skillTags: ["かけ算", "大小比較"]
+  }, [
+    { prompt: "6 × 9 と 7 × 8。答えが大きいのはどっち？(予想してからたしかめよう)", correct: "7 × 8", wrongs: ["6 × 9", "どちらも同じ", "くらべられない"], explanation: "6 × 9 = 54、7 × 8 = 56 なので、7 × 8 のほうが大きいです。" },
+    { prompt: "5 × 7 と 6 × 6。答えが大きいのはどっち？", correct: "6 × 6", wrongs: ["5 × 7", "どちらも同じ", "くらべられない"], explanation: "5 × 7 = 35、6 × 6 = 36 なので、6 × 6 のほうが1大きいです。" },
+    { prompt: "3 × 8 と 4 × 6。答えはどうなる？", correct: "どちらも同じ", wrongs: ["3 × 8 が大きい", "4 × 6 が大きい", "くらべられない"], explanation: "3 × 8 = 24、4 × 6 = 24 で、どちらも同じ24です。" }
+  ].map((item) => ({
+    axes: { knowledge: 2, info: 2, steps: 3, format: 2, choices: 1 },
+    questionType: "multiple_choice",
+    prompt: item.prompt,
+    choices: textChoices(item.correct, item.wrongs),
+    answer: choiceAnswer(item.correct),
+    explanation: item.explanation
+  })));
+
+  // F11 ヒントから数を当てる(inference, d4)
+  fam({
+    familyId: "mul_hidden_number",
+    funMechanic: "inference",
+    learningObjective: "ヒントから九九の答えをしぼりこめる",
+    commonMistake: "ヒントの1つだけで答えを決めてしまう",
+    estimatedSeconds: 120,
+    skillTags: ["かけ算", "推理"]
+  }, [
+    { prompt: "ヒント1：九九の6のだんの答えです。ヒント2：50より大きいです。この数はいくつ？", answer: numberAnswer(54), explanation: "6のだんで50より大きいのは 6 × 9 = 54 だけです。" },
+    { prompt: "ヒント1：3のだんにも4のだんにも出てくる答えです。ヒント2：20より小さいです。この数はいくつ？", answer: numberAnswer(12), explanation: "3 × 4 = 12、4 × 3 = 12 で、どちらのだんにもある20より小さい数は12です。" },
+    { prompt: "ヒント1：九九の5のだんの答えです。ヒント2：30より大きくて、40より小さいです。この数はいくつ？", answer: numberAnswer(35), explanation: "5のだんで30より大きく40より小さいのは 5 × 7 = 35 だけです。" },
+    { prompt: "ある数に4をかけると32になります。同じ「ある数」に6をかけると、いくつ？", answer: numberAnswer(48), explanation: "4をかけて32になる数は8です。8 × 6 = 48 です。" }
+  ].map((item) => ({ ...item, axes: { knowledge: 2, info: 3, steps: 3, format: 3, choices: 1 }, questionType: "numeric_input" })));
+
+  // F12 かけ算を2回使うパズル(inference, d4)
+  fam({
+    familyId: "mul_multi_step",
+    funMechanic: "inference",
+    learningObjective: "かけ算を2回組み合わせて、ぜんぶの数を求められる",
+    commonMistake: "1回のかけ算で計算をやめてしまう",
+    estimatedSeconds: 120,
+    skillTags: ["かけ算", "文章題", "組み合わせ"]
+  }, [
+    { prompt: "1はこに2こずつ入ったガムが、1ふくろに3はこ入っています。2ふくろでは、ガムは何こ？", answer: numberAnswer(12, "こ"), explanation: "1ふくろ分は 2 × 3 = 6 こです。2ふくろで 6 × 2 = 12 こです。" },
+    { prompt: "1チーム5人のチームが4つあります。全員に2まいずつカードをくばると、カードは何まい？", answer: numberAnswer(40, "まい"), explanation: "全員で 5 × 4 = 20 人です。カードは 20 × 2 = 40 まいです。", soccer: true },
+    { prompt: "たてに3こ、横に3れつでクッキーをならべたお皿が、2まいあります。クッキーはぜんぶで何こ？", answer: numberAnswer(18, "こ"), explanation: "1まい分は 3 × 3 = 9 こです。2まいで 9 × 2 = 18 こです。" }
+  ].map((item) => ({ ...item, axes: { knowledge: 2, info: 3, steps: 3, format: 2, choices: 1 }, questionType: "numeric_input" })));
+
+  if (questions.length !== 50) {
+    throw new Error(`multiplication_table: expected 50 questions, got ${questions.length}`);
+  }
+  return questions;
+}
+
+// division_basic は chibique-question-design-core 準拠の刷新版(パイロット単元)。
+function makeDivision() {
+  const { questions, fam } = makeFamilyBuilder("division_basic");
 
   const drillAxes = { knowledge: 1, info: 1, steps: 1, format: 1, choices: 1 };
 
@@ -454,276 +613,680 @@ function makeDivision() {
 }
 
 function makeAdditionSubtraction() {
-  const questions = [];
-  let i = 1;
-  for (let n = 0; questions.length < 24; n += 1) {
-    const a = 126 + n * 17;
-    const b = 238 + n * 13;
-    questions.push(q(
-      "addition_subtraction_written",
-      i++,
-      1,
-      "numeric_input",
-      `${a} + ${b} はいくつ？`,
-      numberAnswer(a + b),
-      `一の位、十の位、百の位をそろえて計算します。答えは${a + b}です。`,
-      { skillTags: ["筆算", "たし算"] }
-    ));
-  }
-  for (let n = 0; questions.length < 44; n += 1) {
-    const b = 146 + n * 11;
-    const a = b + 213 + n * 7;
-    questions.push(q(
-      "addition_subtraction_written",
-      i++,
-      2,
-      "numeric_input",
-      `${a} - ${b} はいくつ？`,
-      numberAnswer(a - b),
-      `位をそろえてひきます。${a} - ${b} = ${a - b} です。`,
-      { skillTags: ["筆算", "ひき算"] }
-    ));
-  }
-  for (let n = 0; questions.length < 60; n += 1) {
-    const start = 320 + n * 18;
-    const add = 125 + n * 9;
-    const sold = 98 + n * 6;
-    const answer = start + add - sold;
-    questions.push(q(
-      "addition_subtraction_written",
-      i++,
-      3,
-      "numeric_input",
-      `本が${start}さつありました。${add}さつふえて、${sold}さつかし出しました。今は何さつありますか？`,
-      numberAnswer(answer, "さつ"),
-      `ふえた分をたして、かし出した分をひきます。${start} + ${add} - ${sold} = ${answer} です。`,
-      { skillTags: ["筆算", "文章題", "たし算とひき算"] }
-    ));
+  const { questions, fam } = makeFamilyBuilder("addition_subtraction_written");
+
+  const calcAxes = { knowledge: 1, info: 1, steps: 2, format: 1, choices: 1 };
+  const wordAxes = { knowledge: 1, info: 2, steps: 3, format: 1, choices: 1 };
+
+  // F1 たし算の筆算(drill, d1)
+  fam({
+    familyId: "add_calc",
+    funMechanic: "drill",
+    learningObjective: "くり上がりのある3けたのたし算を筆算でできる",
+    commonMistake: "くり上がりの1をたし忘れる",
+    estimatedSeconds: 60,
+    skillTags: ["筆算", "たし算"]
+  }, [
+    [358, 264], [189, 276], [347, 285], [296, 417], [158, 563]
+  ].map(([a, b]) => ({
+    axes: calcAxes,
+    questionType: "numeric_input",
+    prompt: `${a} + ${b} はいくつ？`,
+    answer: numberAnswer(a + b),
+    explanation: `一の位、十の位、百の位をそろえて、くり上がりに気をつけて計算します。${a} + ${b} = ${a + b} です。`
+  })));
+
+  // F2 ひき算の筆算(drill, d1)
+  fam({
+    familyId: "add_sub_calc",
+    funMechanic: "drill",
+    learningObjective: "くり下がりのある3けたのひき算を筆算でできる",
+    commonMistake: "くり下がりのあとに、へった数をひき忘れる",
+    estimatedSeconds: 60,
+    skillTags: ["筆算", "ひき算"]
+  }, [
+    [624, 258], [512, 178], [730, 274], [405, 138], [811, 345]
+  ].map(([a, b]) => ({
+    axes: calcAxes,
+    questionType: "numeric_input",
+    prompt: `${a} - ${b} はいくつ？`,
+    answer: numberAnswer(a - b),
+    explanation: `位をそろえて、くり下がりに気をつけてひきます。${a} - ${b} = ${a - b} です。`
+  })));
+
+  // F3 たし算の文章題(drill, d2)
+  fam({
+    familyId: "add_word_plus",
+    funMechanic: "drill",
+    learningObjective: "「あわせて」「〜より多い」の場面をたし算の式に表せる",
+    commonMistake: "「多い」という言葉だけを見て、ひき算にしてしまう",
+    estimatedSeconds: 75,
+    skillTags: ["筆算", "たし算", "文章題"]
+  }, [
+    { prompt: "なわとびを、きのう156回、きょう178回とびました。あわせて何回？", answer: numberAnswer(156 + 178, "回"), explanation: "あわせた数なのでたし算です。156 + 178 = 334 です。" },
+    { prompt: "どんぐりを208こ、くりを194こひろいました。あわせて何こ？", answer: numberAnswer(208 + 194, "こ"), explanation: "あわせた数なのでたし算です。208 + 194 = 402 です。" },
+    { prompt: "えきの前に自転車が316台、車が285台とまっています。あわせて何台？", answer: numberAnswer(316 + 285, "台"), explanation: "あわせた数なのでたし算です。316 + 285 = 601 です。" },
+    { prompt: "花だんに赤い花が127本さいています。白い花は赤より165本多いです。白い花は何本？", answer: numberAnswer(127 + 165, "本"), explanation: "赤より165本多いので、127 + 165 = 292 です。" },
+    { prompt: "サッカーの大会に、1日目は246人、2日目は259人が来ました。あわせて何人？", answer: numberAnswer(246 + 259, "人"), explanation: "あわせた数なのでたし算です。246 + 259 = 505 です。", soccer: true }
+  ].map((item) => ({ ...item, axes: wordAxes, questionType: "numeric_input" })));
+
+  // F4 ひき算の文章題(drill, d2)
+  fam({
+    familyId: "add_word_minus",
+    funMechanic: "drill",
+    learningObjective: "「のこり」「ちがい」の場面をひき算の式に表せる",
+    commonMistake: "大きい数から小さい数をひかず、式の順番をまちがえる",
+    estimatedSeconds: 75,
+    skillTags: ["筆算", "ひき算", "文章題"]
+  }, [
+    { prompt: "シールを412まい持っています。165まい使うと、のこりは何まい？", answer: numberAnswer(412 - 165, "まい"), explanation: "のこりなのでひき算です。412 - 165 = 247 です。" },
+    { prompt: "500円玉で274円のおかしを買うと、おつりは何円？", answer: numberAnswer(500 - 274, "円"), explanation: "500円から代金をひきます。500 - 274 = 226 です。" },
+    { prompt: "学校の本は634さつ、うちの本は158さつです。ちがいは何さつ？", answer: numberAnswer(634 - 158, "さつ"), explanation: "ちがいなのでひき算です。634 - 158 = 476 です。" },
+    { prompt: "電車に305人乗っています。えきで127人おりました。今、何人乗っている？", answer: numberAnswer(305 - 127, "人"), explanation: "おりた分をひきます。305 - 127 = 178 です。" },
+    { prompt: "あきかんを250こ集めます。もう183こ集めました。あと何こ？", answer: numberAnswer(250 - 183, "こ"), explanation: "目ひょうから集めた分をひきます。250 - 183 = 67 です。" }
+  ].map((item) => ({ ...item, axes: wordAxes, questionType: "numeric_input" })));
+
+  // F5 たすかひくかを選ぶ(best_choice, d2)
+  fam({
+    familyId: "add_expression",
+    funMechanic: "best_choice",
+    learningObjective: "場面から、たし算かひき算かを判断して式を選べる",
+    commonMistake: "数字の順番だけ見て、場面に合わない式を選ぶ",
+    estimatedSeconds: 60,
+    skillTags: ["筆算", "式を選ぶ"]
+  }, [
+    { prompt: "スタジアムに425人いて、137人帰りました。今の人数をもとめる式はどれ？", correct: "425 - 137", wrongs: ["425 + 137", "137 - 425", "425 × 137"], explanation: "帰った分をひくので、425 - 137 です。" },
+    { prompt: "きのうまでに268このつるを折りました。きょう75こ折りました。ぜんぶの数をもとめる式はどれ？", correct: "268 + 75", wrongs: ["268 - 75", "75 - 268", "268 × 75"], explanation: "ふえた分をたすので、268 + 75 です。" },
+    { prompt: "350ページの本を、128ページまで読みました。のこりのページをもとめる式はどれ？", correct: "350 - 128", wrongs: ["350 + 128", "128 - 350", "128 + 128"], explanation: "ぜんぶから読んだ分をひくので、350 - 128 です。" },
+    { prompt: "赤いテープは421cm、青いテープは386cmです。ちがいをもとめる式はどれ？", correct: "421 - 386", wrongs: ["421 + 386", "386 - 421", "421 × 386"], explanation: "ちがいは、大きい数から小さい数をひいてもとめます。421 - 386 です。" }
+  ].map((item) => ({
+    axes: { knowledge: 1, info: 2, steps: 2, format: 1, choices: 2 },
+    questionType: "expression_choice",
+    prompt: item.prompt,
+    choices: textChoices(item.correct, item.wrongs),
+    answer: choiceAnswer(item.correct),
+    explanation: item.explanation
+  })));
+
+  // F6 答えの大きさを予想する(predict_check, d3)
+  fam({
+    familyId: "add_estimate",
+    funMechanic: "predict_check",
+    learningObjective: "計算する前に答えのだいたいの大きさを予想できる",
+    commonMistake: "予想せずに計算して、大きなまちがいに気づかない",
+    estimatedSeconds: 75,
+    skillTags: ["筆算", "見積もり"]
+  }, [
+    { prompt: "298 + 304 の答えは、600より大きい？小さい？", correct: "600より大きい", wrongs: ["600より小さい", "ちょうど600", "くらべられない"], explanation: "だいたい300と300で600くらい。くわしく計算すると602で、600より大きいです。" },
+    { prompt: "512 - 189 の答えは、300より大きい？小さい？", correct: "300より大きい", wrongs: ["300より小さい", "ちょうど300", "くらべられない"], explanation: "だいたい500 - 200 = 300くらい。くわしくは323で、300より大きいです。" },
+    { prompt: "195 + 402 の答えは、600より大きい？小さい？", correct: "600より小さい", wrongs: ["600より大きい", "ちょうど600", "くらべられない"], explanation: "だいたい200 + 400 = 600くらい。くわしくは597で、600より少し小さいです。" },
+    { prompt: "703 - 315 の答えは、400より大きい？小さい？", correct: "400より小さい", wrongs: ["400より大きい", "ちょうど400", "くらべられない"], explanation: "だいたい700 - 300 = 400くらい。くわしくは388で、400より小さいです。" }
+  ].map((item) => ({
+    axes: { knowledge: 2, info: 2, steps: 2, format: 3, choices: 1 },
+    questionType: "multiple_choice",
+    prompt: item.prompt,
+    choices: textChoices(item.correct, item.wrongs),
+    answer: choiceAnswer(item.correct),
+    explanation: item.explanation
+  })));
+
+  // F7 まちがい直し(find_mistake, d3)
+  fam({
+    familyId: "add_find_mistake",
+    funMechanic: "find_mistake",
+    learningObjective: "筆算のよくあるまちがいに気づいて、正しく直せる",
+    commonMistake: "くり上がり・くり下がりのわすれに気づかない",
+    estimatedSeconds: 90,
+    skillTags: ["筆算", "たしかめ"]
+  }, [
+    { prompt: "みおさんは 500 - 137 を「463」と計算しました(くり下がりをわすれたようです)。正しい答えはいくつ？", answer: numberAnswer(500 - 137), explanation: "500からのくり下がりに気をつけると、500 - 137 = 363 です。" },
+    { prompt: "はるとさんは 246 + 178 を「314」と計算しました(くり上がりをわすれたようです)。正しい答えはいくつ？", answer: numberAnswer(246 + 178), explanation: "一の位と十の位のくり上がりをたすと、246 + 178 = 424 です。" },
+    { prompt: "みおさんは 632 - 458 を、位ごとに大きい数から小さい数をひいて「226」としました。正しい答えはいくつ？", answer: numberAnswer(632 - 458), explanation: "ひき算は上の数から下の数をひきます。くり下がりを使うと 632 - 458 = 174 です。" },
+    { prompt: "はるとさんは 57 + 368 を、位をそろえずに「938」と計算しました。正しい答えはいくつ？", answer: numberAnswer(57 + 368), explanation: "一の位どうしをそろえてたすと、57 + 368 = 425 です。" },
+    { prompt: "みおさんは 800 - 406 を「494」と計算しました。正しい答えはいくつ？", answer: numberAnswer(800 - 406), explanation: "800 - 400 = 400、400 - 6 = 394 です。答えは394です。" }
+  ].map((item) => ({ ...item, axes: { knowledge: 1, info: 2, steps: 3, format: 3, choices: 1 }, questionType: "numeric_input" })));
+
+  // F8 虫食い筆算(inference, d3-d4)
+  fam({
+    familyId: "add_hidden_digit",
+    funMechanic: "inference",
+    learningObjective: "筆算のしくみを使って、かくれた数字を見つけられる",
+    commonMistake: "くり上がり・くり下がりを考えずに□を決めてしまう",
+    estimatedSeconds: 120,
+    skillTags: ["筆算", "虫食い算", "推理"]
+  }, [
+    { prompt: "3□6 + 258 = 614。□に入る数字はいくつ？", answer: numberAnswer(5), explanation: "356 + 258 = 614 になります。□は5です。", axes: { knowledge: 1, info: 2, steps: 3, format: 3, choices: 1 } },
+    { prompt: "47□ + 216 = 693。□に入る数字はいくつ？", answer: numberAnswer(7), explanation: "477 + 216 = 693 になります。□は7です。", axes: { knowledge: 1, info: 2, steps: 3, format: 3, choices: 1 } },
+    { prompt: "□24 - 158 = 466。□に入る数字はいくつ？", answer: numberAnswer(6), explanation: "466 + 158 = 624 なので、□24は624。□は6です。", axes: { knowledge: 2, info: 2, steps: 3, format: 3, choices: 1 } },
+    { prompt: "5□2 - 236 = 296。□に入る数字はいくつ？", answer: numberAnswer(3), explanation: "296 + 236 = 532 なので、5□2は532。□は3です。", axes: { knowledge: 2, info: 2, steps: 3, format: 3, choices: 1 } },
+    { prompt: "638 - 2□5 = 393。□に入る数字はいくつ？", answer: numberAnswer(4), explanation: "638 - 393 = 245 なので、2□5は245。□は4です。", axes: { knowledge: 2, info: 2, steps: 3, format: 3, choices: 1 } }
+  ].map((item) => ({ ...item, questionType: "numeric_input" })));
+
+  // F9 どっちの言い分が正しい？(judge_claim, d3-d4)
+  const judgeChoices = ["二人とも正しい", "はるとだけ正しい", "みおだけ正しい", "二人ともまちがい"];
+  fam({
+    familyId: "add_judge_claim",
+    funMechanic: "judge_claim",
+    learningObjective: "たし算・ひき算のきまりについての主張を、計算でたしかめて判断できる",
+    commonMistake: "たし算のきまりが、ひき算にもそのまま使えると思いこむ",
+    estimatedSeconds: 90,
+    skillTags: ["筆算", "きまり見つけ"]
+  }, [
+    { prompt: "はると「たし算は、たすじゅんばんを入れかえても答えが同じ」。みお「ひき算も、ひくじゅんばんを入れかえても答えが同じ」。正しいのはどっち？", correct: "はるとだけ正しい", explanation: "たし算は入れかえても同じですが、ひき算は入れかえると答えが変わります(たとえば 5 - 3 と 3 - 5)。", axes: { knowledge: 2, info: 2, steps: 2, format: 3, choices: 1 } },
+    { prompt: "325 + 175 について。はると「答えはちょうど500」。みお「答えは501」。正しいのはどっち？", correct: "はるとだけ正しい", explanation: "325 + 175 = 500 です。ちょうど500になります。", axes: { knowledge: 1, info: 2, steps: 2, format: 3, choices: 1 } },
+    { prompt: "はると「どんな数に0をたしても、数は変わらない」。みお「どんな数から0をひいても、数は変わらない」。正しいのはどっち？", correct: "二人とも正しい", explanation: "0をたしても0をひいても、数は変わりません。", axes: { knowledge: 2, info: 2, steps: 2, format: 3, choices: 1 } },
+    { prompt: "600 - 299 について。はると「600 - 300 = 300 で、ひきすぎた1をたして301」。みお「600 - 300 = 300 で、さらに1をひいて299」。正しいのはどっち？", correct: "はるとだけ正しい", explanation: "299は300より1小さいので、300をひくと1ひきすぎです。ひきすぎた1をたして301です。", axes: { knowledge: 2, info: 2, steps: 3, format: 3, choices: 1 } }
+  ].map((item) => ({
+    axes: item.axes,
+    questionType: "multiple_choice",
+    prompt: item.prompt,
+    choices: textChoices(item.correct, judgeChoices.filter((choice) => choice !== item.correct)),
+    answer: choiceAnswer(item.correct),
+    explanation: item.explanation
+  })));
+
+  // F10 3つの数の文章題(inference, d3)
+  fam({
+    familyId: "add_three_term",
+    funMechanic: "inference",
+    learningObjective: "ふえたりへったりする場面を、じゅんに式に表して計算できる",
+    commonMistake: "とちゅうの計算だけで答えにしてしまう",
+    estimatedSeconds: 90,
+    skillTags: ["筆算", "文章題", "組み合わせ"]
+  }, [
+    { prompt: "バスに26人乗っていました。バスていで13人おりて、8人乗ってきました。今、何人？", answer: numberAnswer(26 - 13 + 8, "人"), explanation: "26 - 13 = 13、13 + 8 = 21 です。じゅんに計算します。" },
+    { prompt: "シールを135まい持っていました。妹に47まいあげて、お母さんから60まいもらいました。今、何まい？", answer: numberAnswer(135 - 47 + 60, "まい"), explanation: "135 - 47 = 88、88 + 60 = 148 です。" },
+    { prompt: "図書室に本が248さつありました。あたらしく75さつ入り、36さつかし出されました。今、何さつ？", answer: numberAnswer(248 + 75 - 36, "さつ"), explanation: "248 + 75 = 323、323 - 36 = 287 です。" },
+    { prompt: "おこづかいが500円あります。180円のノートと120円のえんぴつを買いました。のこりは何円？", answer: numberAnswer(500 - 180 - 120, "円"), explanation: "500 - 180 = 320、320 - 120 = 200 です。" },
+    { prompt: "チケットが350まいありました。きのう127まい、きょう96まい売れました。のこりは何まい？", answer: numberAnswer(350 - 127 - 96, "まい"), explanation: "350 - 127 = 223、223 - 96 = 127 です。" }
+  ].map((item) => ({ ...item, axes: { knowledge: 1, info: 3, steps: 3, format: 1, choices: 1 }, questionType: "numeric_input" })));
+
+  // F11 たしかめの式(compare_methods, d3-d4)
+  fam({
+    familyId: "add_check_method",
+    funMechanic: "compare_methods",
+    learningObjective: "たし算とひき算の関係を使って、答えのたしかめができる",
+    commonMistake: "たしかめの式で、どの数を使えばよいか迷う",
+    estimatedSeconds: 90,
+    skillTags: ["筆算", "たしかめ"]
+  }, [
+    { prompt: "486 - 217 = 269 が正しいか、たしかめる式はどれ？", correct: "269 + 217", wrongs: ["269 - 217", "486 + 217", "486 + 269"], explanation: "ひき算の答えにひいた数をたして、もとの数にもどれば正しいです。269 + 217 = 486 でぴったりです。", axes: { knowledge: 2, info: 2, steps: 2, format: 3, choices: 2 }, questionType: "multiple_choice" },
+    { prompt: "358 + 164 = 522 が正しいか、たしかめる式はどれ？", correct: "522 - 164", wrongs: ["522 + 164", "358 - 164", "522 + 358"], explanation: "たし算の答えから、たした数をひいて、もとの数にもどれば正しいです。522 - 164 = 358 でぴったりです。", axes: { knowledge: 2, info: 2, steps: 2, format: 3, choices: 2 }, questionType: "multiple_choice" },
+    { prompt: "705 - 428 = 277 のたしかめとして、277 + 428 を計算すると、いくつになれば正しい？", answer: numberAnswer(705), explanation: "もとの数の705にもどれば正しいです。277 + 428 = 705 でぴったりです。", axes: { knowledge: 2, info: 2, steps: 2, format: 3, choices: 1 }, questionType: "numeric_input" },
+    { prompt: "433 + 199 = 632 です。この式を使うと、632 - 199 の答えはどれ？", correct: "433", wrongs: ["434", "432", "443"], explanation: "たし算とひき算は反対の関係なので、632 - 199 = 433 と計算しなくてもわかります。", axes: { knowledge: 2, info: 2, steps: 2, format: 3, choices: 3 }, questionType: "multiple_choice" }
+  ].map((item) => ({
+    axes: item.axes,
+    questionType: item.questionType,
+    prompt: item.prompt,
+    choices: item.correct ? textChoices(item.correct, item.wrongs) : [],
+    answer: item.correct ? choiceAnswer(item.correct) : item.answer,
+    explanation: item.explanation
+  })));
+
+  // F12 かくれた数を当てる(inference, d3)
+  fam({
+    familyId: "add_hidden_number",
+    funMechanic: "inference",
+    learningObjective: "たし算とひき算の関係を使って、かくれた数を求められる",
+    commonMistake: "問題の数をそのままたしたりひいたりしてしまう",
+    estimatedSeconds: 90,
+    skillTags: ["筆算", "推理"]
+  }, [
+    { prompt: "ある数から265をひくと、148になります。ある数はいくつ？", answer: numberAnswer(148 + 265), explanation: "ひく前にもどすには、たします。148 + 265 = 413 です。" },
+    { prompt: "ある数に180をたすと、520になります。ある数はいくつ？", answer: numberAnswer(520 - 180), explanation: "たす前にもどすには、ひきます。520 - 180 = 340 です。" },
+    { prompt: "はこにビー玉が何こか入っています。125こたしたら、ぜんぶで312こになりました。はじめに何こ入っていた？", answer: numberAnswer(312 - 125, "こ"), explanation: "312 - 125 = 187 なので、はじめは187こです。" },
+    { prompt: "ジュースが何本かありました。86本くばったら、のこりが214本でした。はじめに何本あった？", answer: numberAnswer(214 + 86, "本"), explanation: "くばった分をのこりにたすと、214 + 86 = 300 で、はじめは300本です。" }
+  ].map((item) => ({ ...item, axes: { knowledge: 2, info: 2, steps: 3, format: 2, choices: 1 }, questionType: "numeric_input" })));
+
+  // F13 計算のくふう(rule_discovery, d3)
+  fam({
+    familyId: "add_smart_calc",
+    funMechanic: "rule_discovery",
+    learningObjective: "きりのよい数を使った計算のくふうができる",
+    commonMistake: "100たしたあとの1のちょうせいを、たすかひくか逆にする",
+    estimatedSeconds: 90,
+    skillTags: ["筆算", "計算のくふう"]
+  }, [
+    { prompt: "456 + 99 を、456 + 100 - 1 とくふうして計算すると、いくつ？", answer: numberAnswer(456 + 99), explanation: "100をたしてから、たしすぎた1をひきます。556 - 1 = 555 です。" },
+    { prompt: "327 + 198 を、327 + 200 - 2 とくふうして計算すると、いくつ？", answer: numberAnswer(327 + 198), explanation: "200をたしてから、たしすぎた2をひきます。527 - 2 = 525 です。" },
+    { prompt: "634 - 99 を、634 - 100 + 1 とくふうして計算すると、いくつ？", answer: numberAnswer(634 - 99), explanation: "100をひいてから、ひきすぎた1をたします。534 + 1 = 535 です。" },
+    { prompt: "700 - 356 と 699 - 355 は、同じ答えになります。699 - 355 はいくつ？", answer: numberAnswer(699 - 355), explanation: "どちらの数も1ずつ小さくしても、ちがいは変わりません。答えは344です。" },
+    { prompt: "250 + 250 = 500 を使って考えます。251 + 249 はいくつ？", answer: numberAnswer(251 + 249), explanation: "251は250より1大きく、249は250より1小さいので、答えは同じ500です。" }
+  ].map((item) => ({ ...item, axes: { knowledge: 2, info: 2, steps: 2, format: 3, choices: 1 }, questionType: "numeric_input" })));
+
+  if (questions.length !== 60) {
+    throw new Error(`addition_subtraction_written: expected 60 questions, got ${questions.length}`);
   }
   return questions;
 }
 
 function makeTime() {
-  const questions = [];
-  let i = 1;
-  const starts = [[7, 10], [8, 20], [9, 35], [10, 45], [13, 5], [14, 30], [15, 50], [16, 15]];
-  const adds = [15, 20, 25, 30, 35, 40, 45, 50, 55, 70];
-  for (let n = 0; questions.length < 18; n += 1) {
-    const [h, m] = starts[n % starts.length];
-    const add = adds[n % adds.length];
-    const total = h * 60 + m + add;
-    const ah = Math.floor(total / 60);
-    const am = total % 60;
-    questions.push(q(
-      "time_duration",
-      i++,
-      1,
-      "multiple_choice",
-      `${h}時${m}分の${add}分後は何時何分？`,
-      choiceAnswer(`${ah}時${am}分`),
-      `${m}分に${add}分をたすと${m + add}分です。60分をこえたら1時間くり上げます。`,
-      {
-        choices: textChoices(`${ah}時${am}分`, [`${h + 1}時${(m + add) % 60}分`, `${ah + 1}時${am}分`, `${ah}時${(am + 10) % 60}分`, `${Math.max(0, ah - 1)}時${am}分`]).slice(0, 4),
-        skillTags: ["時こく", "時間"]
-      }
-    ));
-  }
-  for (let n = 0; questions.length < 32; n += 1) {
-    const startH = 8 + (n % 5);
-    const startM = [0, 10, 20, 30, 40][n % 5];
-    const duration = [35, 45, 50, 65, 80, 95, 110][n % 7];
-    const end = startH * 60 + startM + duration;
-    const endH = Math.floor(end / 60);
-    const endM = end % 60;
-    questions.push(q(
-      "time_duration",
-      i++,
-      2,
-      "numeric_input",
-      `${startH}時${startM}分から${endH}時${endM}分までは何分？`,
-      numberAnswer(duration, "分"),
-      `始まりから終わりまでを分で数えると${duration}分です。`,
-      { skillTags: ["時こく", "時間の長さ"] }
-    ));
-  }
-  for (let n = 0; questions.length < 40; n += 1) {
-    const minutes = [75, 90, 100, 120, 135, 150, 180, 195][n % 8];
-    const h = Math.floor(minutes / 60);
-    const m = minutes % 60;
-    const wrongs = [
-      `${h}時間${m + 10}分`,
-      `${h + 1}時間${m}分`,
-      `${Math.max(0, h - 1)}時間${m}分`,
-      `${h}時間${(m + 30) % 60}分`
-    ];
-    questions.push(q(
-      "time_duration",
-      i++,
-      3,
-      "multiple_choice",
-      `${minutes}分は、何時間何分？`,
-      choiceAnswer(`${h}時間${m}分`),
-      `60分で1時間です。${minutes}分は${h}時間${m}分です。`,
-      {
-        choices: textChoices(`${h}時間${m}分`, wrongs),
-        skillTags: ["時間", "単位変換"]
-      }
-    ));
+  const { questions, fam } = makeFamilyBuilder("time_duration");
+
+  // F1 〜分後の時こく(drill, d2)
+  fam({
+    familyId: "time_after",
+    funMechanic: "drill",
+    learningObjective: "ある時こくから何分後の時こくを求められる",
+    commonMistake: "60分をこえたときに、時間へのくり上げをわすれる(9時70分など)",
+    estimatedSeconds: 60,
+    skillTags: ["時こく", "時間"]
+  }, [
+    { prompt: "7時40分の30分後は、何時何分？", correct: "8時10分", wrongs: ["7時70分", "8時20分", "7時10分"], explanation: "40分 + 30分 = 70分。60分で1時間くり上げて、8時10分です。" },
+    { prompt: "9時15分の50分後は、何時何分？", correct: "10時5分", wrongs: ["9時65分", "10時15分", "9時55分"], explanation: "15分 + 50分 = 65分。60分をくり上げて、10時5分です。" },
+    { prompt: "11時35分の40分後は、何時何分？", correct: "12時15分", wrongs: ["11時75分", "12時5分", "12時35分"], explanation: "35分 + 40分 = 75分。60分をくり上げて、12時15分です。" },
+    { prompt: "6時20分の45分後は、何時何分？", correct: "7時5分", wrongs: ["6時65分", "7時15分", "6時5分"], explanation: "20分 + 45分 = 65分。60分をくり上げて、7時5分です。" }
+  ].map((item) => ({
+    axes: { knowledge: 1, info: 2, steps: 2, format: 1, choices: 2 },
+    questionType: "multiple_choice",
+    prompt: item.prompt,
+    choices: textChoices(item.correct, item.wrongs),
+    answer: choiceAnswer(item.correct),
+    explanation: item.explanation
+  })));
+
+  // F2 〜分前の時こく(drill, d2)
+  fam({
+    familyId: "time_before",
+    funMechanic: "drill",
+    learningObjective: "ある時こくから何分前の時こくを求められる",
+    commonMistake: "「前」なのに分をたしてしまう",
+    estimatedSeconds: 60,
+    skillTags: ["時こく", "時間"]
+  }, [
+    { prompt: "8時10分の20分前は、何時何分？", correct: "7時50分", wrongs: ["8時30分", "7時30分", "7時40分"], explanation: "10分から20分はひけないので、1時間くり下げます。7時70分 - 20分 = 7時50分です。" },
+    { prompt: "3時5分の15分前は、何時何分？", correct: "2時50分", wrongs: ["3時20分", "2時40分", "2時55分"], explanation: "5分から15分はひけないので、2時65分と考えて、65 - 15 = 50。2時50分です。" },
+    { prompt: "12時ちょうどの25分前は、何時何分？", correct: "11時35分", wrongs: ["12時25分", "11時25分", "11時45分"], explanation: "12時は11時60分と同じです。60 - 25 = 35 で、11時35分です。" }
+  ].map((item) => ({
+    axes: { knowledge: 1, info: 2, steps: 2, format: 2, choices: 2 },
+    questionType: "multiple_choice",
+    prompt: item.prompt,
+    choices: textChoices(item.correct, item.wrongs),
+    answer: choiceAnswer(item.correct),
+    explanation: item.explanation
+  })));
+
+  // F3 時間の長さ(drill, d2)
+  fam({
+    familyId: "time_duration_len",
+    funMechanic: "drill",
+    learningObjective: "2つの時こくの間の時間を求められる",
+    commonMistake: "時こくの数字どうしをそのままひいてしまう",
+    estimatedSeconds: 60,
+    skillTags: ["時こく", "時間の長さ"]
+  }, [
+    { prompt: "8時10分から8時55分までは、何分？", answer: numberAnswer(45, "分"), explanation: "55 - 10 = 45 で、45分です。" },
+    { prompt: "9時40分から10時20分までは、何分？", answer: numberAnswer(40, "分"), explanation: "9時40分から10時までが20分、10時から10時20分までが20分。あわせて40分です。" },
+    { prompt: "11時50分から12時30分までは、何分？", answer: numberAnswer(40, "分"), explanation: "11時50分から12時までが10分、12時から12時30分までが30分。あわせて40分です。" },
+    { prompt: "2時35分から4時5分までは、何分？", answer: numberAnswer(90, "分"), explanation: "2時35分から3時35分までが60分、3時35分から4時5分までが30分。あわせて90分です。" },
+    { prompt: "6時15分から7時ちょうどまでは、何分？", answer: numberAnswer(45, "分"), explanation: "60 - 15 = 45 で、45分です。" }
+  ].map((item) => ({ ...item, axes: { knowledge: 1, info: 2, steps: 2, format: 1, choices: 1 }, questionType: "numeric_input" })));
+
+  // F4 単位の変かん(drill, d2-d3)
+  fam({
+    familyId: "time_convert",
+    funMechanic: "drill",
+    learningObjective: "分と秒、時間と分の関係(1分=60秒、1時間=60分)を使って表しかえられる",
+    commonMistake: "60ではなく100で計算してしまう(1分=100秒など)",
+    estimatedSeconds: 60,
+    skillTags: ["時間", "単位変換"]
+  }, [
+    { prompt: "1分 = 60秒です。2分は何秒？", answer: numberAnswer(120, "秒"), explanation: "60秒の2つ分なので、60 × 2 = 120秒です。", axes: { knowledge: 2, info: 1, steps: 2, format: 1, choices: 1 }, questionType: "numeric_input" },
+    { prompt: "90秒は、何分何秒？", correct: "1分30秒", wrongs: ["9分0秒", "1分20秒", "0分90秒"], explanation: "90秒 = 60秒 + 30秒 なので、1分30秒です。", axes: { knowledge: 2, info: 1, steps: 2, format: 1, choices: 2 }, questionType: "multiple_choice" },
+    { prompt: "80分は、何時間何分？", correct: "1時間20分", wrongs: ["8時間0分", "1時間40分", "2時間20分"], explanation: "80分 = 60分 + 20分 なので、1時間20分です。", axes: { knowledge: 2, info: 1, steps: 2, format: 1, choices: 2 }, questionType: "multiple_choice" },
+    { prompt: "1時間45分は、何分？", answer: numberAnswer(105, "分"), explanation: "1時間 = 60分 なので、60 + 45 = 105分です。", axes: { knowledge: 2, info: 1, steps: 2, format: 1, choices: 1 }, questionType: "numeric_input" }
+  ].map((item) => ({
+    axes: item.axes,
+    questionType: item.questionType,
+    prompt: item.prompt,
+    choices: item.correct ? textChoices(item.correct, item.wrongs) : [],
+    answer: item.correct ? choiceAnswer(item.correct) : item.answer,
+    explanation: item.explanation
+  })));
+
+  // F5 まちがい直し(find_mistake, d3)
+  fam({
+    familyId: "time_find_mistake",
+    funMechanic: "find_mistake",
+    learningObjective: "時こく・時間のよくあるまちがいに気づいて、正しく直せる",
+    commonMistake: "60進法を10進法と混同する(9時70分、1時間=100分など)",
+    estimatedSeconds: 90,
+    skillTags: ["時こく", "たしかめ"]
+  }, [
+    { prompt: "はるとさんは「9時50分の20分後は9時70分」と言いました。正しく直すと？", correct: "10時10分", wrongs: ["9時70分で正しい", "10時20分", "9時30分"], explanation: "70分は1時間10分なので、9時70分ではなく10時10分です。" },
+    { prompt: "みおさんは「1時間30分は130分」と言いました。正しく直すと？", correct: "90分", wrongs: ["130分で正しい", "60分", "100分"], explanation: "1時間 = 60分 なので、60 + 30 = 90分です。" },
+    { prompt: "はるとさんは「2分 = 100秒」と言いました。正しく直すと？", correct: "120秒", wrongs: ["100秒で正しい", "200秒", "60秒"], explanation: "1分 = 60秒 なので、2分は 60 × 2 = 120秒です。" },
+    { prompt: "みおさんは「3時40分の30分後は3時10分」と言いました(時こくがもどってしまいました)。正しく直すと？", correct: "4時10分", wrongs: ["3時10分で正しい", "4時40分", "3時70分"], explanation: "40分 + 30分 = 70分で、1時間くり上がります。4時10分です。" }
+  ].map((item) => ({
+    axes: { knowledge: 1, info: 2, steps: 2, format: 3, choices: 2 },
+    questionType: "multiple_choice",
+    prompt: item.prompt,
+    choices: textChoices(item.correct, item.wrongs),
+    answer: choiceAnswer(item.correct),
+    explanation: item.explanation
+  })));
+
+  // F6 どっちの言い分が正しい？(judge_claim, d3)
+  const judgeChoices = ["二人とも正しい", "はるとだけ正しい", "みおだけ正しい", "二人ともまちがい"];
+  fam({
+    familyId: "time_judge_claim",
+    funMechanic: "judge_claim",
+    learningObjective: "時間の単位のきまりについての主張を判断できる",
+    commonMistake: "時間の単位を10進法で考えてしまう",
+    estimatedSeconds: 90,
+    skillTags: ["時間", "単位のきまり"]
+  }, [
+    { prompt: "はると「1時間は60分」。みお「1分は60秒」。正しいのはどっち？", correct: "二人とも正しい", explanation: "時間も分も、60ずつで次の単位になります。", axes: { knowledge: 2, info: 2, steps: 1, format: 3, choices: 1 } },
+    { prompt: "100分について。はると「1時間40分と同じ」。みお「1時間より短い」。正しいのはどっち？", correct: "はるとだけ正しい", explanation: "100分 = 60分 + 40分 = 1時間40分です。1時間(60分)より長いです。", axes: { knowledge: 2, info: 2, steps: 2, format: 3, choices: 1 } },
+    { prompt: "はると「午前は12時間、午後も12時間」。みお「1日は24時間」。正しいのはどっち？", correct: "二人とも正しい", explanation: "午前12時間と午後12時間をあわせて、1日は24時間です。", axes: { knowledge: 2, info: 2, steps: 1, format: 3, choices: 1 } },
+    { prompt: "はると「時計の長いはりが1まわりすると1時間」。みお「時計のみじかいはりが1まわりすると1時間」。正しいのはどっち？", correct: "はるとだけ正しい", explanation: "長いはり(分しん)は1まわりで60分 = 1時間。みじかいはり(時しん)は1まわりで12時間です。", axes: { knowledge: 2, info: 2, steps: 2, format: 3, choices: 1 } }
+  ].map((item) => ({
+    axes: item.axes,
+    questionType: "multiple_choice",
+    prompt: item.prompt,
+    choices: textChoices(item.correct, judgeChoices.filter((choice) => choice !== item.correct)),
+    answer: choiceAnswer(item.correct),
+    explanation: item.explanation
+  })));
+
+  // F7 予定を組み立てる(inference, d3-d4)
+  fam({
+    familyId: "time_schedule",
+    funMechanic: "inference",
+    learningObjective: "目当ての時こくから逆算したり、時間をつないだりして予定を考えられる",
+    commonMistake: "逆算なのに、時こくに時間をたしてしまう",
+    estimatedSeconds: 120,
+    skillTags: ["時こく", "時間", "文章題"]
+  }, [
+    { prompt: "4時までに、40分かかる宿題を終わらせたい。おそくとも何時何分までに始めればいい？", correct: "3時20分", wrongs: ["3時40分", "4時40分", "3時0分"], explanation: "4時の40分前なので、3時20分までに始めます。", axes: { knowledge: 2, info: 2, steps: 3, format: 2, choices: 1 } },
+    { prompt: "学校まで15分かかります。8時ちょうどに着きたいとき、家を出るのは何時何分？", correct: "7時45分", wrongs: ["8時15分", "7時55分", "7時30分"], explanation: "8時の15分前なので、7時45分に出ます。", axes: { knowledge: 2, info: 2, steps: 3, format: 2, choices: 1 } },
+    { prompt: "50分の映画(えいが)が、3時10分に終わりました。始まったのは何時何分？", correct: "2時20分", wrongs: ["4時0分", "2時40分", "3時0分"], explanation: "3時10分の50分前です。2時70分と考えて、70 - 50 = 20。2時20分です。", axes: { knowledge: 2, info: 2, steps: 3, format: 2, choices: 2 } },
+    { prompt: "サッカーのれんしゅうは4時30分から始まり、1時間10分やります。終わるのは何時何分？", correct: "5時40分", wrongs: ["5時30分", "5時50分", "4時40分"], explanation: "4時30分の1時間後が5時30分、さらに10分後で5時40分です。", axes: { knowledge: 2, info: 2, steps: 3, format: 2, choices: 2 }, soccer: true },
+    { prompt: "9時40分から20分休けいして、そのあと30分本を読みます。読み終わるのは何時何分？", correct: "10時30分", wrongs: ["10時10分", "10時50分", "9時90分"], explanation: "9時40分 + 20分 = 10時。10時 + 30分 = 10時30分です。", axes: { knowledge: 2, info: 3, steps: 3, format: 2, choices: 2 } }
+  ].map((item) => ({
+    axes: item.axes,
+    questionType: "multiple_choice",
+    prompt: item.prompt,
+    choices: textChoices(item.correct, item.wrongs),
+    answer: choiceAnswer(item.correct),
+    explanation: item.explanation,
+    soccer: item.soccer
+  })));
+
+  // F8 どっちが長い？を予想してたしかめる(predict_check, d3)
+  fam({
+    familyId: "time_compare",
+    funMechanic: "predict_check",
+    learningObjective: "ちがう単位の時間を、同じ単位にそろえてくらべられる",
+    commonMistake: "数字の大きさだけでくらべてしまう(90秒 > 2分 など)",
+    estimatedSeconds: 90,
+    skillTags: ["時間", "大小比較"]
+  }, [
+    { prompt: "80分と1時間15分。長いのはどっち？", correct: "80分", wrongs: ["1時間15分", "どちらも同じ", "くらべられない"], explanation: "1時間15分 = 75分 なので、80分のほうが長いです。" },
+    { prompt: "1時間30分と100分。長いのはどっち？", correct: "100分", wrongs: ["1時間30分", "どちらも同じ", "くらべられない"], explanation: "1時間30分 = 90分 なので、100分のほうが長いです。" },
+    { prompt: "2分と90秒。長いのはどっち？", correct: "2分", wrongs: ["90秒", "どちらも同じ", "くらべられない"], explanation: "2分 = 120秒 なので、2分のほうが長いです。" },
+    { prompt: "150秒と2分30秒。どうなる？", correct: "どちらも同じ", wrongs: ["150秒が長い", "2分30秒が長い", "くらべられない"], explanation: "2分30秒 = 120秒 + 30秒 = 150秒 で、同じ長さです。" },
+    { prompt: "45分の番組1つと、30分の番組2つ(つづけて見る)。長いのはどっち？", correct: "30分の番組2つ", wrongs: ["45分の番組1つ", "どちらも同じ", "くらべられない"], explanation: "30分 × 2 = 60分 なので、30分の番組2つのほうが長いです。" }
+  ].map((item) => ({
+    axes: { knowledge: 2, info: 2, steps: 3, format: 2, choices: 1 },
+    questionType: "multiple_choice",
+    prompt: item.prompt,
+    choices: textChoices(item.correct, item.wrongs),
+    answer: choiceAnswer(item.correct),
+    explanation: item.explanation
+  })));
+
+  // F9 時間の感かく(best_choice, d2)
+  fam({
+    familyId: "time_sense",
+    funMechanic: "best_choice",
+    learningObjective: "身のまわりのことにかかる時間を、単位をえらんで見当づけられる",
+    commonMistake: "秒・分・時間のどれを使うか、けたちがいの単位を選んでしまう",
+    estimatedSeconds: 45,
+    skillTags: ["時間", "量感"]
+  }, [
+    { prompt: "歯みがきにかかる時間として、いちばん近いのはどれ？", correct: "3分", wrongs: ["3秒", "3時間", "30時間"], explanation: "歯みがきはだいたい3分くらいです。3秒ではみじかすぎ、3時間では長すぎます。" },
+    { prompt: "夜にねむる時間として、いちばん近いのはどれ？", correct: "9時間", wrongs: ["9分", "9秒", "90時間"], explanation: "夜のすいみんはだいたい9時間くらいです。" },
+    { prompt: "カップラーメンができるまでにまつ時間として、いちばん近いのはどれ？", correct: "3分", wrongs: ["3秒", "30秒", "3時間"], explanation: "カップラーメンはだいたい3分まちます。" },
+    { prompt: "学校のじゅぎょう1回の長さとして、いちばん近いのはどれ？", correct: "45分", wrongs: ["45秒", "4時間", "5分"], explanation: "じゅぎょう1回はだいたい45分です。" }
+  ].map((item) => ({
+    axes: { knowledge: 1, info: 1, steps: 2, format: 3, choices: 1 },
+    questionType: "multiple_choice",
+    prompt: item.prompt,
+    choices: textChoices(item.correct, item.wrongs),
+    answer: choiceAnswer(item.correct),
+    explanation: item.explanation
+  })));
+
+  // F10 ならべ替え(reorder, d5: 単元の仕上げ)
+  fam({
+    familyId: "time_reorder",
+    funMechanic: "reorder",
+    learningObjective: "ちがう単位の時間を、ぜんぶ同じ単位にそろえてならべられる",
+    commonMistake: "一部だけ単位をそろえて、のこりは数字のままくらべてしまう",
+    estimatedSeconds: 120,
+    skillTags: ["時間", "大小比較", "ならべ替え"]
+  }, [
+    { prompt: "90秒、2分、1時間、65分を、みじかいじゅんにならべたものとして正しいのはどれ？", correct: "90秒 → 2分 → 1時間 → 65分", wrongs: ["90秒 → 2分 → 65分 → 1時間", "2分 → 90秒 → 1時間 → 65分", "65分 → 1時間 → 2分 → 90秒"], explanation: "90秒 = 1分30秒、2分、1時間 = 60分、65分。みじかいじゅんは 90秒 → 2分 → 1時間 → 65分 です。" },
+    { prompt: "100分、1時間30分、2時間を、長いじゅんにならべたものとして正しいのはどれ？", correct: "2時間 → 100分 → 1時間30分", wrongs: ["100分 → 2時間 → 1時間30分", "1時間30分 → 100分 → 2時間", "2時間 → 1時間30分 → 100分"], explanation: "2時間 = 120分、100分、1時間30分 = 90分。長いじゅんは 2時間 → 100分 → 1時間30分 です。" }
+  ].map((item) => ({
+    axes: { knowledge: 2, info: 3, steps: 3, format: 3, choices: 2 },
+    questionType: "multiple_choice",
+    prompt: item.prompt,
+    choices: textChoices(item.correct, item.wrongs),
+    answer: choiceAnswer(item.correct),
+    explanation: item.explanation
+  })));
+
+  if (questions.length !== 40) {
+    throw new Error(`time_duration: expected 40 questions, got ${questions.length}`);
   }
   return questions;
 }
 
 function makeLargeNumbers() {
-  const questions = [];
-  let i = 1;
+  const { questions, fam } = makeFamilyBuilder("large_numbers");
 
-  const placeValues = [
-    [34820, "3万と4千と8百と2十", ["3千と4百と8十と2", "3万と4百と8十と2", "3万と4千と8十と2"]],
-    [52006, "5万と2千と6", ["5千と2百と6", "5万と2百と6", "5万と2千と6十"]],
-    [70940, "7万と9百と4十", ["7千と9百と4十", "7万と9千と4十", "7万と9十と4"]],
-    [86105, "8万と6千と1百と5", ["8千と6百と1十と5", "8万と6千と1十と5", "8万と6百と1百と5"]],
-    [43070, "4万と3千と7十", ["4千と3百と7十", "4万と3十と7", "4万と3千と7百"]],
-    [90508, "9万と5百と8", ["9千と5百と8", "9万と5千と8", "9万と5十と8"]],
-    [67890, "6万と7千と8百と9十", ["6千と7百と8十と9", "6万と7千と8十と9", "6万と8千と7百と9十"]],
-    [10450, "1万と4百と5十", ["1千と4百と5十", "1万と4千と5十", "1万と4百と5"]],
-    [30009, "3万と9", ["3千と9", "3万と9十", "3万と9百"]],
-    [25080, "2万と5千と8十", ["2千と5百と8十", "2万と5百と8十", "2万と5千と8百"]]
-  ];
+  // F1 数を組み立てる(drill, d2)
+  fam({
+    familyId: "num_compose",
+    funMechanic: "drill",
+    learningObjective: "万・千・百・十・一を組み合わせた数を書ける",
+    commonMistake: "ない位に0を書きわすれる(7万と5百と9を759にするなど)",
+    estimatedSeconds: 60,
+    skillTags: ["大きな数", "位取り", "数の構成"]
+  }, [
+    { prompt: "4万と6千と3百を合わせた数は？", answer: numberAnswer(46300), explanation: "40000 + 6000 + 300 = 46300 です。" },
+    { prompt: "7万と5百と9を合わせた数は？", answer: numberAnswer(70509), explanation: "千の位と十の位には何もないので0を書きます。70509です。" },
+    { prompt: "2万と8千と4十を合わせた数は？", answer: numberAnswer(28040), explanation: "百の位と一の位は0です。28040です。" },
+    { prompt: "9万と9を合わせた数は？", answer: numberAnswer(90009), explanation: "千・百・十の位はぜんぶ0です。90009です。" },
+    { prompt: "5万と1千と6百と2十と3を合わせた数は？", answer: numberAnswer(51623), explanation: "位のじゅんにならべると51623です。" }
+  ].map((item) => ({ ...item, axes: { knowledge: 1, info: 2, steps: 2, format: 1, choices: 1 }, questionType: "numeric_input" })));
 
-  for (const [value, correct, wrongs] of placeValues) {
-    questions.push(q(
-      "large_numbers",
-      i++,
-      3,
-      "multiple_choice",
-      `${value} の表し方として正しいものはどれ？`,
-      choiceAnswer(correct),
-      `${value} は、万・千・百・十・一の位に分けて考えます。`,
-      {
-        choices: textChoices(correct, wrongs),
-        skillTags: ["大きな数", "位取り", "数の構成"]
-      }
-    ));
+  // F2 位の数字を読み取る(drill, d1)
+  fam({
+    familyId: "num_digit",
+    funMechanic: "drill",
+    learningObjective: "5けたの数の、それぞれの位の数字を読み取れる",
+    commonMistake: "位を1つずらして読んでしまう",
+    estimatedSeconds: 45,
+    skillTags: ["大きな数", "位取り"]
+  }, [
+    { prompt: "35062 の千の位の数字はいくつ？", answer: numberAnswer(5), explanation: "35062は、3万5千62です。千の位は5です。" },
+    { prompt: "80417 の万の位の数字はいくつ？", answer: numberAnswer(8), explanation: "5けたの数は、いちばん左が万の位です。80417の万の位は8です。" },
+    { prompt: "62950 の十の位の数字はいくつ？", answer: numberAnswer(5), explanation: "右から2ばんめが十の位です。5です。" },
+    { prompt: "49006 の百の位の数字はいくつ？", answer: numberAnswer(0), explanation: "右から3ばんめが百の位です。0です。" }
+  ].map((item) => ({ ...item, axes: { knowledge: 1, info: 1, steps: 1, format: 1, choices: 1 }, questionType: "numeric_input" })));
+
+  // F3 表し方を選ぶ(drill, d2)
+  fam({
+    familyId: "num_compose_choice",
+    funMechanic: "drill",
+    learningObjective: "数を万・千・百・十・一の組み合わせで表せる",
+    commonMistake: "0のある位をとばして、となりの位とまちがえる",
+    estimatedSeconds: 60,
+    skillTags: ["大きな数", "位取り", "数の構成"]
+  }, [
+    { prompt: "52006 の表し方として正しいのはどれ？", correct: "5万と2千と6", wrongs: ["5万と2百と6", "5万と2千と6十", "5千と2百と6"], explanation: "52006は、5万と2千と6です。百の位と十の位は0です。" },
+    { prompt: "70940 の表し方として正しいのはどれ？", correct: "7万と9百と4十", wrongs: ["7万と9千と4十", "7千と9百と4十", "7万と9十と4"], explanation: "70940は、7万と9百と4十です。千の位は0です。" },
+    { prompt: "30009 の表し方として正しいのはどれ？", correct: "3万と9", wrongs: ["3万と9十", "3万と9百", "3千と9"], explanation: "30009は、3万と9です。あいだの位はぜんぶ0です。" }
+  ].map((item) => ({
+    axes: { knowledge: 1, info: 2, steps: 2, format: 1, choices: 2 },
+    questionType: "multiple_choice",
+    prompt: item.prompt,
+    choices: textChoices(item.correct, item.wrongs),
+    answer: choiceAnswer(item.correct),
+    explanation: item.explanation
+  })));
+
+  // F4 大小くらべ(drill, d2)
+  fam({
+    familyId: "num_compare",
+    funMechanic: "drill",
+    learningObjective: "大きな数を、上の位からじゅんにくらべられる",
+    commonMistake: "とちゅうの大きい数字だけを見てくらべてしまう",
+    estimatedSeconds: 60,
+    skillTags: ["大きな数", "大小比較"]
+  }, [
+    { a: 34820, b: 38420 }, { a: 52006, b: 50260 }, { a: 67890, b: 68790 }, { a: 10450, b: 10045 }
+  ].map(({ a, b }) => ({
+    axes: { knowledge: 1, info: 2, steps: 2, format: 1, choices: 1 },
+    questionType: "multiple_choice",
+    prompt: `${a} と ${b}。大きいのはどっち？`,
+    choices: textChoices(String(Math.max(a, b)), [String(Math.min(a, b)), "同じ", "くらべられない"]),
+    answer: choiceAnswer(String(Math.max(a, b))),
+    explanation: `万の位からじゅんにくらべます。大きいのは ${Math.max(a, b)} です。`
+  })));
+
+  // F5 数直線・数のならび(inference, d3)
+  fam({
+    familyId: "num_number_line",
+    funMechanic: "inference",
+    learningObjective: "数直線やならびの中で、数の位置をつかめる",
+    commonMistake: "1めもりの大きさをたしかめずに数える",
+    estimatedSeconds: 90,
+    skillTags: ["大きな数", "数直線"]
+  }, [
+    { prompt: "30000 と 40000 のちょうどまん中の数は？", answer: numberAnswer(35000), explanation: "30000と40000の間は10000。その半分の5000をたして35000です。" },
+    { prompt: "数直線で、1めもりは1000です。47000から右へ3めもり進んだ数は？", answer: numberAnswer(50000), explanation: "1000が3つ分で3000ふえます。47000 + 3000 = 50000 です。" },
+    { prompt: "0から100000までを、同じ長さで10に分けた数直線があります。1めもりの大きさは？", answer: numberAnswer(10000), explanation: "100000を10に分けると、1めもりは10000です。" },
+    { prompt: "69000 より 1000 大きい数は？", answer: numberAnswer(70000), explanation: "69000 + 1000 = 70000 です。千の位がくり上がって万の位が変わります。" },
+    { prompt: "100000 より 1 小さい数は？", answer: numberAnswer(99999), explanation: "100000の1つ前の数は99999です。" }
+  ].map((item) => ({ ...item, axes: { knowledge: 2, info: 2, steps: 2, format: 2, choices: 1 }, questionType: "numeric_input" })));
+
+  // F6 10ばい・10でわる(rule_discovery, d2-d3)
+  fam({
+    familyId: "num_times10",
+    funMechanic: "rule_discovery",
+    learningObjective: "10ばい・100ばい・10でわると位が動くきまりがわかる",
+    commonMistake: "10ばいで0を2つつけるなど、0の数をまちがえる",
+    estimatedSeconds: 75,
+    skillTags: ["大きな数", "10ばい"]
+  }, [
+    { prompt: "25 を10ばいすると、いくつ？", answer: numberAnswer(250), explanation: "10ばいすると位が1つ上がり、右に0が1つつきます。250です。", axes: { knowledge: 2, info: 1, steps: 2, format: 2, choices: 1 } },
+    { prompt: "25 を100ばいすると、いくつ？", answer: numberAnswer(2500), explanation: "100ばいは10ばいの10ばい。右に0が2つついて2500です。", axes: { knowledge: 2, info: 1, steps: 2, format: 2, choices: 1 } },
+    { prompt: "380 を10でわると、いくつ？", answer: numberAnswer(38), explanation: "10でわると位が1つ下がり、一の位の0が1つとれます。38です。", axes: { knowledge: 2, info: 1, steps: 2, format: 2, choices: 1 } },
+    { prompt: "7 を10ばいして、さらに10ばいすると、いくつ？", answer: numberAnswer(700), explanation: "7 → 70 → 700 と、0が1つずつふえます。700です。", axes: { knowledge: 2, info: 2, steps: 3, format: 2, choices: 1 } },
+    { prompt: "10ばいすると位が1つ上がるきまりを使うと、60 の10ばいは？", answer: numberAnswer(600), explanation: "60の右に0が1つついて600です。", axes: { knowledge: 2, info: 1, steps: 2, format: 2, choices: 1 } }
+  ].map((item) => ({ ...item, questionType: "numeric_input" })));
+
+  // F7 まちがい直し(find_mistake, d3)
+  fam({
+    familyId: "num_find_mistake",
+    funMechanic: "find_mistake",
+    learningObjective: "大きな数の読み方・くらべ方のまちがいに気づいて直せる",
+    commonMistake: "0のある位をとばして読んでしまう",
+    estimatedSeconds: 90,
+    skillTags: ["大きな数", "たしかめ"]
+  }, [
+    { prompt: "みおさんは 70086 を「七万八百六十」と読みました。正しい読み方はどれ？", correct: "七万八十六", wrongs: ["七万八百六十で正しい", "七万八千六", "七千八十六"], explanation: "70086は、7万と80と6なので「七万八十六」です。", questionType: "multiple_choice" },
+    { prompt: "はるとさんは「3万と300をあわせると3300」と言いました。正しい数はいくつ？", answer: numberAnswer(30300), explanation: "30000 + 300 = 30300 です。千の位と十の位、一の位は0です。", questionType: "numeric_input" },
+    { prompt: "みおさんは「41000より39800のほうが大きい。9は4より大きいから」と言いました。正しいのはどれ？", correct: "41000のほうが大きい。まず万の位でくらべるから", wrongs: ["39800のほうが大きいで正しい", "同じ大きさ", "くらべられない"], explanation: "くらべるときは、いちばん上の万の位から見ます。4万と3万で、41000のほうが大きいです。", questionType: "multiple_choice" },
+    { prompt: "はるとさんは 99999 に 1 をたして「99100」と言いました。正しい答えはいくつ？", answer: numberAnswer(100000), explanation: "99999 + 1 = 100000(十万)です。ぜんぶの位がくり上がります。", questionType: "numeric_input" },
+    { prompt: "みおさんは「60000 は 600 を10ばいした数」と言いました。正しくは、600を何ばいした数？", answer: numberAnswer(100), explanation: "600の10ばいは6000です。60000は600の100ばいです。", questionType: "numeric_input" }
+  ].map((item) => ({
+    axes: { knowledge: 2, info: 2, steps: 2, format: 3, choices: item.correct ? 2 : 1 },
+    questionType: item.questionType,
+    prompt: item.prompt,
+    choices: item.correct ? textChoices(item.correct, item.wrongs) : [],
+    answer: item.correct ? choiceAnswer(item.correct) : item.answer,
+    explanation: item.explanation
+  })));
+
+  // F8 どっちの言い分が正しい？(judge_claim, d3)
+  const judgeChoices = ["二人とも正しい", "はるとだけ正しい", "みおだけ正しい", "二人ともまちがい"];
+  fam({
+    familyId: "num_judge_claim",
+    funMechanic: "judge_claim",
+    learningObjective: "大きな数の見方(いくつ集めた数か)について判断できる",
+    commonMistake: "「1000を〜こ」と「100を〜こ」を混同する",
+    estimatedSeconds: 90,
+    skillTags: ["大きな数", "数の構成"]
+  }, [
+    { prompt: "はると「10000 は、9999 より1大きい数」。みお「10000 は、1000 を10こ集めた数」。正しいのはどっち？", correct: "二人とも正しい", explanation: "9999 + 1 = 10000 で、1000 × 10 = 10000。どちらも10000の正しい見方です。" },
+    { prompt: "48000 について。はると「1000 を48こ集めた数」。みお「100 を48こ集めた数」。正しいのはどっち？", correct: "はるとだけ正しい", explanation: "1000 × 48 = 48000 です。100を48こだと4800になります。" },
+    { prompt: "はると「一万円さつ1まいは、千円さつ10まい分」。みお「一万円さつ1まいは、百円玉100こ分」。正しいのはどっち？", correct: "二人とも正しい", explanation: "1000円 × 10 = 10000円、100円 × 100 = 10000円。どちらも一万円です。" },
+    { prompt: "70000 と 68999。はると「70000が大きい」。みお「68999は9がたくさんあるから大きい」。正しいのはどっち？", correct: "はるとだけ正しい", explanation: "万の位が7と6なので、70000のほうが大きいです。下の位の9は関係ありません。" },
+    { prompt: "0、2、5、7、9 のカードで作れるいちばん大きい5けたの数。はると「97520」。みお「92750」。正しいのはどっち？", correct: "はるとだけ正しい", explanation: "大きいじゅんに左からならべると 97520 です。" }
+  ].map((item) => ({
+    axes: { knowledge: 2, info: 2, steps: 2, format: 3, choices: 1 },
+    questionType: "multiple_choice",
+    prompt: item.prompt,
+    choices: textChoices(item.correct, judgeChoices.filter((choice) => choice !== item.correct)),
+    answer: choiceAnswer(item.correct),
+    explanation: item.explanation
+  })));
+
+  // F9 カードで数作り(inference, d4-d5)
+  fam({
+    familyId: "num_make_number",
+    funMechanic: "inference",
+    learningObjective: "条件に合う数を、数字カードの組み合わせで作れる",
+    commonMistake: "いちばん小さい数を作るとき、0を先頭に置いてしまう",
+    estimatedSeconds: 120,
+    skillTags: ["大きな数", "数作り", "推理"]
+  }, [
+    { prompt: "1、3、6、8 の4まいのカードをぜんぶ使って、いちばん大きい4けたの数を作ると？", answer: numberAnswer(8631), explanation: "大きい数字から左にならべます。8631です。", axes: { knowledge: 2, info: 2, steps: 3, format: 3, choices: 1 } },
+    { prompt: "1、3、6、8 の4まいのカードをぜんぶ使って、いちばん小さい4けたの数を作ると？", answer: numberAnswer(1368), explanation: "小さい数字から左にならべます。1368です。", axes: { knowledge: 2, info: 2, steps: 3, format: 3, choices: 1 } },
+    { prompt: "0、2、4、7 の4まいのカードをぜんぶ使って、いちばん小さい4けたの数を作ると？", answer: numberAnswer(2047), explanation: "0は先頭に置けないので、2を先頭にして、つぎに0を置きます。2047です。", axes: { knowledge: 2, info: 3, steps: 3, format: 3, choices: 1 } },
+    { prompt: "2、5、9 の3まいのカードをぜんぶ使って作れる3けたの数のうち、2ばんめに大きい数は？", answer: numberAnswer(925), explanation: "いちばん大きいのは952。2ばんめは925です。", axes: { knowledge: 2, info: 3, steps: 3, format: 3, choices: 1 } },
+    { prompt: "0、1、5、8 の4まいのカードをぜんぶ使って、5000にいちばん近い4けたの数を作ると？", answer: numberAnswer(5018), explanation: "5000より大きい数では5018がいちばん近いです(ちがいは18)。5000より小さい数は1850までしか作れません。", axes: { knowledge: 3, info: 3, steps: 3, format: 3, choices: 1 } }
+  ].map((item) => ({ ...item, questionType: "numeric_input" })));
+
+  // F10 数当てリドル(inference, d4)
+  fam({
+    familyId: "num_riddle",
+    funMechanic: "inference",
+    learningObjective: "位のヒントから数をしぼりこめる",
+    commonMistake: "ヒントの一部だけで数を決めてしまう",
+    estimatedSeconds: 120,
+    skillTags: ["大きな数", "推理"]
+  }, [
+    { prompt: "ヒント1：5けたの数。ヒント2：万の位は3、千の位は0。ヒント3：のこりの位はぜんぶ7。この数は？", answer: numberAnswer(30777), explanation: "万の位3、千の位0、百・十・一の位が7で、30777です。" },
+    { prompt: "ヒント1：40000より大きくて50000より小さい。ヒント2：千の位は9。ヒント3：百・十・一の位はぜんぶ0。この数は？", answer: numberAnswer(49000), explanation: "40000と50000の間なので万の位は4です。千の位が9、あとは0で、49000です。" },
+    { prompt: "ある数を10ばいしたら 35000 になりました。ある数はいくつ？", answer: numberAnswer(3500), explanation: "10ばいのぎゃくは10でわることです。35000 ÷ 10 = 3500 です。" },
+    { prompt: "1000 を10こ集めた数に、100 を5こ集めた数をたすと、いくつ？", answer: numberAnswer(10500), explanation: "1000 × 10 = 10000、100 × 5 = 500。あわせて10500です。" },
+    { prompt: "ヒント1：一の位が0の5けたの数。ヒント2：10でわると 6070 になる。この数は？", answer: numberAnswer(60700), explanation: "10でわって6070になる数は、6070の10ばいで60700です。" }
+  ].map((item) => ({ ...item, axes: { knowledge: 2, info: 3, steps: 3, format: 3, choices: 1 }, questionType: "numeric_input" })));
+
+  // F11 きりのよい数の計算(drill, d2)
+  fam({
+    familyId: "num_unit_calc",
+    funMechanic: "drill",
+    learningObjective: "何千・何万のまとまりで、たし算・ひき算ができる",
+    commonMistake: "0の数をまちがえて、位がずれた答えを書く",
+    estimatedSeconds: 60,
+    skillTags: ["大きな数", "計算"]
+  }, [
+    { prompt: "48000 + 3000 はいくつ？", answer: numberAnswer(48000 + 3000), explanation: "1000のまとまりで考えると、48 + 3 = 51 で、51000です。" },
+    { prompt: "26000 - 4000 はいくつ？", answer: numberAnswer(26000 - 4000), explanation: "1000のまとまりで考えると、26 - 4 = 22 で、22000です。" },
+    { prompt: "70000 + 30000 はいくつ？", answer: numberAnswer(70000 + 30000), explanation: "1万のまとまりで考えると、7 + 3 = 10 で、100000(十万)です。" },
+    { prompt: "9000 + 5000 はいくつ？", answer: numberAnswer(9000 + 5000), explanation: "1000のまとまりで考えると、9 + 5 = 14 で、14000です。" }
+  ].map((item) => ({ ...item, axes: { knowledge: 1, info: 2, steps: 2, format: 1, choices: 1 }, questionType: "numeric_input" })));
+
+  if (questions.length !== 50) {
+    throw new Error(`large_numbers: expected 50 questions, got ${questions.length}`);
   }
-
-  const digitQuestions = [
-    [48251, "万の位", 4],
-    [73508, "万の位", 7],
-    [60842, "千の位", 0],
-    [91630, "百の位", 6],
-    [25047, "十の位", 4],
-    [80905, "一の位", 5],
-    [34012, "万の位", 3],
-    [19080, "千の位", 9],
-    [50076, "百の位", 0],
-    [76003, "一の位", 3]
-  ];
-
-  for (const [value, place, answer] of digitQuestions) {
-    questions.push(q(
-      "large_numbers",
-      i++,
-      2,
-      "numeric_input",
-      `${value} の ${place} の数字はいくつ？`,
-      numberAnswer(answer),
-      `${value} を位ごとに見ると、${place} の数字は ${answer} です。`,
-      { skillTags: ["大きな数", "位取り"] }
-    ));
-  }
-
-  const comparisonPairs = [
-    [34820, 38420],
-    [52006, 50260],
-    [70940, 70490],
-    [86105, 81650],
-    [43070, 40370],
-    [90508, 95080],
-    [67890, 68790],
-    [10450, 10045],
-    [30009, 30900],
-    [25080, 20580]
-  ];
-
-  for (const [a, b] of comparisonPairs) {
-    const correct = a > b ? `${a} > ${b}` : `${a} < ${b}`;
-    const wrongs = a > b
-      ? [`${a} < ${b}`, `${a} = ${b}`, `${b} > ${a}`]
-      : [`${a} > ${b}`, `${a} = ${b}`, `${b} < ${a}`];
-    questions.push(q(
-      "large_numbers",
-      i++,
-      2,
-      "multiple_choice",
-      `${a} と ${b} の大小をくらべます。正しいのはどれ？`,
-      choiceAnswer(correct),
-      `万、千、百の位の順にくらべます。正しいのは ${correct} です。`,
-      {
-        choices: textChoices(correct, wrongs),
-        skillTags: ["大きな数", "大小比較"]
-      }
-    ));
-  }
-
-  const changes = [
-    [24800, 1000, "たす"],
-    [50600, 10000, "たす"],
-    [73200, 1000, "ひく"],
-    [91050, 100, "ひく"],
-    [45980, 10, "たす"],
-    [68000, 10000, "ひく"],
-    [29900, 100, "たす"],
-    [80420, 1000, "ひく"],
-    [12090, 10, "ひく"],
-    [39000, 1000, "たす"]
-  ];
-
-  for (const [base, amount, operation] of changes) {
-    const answer = operation === "たす" ? base + amount : base - amount;
-    questions.push(q(
-      "large_numbers",
-      i++,
-      3,
-      "numeric_input",
-      `${base} に ${amount} を${operation}といくつ？`,
-      numberAnswer(answer),
-      `${base} に ${amount} を${operation}ので、答えは ${answer} です。位がどう変わるかを考えます。`,
-      { skillTags: ["大きな数", "位取り", "計算"] }
-    ));
-  }
-
-  const wordProblems = [
-    ["図書館に本が 24850 さつあります。新しく 1000 さつ入りました。全部で何さつ？", 25850, "24850 に 1000 をたすと 25850 です。"],
-    ["店にカードが 36200 まいあります。2000 まい売れました。残りは何まい？", 34200, "36200 から 2000 をひくと 34200 です。"],
-    ["A町の人口は 50340 人、B町は 53040 人です。多い方はどれ？", "B町", "万の位が同じなので、千の位から順にくらべます。B町の方が多いです。", ["A町", "同じ", "くらべられない"]],
-    ["85000 は 80000 よりいくつ大きい？", 5000, "85000 と 80000 の差は 5000 です。"],
-    ["4万、6千、3百を合わせた数はいくつ？", 46300, "4万=40000、6千=6000、3百=300 なので 46300 です。"],
-    ["70200 は 70000 とあといくつ？", 200, "70200 は 70000 より 200 大きい数です。"],
-    ["9990 に 10 をたすと、位が変わっていくつ？", 10000, "9990 に 10 をたすと 10000 になります。"],
-    ["59000 に 1000 をたすと、何万になる？", "6万", "59000 + 1000 = 60000 なので 6万です。", ["5万", "59万", "6000"]],
-    ["数直線で 30000 と 40000 のちょうどまん中はどれ？", 35000, "30000 と 40000 のまん中は 35000 です。"],
-    ["72000、70200、70020 を大きい順にした最初の数はどれ？", 72000, "万の位、千の位、百の位の順にくらべると 72000 がいちばん大きいです。"]
-  ];
-
-  for (const [prompt, answer, explanation, wrongs = ["A町", "同じ", "くらべられない"]] of wordProblems) {
-    const isNumber = typeof answer === "number";
-    questions.push(q(
-      "large_numbers",
-      i++,
-      3,
-      isNumber ? "numeric_input" : "multiple_choice",
-      prompt,
-      isNumber ? numberAnswer(answer) : choiceAnswer(answer),
-      explanation,
-      isNumber
-        ? { skillTags: ["大きな数", "文章題", "位取り"] }
-        : {
-          choices: textChoices(answer, wrongs.filter((value) => value !== answer)),
-          skillTags: ["大きな数", "文章題", "大小比較"]
-        }
-    ));
-  }
-
   return questions;
 }
 
