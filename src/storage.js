@@ -30,6 +30,8 @@ const defaultState = {
   migrationVersion: CURRENT_MIGRATION_VERSION,
   // 1問正解につき1pt。100pt貯まるとせんしゅパックへ自動変換される（finishSession参照）
   points: 0,
+  // 1日に貯められるptの上限管理。dateが変わったらearnedを0にリセットする（finishSession参照）
+  pointsDaily: { date: null, earned: 0 },
   lastQuestionIds: [],
   lastQuestionFamilies: [],
   unlockedUnits: [

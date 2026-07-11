@@ -252,6 +252,8 @@ const DAILY_SUBJECT_ORDER = ["math", "japanese", "english", "science", "social"]
 const RECENT_QUESTION_LIMIT = 120;
 const RECENT_FAMILY_LIMIT = 80;
 const POINTS_PER_PACK = 100;
+// 1日に貯められるptの上限。日課の周回でのpt稼ぎすぎ（グラインド）を防ぐ
+const DAILY_POINTS_CAP = 50;
 // チーム編成の合計コスト上限（11人×平均コスト5.5相当）
 const COST_BUDGET = 60;
 const WEAK_SCORE_BOOST = 100;
@@ -1119,8 +1121,17 @@ function finishSession() {
   }
 
   // ptは100を超えても自動でパックにはせず貯まり続ける。パックの受け取りはhubから手動で行う（openPointsPack）
+  // ただし周回でのpt稼ぎすぎを防ぐため、1日に加算できるptにはDAILY_POINTS_CAPの上限がある
+  const today = dateKey();
+  if (state.pointsDaily?.date !== today) {
+    state.pointsDaily = { date: today, earned: 0 };
+  }
+  const remainingDailyCap = Math.max(0, DAILY_POINTS_CAP - state.pointsDaily.earned);
+  const awardedPoints = Math.min(earnedPoints, remainingDailyCap);
+  const pointsCapped = awardedPoints < earnedPoints;
+  state.pointsDaily.earned += awardedPoints;
   const previousPoints = state.points ?? 0;
-  state.points = previousPoints + earnedPoints;
+  state.points = previousPoints + awardedPoints;
   const newPointPacksUnlocked = Math.floor(state.points / POINTS_PER_PACK) - Math.floor(previousPoints / POINTS_PER_PACK);
   state.lastQuestionIds = [
     ...state.lastQuestionIds,
@@ -1153,7 +1164,8 @@ function finishSession() {
     mode: "result",
     correctCount,
     totalQuestions,
-    earnedPoints,
+    earnedPoints: awardedPoints,
+    pointsCapped,
     newPointPacksUnlocked,
     perSubject,
     packEarned
@@ -1200,6 +1212,7 @@ function renderResult() {
           <span>/${total}</span>
         </div>
         <p class="xpGain">+${session.earnedPoints}pt${session.newPointPacksUnlocked > 0 ? `　🎯 ポイントパックが引けるようになったよ！` : ""}</p>
+        ${session.pointsCapped ? `<p class="ptCapNote">きょうのpt上限（${DAILY_POINTS_CAP}pt）に達したよ。また明日ためよう！</p>` : ""}
         <div class="resultActions">
           <button class="primaryButton" id="againButton">もう一回</button>
           <button class="secondaryButton" id="homeButton">ホーム</button>
@@ -1234,6 +1247,7 @@ function renderDailyResult() {
         <div class="treasureChest">${chest}</div>
         <h1>${headline}</h1>
         <p class="xpGain">+${session.earnedPoints}pt / 🔥 れんぞく ${currentStreak()}日</p>
+        ${session.pointsCapped ? `<p class="ptCapNote">きょうのpt上限（${DAILY_POINTS_CAP}pt）に達したよ。また明日ためよう！</p>` : ""}
         <div class="dailyBreakdown">${rows}</div>
         <div class="scoreCircle dailyScoreCircle">
           <strong>${session.correctCount}</strong>

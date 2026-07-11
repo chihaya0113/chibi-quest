@@ -528,6 +528,13 @@ h1 {
   font-weight: 800;
 }
 
+.ptCapNote {
+  margin: 4px 0 0;
+  color: #8a6d1f;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
 .resultActions {
   display: flex;
   gap: 14px;
