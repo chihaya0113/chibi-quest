@@ -3,7 +3,7 @@
 // 1試合2〜3件のハイライトを選び、演出用のsequence/captionを組み立てる純粋関数群。
 // ここでの選択・演出組み立ては、得点数やoutcomeなど既存の試合結果を一切変更しない。
 
-import { START_TYPES, OUTCOME_ART, RARE_SEQUENCES } from "./data/soccer/highlightScenes.js?v=34";
+import { START_TYPES, OUTCOME_ART, RARE_SEQUENCES } from "./data/soccer/highlightScenes.js?v=35";
 
 const MAX_HIGHLIGHTS = 3;
 
@@ -88,9 +88,15 @@ export function buildHighlightScenes(selectedLines, myPlaced, myTactics, cpu) {
         startTypeId = pickStartType(myTactics);
         const startType = START_TYPES[startTypeId];
         const scorerEntry = findPlacedById(myPlaced, line.actor);
-        const starterEntry = pickFromRolePool(myPlaced, startType.starter, scorerEntry ? [scorerEntry.player.id] : []);
-        if (starterEntry) {
-          sequence.push({ action: "start", role: "primaryAttacker", playerId: starterEntry.player.id });
+        if (startType.assist) {
+          // クロス/スルーパス/コーナー: 起点の選手（別人）→決めた選手、の2人プレー
+          const starterEntry = pickFromRolePool(myPlaced, startType.starter, scorerEntry ? [scorerEntry.player.id] : []);
+          if (starterEntry) {
+            sequence.push({ action: "start", role: "primaryAttacker", playerId: starterEntry.player.id, startType: startTypeId });
+          }
+        } else {
+          // ドリブル/ミドル/カウンター/FK/PK: 同じ選手が持ち込んで決める1人プレー
+          sequence.push({ action: "windup", role: "shooter", playerId: scorerEntry?.player.id ?? null, startType: startTypeId });
         }
         sequence.push({
           action: "finish",

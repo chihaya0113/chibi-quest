@@ -1,6 +1,7 @@
-import { subjects } from "./curriculum.js?v=34";
-import { loadState, resetState, saveState } from "./storage.js?v=34";
-import { selectHighlights, buildHighlightScenes } from "./battleHighlights.js?v=34";
+import { subjects } from "./curriculum.js?v=35";
+import { loadState, resetState, saveState } from "./storage.js?v=35";
+import { selectHighlights, buildHighlightScenes } from "./battleHighlights.js?v=35";
+import { START_TYPES } from "./data/soccer/highlightScenes.js?v=35";
 
 const allQuestions = [
   ...(window.CHIBI_QUEST_QUESTIONS ?? []),
@@ -2799,13 +2800,15 @@ function renderBattle() {
     }
   };
 
-  // ハイライト演出（Phase 2）: 画像はまだ無いのでプレースホルダーとして選手アイコンを拡大表示する。
-  // side_cross/through_pass等のstartTypeは今のところ演出の分岐先を変えず、キャプション文言のみで見せ方を変える。
+  // ハイライト演出（Phase 3）: 画像はまだ無いのでプレースホルダーとして選手アイコンを拡大表示する。
+  // startTypeごとにキャプション文言だけ変える（assist型はクロス/パス役→決め手、単独型は同じ選手の持ち込み）。
   const captionForStep = (step, highlight) => {
     const player = step.playerId ? findPlayerById(step.playerId) : null;
     const name = player ? `${player.emoji}${player.name}` : (highlight.attackingSide === "cpu" ? `${cpu.emoji}${cpu.name}` : "みんな");
+    const label = step.startType ? (START_TYPES[step.startType]?.label ?? "しかけ") : null;
     switch (step.action) {
-      case "start": return `${name}が しかける！`;
+      case "start": return `${name}の ${label}！`;
+      case "windup": return `${name}、${label}！`;
       case "cpu_attack": return `${cpu.emoji}${cpu.name}の こうげき！`;
       case "parry": return "GKが はじき返す！";
       case "rebound": return `${name}が こぼれ球に つめる！`;

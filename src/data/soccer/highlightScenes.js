@@ -3,41 +3,56 @@
 // 起点(starter)・フィニッシュ(finisher)の選手は、実際の編成(placed)から rolePool 条件で事後的に選ばれる。
 
 // attackingSide:"player"（自チーム攻撃）のときにのみ使う、起点プレーの種別プール。
+// assist:true の種別だけ「起点の選手」と「決めた選手」が別人になりうる（クロス/スルーパス/コーナー）。
+// それ以外（ドリブル・ミドル・カウンター・FK・PK）は同じ選手が持ち込んで決める1人プレーとして見せる。
 export const START_TYPES = {
   side_cross: {
     weight: 3,
-    starter: { slotPos: ["DF", "MF"], wide: true },
-    finisher: { slotPos: ["FW"] }
+    assist: true,
+    label: "クロス",
+    starter: { slotPos: ["DF", "MF"], wide: true }
   },
   through_pass: {
     weight: 2,
-    starter: { slotPos: ["MF"] },
-    finisher: { slotPos: ["FW"] }
+    assist: true,
+    label: "スルーパス",
+    starter: { slotPos: ["MF"] }
   },
   dribble: {
     weight: 2,
+    assist: false,
+    label: "ドリブル突破",
     starter: { slotPos: ["FW", "MF"], statBias: "dribble" }
   },
   mid_shot: {
     weight: 2,
+    assist: false,
+    label: "ミドルシュート",
     starter: { slotPos: ["MF", "FW"] }
   },
   corner: {
     weight: 1,
-    starter: { slotPos: ["MF"] },
-    finisher: { slotPos: ["FW", "DF"] }
+    assist: true,
+    label: "コーナーキック",
+    starter: { slotPos: ["MF"] }
   },
   counter: {
     weight: 1,
+    assist: false,
+    label: "カウンター",
     starter: { slotPos: ["FW"], statBias: "speed" },
     tacticBoost: { attack: "counter", multiplier: 2 }
   },
   direct_fk: {
     weight: 0.4,
+    assist: false,
+    label: "直接FK",
     starter: { slotPos: ["MF", "FW"] }
   },
   pk: {
     weight: 0.15,
+    assist: false,
+    label: "PK",
     starter: { slotPos: ["FW", "MF"] }
   }
 };
