@@ -1,5 +1,6 @@
-import { subjects } from "./curriculum.js?v=26";
-import { loadState, resetState, saveState } from "./storage.js?v=26";
+import { subjects } from "./curriculum.js?v=33";
+import { loadState, resetState, saveState } from "./storage.js?v=33";
+import { selectHighlights, buildHighlightScenes } from "./battleHighlights.js?v=33";
 
 const allQuestions = [
   ...(window.CHIBI_QUEST_QUESTIONS ?? []),
@@ -2323,7 +2324,10 @@ function simulateMatch(cpu, matchBonus = 0) {
     text, kind, my: myScore, cpu: cpuScore,
     ball: extra.ball ?? 50,
     actor: extra.actor ?? null,
-    flash: extra.flash ?? null
+    flash: extra.flash ?? null,
+    // ハイライト演出（battleHighlights.js）向けのメタデータ。試合結果の計算には一切使わない。
+    attackingSide: extra.attackingSide ?? null,
+    outcome: extra.outcome ?? null
   });
 
   push(`しあいスタート！ きみのチーム 対 ${cpu.emoji}${cpu.name}！`, "info", { ball: 50 });
@@ -2342,7 +2346,7 @@ function simulateMatch(cpu, matchBonus = 0) {
       const breakChance = clampChance(0.4 + (breakScore - cpu.def) * 0.06 + bonus * 0.3, 0.15, 0.85);
 
       if (Math.random() >= breakChance) {
-        push(`${player.emoji}${player.name}が しかけたが、${cpu.name}に とめられた！`, "chance", { ball: 65, actor: player.id });
+        push(`${player.emoji}${player.name}が しかけたが、${cpu.name}に とめられた！`, "chance", { ball: 65, actor: player.id, attackingSide: "player", outcome: "tackle" });
         continue;
       }
 
@@ -2352,23 +2356,23 @@ function simulateMatch(cpu, matchBonus = 0) {
 
       if (Math.random() < goalChance) {
         myScore += 1;
-        push(`⚽ ゴーール！！ ${player.emoji}${player.name}が${useHeading ? " ヘディングで" : ""} きめた！`, "goal", { ball: 98, actor: player.id, flash: "goal" });
+        push(`⚽ ゴーール！！ ${player.emoji}${player.name}が${useHeading ? " ヘディングで" : ""} きめた！`, "goal", { ball: 98, actor: player.id, flash: "goal", attackingSide: "player", outcome: "goal" });
       } else {
-        push(`${player.emoji}${player.name}のシュート！ …キーパーに とめられた！`, "chance", { ball: 88, actor: player.id });
+        push(`${player.emoji}${player.name}のシュート！ …キーパーに とめられた！`, "chance", { ball: 88, actor: player.id, attackingSide: "player", outcome: "save" });
       }
     } else {
       const breakChance = clampChance(0.4 + (cpu.atk - my.def) * 0.06 - bonus * 0.3, 0.15, 0.85);
       if (Math.random() >= breakChance) {
         const defender = my.dfEntries.length > 0 ? my.dfEntries[Math.floor(Math.random() * my.dfEntries.length)] : null;
-        push(`ナイスまもり！ ${defender ? `${defender.player.emoji}${defender.player.name}` : "みんな"}が ボールをうばった！`, "good", { ball: 35, actor: defender?.player.id ?? null });
+        push(`ナイスまもり！ ${defender ? `${defender.player.emoji}${defender.player.name}` : "みんな"}が ボールをうばった！`, "good", { ball: 35, actor: defender?.player.id ?? null, attackingSide: "cpu", outcome: "tackle" });
         continue;
       }
       const goalChance = clampChance(0.35 + (cpu.atk - my.gk) * 0.07 - bonus * 0.3, 0.12, 0.8);
       if (Math.random() < goalChance) {
         cpuScore += 1;
-        push(`😱 ${cpu.emoji}${cpu.name}のシュートが きまってしまった…`, "danger", { ball: 2, flash: "danger" });
+        push(`😱 ${cpu.emoji}${cpu.name}のシュートが きまってしまった…`, "danger", { ball: 2, flash: "danger", attackingSide: "cpu", outcome: "goal" });
       } else {
-        push(`あぶない！ でも ${my.gkEntry ? `${my.gkEntry.player.emoji}${my.gkEntry.player.name}` : "キーパー"}が ビッグセーブ！`, "good", { ball: 10, actor: my.gkEntry?.player.id ?? null });
+        push(`あぶない！ でも ${my.gkEntry ? `${my.gkEntry.player.emoji}${my.gkEntry.player.name}` : "キーパー"}が ビッグセーブ！`, "good", { ball: 10, actor: my.gkEntry?.player.id ?? null, attackingSide: "cpu", outcome: "save" });
       }
     }
   }
@@ -2383,7 +2387,32 @@ function simulateMatch(cpu, matchBonus = 0) {
     y: myCoords[entry.slotIndex].y
   }));
 
-  return { lines, myScore, cpuScore, tokens };
+  return { lines, myScore, cpuScore, tokens, placed: tagWidePlacements(my.placed, getTeam().formation) };
+}
+
+// 同じslotPos内でy座標が最小/最大の選手を「ワイド」とみなす（新規データフィールドを増やさずに左右サイドを判定するため）。
+function tagWidePlacements(placed, formationKey) {
+  const coords = formationPitchCoords(formationKey);
+  const bySlotPos = new Map();
+  placed.forEach((entry) => {
+    const list = bySlotPos.get(entry.slotPos) ?? [];
+    list.push(entry);
+    bySlotPos.set(entry.slotPos, list);
+  });
+
+  const wideSlotIndexes = new Set();
+  for (const group of bySlotPos.values()) {
+    if (group.length < 2) continue;
+    const ys = group.map((entry) => coords[entry.slotIndex].y);
+    const minY = Math.min(...ys);
+    const maxY = Math.max(...ys);
+    group.forEach((entry) => {
+      const y = coords[entry.slotIndex].y;
+      if (y === minY || y === maxY) wideSlotIndexes.add(entry.slotIndex);
+    });
+  }
+
+  return placed.map((entry) => ({ ...entry, wide: wideSlotIndexes.has(entry.slotIndex) }));
 }
 
 function getMyTactics() {
@@ -2409,6 +2438,9 @@ function playTodayLeagueMatch() {
   const winRate = computeMatchupWinRate(myXIPlayers(), getMyTactics(), fixture.opponent.tactics);
   const matchBonus = (winRate.finalPercent - 50) / 100;
   const match = simulateMatch(fixture.opponent, matchBonus);
+  match.highlights = buildHighlightScenes(selectHighlights(match.lines), match.placed, getMyTactics(), fixture.opponent);
+  // Phase 1検証用: レンダリングには未接続。選定・組み立てが意図通りか目視確認するためのログ。
+  console.debug("[battleHighlights]", match.highlights);
   state.soccer.battleTickets -= 1;
 
   let outcome = "loss";
