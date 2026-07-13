@@ -1321,6 +1321,74 @@ details.tacticHint .hintText {
   100% { background: #58b88b; }
 }
 
+/* ---- ハイライト演出オーバーレイ（Phase2: 画像は未着手のため選手アイコン拡大で代用） ---- */
+.highlightOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  background: rgba(30, 26, 20, 0.55);
+}
+
+.highlightOverlay[hidden] {
+  display: none;
+}
+
+.highlightFrame {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-radius: 14px;
+  background: #fffdf7;
+  box-shadow: var(--shadow);
+  opacity: 0;
+}
+
+.highlightOverlay.isGoal .highlightFrame {
+  background: var(--sun);
+}
+
+/* side-left/side-right は今は演出差分なし。Phase5で実画像を左右反転させる際のフックとして残す */
+.highlightOverlay.side-left.stepIn .highlightFrame { animation-name: highlightStepInFromLeft; }
+.highlightOverlay.side-right.stepIn .highlightFrame { animation-name: highlightStepInFromRight; }
+.highlightOverlay.stepIn .highlightFrame {
+  animation-duration: 0.35s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.highlightAvatar {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  background: #fffdf7;
+  font-size: 2.2rem;
+}
+
+.highlightCaption {
+  margin: 0;
+  max-width: 280px;
+  font-weight: 800;
+  text-align: center;
+}
+
+@keyframes highlightStepInFromLeft {
+  0% { transform: scale(0.85) translateX(-16px); opacity: 0; }
+  60% { transform: scale(1.05) translateX(0); opacity: 1; }
+  100% { transform: scale(1) translateX(0); opacity: 1; }
+}
+
+@keyframes highlightStepInFromRight {
+  0% { transform: scale(0.85) translateX(16px); opacity: 0; }
+  60% { transform: scale(1.05) translateX(0); opacity: 1; }
+  100% { transform: scale(1) translateX(0); opacity: 1; }
+}
+
 .battleLog {
   display: grid;
   gap: 10px;

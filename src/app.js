@@ -1,6 +1,6 @@
-import { subjects } from "./curriculum.js?v=33";
-import { loadState, resetState, saveState } from "./storage.js?v=33";
-import { selectHighlights, buildHighlightScenes } from "./battleHighlights.js?v=33";
+import { subjects } from "./curriculum.js?v=34";
+import { loadState, resetState, saveState } from "./storage.js?v=34";
+import { selectHighlights, buildHighlightScenes } from "./battleHighlights.js?v=34";
 
 const allQuestions = [
   ...(window.CHIBI_QUEST_QUESTIONS ?? []),
@@ -2669,6 +2669,7 @@ function renderBattle() {
           <span class="pitchToken cpu" data-x="${100 - coord.x}" data-y="${coord.y}" style="left:${100 - coord.x}%;top:${coord.y}%"><span class="tokenBody" style="animation-duration:${(2.4 + Math.random() * 1.8).toFixed(2)}s;animation-delay:-${(Math.random() * 3).toFixed(2)}s">${cpu.emoji}</span></span>
         `).join("")}
         <span class="pitchBall" id="pitchBall" style="left:50%"></span>
+        <div class="highlightOverlay" id="highlightOverlay" hidden></div>
       </section>
 
       <section class="resultActions battleActions" id="battleActions" hidden>
@@ -2687,7 +2688,12 @@ function renderBattle() {
   const actions = document.querySelector("#battleActions");
   const pitch = document.querySelector("#battlePitch");
   const ball = document.querySelector("#pitchBall");
+  const overlay = document.querySelector("#highlightOverlay");
   let revealed = 0;
+  let skipped = false;
+  let inHighlight = false;
+  let overlayTimer = null;
+  const highlightByLineIndex = new Map((match.highlights ?? []).map((highlight) => [highlight.lineIndex, highlight]));
 
   const lerp = (from, to, t) => from + (to - from) * t;
   const clampPct = (value, min, max) => Math.min(max, Math.max(min, value));
@@ -2793,6 +2799,55 @@ function renderBattle() {
     }
   };
 
+  // ハイライト演出（Phase 2）: 画像はまだ無いのでプレースホルダーとして選手アイコンを拡大表示する。
+  // side_cross/through_pass等のstartTypeは今のところ演出の分岐先を変えず、キャプション文言のみで見せ方を変える。
+  const captionForStep = (step, highlight) => {
+    const player = step.playerId ? findPlayerById(step.playerId) : null;
+    const name = player ? `${player.emoji}${player.name}` : (highlight.attackingSide === "cpu" ? `${cpu.emoji}${cpu.name}` : "みんな");
+    switch (step.action) {
+      case "start": return `${name}が しかける！`;
+      case "cpu_attack": return `${cpu.emoji}${cpu.name}の こうげき！`;
+      case "parry": return "GKが はじき返す！";
+      case "rebound": return `${name}が こぼれ球に つめる！`;
+      default: return highlight.text;
+    }
+  };
+
+  const playHighlightScene = (highlight, onDone) => {
+    const steps = highlight.sequence.length > 0 ? highlight.sequence : [{ action: "finish", role: null, playerId: highlight.actorId ?? null }];
+    let stepIndex = 0;
+
+    const renderStep = () => {
+      const step = steps[stepIndex];
+      const player = step.playerId ? findPlayerById(step.playerId) : null;
+      overlay.hidden = false;
+      overlay.className = `highlightOverlay side-${highlight.side}${highlight.outcome === "goal" ? " isGoal" : ""}`;
+      overlay.innerHTML = `
+        <div class="highlightFrame">
+          <span class="highlightAvatar">${avatarHtml(player ?? { emoji: highlight.attackingSide === "cpu" ? cpu.emoji : "⚽" }, 72)}</span>
+          <p class="highlightCaption">${escapeHtml(captionForStep(step, highlight))}</p>
+        </div>
+      `;
+      void overlay.offsetWidth;
+      overlay.classList.remove("stepIn");
+      void overlay.offsetWidth;
+      overlay.classList.add("stepIn");
+
+      stepIndex += 1;
+      if (stepIndex < steps.length) {
+        overlayTimer = window.setTimeout(renderStep, 750);
+      } else {
+        overlayTimer = window.setTimeout(() => {
+          overlay.hidden = true;
+          overlay.innerHTML = "";
+          onDone();
+        }, 900);
+      }
+    };
+
+    renderStep();
+  };
+
   const revealLine = () => {
     const line = match.lines[revealed];
     if (!line) return finishReveal();
@@ -2803,21 +2858,48 @@ function renderBattle() {
     log.prepend(div);
     score.textContent = `きみ ${line.my} - ${line.cpu} ${cpu.emoji}${cpu.name}`;
     animatePitch(line);
+    const highlight = highlightByLineIndex.get(revealed);
     revealed += 1;
+
+    if (highlight && !skipped) {
+      inHighlight = true;
+      if (battleTimer) {
+        window.clearInterval(battleTimer);
+        battleTimer = null;
+      }
+      playHighlightScene(highlight, () => {
+        inHighlight = false;
+        if (skipped) return;
+        if (revealed >= match.lines.length) {
+          finishReveal();
+          return;
+        }
+        battleTimer = window.setInterval(revealLine, 900);
+      });
+      return;
+    }
+
     if (revealed >= match.lines.length) finishReveal();
   };
 
   const finishReveal = () => {
+    skipped = true;
     if (battleTimer) {
       window.clearInterval(battleTimer);
       battleTimer = null;
     }
+    if (overlayTimer) {
+      window.clearTimeout(overlayTimer);
+      overlayTimer = null;
+    }
+    overlay.hidden = true;
+    overlay.innerHTML = "";
     while (revealed < match.lines.length) revealLine();
     actions.hidden = false;
   };
 
   revealLine();
-  battleTimer = window.setInterval(revealLine, 900);
+  if (!skipped && !inHighlight) battleTimer = window.setInterval(revealLine, 900);
 
   document.querySelector("#skipButton").addEventListener("click", finishReveal);
   document.querySelector("#homeButton").addEventListener("click", () => {
