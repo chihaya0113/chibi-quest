@@ -1,7 +1,7 @@
-import { subjects } from "./curriculum.js?v=45";
-import { loadState, resetState, saveState } from "./storage.js?v=45";
-import { selectHighlights, buildHighlightScenes } from "./battleHighlights.js?v=45";
-import { START_TYPES } from "./data/soccer/highlightScenes.js?v=45";
+import { subjects } from "./curriculum.js?v=46";
+import { loadState, resetState, saveState } from "./storage.js?v=46";
+import { selectHighlights, buildHighlightScenes } from "./battleHighlights.js?v=46";
+import { START_TYPES } from "./data/soccer/highlightScenes.js?v=46";
 
 const allQuestions = [
   ...(window.CHIBI_QUEST_QUESTIONS ?? []),
@@ -2440,6 +2440,40 @@ function myXIPlayers() {
   return getTeam().slots.map((playerId) => (playerId ? findPlayerById(playerId) : null)).filter(Boolean);
 }
 
+// 画像ファイル名（拡張子抜き）を決める。start/windupはstartType自体がファイル名と一致する。
+// 結果系（finish/concede/save/tackle/stopped）はoutcomeから決まるhighlight.artをそのまま使う。
+function artKeyForStep(step, highlight) {
+  switch (step.action) {
+    case "start":
+    case "windup":
+      return step.startType;
+    case "cpu_attack":
+      return "cpu_attack";
+    case "parry":
+      return "parry";
+    case "rebound":
+      return "rebound";
+    default:
+      return highlight.art;
+  }
+}
+
+// 試合中にオーバーレイへ差し込む前に、使う画像をあらかじめブラウザキャッシュへ読み込んでおく。
+// 通信が遅い環境で、演出の切り替わりに画像読み込みが間に合わず表示されないのを防ぐため。
+function preloadHighlightArt(highlights) {
+  const keys = new Set();
+  for (const highlight of highlights ?? []) {
+    for (const step of highlight.sequence ?? []) {
+      const key = artKeyForStep(step, highlight);
+      if (key) keys.add(key);
+    }
+  }
+  for (const key of keys) {
+    const img = new Image();
+    img.src = `./src/assets/soccer-scenes/${key}.png`;
+  }
+}
+
 function playTodayLeagueMatch() {
   ensureLeagueWeek();
   const fixture = todaysLeagueFixture();
@@ -2450,6 +2484,7 @@ function playTodayLeagueMatch() {
   const matchBonus = (winRate.finalPercent - 50) / 100;
   const match = simulateMatch(fixture.opponent, matchBonus);
   match.highlights = buildHighlightScenes(selectHighlights(match.lines), match.placed, getMyTactics(), fixture.opponent);
+  preloadHighlightArt(match.highlights);
   // Phase 1検証用: レンダリングには未接続。選定・組み立てが意図通りか目視確認するためのログ。
   console.debug("[battleHighlights]", match.highlights);
   state.soccer.battleTickets -= 1;
@@ -2827,24 +2862,6 @@ function renderBattle() {
       case "parry": return "GKが はじき返す！";
       case "rebound": return `${name}が こぼれ球に つめる！`;
       default: return highlight.text;
-    }
-  };
-
-  // 画像ファイル名（拡張子抜き）を決める。start/windupはstartType自体がファイル名と一致する。
-  // 結果系（finish/concede/save/tackle/stopped）はoutcomeから決まるhighlight.artをそのまま使う。
-  const artKeyForStep = (step, highlight) => {
-    switch (step.action) {
-      case "start":
-      case "windup":
-        return step.startType;
-      case "cpu_attack":
-        return "cpu_attack";
-      case "parry":
-        return "parry";
-      case "rebound":
-        return "rebound";
-      default:
-        return highlight.art;
     }
   };
 
