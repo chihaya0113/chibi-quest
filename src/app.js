@@ -1,7 +1,7 @@
-import { subjects } from "./curriculum.js?v=36";
-import { loadState, resetState, saveState } from "./storage.js?v=36";
-import { selectHighlights, buildHighlightScenes } from "./battleHighlights.js?v=36";
-import { START_TYPES } from "./data/soccer/highlightScenes.js?v=36";
+import { subjects } from "./curriculum.js?v=38";
+import { loadState, resetState, saveState } from "./storage.js?v=38";
+import { selectHighlights, buildHighlightScenes } from "./battleHighlights.js?v=38";
+import { START_TYPES } from "./data/soccer/highlightScenes.js?v=38";
 
 const allQuestions = [
   ...(window.CHIBI_QUEST_QUESTIONS ?? []),
@@ -2804,8 +2804,8 @@ function renderBattle() {
     }
   };
 
-  // ハイライト演出（Phase 3）: 画像はまだ無いのでプレースホルダーとして選手アイコンを拡大表示する。
-  // startTypeごとにキャプション文言だけ変える（assist型はクロス/パス役→決め手、単独型は同じ選手の持ち込み）。
+  // ハイライト演出（Phase 5）: src/assets/soccer-scenes/ のアメコミ調イラストを表示する。
+  // startTypeごとにキャプション文言を変える（assist型はクロス/パス役→決め手、単独型は同じ選手の持ち込み）。
   const captionForStep = (step, highlight) => {
     const player = step.playerId ? findPlayerById(step.playerId) : null;
     const name = player ? `${player.emoji}${player.name}` : (highlight.attackingSide === "cpu" ? `${cpu.emoji}${cpu.name}` : "みんな");
@@ -2820,6 +2820,47 @@ function renderBattle() {
     }
   };
 
+  // 画像ファイル名（拡張子抜き）を決める。start/windupはstartType自体がファイル名と一致する。
+  // 結果系（finish/concede/save/tackle/stopped）はoutcomeから決まるhighlight.artをそのまま使う。
+  const artKeyForStep = (step, highlight) => {
+    switch (step.action) {
+      case "start":
+      case "windup":
+        return step.startType;
+      case "cpu_attack":
+        return "cpu_attack";
+      case "parry":
+        return "parry";
+      case "rebound":
+        return "rebound";
+      default:
+        return highlight.art;
+    }
+  };
+
+  // gk_save/tackle_stopは自チーム・相手チーム両方の場面で使い回す画像なので、
+  // どちらの選手を描いているかをactionから判定し、CSSの縁取り色（team-mine/team-cpu）で見分けられるようにする。
+  const teamForStep = (step) => {
+    switch (step.action) {
+      case "start":
+      case "windup":
+      case "rebound":
+        return "mine";
+      case "cpu_attack":
+      case "parry":
+        return "cpu";
+      case "finish":
+        return "cpu"; // goalはgoal_net(人物なし)なので実質save時のみ意味を持つ＝相手GK
+      case "stopped":
+        return "cpu"; // 自分が攻めて相手に止められた
+      case "save":
+      case "tackle":
+        return "mine"; // 相手が攻めて自分のGK/DFが止めた
+      default:
+        return "mine";
+    }
+  };
+
   const playHighlightScene = (highlight, onDone) => {
     const steps = highlight.sequence.length > 0 ? highlight.sequence : [{ action: "finish", role: null, playerId: highlight.actorId ?? null }];
     let stepIndex = 0;
@@ -2827,14 +2868,29 @@ function renderBattle() {
     const renderStep = () => {
       const step = steps[stepIndex];
       const player = step.playerId ? findPlayerById(step.playerId) : null;
+      const artKey = artKeyForStep(step, highlight);
+      // goal_net.pngは人物が写らないので、自チーム/相手チームの縁取り色は付けない
+      const teamClass = artKey && artKey !== "goal_net" ? ` team-${teamForStep(step)}` : "";
+      const fallbackAvatar = avatarHtml(player ?? { emoji: highlight.attackingSide === "cpu" ? cpu.emoji : "⚽" }, 72);
       overlay.hidden = false;
       overlay.className = `highlightOverlay side-${highlight.side}${highlight.outcome === "goal" ? " isGoal" : ""}`;
       overlay.innerHTML = `
         <div class="highlightFrame">
-          <span class="highlightAvatar">${avatarHtml(player ?? { emoji: highlight.attackingSide === "cpu" ? cpu.emoji : "⚽" }, 72)}</span>
+          ${artKey ? `
+            <span class="highlightArtWrap${teamClass}">
+              <img class="highlightArt" src="./src/assets/soccer-scenes/${artKey}.png" alt="" draggable="false">
+            </span>
+          ` : `<span class="highlightAvatar">${fallbackAvatar}</span>`}
           <p class="highlightCaption">${escapeHtml(captionForStep(step, highlight))}</p>
         </div>
       `;
+      // 画像が見つからない場合は選手アイコンにフォールバック（onerrorを属性文字列に埋め込むとSVGの二重引用符と衝突するため、ここで設定する）
+      const artImg = overlay.querySelector(".highlightArt");
+      if (artImg) {
+        artImg.addEventListener("error", () => {
+          artImg.closest(".highlightArtWrap").innerHTML = fallbackAvatar;
+        }, { once: true });
+      }
       void overlay.offsetWidth;
       overlay.classList.remove("stepIn");
       void overlay.offsetWidth;
