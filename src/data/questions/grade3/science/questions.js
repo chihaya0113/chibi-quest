@@ -983,11 +983,11 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「観察した生き物はもとの場所にもどす」。みお「観察した生き物は全部持ち帰ってよい」。正しいのはどっち？",
+    "prompt": "はると「観察した生き物は全部持ち帰ってよい」。みお「観察した生き物はもとの場所にもどす」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "みおだけ正しい"
       },
       {
         "id": "b",
@@ -995,7 +995,7 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
@@ -1004,7 +1004,7 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "みおだけ正しい"
     },
     "explanation": "生き物のくらしを守るため、むやみに持ち帰らずもとの場所にもどします。",
     "estimatedSeconds": 60,
@@ -2855,15 +2855,15 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「同じ種類の植物でも、育つ環境がちがうと大きさが変わることがある」。みお「同じ種類なら必ず同じ大きさに育つ」。正しいのはどっち？",
+    "prompt": "はると「同じ種類の植物でも、育つ環境がちがうと大きさが変わることがある」。みお「日光や水の量によって、育ち方の速さも変わることがある」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人とも正しい"
       },
       {
         "id": "b",
-        "text": "二人とも正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "c",
@@ -2876,9 +2876,9 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人とも正しい"
     },
-    "explanation": "日光や水などの条件によって、同じ種類でも育ち方に差が出ることがあります。",
+    "explanation": "日光や水などの条件によって、同じ種類の植物でも大きさや育つ速さにちがいが出ることがあります。",
     "estimatedSeconds": 75,
     "skillTags": [
       "植物"
@@ -2914,11 +2914,11 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「植物にとって日光は成長に関係がある」。みお「日光は植物の成長に関係ない」。正しいのはどっち？",
+    "prompt": "はると「日光が強いほど、植物はかならず早くかれてしまう」。みお「植物は日光の代わりに、月の光でも同じように育つ」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -2926,18 +2926,18 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "植物は日光を使って、育つための養分をつくります。",
+    "explanation": "植物は日光を使って育つための養分をつくります。日光が強いからといって必ずかれるわけではなく、月の光だけでは日光の代わりになりません。",
     "estimatedSeconds": 75,
     "skillTags": [
       "植物"
@@ -2973,11 +2973,11 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「植物の高さは、まいた日から少しずつ変わっていく」。みお「植物の高さはたねをまいた日からずっと同じ」。正しいのはどっち？",
+    "prompt": "はると「植物の高さは、たねをまいてすぐに大人と同じ高さになる」。みお「植物の高さは、たねをまいた日からずっと同じ」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -2985,18 +2985,18 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "植物は時間とともに少しずつ成長し、高さが変わっていきます。",
+    "explanation": "植物はたねをまいてすぐに大きくなるのではなく、時間とともに少しずつ成長して高さが変わっていきます。",
     "estimatedSeconds": 75,
     "skillTags": [
       "植物"
@@ -4422,11 +4422,11 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「クモはこん虫ではない」。みお「クモは足が8本だからこん虫だ」。正しいのはどっち？",
+    "prompt": "はると「クモは足が8本だからこん虫だ」。みお「クモはこん虫ではない」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "みおだけ正しい"
       },
       {
         "id": "b",
@@ -4434,7 +4434,7 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
@@ -4443,7 +4443,7 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "みおだけ正しい"
     },
     "explanation": "こん虫は足が6本ですが、クモは足が8本なのでこん虫ではありません。",
     "estimatedSeconds": 75,
@@ -4481,15 +4481,15 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「幼虫が食べるものは、こん虫のくらしを知る手がかりになる」。みお「幼虫が食べるものは関係ない」。正しいのはどっち？",
+    "prompt": "はると「幼虫が食べるものは、こん虫のくらしを知る手がかりになる」。みお「こん虫は育つ間に、すがたが大きく変わることがある」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人とも正しい"
       },
       {
         "id": "b",
-        "text": "二人とも正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "c",
@@ -4502,9 +4502,9 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人とも正しい"
     },
-    "explanation": "食べ物は生き物のくらしと関係しています。",
+    "explanation": "食べ物はくらしと関係があり、また多くのこん虫はよう虫からせい虫になる間にすがたが大きく変わります。",
     "estimatedSeconds": 75,
     "skillTags": [
       "昆虫"
@@ -7322,11 +7322,11 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「ふるえが大きいほど音は大きくなる」。みお「ふるえが大きいほど音は必ず高くなる」。正しいのはどっち？",
+    "prompt": "はると「ふるえが大きいほど音は必ず高くなる」。みお「ふるえが大きいほど音は大きくなる」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "みおだけ正しい"
       },
       {
         "id": "b",
@@ -7334,7 +7334,7 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
@@ -7343,7 +7343,7 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "みおだけ正しい"
     },
     "explanation": "ふるえの大きさは音の大きさに関係し、ふるえの速さが音の高さに関係します。",
     "estimatedSeconds": 60,
@@ -7381,11 +7381,11 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「音が出ているものにはふるえがある」。みお「音が出ていてもふるえていないことがある」。正しいのはどっち？",
+    "prompt": "はると「ふるえがなくても、音が出ることがある」。みお「ふるえていれば、かならず大きな音が出る」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -7393,18 +7393,18 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "音はふるえによって出るので、音が出ているものは必ずふるえています。",
+    "explanation": "音が出るものは必ずふるえていますが、ふるえていても音の大きさはふるえ方によって変わるので、必ず大きな音になるわけではありません。",
     "estimatedSeconds": 60,
     "skillTags": [
       "音"
@@ -8893,15 +8893,15 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「生き物のすみかは、食べ物やかくれ場所と関係がある」。みお「生き物のすみかは、たまたま決まる」。正しいのはどっち？",
+    "prompt": "はると「生き物のすみかは、食べ物やかくれ場所と関係がある」。みお「生き物によって、すみかにする場所はちがう」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人とも正しい"
       },
       {
         "id": "b",
-        "text": "二人とも正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "c",
@@ -8914,9 +8914,9 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人とも正しい"
     },
-    "explanation": "生き物のすみかは、食べ物やかくれ場所などの条件と関係があります。",
+    "explanation": "生き物のすみかは食べ物やかくれ場所などの条件と関係があり、また生き物のしゅるいによってすみかにする場所もちがいます。",
     "estimatedSeconds": 75,
     "skillTags": [
       "動物"
@@ -8952,11 +8952,11 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「体の色は敵から身を守ることに関係することがある」。みお「体の色はすみかとまったく関係ない」。正しいのはどっち？",
+    "prompt": "はると「生き物の体の色は、すべて敵をおどろかすためについている」。みお「体の色はすみかとまったく関係ない」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -8964,18 +8964,18 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "体の色がすみかの環境に似ていると、敵に見つかりにくくなることがあります。",
+    "explanation": "体の色がすみかの環境に似ていると敵に見つかりにくくなることがありますが、色の理由はそれだけではなく、すべてが敵をおどろかすためというわけでもありません。",
     "estimatedSeconds": 75,
     "skillTags": [
       "動物"
@@ -9011,11 +9011,11 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「すみかを観察するときも、生き物への配慮が必要だ」。みお「観察のためなら生き物のすみかをこわしてもよい」。正しいのはどっち？",
+    "prompt": "はると「観察のためなら生き物のすみかをこわしてもよい」。みお「すみかを観察するときも、生き物への配慮が必要だ」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "みおだけ正しい"
       },
       {
         "id": "b",
@@ -9023,7 +9023,7 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
@@ -9032,7 +9032,7 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "みおだけ正しい"
     },
     "explanation": "観察をするときも、生き物のくらしやすみかを大切にすることが必要です。",
     "estimatedSeconds": 75,
@@ -10101,11 +10101,11 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「太陽の位置が変わると影の向きも変わる」。みお「影の向きは太陽の位置と関係ない」。正しいのはどっち？",
+    "prompt": "はると「影の向きは太陽の位置と関係ない」。みお「太陽の位置が変わると影の向きも変わる」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "みおだけ正しい"
       },
       {
         "id": "b",
@@ -10113,7 +10113,7 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
@@ -10122,7 +10122,7 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "みおだけ正しい"
     },
     "explanation": "太陽の位置が変わると、影の向きも変わります。",
     "estimatedSeconds": 75,
@@ -10161,15 +10161,15 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「日光が当たる時間が長いほど地面はあたたまりやすい」。みお「日光の当たる時間は地面の温度に関係ない」。正しいのはどっち？",
+    "prompt": "はると「日光が当たる時間が長いほど地面はあたたまりやすい」。みお「地面の温度は、時こくによって変わることがある」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人とも正しい"
       },
       {
         "id": "b",
-        "text": "二人とも正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "c",
@@ -10182,9 +10182,9 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人とも正しい"
     },
-    "explanation": "日光が長く当たるほど、地面はあたたまりやすくなります。",
+    "explanation": "日光が長く当たるほど地面はあたたまりやすく、また太陽の高さが変わる時こくによって地面の温度も変わります。",
     "estimatedSeconds": 75,
     "skillTags": [
       "太陽",
@@ -11250,11 +11250,11 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「虫めがねで日光を集めるとき、強い光を直接見てはいけない」。みお「集めた光をじっくり見て確かめるとよい」。正しいのはどっち？",
+    "prompt": "はると「集めた光をじっくり見て確かめるとよい」。みお「虫めがねで日光を集めるとき、強い光を直接見てはいけない」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "みおだけ正しい"
       },
       {
         "id": "b",
@@ -11262,7 +11262,7 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
@@ -11271,7 +11271,7 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "みおだけ正しい"
     },
     "explanation": "強い光を直接見ると目に危険なので、見ないようにします。",
     "estimatedSeconds": 60,
@@ -11671,15 +11671,15 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「虫めがねが大きいほど、多くの日光を集められる」。みお「虫めがねの大きさは日光の量に関係ない」。正しいのはどっち？",
+    "prompt": "はると「虫めがねが大きいほど、多くの日光を集められる」。みお「虫めがねで集めた日光を紙に当てると、紙があつくなることがある」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人とも正しい"
       },
       {
         "id": "b",
-        "text": "二人とも正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "c",
@@ -11692,9 +11692,9 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人とも正しい"
     },
-    "explanation": "レンズが大きいほど、より多くの日光を集めることができます。",
+    "explanation": "レンズが大きいほど多くの日光を集められ、集めた日光を当てた紙はあつくなり、こげることもあります。",
     "estimatedSeconds": 75,
     "skillTags": [
       "日光"
@@ -11730,11 +11730,11 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「黒い紙は白い紙より日光を吸収しやすい」。みお「紙の色は日光の吸収に関係ない」。正しいのはどっち？",
+    "prompt": "はると「白い紙のほうが黒い紙より日光を吸収しやすい」。みお「紙の色は日光の吸収に関係ない」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -11742,18 +11742,18 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "黒い色は光を多く吸収し、あたたまりやすい性質があります。",
+    "explanation": "黒い色は光を多く吸収してあたたまりやすく、白い色は光を反射しやすいので、黒い紙のほうが日光を吸収しやすいです。",
     "estimatedSeconds": 75,
     "skillTags": [
       "日光"
@@ -12872,11 +12872,11 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「金属はほとんど電気を通す」。みお「金属はすべて電気を通さない」。正しいのはどっち？",
+    "prompt": "はると「金属はすべて電気を通さない」。みお「金属はほとんど電気を通す」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "みおだけ正しい"
       },
       {
         "id": "b",
@@ -12884,7 +12884,7 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
@@ -12893,7 +12893,7 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "みおだけ正しい"
     },
     "explanation": "鉄・銅・アルミニウムなど、多くの金属は電気を通します。",
     "estimatedSeconds": 75,
@@ -12931,11 +12931,11 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「回路が1か所でも切れると豆電球はつかない」。みお「回路の一部が切れていても豆電球はつく」。正しいのはどっち？",
+    "prompt": "はると「回路が切れていても、電池が新しければ豆電球はつく」。みお「回路の一部が切れていても豆電球はつく」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -12943,18 +12943,18 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "回路のどこか1か所でも切れていると、電気は流れず豆電球はつきません。",
+    "explanation": "回路がどこか1か所でも切れていると電気は流れず、電池が新しくても豆電球はつきません。",
     "estimatedSeconds": 75,
     "skillTags": [
       "電気"
@@ -14133,15 +14133,15 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「磁石の働きは、近づける材料や極によって変わる」。みお「磁石の働きはいつも同じ」。正しいのはどっち？",
+    "prompt": "はると「磁石の働きは、近づける材料や極によって変わる」。みお「磁石は、はなれていても鉄を引きつけることがある」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人とも正しい"
       },
       {
         "id": "b",
-        "text": "二人とも正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "c",
@@ -14154,9 +14154,9 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人とも正しい"
     },
-    "explanation": "磁石の働きは、近づける材料や極によって変わります。",
+    "explanation": "磁石の働きは近づける材料や極によって変わり、また少しはなれていても鉄を引きつけることがあります。",
     "estimatedSeconds": 60,
     "skillTags": [
       "磁石"
@@ -15572,15 +15572,15 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「形を変えても、ものの量が同じなら重さは変わらない」。みお「形を変えると必ず重さも変わる」。正しいのはどっち？",
+    "prompt": "はると「形を変えても、ものの量が同じなら重さは変わらない」。みお「ねん土をいくつかに分けても、全部集めると重さは同じ」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人とも正しい"
       },
       {
         "id": "b",
-        "text": "二人とも正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "c",
@@ -15593,9 +15593,9 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人とも正しい"
     },
-    "explanation": "形を変えても、量が同じであれば重さは変わりません。",
+    "explanation": "形を変えても量が同じなら重さは変わらず、分けて集めても全体の重さは変わりません。",
     "estimatedSeconds": 75,
     "skillTags": [
       "重さ"
@@ -15631,11 +15631,11 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「同じ体積でも材料によって重さがちがうことがある」。みお「同じ体積なら材料が何でも重さは同じ」。正しいのはどっち？",
+    "prompt": "はると「重さは、ものの形を見ただけで正確にわかる」。みお「同じ体積なら材料が何でも重さは同じ」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -15643,18 +15643,18 @@ window.CHIBI_QUEST_SCIENCE_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "同じ体積でも、材料によって重さが違うことがあります。",
+    "explanation": "同じ体積でも材料によって重さはちがうことがあり、重さは形を見ただけでは正確にはわからず、はかりで調べる必要があります。",
     "estimatedSeconds": 75,
     "skillTags": [
       "重さ"
