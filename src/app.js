@@ -1,7 +1,7 @@
-import { subjects } from "./curriculum.js?v=44";
-import { loadState, resetState, saveState } from "./storage.js?v=44";
-import { selectHighlights, buildHighlightScenes } from "./battleHighlights.js?v=44";
-import { START_TYPES } from "./data/soccer/highlightScenes.js?v=44";
+import { subjects } from "./curriculum.js?v=45";
+import { loadState, resetState, saveState } from "./storage.js?v=45";
+import { selectHighlights, buildHighlightScenes } from "./battleHighlights.js?v=45";
+import { START_TYPES } from "./data/soccer/highlightScenes.js?v=45";
 
 const allQuestions = [
   ...(window.CHIBI_QUEST_QUESTIONS ?? []),
@@ -2231,7 +2231,13 @@ function ensureLeagueWeek() {
           simulateCpuPairingsForDay(day);
           league.cpuDaysResolved.push(day);
         }
-        if (!league.playedDays[day]) league.playedDays[day] = { kind: "rest" };
+        if (!league.playedDays[day]) {
+          league.playedDays[day] = { kind: "rest" };
+          // きみが試合をしなかった日は、きみ自身とその日の対戦相手の両方を「お休み」にする
+          // （simulateCpuPairingsForDayはきみと対戦予定のチームを常にスキップするため、ここで補う）
+          applyResultToStandings(league.standings, 0, "rest");
+          applyResultToStandings(league.standings, LEAGUE_SCHEDULE[0][day], "rest");
+        }
       }
       finalizeLeagueWeek();
     }
@@ -2244,7 +2250,11 @@ function ensureLeagueWeek() {
       simulateCpuPairingsForDay(day);
       league.cpuDaysResolved.push(day);
     }
-    if (!league.playedDays[day]) league.playedDays[day] = { kind: "rest" };
+    if (!league.playedDays[day]) {
+      league.playedDays[day] = { kind: "rest" };
+      applyResultToStandings(league.standings, 0, "rest");
+      applyResultToStandings(league.standings, LEAGUE_SCHEDULE[0][day], "rest");
+    }
   }
   if (!league.cpuDaysResolved.includes(todayIndex)) {
     simulateCpuPairingsForDay(todayIndex);
