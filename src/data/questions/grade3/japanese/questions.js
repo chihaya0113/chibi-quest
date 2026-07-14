@@ -2621,11 +2621,11 @@ window.CHIBI_QUEST_JAPANESE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "「二十日」の読み方。はると「はつか」。みお「にじゅうにち」。正しいのはどっち？",
+    "prompt": "「二十日」の読み方。はると「にじゅうにち」。みお「はつか」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "みおだけ正しい"
       },
       {
         "id": "b",
@@ -2633,7 +2633,7 @@ window.CHIBI_QUEST_JAPANESE_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
@@ -2642,7 +2642,7 @@ window.CHIBI_QUEST_JAPANESE_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "みおだけ正しい"
     },
     "explanation": "日づけの「二十日」は「はつか」と読みます。",
     "estimatedSeconds": 60,
@@ -2681,11 +2681,11 @@ window.CHIBI_QUEST_JAPANESE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "「坂を下る」の読み方。はると「くだる」。みお「さがる」。正しいのはどっち？",
+    "prompt": "「坂を下る」の読み方。はると「のぼる」。みお「さがる」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -2693,18 +2693,18 @@ window.CHIBI_QUEST_JAPANESE_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "「下る」は「くだる」です。「さがる」と読むのは「下がる」のときです。",
+    "explanation": "「下る」は「くだる」と読みます。「さがる」と読むのは「下がる」、「のぼる」は「上る」です。",
     "estimatedSeconds": 60,
     "skillTags": [
       "漢字",
@@ -4670,11 +4670,11 @@ window.CHIBI_QUEST_JAPANESE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「カタカナの言葉も国語辞典にのっている」。みお「カタカナの言葉はのっていない」。正しいのはどっち？",
+    "prompt": "はると「カタカナの言葉はのっていない」。みお「カタカナの言葉も国語辞典にのっている」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "みおだけ正しい"
       },
       {
         "id": "b",
@@ -4682,7 +4682,7 @@ window.CHIBI_QUEST_JAPANESE_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
@@ -4691,7 +4691,7 @@ window.CHIBI_QUEST_JAPANESE_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "みおだけ正しい"
     },
     "explanation": "「テレビ」「パン」のようなカタカナの言葉ものっています。",
     "estimatedSeconds": 75,
@@ -4730,11 +4730,11 @@ window.CHIBI_QUEST_JAPANESE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "「食べる」の調べ方。はると「『た』の場所でさがす」。みお「漢字の画数でさがす」。正しいのはどっち？",
+    "prompt": "「食べる」の調べ方。はると「『べ』の場所でさがす」。みお「漢字の画数でさがす」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -4742,18 +4742,18 @@ window.CHIBI_QUEST_JAPANESE_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "国語辞典は音の順なので「た」でさがします。画数で引くのは漢字辞典です。",
+    "explanation": "国語辞典は言葉の最初の音の順にならんでいるので、「食べる」は「た」の場所でさがします。画数で引くのは漢字辞典です。",
     "estimatedSeconds": 75,
     "skillTags": [
       "国語辞典",
@@ -4790,15 +4790,15 @@ window.CHIBI_QUEST_JAPANESE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「同じ言葉に意味がいくつものっていることがある」。みお「1つの言葉の意味は1つだけ」。正しいのはどっち？",
+    "prompt": "はると「同じ言葉に意味がいくつものっていることがある」。みお「国語辞典では、言葉が五十音じゅんにならんでいる」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人とも正しい"
       },
       {
         "id": "b",
-        "text": "二人とも正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "c",
@@ -4811,9 +4811,9 @@ window.CHIBI_QUEST_JAPANESE_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人とも正しい"
     },
-    "explanation": "「あがる」のように、1つの言葉にいくつもの意味がのっていることがあります。",
+    "explanation": "「あがる」のように1つの言葉に意味がいくつものっていることがあり、また国語辞典では言葉が五十音じゅんにならんでいます。",
     "estimatedSeconds": 75,
     "skillTags": [
       "国語辞典",
@@ -6302,11 +6302,11 @@ window.CHIBI_QUEST_JAPANESE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「辞典では音読みをカタカナ、訓読みをひらがなで書くことが多い」。みお「その反対だ」。正しいのはどっち？",
+    "prompt": "はると「辞典では音読みも訓読みもひらがなで書く」。みお「辞典では音読みも訓読みもカタカナで書く」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -6314,18 +6314,18 @@ window.CHIBI_QUEST_JAPANESE_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "辞典では音読みはカタカナ、訓読みはひらがなで書き分けられています。",
+    "explanation": "辞典では音読みをカタカナ、訓読みをひらがなで書き分けることが多いです。",
     "estimatedSeconds": 75,
     "skillTags": [
       "漢字",
@@ -8159,11 +8159,11 @@ window.CHIBI_QUEST_JAPANESE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「こそあど言葉を使うと、同じ言葉のくりかえしをさけられる」。みお「使うと文はかならず長くなる」。正しいのはどっち？",
+    "prompt": "はると「こそあど言葉を使うと、何を指しているかいつも分かりにくくなる」。みお「使うと文はかならず長くなる」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -8171,18 +8171,18 @@ window.CHIBI_QUEST_JAPANESE_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "「子犬は…子犬は…」とくり返すかわりに「それ」と言えて、文はむしろ短くなります。",
+    "explanation": "こそあど言葉を使うと同じ言葉のくり返しをさけられ、文はむしろ短くなります。何を指すかは前後の文で分かるようにします。",
     "estimatedSeconds": 75,
     "skillTags": [
       "こそあど言葉"
@@ -10080,11 +10080,11 @@ window.CHIBI_QUEST_JAPANESE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「つなぎ言葉をかえると、文の意味が変わることがある」。みお「どのつなぎ言葉を使っても意味は同じ」。正しいのはどっち？",
+    "prompt": "はると「どのつなぎ言葉を使っても意味は同じ」。みお「つなぎ言葉をかえると、文の意味が変わることがある」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "みおだけ正しい"
       },
       {
         "id": "b",
@@ -10092,7 +10092,7 @@ window.CHIBI_QUEST_JAPANESE_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
@@ -10101,7 +10101,7 @@ window.CHIBI_QUEST_JAPANESE_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "みおだけ正しい"
     },
     "explanation": "「だから勝った」と「しかし負けた」のように、つなぎ言葉で意味が変わります。",
     "estimatedSeconds": 90,
@@ -12253,11 +12253,11 @@ window.CHIBI_QUEST_JAPANESE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "「し」の書き方。はると「shiともsiとも書ける」。みお「shiだけが正しい」。正しいのはどっち？",
+    "prompt": "「し」の書き方。はると「『し』はローマ字では書けない」。みお「shiだけが正しい」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -12265,16 +12265,16 @@ window.CHIBI_QUEST_JAPANESE_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
     "explanation": "「し」はsiとshiの2つの書き方があり、どちらも使われます。",
     "estimatedSeconds": 75,
@@ -12373,11 +12373,11 @@ window.CHIBI_QUEST_JAPANESE_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「日本の地名や人の名前もローマ字で書ける」。みお「ローマ字で書けるのは英語だけ」。正しいのはどっち？",
+    "prompt": "はると「ローマ字は日本語には使えない」。みお「ローマ字で書けるのは英語だけ」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -12385,18 +12385,18 @@ window.CHIBI_QUEST_JAPANESE_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "ローマ字は日本語の音を書く文字なので、地名や名前も書けます。",
+    "explanation": "ローマ字は日本語の音を書き表す文字なので、地名や人の名前も書けます。",
     "estimatedSeconds": 75,
     "skillTags": [
       "ローマ字",
