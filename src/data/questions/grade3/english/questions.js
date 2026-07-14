@@ -1759,11 +1759,11 @@ window.CHIBI_QUEST_ENGLISH_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「What's your name? には名前で答える」。みお「What's your name? には数で答える」。正しいのはどっち？",
+    "prompt": "はると「What's your name? には『はい』か『いいえ』で答える」。みお「What's your name? には数で答える」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -1771,18 +1771,18 @@ window.CHIBI_QUEST_ENGLISH_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "What's your name? は名前をたずねる質問なので、名前で答えます。",
+    "explanation": "What's your name? は名前をたずねる質問なので、名前で答えます。はい・いいえや数では答えません。",
     "estimatedSeconds": 60,
     "skillTags": [
       "あいさつ"
@@ -2837,15 +2837,15 @@ window.CHIBI_QUEST_ENGLISH_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「great は fine よりもっと調子が良いことを表す」。みお「great と fine は反対の意味」。正しいのはどっち？",
+    "prompt": "はると「great は fine よりもっと調子が良いことを表す」。みお「sad は fine より調子が良くない気持ちを表す」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人とも正しい"
       },
       {
         "id": "b",
-        "text": "二人とも正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "c",
@@ -2858,9 +2858,9 @@ window.CHIBI_QUEST_ENGLISH_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人とも正しい"
     },
-    "explanation": "great は fine よりさらに良い調子を表します。反対の意味ではありません。",
+    "explanation": "great は fine よりさらに良い調子を表し、sad は fine より良くない気持ちを表します。",
     "estimatedSeconds": 60,
     "skillTags": [
       "気分"
@@ -6675,11 +6675,11 @@ window.CHIBI_QUEST_ENGLISH_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「Me, too. は自分も同じという意味」。みお「Me, too. は反対という意味」。正しいのはどっち？",
+    "prompt": "はると「Me, too. はお別れのあいさつという意味」。みお「Me, too. は反対という意味」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -6687,18 +6687,18 @@ window.CHIBI_QUEST_ENGLISH_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "Me, too. は「わたしも」という意味で、相手と同じ気持ちを表します。",
+    "explanation": "Me, too. は「わたしも」という意味で、相手と同じ気持ちを表します。反対の意味やお別れのあいさつではありません。",
     "estimatedSeconds": 60,
     "skillTags": [
       "好きなもの"
@@ -8961,11 +8961,11 @@ window.CHIBI_QUEST_ENGLISH_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "A: I like blue. B: I like blue, too. はると「AとBは同じ色が好き」。みお「AとBはちがう色が好き」。正しいのはどっち？",
+    "prompt": "A: I like blue. B: I like blue, too. はると「AとBはどちらも色の話をしていない」。みお「AとBはちがう色が好き」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -8973,18 +8973,18 @@ window.CHIBI_QUEST_ENGLISH_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "I like blue, too.(わたしも青が好き)なので、同じ色が好きです。",
+    "explanation": "I like blue, too.(わたしも青が好き)なので、AとBは同じ色(青)が好きです。",
     "estimatedSeconds": 60,
     "skillTags": [
       "好きなもの"

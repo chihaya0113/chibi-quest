@@ -194,7 +194,7 @@ function makeHello() {
     { prompt: "はると「Good night. は朝には使わない」。みお「Good morning. は夜には使わない」。正しいのはどっち？", correct: "二人とも正しい", explanation: "あいさつは時間帯によって使い分けます。" },
     { prompt: "はると「See you. は初対面のあいさつだ」。みお「See you. は別れるときのあいさつだ」。正しいのはどっち？", correct: "みおだけ正しい", explanation: "See you. は別れるときに使うあいさつです。初対面には Nice to meet you. を使います。" },
     { prompt: "はると「You're welcome. はお礼を言われたときの返事だ」。みお「You're welcome. は自分からお礼を言うときの言葉だ」。正しいのはどっち？", correct: "はるとだけ正しい", explanation: "You're welcome. はThank you.と言われたときの返事です。自分からお礼を言うときはThank you.を使います。" },
-    { prompt: "はると「What's your name? には名前で答える」。みお「What's your name? には数で答える」。正しいのはどっち？", correct: "はるとだけ正しい", explanation: "What's your name? は名前をたずねる質問なので、名前で答えます。" }
+    { prompt: "はると「What's your name? には『はい』か『いいえ』で答える」。みお「What's your name? には数で答える」。正しいのはどっち？", correct: "二人ともまちがい", explanation: "What's your name? は名前をたずねる質問なので、名前で答えます。はい・いいえや数では答えません。" }
   ]);
 
   if (questions.length !== 30) throw new Error(`hello: expected 30, got ${questions.length}`);
@@ -280,7 +280,7 @@ function makeHowAreYou() {
   }, [
     { prompt: "はると「happy と great はどちらも良い気分を表す」。みお「happy と sad は反対の意味」。正しいのはどっち？", correct: "二人とも正しい", explanation: "happy と great はどちらも良い気分、happy と sad は反対の意味です。" },
     { prompt: "はると「sleepy はお腹がすいたという意味」。みお「hungry がお腹がすいたという意味」。正しいのはどっち？", correct: "みおだけ正しい", explanation: "hungry がお腹がすいた、sleepy は眠いという意味です。" },
-    { prompt: "はると「great は fine よりもっと調子が良いことを表す」。みお「great と fine は反対の意味」。正しいのはどっち？", correct: "はるとだけ正しい", explanation: "great は fine よりさらに良い調子を表します。反対の意味ではありません。" }
+    { prompt: "はると「great は fine よりもっと調子が良いことを表す」。みお「sad は fine より調子が良くない気持ちを表す」。正しいのはどっち？", correct: "二人とも正しい", explanation: "great は fine よりさらに良い調子を表し、sad は fine より良くない気持ちを表します。" }
   ]);
 
   // F6 気分のなかまはずれ(rule_discovery, d3)
@@ -600,7 +600,7 @@ function makeILikeBlue() {
     axes: { knowledge: 2, info: 2, steps: 2, format: 3, choices: 1 }
   }, [
     { prompt: "はると「I like blue. は青が好きという意味」。みお「I don't like blue. も青が好きという意味」。正しいのはどっち？", correct: "はるとだけ正しい", explanation: "I don't like blue. は「青が好きではない」という意味です。" },
-    { prompt: "はると「Me, too. は自分も同じという意味」。みお「Me, too. は反対という意味」。正しいのはどっち？", correct: "はるとだけ正しい", explanation: "Me, too. は「わたしも」という意味で、相手と同じ気持ちを表します。" }
+    { prompt: "はると「Me, too. はお別れのあいさつという意味」。みお「Me, too. は反対という意味」。正しいのはどっち？", correct: "二人ともまちがい", explanation: "Me, too. は「わたしも」という意味で、相手と同じ気持ちを表します。反対の意味やお別れのあいさつではありません。" }
   ]);
 
   // F7 好きな色となかまはずれ(rule_discovery, d3)
@@ -790,7 +790,7 @@ function makeWhatDoYouLike() {
   }, [
     { prompt: "A: I like cats. B: I like cats, too. はると「AとBは同じものが好き」。みお「AとBはちがうものが好き」。正しいのはどっち？", correct: "はるとだけ正しい", explanation: "I like cats, too.は「わたしもねこが好き」という意味なので、同じものが好きです。" },
     { prompt: "A: I like soccer. B: I don't like soccer. I like tennis. はると「AとBは同じスポーツが好き」。みお「AとBはちがうスポーツが好き」。正しいのはどっち？", correct: "みおだけ正しい", explanation: "I don't like soccer.(サッカーは好きじゃない)なので、ちがうスポーツが好きです。", soccer: true },
-    { prompt: "A: I like blue. B: I like blue, too. はると「AとBは同じ色が好き」。みお「AとBはちがう色が好き」。正しいのはどっち？", correct: "はるとだけ正しい", explanation: "I like blue, too.(わたしも青が好き)なので、同じ色が好きです。" }
+    { prompt: "A: I like blue. B: I like blue, too. はると「AとBはどちらも色の話をしていない」。みお「AとBはちがう色が好き」。正しいのはどっち？", correct: "二人ともまちがい", explanation: "I like blue, too.(わたしも青が好き)なので、AとBは同じ色(青)が好きです。" }
   ]);
 
   if (questions.length !== 30) throw new Error(`what_do_you_like: expected 30, got ${questions.length}`);
