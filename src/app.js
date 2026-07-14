@@ -1,7 +1,7 @@
-import { subjects } from "./curriculum.js?v=46";
-import { loadState, resetState, saveState } from "./storage.js?v=46";
-import { selectHighlights, buildHighlightScenes } from "./battleHighlights.js?v=46";
-import { START_TYPES } from "./data/soccer/highlightScenes.js?v=46";
+import { subjects } from "./curriculum.js?v=47";
+import { loadState, resetState, saveState } from "./storage.js?v=47";
+import { selectHighlights, buildHighlightScenes } from "./battleHighlights.js?v=47";
+import { START_TYPES } from "./data/soccer/highlightScenes.js?v=47";
 
 const allQuestions = [
   ...(window.CHIBI_QUEST_QUESTIONS ?? []),

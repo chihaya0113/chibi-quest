@@ -1,6 +1,6 @@
 // ちびクエ Service Worker — 完全オフライン対応
 // 更新時は CACHE_VERSION の数字を上げる（古いキャッシュは activate で削除される）
-const CACHE_VERSION = "chibi-quest-v46";
+const CACHE_VERSION = "chibi-quest-v47";
 
 // アプリの土台を先読みキャッシュ（初回インストール時）。
 // 問題データ・サッカーデータ・アイコンは、初回のオンライン表示時に
@@ -12,18 +12,18 @@ const PRECACHE = [
   "./icons/icon-180.png",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
-  "./src/app.js?v=46",
-  "./src/styles.css?v=46",
-  "./src/curriculum.js?v=46",
-  "./src/storage.js?v=46",
-  "./src/battleHighlights.js?v=46",
-  "./src/data/soccer/highlightScenes.js?v=46",
+  "./src/app.js?v=47",
+  "./src/styles.css?v=47",
+  "./src/curriculum.js?v=47",
+  "./src/storage.js?v=47",
+  "./src/battleHighlights.js?v=47",
+  "./src/data/soccer/highlightScenes.js?v=47",
   "./src/data/questions/grade3/math/questions.js",
   "./src/data/questions/grade3/japanese/questions.js",
   "./src/data/questions/grade3/social/questions.js",
   "./src/data/questions/grade3/english/questions.js",
   "./src/data/questions/grade3/science/questions.js",
-  "./src/data/soccer/players.js?v=46"
+  "./src/data/soccer/players.js?v=47"
 ];
 
 self.addEventListener("install", (event) => {
