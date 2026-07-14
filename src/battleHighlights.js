@@ -3,7 +3,7 @@
 // 1試合2〜3件のハイライトを選び、演出用のsequence/captionを組み立てる純粋関数群。
 // ここでの選択・演出組み立ては、得点数やoutcomeなど既存の試合結果を一切変更しない。
 
-import { START_TYPES, OUTCOME_ART, RARE_SEQUENCES } from "./data/soccer/highlightScenes.js?v=35";
+import { START_TYPES, OUTCOME_ART, RARE_SEQUENCES } from "./data/soccer/highlightScenes.js?v=36";
 
 const MAX_HIGHLIGHTS = 3;
 

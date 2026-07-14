@@ -1,7 +1,7 @@
-import { subjects } from "./curriculum.js?v=35";
-import { loadState, resetState, saveState } from "./storage.js?v=35";
-import { selectHighlights, buildHighlightScenes } from "./battleHighlights.js?v=35";
-import { START_TYPES } from "./data/soccer/highlightScenes.js?v=35";
+import { subjects } from "./curriculum.js?v=36";
+import { loadState, resetState, saveState } from "./storage.js?v=36";
+import { selectHighlights, buildHighlightScenes } from "./battleHighlights.js?v=36";
+import { START_TYPES } from "./data/soccer/highlightScenes.js?v=36";
 
 const allQuestions = [
   ...(window.CHIBI_QUEST_QUESTIONS ?? []),
@@ -2258,7 +2258,7 @@ function todaysLeagueFixture() {
   const dayIndex = dayIndexInWeek(league.weekKey, new Date());
   if (league.playedDays[dayIndex]) return null;
   const oppTeamIndex = LEAGUE_SCHEDULE[0][dayIndex];
-  return { dayIndex, opponent: LEAGUE_CPU_TEAMS[oppTeamIndex - 1] };
+  return { dayIndex, oppTeamIndex, opponent: LEAGUE_CPU_TEAMS[oppTeamIndex - 1] };
 }
 
 function leagueRanking() {
@@ -2445,16 +2445,20 @@ function playTodayLeagueMatch() {
   state.soccer.battleTickets -= 1;
 
   let outcome = "loss";
+  let oppOutcome = "win";
   let resultText = "まけちゃった… でも いい経験！";
   if (match.myScore > match.cpuScore) {
     outcome = "win";
+    oppOutcome = "loss";
     resultText = "🏆 しょうり！！";
   } else if (match.myScore === match.cpuScore) {
     outcome = "draw";
+    oppOutcome = "draw";
     resultText = "ひきわけ！ おしい！";
   }
 
   applyResultToStandings(state.soccer.league.standings, 0, outcome);
+  applyResultToStandings(state.soccer.league.standings, fixture.oppTeamIndex, oppOutcome);
   state.soccer.league.playedDays[fixture.dayIndex] = { kind: outcome, myScore: match.myScore, cpuScore: match.cpuScore };
 
   saveState(state);
