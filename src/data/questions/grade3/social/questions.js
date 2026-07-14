@@ -3326,11 +3326,11 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「地図記号は国じゅうで同じものが使われている」。みお「地図記号は地図ごとにちがう」。正しいのはどっち？",
+    "prompt": "はると「地図記号は地図ごとにちがう」。みお「地図記号は国じゅうで同じものが使われている」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "みおだけ正しい"
       },
       {
         "id": "b",
@@ -3338,7 +3338,7 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
@@ -3347,7 +3347,7 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "みおだけ正しい"
     },
     "explanation": "地図記号は全国共通の決まった形で使われています。",
     "estimatedSeconds": 75,
@@ -3386,15 +3386,15 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「田と畑の地図記号はちがう形をしている」。みお「田と畑の記号は同じ形だ」。正しいのはどっち？",
+    "prompt": "はると「田と畑の地図記号はちがう形をしている」。みお「地図記号には、田・畑のほかに果樹園や工場を表すものもある」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人とも正しい"
       },
       {
         "id": "b",
-        "text": "二人とも正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "c",
@@ -3407,9 +3407,9 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人とも正しい"
     },
-    "explanation": "田は稲を刈ったあとの形、畑は植物の芽の形で、ちがう記号です。",
+    "explanation": "田は稲を刈ったあとの形、畑は植物の芽の形でちがう記号です。地図記号には、田・畑のほかにも果樹園や工場などを表す記号があります。",
     "estimatedSeconds": 75,
     "skillTags": [
       "地図",
@@ -3446,11 +3446,11 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「市役所は地域のくらしに関わる仕事をしている」。みお「市役所は店の一種だ」。正しいのはどっち？",
+    "prompt": "はると「市役所は警察と同じ仕事をしている」。みお「市役所は店の一種だ」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -3458,18 +3458,18 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "市役所は住民のくらしに関わる仕事をする公共のしせつで、店ではありません。",
+    "explanation": "市役所は住民のくらしに関わる仕事をする公共のしせつで、店でも警察でもありません。",
     "estimatedSeconds": 75,
     "skillTags": [
       "地図",
@@ -3506,11 +3506,11 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「地図を見れば、実際に行かなくてもまちの様子がある程度わかる」。みお「地図では何もわからない」。正しいのはどっち？",
+    "prompt": "はると「地図を見れば、実際に行くよりくわしくわかる」。みお「地図では何もわからない」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -3518,18 +3518,18 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "地図からは、土地の使われ方や施設の場所など多くのことがわかります。",
+    "explanation": "地図からは土地の使われ方や施設の場所など多くのことがある程度わかりますが、実際に行って確かめることでさらにくわしくわかります。",
     "estimatedSeconds": 75,
     "skillTags": [
       "地図",
@@ -5132,11 +5132,11 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「地元の商品を買うと、地域の仕事を応援できる」。みお「どこで作られた商品を買っても同じ」。正しいのはどっち？",
+    "prompt": "はると「どこで作られた商品を買っても同じ」。みお「地元の商品を買うと、地域の仕事を応援できる」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "みおだけ正しい"
       },
       {
         "id": "b",
@@ -5144,7 +5144,7 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
@@ -5153,7 +5153,7 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "みおだけ正しい"
     },
     "explanation": "地元の商品を買うことは、その地域の生産者や店を支えることにつながります。",
     "estimatedSeconds": 75,
@@ -6460,15 +6460,15 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「食品工場では衛生に気をつけて作業している」。みお「服そうは何でもよい」。正しいのはどっち？",
+    "prompt": "はると「食品工場では衛生に気をつけて作業している」。みお「食品工場では、機械を清潔にたもつことにも気をつけている」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人とも正しい"
       },
       {
         "id": "b",
-        "text": "二人とも正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "c",
@@ -6481,9 +6481,9 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人とも正しい"
     },
-    "explanation": "食品工場では、白い服やぼうしなどで衛生に気をつけています。",
+    "explanation": "食品工場では、白い服やぼうしを身につけたり、機械を清潔にたもったりして衛生に気をつけています。",
     "estimatedSeconds": 75,
     "skillTags": [
       "仕事"
@@ -6519,11 +6519,11 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「野菜は新鮮なうちに運ぶ工夫がされている」。みお「野菜はいつ運んでも同じ」。正しいのはどっち？",
+    "prompt": "はると「野菜は運ぶのに時間がかかるほど新鮮になる」。みお「野菜はいつ運んでも同じ」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -6531,18 +6531,18 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "新鮮さを保つために、温度管理やすばやい輸送などの工夫がされています。",
+    "explanation": "新鮮さを保つために、温度管理やすばやい輸送などの工夫がされています。運ぶ時間が長いほど新鮮になるわけではありません。",
     "estimatedSeconds": 75,
     "skillTags": [
       "仕事"
@@ -6578,15 +6578,15 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「機械を使う仕事にも、人の手が必要な部分がある」。みお「機械があれば人の仕事は一切いらない」。正しいのはどっち？",
+    "prompt": "はると「機械を使う仕事にも、人の手が必要な部分がある」。みお「機械を使うと、同じ作業を早く正確にくり返せる」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人とも正しい"
       },
       {
         "id": "b",
-        "text": "二人とも正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "c",
@@ -6599,9 +6599,9 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人とも正しい"
     },
-    "explanation": "機械化が進んでも、点検や管理など人の手が必要な仕事があります。",
+    "explanation": "機械化が進んでも点検や管理など人の手が必要な仕事があり、また機械は同じ作業を早く正確にくり返すのが得意です。",
     "estimatedSeconds": 75,
     "skillTags": [
       "仕事"
@@ -7239,11 +7239,11 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「もし農家の人がいなかったら、お米や野菜が手に入りにくくなる」。みお「農家がいなくてもくらしは変わらない」。正しいのはどっち？",
+    "prompt": "はると「お米や野菜は、農家がいなくても工場だけで作れる」。みお「農家がいなくてもくらしは変わらない」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -7251,18 +7251,18 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "農家の仕事は、わたしたちの食生活を支える大切な仕事です。",
+    "explanation": "農家の仕事はわたしたちの食生活を支える大切な仕事で、農家がいなければお米や野菜は手に入りにくくなります。",
     "estimatedSeconds": 90,
     "skillTags": [
       "仕事",
@@ -7299,11 +7299,11 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「運送の仕事がなければ、遠くで作られた商品を買えない」。みお「運送は仕事のうちに入らない」。正しいのはどっち？",
+    "prompt": "はると「商品はどこで作られても、運ばなくても店にならぶ」。みお「運送は仕事のうちに入らない」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -7311,16 +7311,16 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
     "explanation": "運送の仕事のおかげで、遠くの産地で作られた商品を近くの店で買うことができます。",
     "estimatedSeconds": 90,
@@ -9598,11 +9598,11 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「訓練をしておくと、実さいの災害のときに落ち着いて行動しやすい」。みお「訓練をしてもしなくても同じ」。正しいのはどっち？",
+    "prompt": "はると「訓練をしてもしなくても同じ」。みお「訓練をしておくと、実さいの災害のときに落ち着いて行動しやすい」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "みおだけ正しい"
       },
       {
         "id": "b",
@@ -9610,7 +9610,7 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
@@ -9619,7 +9619,7 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "みおだけ正しい"
     },
     "explanation": "訓練をしておくことで、いざというときに落ち着いて行動しやすくなります。",
     "estimatedSeconds": 75,
@@ -9657,15 +9657,15 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「交通のきまりを守ることは、自分だけでなく周りの安全も守ることになる」。みお「交通のきまりは自分には関係ない」。正しいのはどっち？",
+    "prompt": "はると「交通のきまりを守ることは、自分だけでなく周りの安全も守ることになる」。みお「信号を守ることも、交通のきまりの一つだ」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人とも正しい"
       },
       {
         "id": "b",
-        "text": "二人とも正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "c",
@@ -9678,9 +9678,9 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人とも正しい"
     },
-    "explanation": "きまりを守ることは、自分自身だけでなく周りの人の安全にもつながります。",
+    "explanation": "きまりを守ることは自分自身だけでなく周りの人の安全にもつながり、信号を守ることもその一つです。",
     "estimatedSeconds": 75,
     "skillTags": [
       "安全"
@@ -11107,11 +11107,11 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「集団登下校は、一人で行くより安全性が高まる」。みお「集団で行っても一人で行っても安全さは同じ」。正しいのはどっち？",
+    "prompt": "はると「集団で行っても一人で行っても安全さは同じ」。みお「集団登下校は、一人で行くより安全性が高まる」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "みおだけ正しい"
       },
       {
         "id": "b",
@@ -11119,7 +11119,7 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
@@ -11128,7 +11128,7 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "みおだけ正しい"
     },
     "explanation": "集団で行動することで、お互いに気をつけ合い安全性が高まります。",
     "estimatedSeconds": 75,
@@ -11167,15 +11167,15 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「こども110番の家は、こまったときにだれでもかけこめる」。みお「こども110番の家は大人は使えない」。正しいのはどっち？",
+    "prompt": "はると「こども110番の家は、こまったときにだれでもかけこめる」。みお「こども110番の家は、地域の人が協力して行っている取り組みだ」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人とも正しい"
       },
       {
         "id": "b",
-        "text": "二人とも正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "c",
@@ -11188,9 +11188,9 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人とも正しい"
     },
-    "explanation": "こども110番の家は主にこどもを対象としていますが、こまっている人を助けるための場所です。",
+    "explanation": "こども110番の家はこまったときにかけこめる場所で、地域の人が協力して行っている取り組みでもあります。",
     "estimatedSeconds": 75,
     "skillTags": [
       "安全",
@@ -12192,15 +12192,15 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「子どもも、あいさつや周りへの注意で地域の安全に協力できる」。みお「子どもは安全に何もできない」。正しいのはどっち？",
+    "prompt": "はると「子どもも、あいさつや周りへの注意で地域の安全に協力できる」。みお「知らない人に声をかけられたら、大人に知らせることも安全への協力になる」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人とも正しい"
       },
       {
         "id": "b",
-        "text": "二人とも正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "c",
@@ -12213,9 +12213,9 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人とも正しい"
     },
-    "explanation": "あいさつを交わすことや周りに気をつけることは、子どもにもできる地域の安全への協力です。",
+    "explanation": "あいさつや周りへの注意、こまったことを大人に知らせることなど、子どもにもできる地域の安全への協力があります。",
     "estimatedSeconds": 90,
     "skillTags": [
       "安全",
@@ -12252,11 +12252,11 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「学校、警察、消防、地域の人がそれぞれの役目で協力して安全を守っている」。みお「安全を守るのは警察だけの仕事だ」。正しいのはどっち？",
+    "prompt": "はると「安全を守るのは消防だけの仕事だ」。みお「安全を守るのは警察だけの仕事だ」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -12264,18 +12264,18 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "安全は、いろいろな立場の人が協力して守っています。",
+    "explanation": "安全は、学校・警察・消防・地域の人など、いろいろな立場の人が協力して守っています。",
     "estimatedSeconds": 90,
     "skillTags": [
       "安全",
@@ -13453,11 +13453,11 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「年表を使うと、できごとの順番がわかりやすい」。みお「年表がなくても順番はいつでもわかる」。正しいのはどっち？",
+    "prompt": "はると「年表がなくても順番はいつでもわかる」。みお「年表を使うと、できごとの順番がわかりやすい」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "みおだけ正しい"
       },
       {
         "id": "b",
@@ -13465,7 +13465,7 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
@@ -13474,7 +13474,7 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "みおだけ正しい"
     },
     "explanation": "年表は、できごとを時間の順に整理して見やすくする資料です。",
     "estimatedSeconds": 75,
@@ -15021,11 +15021,11 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「今べんりな道具も、いつかまた新しいものに変わっていくかもしれない」。みお「今の道具はこれ以上変わらない」。正しいのはどっち？",
+    "prompt": "はると「今の道具はこれ以上変わらない」。みお「今べんりな道具も、いつかまた新しいものに変わっていくかもしれない」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "みおだけ正しい"
       },
       {
         "id": "b",
@@ -15033,7 +15033,7 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
@@ -15042,7 +15042,7 @@ window.CHIBI_QUEST_SOCIAL_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "みおだけ正しい"
     },
     "explanation": "道具や技術はこれからも変化を続けていくと考えられます。",
     "estimatedSeconds": 75,
