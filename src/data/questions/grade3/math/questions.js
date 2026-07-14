@@ -1964,11 +1964,11 @@ window.CHIBI_QUEST_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「4 × 8 の答えは、4 × 4 の答えを2ばいした数と同じ」。みお「そんなきまりはないよ」。正しいのはどっち？",
+    "prompt": "はると「そんなきまりはないよ」。みお「4 × 8 の答えは、4 × 4 の答えを2ばいした数と同じ」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "みおだけ正しい"
       },
       {
         "id": "b",
@@ -1976,7 +1976,7 @@ window.CHIBI_QUEST_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
@@ -1985,7 +1985,7 @@ window.CHIBI_QUEST_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "みおだけ正しい"
     },
     "explanation": "4 × 4 = 16 で、16の2ばいは32。4 × 8 = 32 なので同じです。かける数を半分にして2ばいしても答えは同じです。",
     "estimatedSeconds": 90,
@@ -4564,11 +4564,11 @@ window.CHIBI_QUEST_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「7 ÷ 7 = 1 だよ」。みお「7 ÷ 7 = 0 だよ」。正しいのはどっち？",
+    "prompt": "はると「7 ÷ 7 = 0 だよ」。みお「7 ÷ 7 = 1 だよ」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "みおだけ正しい"
       },
       {
         "id": "b",
@@ -4576,7 +4576,7 @@ window.CHIBI_QUEST_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
@@ -4585,9 +4585,9 @@ window.CHIBI_QUEST_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "みおだけ正しい"
     },
-    "explanation": "同じ数でわると答えは1です。7 ÷ 7 = 1 なので、はるとが正しいです。",
+    "explanation": "同じ数でわると答えは1です。7 ÷ 7 = 1 なので、みおが正しいです。",
     "estimatedSeconds": 90,
     "skillTags": [
       "わり算",
@@ -7397,11 +7397,11 @@ window.CHIBI_QUEST_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「たし算は、たすじゅんばんを入れかえても答えが同じ」。みお「ひき算も、ひくじゅんばんを入れかえても答えが同じ」。正しいのはどっち？",
+    "prompt": "はると「ひき算も、ひくじゅんばんを入れかえても答えが同じ」。みお「たし算は、たすじゅんばんを入れかえても答えが同じ」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "みおだけ正しい"
       },
       {
         "id": "b",
@@ -7409,7 +7409,7 @@ window.CHIBI_QUEST_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
@@ -7418,7 +7418,7 @@ window.CHIBI_QUEST_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "みおだけ正しい"
     },
     "explanation": "たし算は入れかえても同じですが、ひき算は入れかえると答えが変わります(たとえば 5 - 3 と 3 - 5)。",
     "estimatedSeconds": 90,
@@ -7577,11 +7577,11 @@ window.CHIBI_QUEST_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "600 - 299 について。はると「600 - 300 = 300 で、ひきすぎた1をたして301」。みお「600 - 300 = 300 で、さらに1をひいて299」。正しいのはどっち？",
+    "prompt": "600 - 299 について。はると「600 - 300 = 300 で、そのまま300が答え」。みお「600 - 300 = 300 で、さらに1をひいて299」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -7589,18 +7589,18 @@ window.CHIBI_QUEST_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "299は300より1小さいので、300をひくと1ひきすぎです。ひきすぎた1をたして301です。",
+    "explanation": "299は300より1小さいので、300をひくと1ひきすぎです。ひきすぎた1をたして301が正しい答えです。",
     "estimatedSeconds": 90,
     "skillTags": [
       "筆算",
@@ -9570,30 +9570,30 @@ window.CHIBI_QUEST_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「1時間は60分」。みお「1分は60秒」。正しいのはどっち？",
+    "prompt": "はると「1時間は100分」。みお「1分は100秒」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "二人とも正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
-        "text": "はるとだけ正しい"
+        "text": "二人とも正しい"
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "二人とも正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "時間も分も、60ずつで次の単位になります。",
+    "explanation": "1時間は60分、1分は60秒です。時間も分も、60ずつで次の単位にくり上がります。",
     "estimatedSeconds": 90,
     "skillTags": [
       "時間",
@@ -9630,11 +9630,11 @@ window.CHIBI_QUEST_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "100分について。はると「1時間40分と同じ」。みお「1時間より短い」。正しいのはどっち？",
+    "prompt": "100分について。はると「1時間より短い」。みお「1時間40分と同じ」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "みおだけ正しい"
       },
       {
         "id": "b",
@@ -9642,7 +9642,7 @@ window.CHIBI_QUEST_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
@@ -9651,7 +9651,7 @@ window.CHIBI_QUEST_QUESTIONS = [
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "みおだけ正しい"
     },
     "explanation": "100分 = 60分 + 40分 = 1時間40分です。1時間(60分)より長いです。",
     "estimatedSeconds": 90,
@@ -9690,28 +9690,28 @@ window.CHIBI_QUEST_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「午前は12時間、午後も12時間」。みお「1日は24時間」。正しいのはどっち？",
+    "prompt": "はると「午前は10時間、午後は14時間」。みお「1日は20時間」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "二人とも正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
-        "text": "はるとだけ正しい"
+        "text": "二人とも正しい"
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "二人とも正しい"
+      "value": "二人ともまちがい"
     },
     "explanation": "午前12時間と午後12時間をあわせて、1日は24時間です。",
     "estimatedSeconds": 90,
@@ -12354,11 +12354,11 @@ window.CHIBI_QUEST_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "48000 について。はると「1000 を48こ集めた数」。みお「100 を48こ集めた数」。正しいのはどっち？",
+    "prompt": "48000 について。はると「1000 を4こ集めた数」。みお「100 を48こ集めた数」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -12366,18 +12366,18 @@ window.CHIBI_QUEST_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "1000 × 48 = 48000 です。100を48こだと4800になります。",
+    "explanation": "48000は1000を48こ集めた数です。1000を4こ集めても4000にしかならず、100を48こ集めても4800にしかなりません。",
     "estimatedSeconds": 90,
     "skillTags": [
       "大きな数",
@@ -12414,30 +12414,30 @@ window.CHIBI_QUEST_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "はると「一万円さつ1まいは、千円さつ10まい分」。みお「一万円さつ1まいは、百円玉100こ分」。正しいのはどっち？",
+    "prompt": "はると「一万円さつ1まいは、千円さつ5まい分」。みお「一万円さつ1まいは、百円玉10こ分」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "二人とも正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
-        "text": "はるとだけ正しい"
+        "text": "二人とも正しい"
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "二人とも正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "1000円 × 10 = 10000円、100円 × 100 = 10000円。どちらも一万円です。",
+    "explanation": "一万円は千円さつ10まい分(1000 × 10 = 10000)、また百円玉100こ分(100 × 100 = 10000)です。",
     "estimatedSeconds": 90,
     "skillTags": [
       "大きな数",
@@ -12474,11 +12474,11 @@ window.CHIBI_QUEST_QUESTIONS = [
       "choices": 1
     },
     "questionType": "multiple_choice",
-    "prompt": "70000 と 68999。はると「70000が大きい」。みお「68999は9がたくさんあるから大きい」。正しいのはどっち？",
+    "prompt": "70000 と 68999。はると「けたの数が同じだから同じ大きさ」。みお「68999は9がたくさんあるから大きい」。正しいのはどっち？",
     "choices": [
       {
         "id": "a",
-        "text": "はるとだけ正しい"
+        "text": "二人ともまちがい"
       },
       {
         "id": "b",
@@ -12486,18 +12486,18 @@ window.CHIBI_QUEST_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "みおだけ正しい"
+        "text": "はるとだけ正しい"
       },
       {
         "id": "d",
-        "text": "二人ともまちがい"
+        "text": "みおだけ正しい"
       }
     ],
     "answer": {
       "type": "choice",
-      "value": "はるとだけ正しい"
+      "value": "二人ともまちがい"
     },
-    "explanation": "万の位が7と6なので、70000のほうが大きいです。下の位の9は関係ありません。",
+    "explanation": "けたの数が同じでも、大きさは同じとはかぎりません。万の位でくらべると7と6なので、70000のほうが大きいです。9の数は関係ありません。",
     "estimatedSeconds": 90,
     "skillTags": [
       "大きな数",
